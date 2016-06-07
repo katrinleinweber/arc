@@ -1,5 +1,7 @@
 # presume that working directory in current scenario directory, eg:
-# setwd('~/github/arc/circle2016')
+
+setwd('circle2016') # assuming in /arc directory
+library(ohicore)
 
 # load conf
 conf = Conf('conf')
