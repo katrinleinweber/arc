@@ -240,6 +240,7 @@ MAR = function(layers, status_year){
 
   # 4-year rolling mean of data
   m <- rky %>%
+    filter(!is.na(tonnes)) %>%
     mutate(year = as.numeric(as.character(year))) %>%
     group_by(rgn_id, species, species_code, sust_coeff) %>%
     arrange(rgn_id, species, species_code, year) %>%
@@ -257,6 +258,7 @@ MAR = function(layers, status_year){
     summarize(sust_tonnes_sum = sum(sust_tonnes, na.rm=TRUE)) %>%  #na.rm = TRUE assumes that NA values are 0
     left_join(popn_inland25mi, by = c('rgn_id','year')) %>%
     mutate(mar_pop = sust_tonnes_sum / popsum) %>%
+    filter(!is.na(popsum)) %>%
     ungroup()
 
 
@@ -266,25 +268,12 @@ MAR = function(layers, status_year){
 
   ref_95pct <- quantile(ref_95pct_data$mar_pop, 0.95, na.rm=TRUE)
 
-  # identify reference rgn_id
-  ry_ref = ref_95pct_data %>%
-    arrange(mar_pop) %>%
-    filter(mar_pop >= ref_95pct)
-  message(sprintf('95th percentile for MAR ref pt is: %s\n', ref_95pct))
-  message(sprintf('95th percentile rgn_id for MAR ref pt is: %s\n', ry_ref$rgn_id[1]))
-
-  rp <- read.csv('temp/referencePoints.csv', stringsAsFactors=FALSE) %>%
-    rbind(data.frame(goal = "MAR", method = "spatial 95th quantile",
-                     reference_point = paste0("region id: ", ry_ref$rgn_id[1], ' value: ', ref_95pct)))
-  write.csv(rp, 'temp/referencePoints.csv', row.names=FALSE)
-
-
   ry = ry %>%
     mutate(status = ifelse(mar_pop / ref_95pct > 1,
                            1,
                            mar_pop / ref_95pct))
   status <- ry %>%
-    filter(year == status_year) %>%
+    filter(year %in% status_year) %>%
     select(rgn_id, status) %>%
     mutate(status = round(status*100, 2))
 
@@ -1355,15 +1344,15 @@ LIV_ECO = function(layers, subgoal){
 LE = function(scores, layers){
 
   # calculate LE scores
-  scores.LE = scores %.%
-    filter(goal %in% c('LIV','ECO') & dimension %in% c('status','trend','score','future')) %.%
-    dcast(region_id + dimension ~ goal, value.var='score') %.%
-    mutate(score = rowMeans(cbind(ECO, LIV), na.rm=T)) %.%
-    select(region_id, dimension, score) %.%
+  scores.LE = scores %>%
+    filter(goal %in% c('LIV','ECO') & dimension %in% c('status','trend','score','future')) %>%
+    dcast(region_id + dimension ~ goal, value.var='score') %>%
+    mutate(score = rowMeans(cbind(ECO, LIV), na.rm=T)) %>%
+    select(region_id, dimension, score) %>%
     mutate(goal  = 'LE')
 
   # rbind to all scores
-  scores = scores %.%
+  scores = scores %>%
     rbind(scores.LE)
 
   # return scores
