@@ -23,7 +23,7 @@ if (!"ohicore" %in% (.packages())) {
 }
 
 # set working directory to the scenario directory, ie containing conf and layers directories
-setwd('~/github/bhi/baltic2015')
+setwd('~/github/arc/circle2016')
 
 # load scenario configuration. "Conf" is an ohicore function that loads all materials from "conf" folder
 conf = Conf('conf')
