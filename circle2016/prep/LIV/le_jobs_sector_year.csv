@@ -1,0 +1,203 @@
+"","rgn_id","sector","Year","value"
+"1","Russia","fishing","2010",81553
+"2","Russia","hospitality","2010",20556
+"3","Russia","transport","2010",139621
+"4","Russia","fishing","2011",81898
+"5","Russia","hospitality","2011",20900
+"6","Russia","transport","2011",140898
+"7","Russia","fishing","2012",80479
+"8","Russia","hospitality","2012",22679
+"9","Russia","transport","2012",141925
+"10","Russia","fishing","2013",77682
+"11","Russia","hospitality","2013",24290
+"12","Russia","transport","2013",141257
+"13","Russia","fishing","2014",76700
+"14","Russia","hospitality","2014",24855
+"15","Russia","transport","2014",138693
+"16","Alaska","manufacturing","2004",12
+"17","Alaska","transport","2004",519
+"18","Alaska","hospitality","2004",465
+"19","Alaska","transport","2004",304
+"20","Alaska","hospitality","2004",133
+"21","Alaska","manufacturing","2005",13
+"22","Alaska","transport","2005",383
+"23","Alaska","hospitality","2005",481
+"24","Alaska","manufacturing","2005",5
+"25","Alaska","transport","2005",273
+"26","Alaska","hospitality","2005",264
+"27","Alaska","manufacturing","2006",3
+"28","Alaska","transport","2006",423
+"29","Alaska","hospitality","2006",504
+"30","Alaska","transport","2006",265
+"31","Alaska","hospitality","2006",167
+"32","Alaska","transport","2007",450
+"33","Alaska","hospitality","2007",516
+"34","Alaska","transport","2007",284
+"35","Alaska","hospitality","2007",169
+"36","Alaska","transport","2008",472
+"37","Alaska","hospitality","2008",575
+"38","Alaska","transport","2008",304
+"39","Alaska","hospitality","2008",174
+"40","Alaska","transport","2009",478
+"41","Alaska","hospitality","2009",550
+"42","Alaska","transport","2009",356
+"43","Alaska","hospitality","2009",179
+"44","Alaska","transport","2010",563
+"45","Alaska","hospitality","2010",540
+"46","Alaska","transport","2010",337
+"47","Alaska","hospitality","2010",172
+"48","Alaska","transport","2011",546
+"49","Alaska","hospitality","2011",541
+"50","Alaska","transport","2011",346
+"51","Alaska","hospitality","2011",176
+"52","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2012",573
+"53","Alaska","LEISURE AND HOSPITALITY","2012",560
+"54","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2012",358
+"55","Alaska","LEISURE AND HOSPITALITY","2012",185
+"56","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2013",628
+"57","Alaska","LEISURE AND HOSPITALITY","2013",534
+"58","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2013",352
+"59","Alaska","LEISURE AND HOSPITALITY","2013",189
+"60","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2014",630
+"61","Alaska","LEISURE AND HOSPITALITY","2014",719
+"62","Alaska","TRADE, TRANSPORTATION AND UTILITIES","2014",361
+"63","Alaska","LEISURE AND HOSPITALITY","2014",172
+"64","Beaufort","transport","2001",213
+"65","Beaufort","tourism","2001",85
+"66","Beaufort","hospitality","2001",185
+"67","Beaufort","transport","2002",256
+"68","Beaufort","tourism","2002",114
+"69","Beaufort","hospitality","2002",199
+"70","Beaufort","transport","2003",284
+"71","Beaufort","tourism","2003",128
+"72","Beaufort","hospitality","2003",185
+"73","Beaufort","transport","2004",312
+"74","Beaufort","tourism","2004",128
+"75","Beaufort","hospitality","2004",170
+"76","Beaufort","transport","2005",312
+"77","Beaufort","tourism","2005",128
+"78","Beaufort","hospitality","2005",170
+"79","Beaufort","transport","2006",256
+"80","Beaufort","tourism","2006",156
+"81","Beaufort","hospitality","2006",128
+"82","Beaufort","transport","2007",270
+"83","Beaufort","tourism","2007",142
+"84","Beaufort","hospitality","2007",142
+"85","Beaufort","transport","2008",270
+"86","Beaufort","tourism","2008",128
+"87","Beaufort","hospitality","2008",170
+"88","Beaufort","transport","2009",241
+"89","Beaufort","tourism","2009",114
+"90","Beaufort","hospitality","2009",114
+"91","Beaufort","transport","2010",256
+"92","Beaufort","tourism","2010",114
+"93","Beaufort","hospitality","2010",114
+"94","Beaufort","transport","2011",298
+"95","Beaufort","tourism","2011",128
+"96","Beaufort","hospitality","2011",170
+"97","Beaufort","transport","2012",241
+"98","Beaufort","tourism","2012",128
+"99","Beaufort","hospitality","2012",156
+"100","Beaufort","transport","2013",256
+"101","Beaufort","tourism","2013",114
+"102","Beaufort","hospitality","2013",156
+"103","Beaufort","transport","2014",199
+"104","Beaufort","tourism","2014",114
+"105","Beaufort","hospitality","2014",142
+"106","Beaufort","transport","2015",199
+"107","Beaufort","tourism","2015",128
+"108","Beaufort","hospitality","2015",142
+"109","Nunavut","fishing","2008",320
+"110","Nunavut","transport","2008",570
+"111","Nunavut","hospitality","2008",340
+"112","Nunavut","fishing","2009",67
+"113","Nunavut","transport","2009",608
+"114","Nunavut","hospitality","2009",325
+"115","Nunavut","fishing","2010",383
+"116","Nunavut","transport","2010",600
+"117","Nunavut","hospitality","2010",292
+"118","Nunavut","fishing","2011",425
+"119","Nunavut","transport","2011",683
+"120","Nunavut","hospitality","2011",283
+"121","Nunavut","fishing","2012",475
+"122","Nunavut","transport","2012",833
+"123","Nunavut","hospitality","2012",333
+"124","Nunavut","fishing","2013",458
+"125","Nunavut","transport","2013",958
+"126","Nunavut","hospitality","2013",483
+"127","Nunavut","fishing","2014",300
+"128","Nunavut","transport","2014",592
+"129","Nunavut","hospitality","2014",458
+"130","Svalbard","transport","2008",110
+"131","Svalbard","hospitality","2008",137
+"132","Svalbard","education","2008",143
+"133","Svalbard","tourism","2008",30
+"134","Svalbard","transport","2009",99
+"135","Svalbard","hospitality","2009",134
+"136","Svalbard","education","2009",124
+"137","Svalbard","tourism","2009",40
+"138","Svalbard","transport","2010",103
+"139","Svalbard","hospitality","2010",146
+"140","Svalbard","education","2010",117
+"141","Svalbard","tourism","2010",35
+"142","Svalbard","transport","2011",104
+"143","Svalbard","hospitality","2011",190
+"144","Svalbard","education","2011",138
+"145","Svalbard","tourism","2011",39
+"146","Svalbard","transport","2012",111
+"147","Svalbard","hospitality","2012",212
+"148","Svalbard","education","2012",150
+"149","Svalbard","tourism","2012",48
+"150","Svalbard","transport","2013",113
+"151","Svalbard","hospitality","2013",217
+"152","Svalbard","education","2013",153
+"153","Svalbard","tourism","2013",45
+"154","Svalbard","transport","2014",98
+"155","Svalbard","hospitality","2014",245
+"156","Svalbard","education","2014",163
+"157","Svalbard","tourism","2014",70
+"158","Norway Mainland","fishing","2009",7188
+"159","Norway Mainland","food","2009",6119
+"160","Norway Mainland","tourism","2009",532
+"161","Norway Mainland","transport","2009",3284
+"162","Norway Mainland","fishing","2010",6721
+"163","Norway Mainland","food","2010",5982
+"164","Norway Mainland","tourism","2010",503
+"165","Norway Mainland","transport","2010",3522
+"166","Norway Mainland","fishing","2011",6839
+"167","Norway Mainland","food","2011",6124
+"168","Norway Mainland","tourism","2011",462
+"169","Norway Mainland","transport","2011",3269
+"170","Norway Mainland","fishing","2012",6498
+"171","Norway Mainland","food","2012",6665
+"172","Norway Mainland","tourism","2012",433
+"173","Norway Mainland","transport","2012",3652
+"174","Norway Mainland","fishing","2013",6360
+"175","Norway Mainland","food","2013",6626
+"176","Norway Mainland","tourism","2013",508
+"177","Norway Mainland","transport","2013",3833
+"178","Norway Mainland","fishing","2014",6395
+"179","Norway Mainland","food","2014",6629
+"180","Norway Mainland","tourism","2014",563
+"181","Norway Mainland","transport","2014",3660
+"182","Greenland","fishing","2008",8333
+"183","Greenland","hospitality","2008",1969
+"184","Greenland","transport","2008",4043
+"185","Greenland","fishing","2009",7528
+"186","Greenland","hospitality","2009",1838
+"187","Greenland","transport","2009",4237
+"188","Greenland","fishing","2010",6935
+"189","Greenland","hospitality","2010",1818
+"190","Greenland","transport","2010",4283
+"191","Greenland","fishing","2011",6678
+"192","Greenland","hospitality","2011",1807
+"193","Greenland","transport","2011",4162
+"194","Greenland","fishing","2012",7068
+"195","Greenland","hospitality","2012",1770
+"196","Greenland","transport","2012",4103
+"197","Greenland","fishing","2013",6819
+"198","Greenland","hospitality","2013",1841
+"199","Greenland","transport","2013",3987
+"200","Greenland","fishing","2014",7071
+"201","Greenland","hospitality","2014",1765
+"202","Greenland","transport","2014",3841
