@@ -108,7 +108,7 @@ Sval_Employment2<-gather(Sval_Employment2, "Year", "value", 2:8)
 
 Sval_Jobs = Sval_Employment2 %>% separate(Year,c("X","Year"),remove=T,sep="X")%>%  #(1) First strip away the X from the years (this creates a new column called "X" that is empty)
   select(Year,sector,value)
-  
+
 Sval_Jobs$rgn_id <- "Svalbard"
 sval_jobs_final=Sval_Jobs[c(4,2,1,3)]
 sval_jobs_final$sector<-as.character(sval_jobs_final$sector) ## change to character
@@ -143,7 +143,7 @@ NWT_Jobs = NWT_Employment2 %>% separate(Year,c("X","Year"),remove=T,sep="X")%>% 
   select(Year,sector,value)
 NWT_Jobs$Region <- "Beaufort"
 NWT_jobs_final=NWT_Jobs[c(4,2,1,3)]
-NWT_jobs_final$sector<-as.character(NWT_jobs_final$sector) 
+NWT_jobs_final$sector<-as.character(NWT_jobs_final$sector)
 NWT_jobs_final[NWT_jobs_final=="Transportation and warehousing"]<- "transport"
 NWT_jobs_final[NWT_jobs_final=="Information, culture and recreation"]<-"tourism"
 NWT_jobs_final[NWT_jobs_final=="Accommodation and food services"]<-"hospitality"
@@ -169,7 +169,7 @@ Nunavut_Jobs = Nunavut_Employment2 %>% separate(Year,c("X","Year"),remove=T,sep=
   select(Year, sector, value)
 Nunavut_Jobs$Region <- "Nunavut"
 Nunavut_jobs_final=Nunavut_Jobs[c(4,2,1,3)]
-Nunavut_jobs_final$sector<-as.character(Nunavut_jobs_final$sector) 
+Nunavut_jobs_final$sector<-as.character(Nunavut_jobs_final$sector)
 Nunavut_jobs_final[Nunavut_jobs_final=="Transportation and Warehousing"]<- "transport"
 Nunavut_jobs_final[Nunavut_jobs_final=="Fishing, Hunting, Trapping, Mining and Quarrying"]<-"fishing"
 Nunavut_jobs_final[Nunavut_jobs_final=="Accommodation and Food Services"]<-"hospitality"
@@ -444,4 +444,5 @@ Russia_Jobs
 
 le_jobs_sector_year= rbind(Russia_Jobs, Alaska_Jobs, canada_jobs, norway_jobs, Greenland_jobs_final)
 le_jobs_sector_year
+
 write.csv(le_jobs_sector_year, "le_jobs_sector_year.csv")
