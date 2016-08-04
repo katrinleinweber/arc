@@ -18,7 +18,7 @@ if (!"ohicore" %in% (.packages())) {
 }
 
 ## set working directory to the scenario that contains conf and layers directories
-setwd('~/github/col/subcountry2014')
+setwd('~/github/arc/circle2016')
 
 ## load scenario configuration
 conf = ohicore::Conf('conf')
