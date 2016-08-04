@@ -1,17 +1,22 @@
-## Overview
-## calculate_scores.R calculates scores for all OHI dimensions (status, trend, pressures, resilience, likely future state, and overall Index scores).
+## calculate_scores.R
 
-## When you begin, this script will calculate all dimensions using the 'templated' data and goal models provided.
-## As you develop goal models with your own data, we recommend that you work on one goal at a time with pre_scores.R and functions.R
-## instead of calculating scores for all dimensions using CalculateAll(). Goal and subgoal models are individual R functions
-## in functions.R. You can run them individually from functions.r as you modify them
-## calculate "current status" and "trend".
+## calculate_scores.R ensures all files are properly configured and calculates OHI scores.
+  ## - configure_toolbox.r ensures your files are properly configured. It is a script in your repository.
+  ## - CalculateAll() calculates OHI scores. It is a function in the `ohicore` R package
+  ##   (this can be written in R as `ohicore::CalculateAll()`).
 
-## When you are done with all the goal model modifications, you can come back here, and run the following scripts, which combines "current status" and "trend"
-## with pressures and resilience to finish your OHI scores calculations.
+## When you begin, configure_toolbox.r and CalculateAll() will calculate scores using
+## the 'templated' data and goal models provided. We suggest you work
+## goal-by-goal as you prepare data in the prep folder and develop goal models
+## in functions.r. Running configure_toolbox.r and a specific goal model line-by-line
+## in functions.R is a good workflow.
 
-source('~/github/arc/circle2016/pre_scores.R')
+## run the configure_toolbox.r script to check configuration
+source('~/github/col/subcountry2014/configure_toolbox.r')
 
 ## calculate scenario scores
-scores = CalculateAll(conf, layers, debug=T)
+scores = ohicore::CalculateAll(conf, layers)
+
+## save scores as scores.csv
 write.csv(scores, 'scores.csv', na='', row.names=F)
+
