@@ -12,7 +12,7 @@
 ## in functions.R is a good workflow.
 
 ## run the configure_toolbox.r script to check configuration
-source('~/github/arc/circle2016/configure_toolbox.r')
+source('circle2016/configure_toolbox.r')
 
 ## calculate scenario scores
 scores = ohicore::CalculateAll(conf, layers)
