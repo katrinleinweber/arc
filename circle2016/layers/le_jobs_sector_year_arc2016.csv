@@ -87,9 +87,6 @@ rgn_id,sector,year,value
 4,fishing,2014,76700
 4,tourism,2014,24855
 4,transport,2014,138693
-5,education,2008,143
-5,tourism,2008,167
-5,transport,2008,110
 5,education,2009,124
 5,tourism,2009,174
 5,transport,2009,99
@@ -108,10 +105,6 @@ rgn_id,sector,year,value
 5,education,2014,163
 5,tourism,2014,315
 5,transport,2014,98
-6,fishing,2009,7188
-6,food,2009,6119
-6,tourism,2009,532
-6,transport,2009,3284
 6,fishing,2010,6721
 6,food,2010,5982
 6,tourism,2010,503
@@ -151,9 +144,6 @@ rgn_id,sector,year,value
 8,fishing,2013,5455.2
 8,tourism,2013,1472.8
 8,transport,2013,3189.6
-8,fishing,2014,5656.8
-8,tourism,2014,1412
-8,transport,2014,3072.8
 9,fishing,2008,1666.6
 9,tourism,2008,393.8
 9,transport,2008,808.6
@@ -172,6 +162,3 @@ rgn_id,sector,year,value
 9,fishing,2013,1363.8
 9,tourism,2013,368.2
 9,transport,2013,797.4
-9,fishing,2014,1414.2
-9,tourism,2014,353
-9,transport,2014,768.2
