@@ -11,12 +11,3 @@
 ## in functions.r. Running configure_toolbox.r and a specific goal model line-by-line
 ## in functions.R is a good workflow.
 
-## run the configure_toolbox.r script to check configuration
-source('circle2016/configure_toolbox.r')
-
-## calculate scenario scores
-scores = ohicore::CalculateAll(conf, layers)
-
-## save scores as scores.csv
-write.csv(scores, 'scores.csv', na='', row.names=F)
-
