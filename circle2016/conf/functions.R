@@ -1124,13 +1124,16 @@ LIV_ECO = function(layers, subgoal){
   #     le_workforce_size = read.csv('eez2014/layers/le_workforcesize_adj.csv')
   #     le_unemployment   = read.csv('eez2014/layers/le_unemployment.csv')
 
+  ##For reference - jobs_all = workforce size,
+
   # multipliers from Table S10 (Halpern et al 2012 SOM)
-  multipliers_jobs = data.frame('sector' = c('tour','cf', 'mmw', 'wte','mar'),
-                                'multiplier' = c(1, 1.582, 1.915, 1.88, 2.7)) # no multiplers for tour (=1)
-  # multipliers_rev  = data.frame('sector' = c('mar', 'tour'), 'multiplier' = c(1.59, 1)) # not used because GDP data is not by sector
+  #multipliers_jobs = data.frame('sector' = c('tour','cf', 'mmw', 'wte','mar'),
+                                #'multiplier' = c(1, 1.582, 1.915, 1.88, 2.7)) # no multiplers for tour (=1)
+  # multipliers_rev  = data.frame('sector' = c('mar', 'tour'), 'multiplier' = c(1.59, 1))
+  # not used multipliers as not relevant for us.
 
 
-  # calculate employment counts
+  # calculate employment counts - this basically works out how many employed total in all sector (including non-marine)
   le_employed = le_workforce_size %>%
     left_join(le_unemployment, by = c('rgn_id', 'year')) %>%
     mutate(proportion_employed = (100 - pct_unemployed) / 100,
@@ -1147,10 +1150,11 @@ LIV_ECO = function(layers, subgoal){
   liv =
     # adjust jobs
     le_jobs %>%
-    left_join(multipliers_jobs, by = 'sector') %>%
-    mutate(jobs_mult = jobs * multiplier) %>%  # adjust jobs by multipliers
+    #left_join(multipliers_jobs, by = 'sector') %>%
+    #mutate(jobs_mult = jobs * multiplier) %>%  # adjust jobs by multipliers # drop out multipliers
     left_join(le_employed, by= c('rgn_id', 'year')) %>%
-    mutate(jobs_adj = jobs_mult * proportion_employed) %>% # adjust jobs by proportion employed
+    mutate(jobs_adj = jobs) %>% # adjust jobs by proportion employed - not sure why this is done?
+    #remove * proportion unemployed as not accounting for multipliers
     left_join(le_wages, by=c('rgn_id','year','sector')) %>%
     arrange(year, sector, rgn_id)
 
