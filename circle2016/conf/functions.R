@@ -1164,22 +1164,7 @@ LIV_ECO = function(layers, subgoal){
   liv_status = liv %>%
     filter(!is.na(jobs_adj) & !is.na(wage_usd))
   # aia/subcountry2014 crashing b/c no concurrent wage data, so adding this check
-  if (nrow(liv_status)==0){ #does this if clause basically apply if liv_status has 0 rows? When would that happen?
-    liv_status = liv %>%
-      select(region_id=rgn_id) %>%
-      group_by(region_id) %>%
-      summarize(
-        goal      = 'LIV',
-        dimension = 'status',
-        score     = NA)
-    liv_trend = liv %>%
-      select(region_id=rgn_id) %>%
-      group_by(region_id) %>%
-      summarize(
-        goal      = 'LIV',
-        dimension = 'trend',
-        score     = NA)
-  } else { #this is the meat of the function then?
+
  liv_status = liv_status %>%
       group_by(rgn_id)%>% #added group by rgn_id so that most recent years in each region are captured
       filter(year >= max(year, na.rm=T) - 4) %>%
@@ -1270,16 +1255,16 @@ LIV_ECO = function(layers, subgoal){
         goal, dimension,
         region_id = rgn_id,
         score)
-  }
+
 
 
   # ECO calculations ----
   eco = le_gdp %>%
     mutate(
-      rev_adj = gdp_usd)
+      rev_adj = gdp_usd)%>%
      # sector = 'gdp') %>%
     # adjust rev with national GDP rates if available. Example: (rev_adj = gdp_usd / ntl_gdp)
-    select(rgn_id, year, sector, rev_adj)
+    dplyr::select(rgn_id, year, sector, rev_adj)
 
   # ECO status
   eco_status = eco %>%
