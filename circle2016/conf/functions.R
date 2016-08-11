@@ -1103,7 +1103,7 @@ LIV_ECO = function(layers, subgoal){
 
   # gdp, wages, jobs and workforce_size data
   le_gdp   = SelectLayersData(layers, layers='le_gdp')  %>%
-    select(rgn_id = id_num, year, gdp_usd = val_num)
+    select(rgn_id = id_num, year, sector = category, gdp_usd = val_num) #add sector
 
   le_wages = SelectLayersData(layers, layers='le_wage_sector_year') %>%
     select(rgn_id = id_num, year, sector = category, wage_usd = val_num)
@@ -1164,7 +1164,7 @@ LIV_ECO = function(layers, subgoal){
   liv_status = liv %>%
     filter(!is.na(jobs_adj) & !is.na(wage_usd))
   # aia/subcountry2014 crashing b/c no concurrent wage data, so adding this check
-  if (nrow(liv_status)==0){
+  if (nrow(liv_status)==0){ #does this if clause basically apply if liv_status has 0 rows? When would that happen?
     liv_status = liv %>%
       select(region_id=rgn_id) %>%
       group_by(region_id) %>%
@@ -1179,17 +1179,20 @@ LIV_ECO = function(layers, subgoal){
         goal      = 'LIV',
         dimension = 'trend',
         score     = NA)
-  } else {
-    liv_status = liv_status %>%
-      filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+  } else { #this is the meat of the function then?
+ liv_status = liv_status %>%
+      group_by(rgn_id)%>% #added group by rgn_id so that most recent years in each region are captured
+      filter(year >= max(year, na.rm=T) - 4) %>%
+   ungroup() %>%# reference point is 5 years ago Problem with this line of code is that different regions have different time periods
+   #Talks about references just below?
       arrange(rgn_id, year, sector) %>%
       # summarize across sectors
       group_by(rgn_id, year) %>%
       summarize(
         # across sectors, jobs are summed
         jobs_sum  = sum(jobs_adj, na.rm=T),
-        # across sectors, wages are averaged
-        wages_avg = mean(wage_usd, na.rm=T)) %>%
+        # across sectors, wages are averaged ##do we not want a weighted average?
+        wages_avg = mean(wage_usd, na.rm=T)) %>% #this now then gives a score for marine jobs per rgn per year and average wage
       group_by(rgn_id) %>%
       arrange(rgn_id, year) %>%
       mutate(
@@ -1198,14 +1201,17 @@ LIV_ECO = function(layers, subgoal){
         # original reference for wages [w]: target value for average annual wages is the highest value observed across all reporting units
         # new reference for wages [w]: value in the current year (or most recent year) [c], relative to the value in a recent moving reference period [r] defined as 5 years prior to [c]
         wages_avg_first = first(wages_avg)) %>% # note:  `first(jobs_sum, order_by=year)` caused segfault crash on Linux with dplyr 0.3.0.2, so using arrange above instead
-      # calculate final scores
-      ungroup() %>%
+      # calculate final scores #first(jobs_sum) gives you the oldest not the newest.
+      #ungroup() %>%
       mutate(
-        x_jobs  = pmax(-1, pmin(1,  jobs_sum / jobs_sum_first)),
+        x_jobs  = pmax(-1, pmin(1,  jobs_sum / jobs_sum_first)), #bounds answer between -1 and 1?
         x_wages = pmax(-1, pmin(1, wages_avg / wages_avg_first)),
         score   = mean(c(x_jobs, x_wages), na.rm=T) * 100) %>%
+   ungroup()%>%
+   group_by(rgn_id)%>% #add in group_by to ensure it doesn't just filter everything out
       # filter for most recent year
       filter(year == max(year, na.rm=T)) %>%
+        ungroup()%>%
       # format
       select(
         region_id = rgn_id,
@@ -1224,7 +1230,9 @@ LIV_ECO = function(layers, subgoal){
     liv_trend = liv %>%
       filter(!is.na(jobs_adj) & !is.na(wage_usd)) %>%
       # TODO: consider "5 year time spans" as having 5 [(max(year)-4):max(year)] or 6 [(max(year)-5):max(year)] member years
+      group_by(rgn_id)%>%
       filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+      ungroup()%>%
       # get sector weight as total jobs across years for given region
       arrange(rgn_id, year, sector) %>%
       group_by(rgn_id, sector) %>%
@@ -1268,15 +1276,17 @@ LIV_ECO = function(layers, subgoal){
   # ECO calculations ----
   eco = le_gdp %>%
     mutate(
-      rev_adj = gdp_usd,
-      sector = 'gdp') %>%
+      rev_adj = gdp_usd)
+     # sector = 'gdp') %>%
     # adjust rev with national GDP rates if available. Example: (rev_adj = gdp_usd / ntl_gdp)
     select(rgn_id, year, sector, rev_adj)
 
   # ECO status
   eco_status = eco %>%
     filter(!is.na(rev_adj)) %>%
-    filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+    group_by(rgn_id)%>%
+    filter(year >= max(year, na.rm=T) - 4) %>%
+    ungroup() %>% # reference point is 5 years ago
     # across sectors, revenue is summed
     group_by(rgn_id, year) %>%
     summarize(
@@ -1291,6 +1301,7 @@ LIV_ECO = function(layers, subgoal){
     mutate(
       score  = pmin(rev_sum / rev_sum_first, 1) * 100) %>%
     # get most recent year
+    group_by(rgn_id)%>%
     filter(year == max(year, na.rm=T)) %>%
     # format
     mutate(
@@ -1304,7 +1315,9 @@ LIV_ECO = function(layers, subgoal){
   # ECO trend
   eco_trend = eco %>%
     filter(!is.na(rev_adj)) %>%
+    group_by(rgn_id)%>%
     filter(year >= max(year, na.rm=T) - 4 ) %>% # 5 year trend
+    ungroup()%>%
     # get sector weight as total revenue across years for given region
     arrange(rgn_id, year, sector) %>%
     group_by(rgn_id, sector) %>%
