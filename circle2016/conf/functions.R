@@ -1164,22 +1164,7 @@ LIV_ECO = function(layers, subgoal){
   liv_status = liv %>%
     filter(!is.na(jobs_adj) & !is.na(wage_usd))
   # aia/subcountry2014 crashing b/c no concurrent wage data, so adding this check
-  if (nrow(liv_status)==0){ #does this if clause basically apply if liv_status has 0 rows? When would that happen?
-    liv_status = liv %>%
-      select(region_id=rgn_id) %>%
-      group_by(region_id) %>%
-      summarize(
-        goal      = 'LIV',
-        dimension = 'status',
-        score     = NA)
-    liv_trend = liv %>%
-      select(region_id=rgn_id) %>%
-      group_by(region_id) %>%
-      summarize(
-        goal      = 'LIV',
-        dimension = 'trend',
-        score     = NA)
-  } else { #this is the meat of the function then?
+
  liv_status = liv_status %>%
       group_by(rgn_id)%>% #added group by rgn_id so that most recent years in each region are captured
       filter(year >= max(year, na.rm=T) - 4) %>%
@@ -1270,16 +1255,16 @@ LIV_ECO = function(layers, subgoal){
         goal, dimension,
         region_id = rgn_id,
         score)
-  }
+
 
 
   # ECO calculations ----
   eco = le_gdp %>%
     mutate(
-      rev_adj = gdp_usd)
+      rev_adj = gdp_usd)%>%
      # sector = 'gdp') %>%
     # adjust rev with national GDP rates if available. Example: (rev_adj = gdp_usd / ntl_gdp)
-    select(rgn_id, year, sector, rev_adj)
+    dplyr::select(rgn_id, year, sector, rev_adj)
 
   # ECO status
   eco_status = eco %>%
@@ -1310,7 +1295,8 @@ LIV_ECO = function(layers, subgoal){
     select(
       goal, dimension,
       region_id = rgn_id,
-      score)
+      score) %>%
+    ungroup() # don't forget this! Was causing this Tbx error: Error in v$status/100 : non-numeric argument to binary operator
 
   # ECO trend
   eco_trend = eco %>%
@@ -1343,7 +1329,8 @@ LIV_ECO = function(layers, subgoal){
     select(
       goal, dimension,
       region_id = rgn_id,
-      score)
+      score) %>%
+    ungroup() # for good measure...
 
   # report LIV and ECO scores separately
   if (subgoal=='LIV'){
@@ -1362,11 +1349,11 @@ LE = function(scores, layers){
 
   # calculate LE scores
   scores.LE = scores %>%
-    filter(goal %in% c('LIV','ECO') & dimension %in% c('status','trend','score','future')) %>%
-    dcast(region_id + dimension ~ goal, value.var='score') %>%
-    mutate(score = rowMeans(cbind(ECO, LIV), na.rm=T)) %>%
-    select(region_id, dimension, score) %>%
-    mutate(goal  = 'LE')
+    dplyr::filter(goal %in% c('LIV','ECO') & dimension %in% c('status','trend','score','future')) %>%
+    tidyr::spread(key = goal, value = score) %>%
+    dplyr::mutate(score = rowMeans(cbind(ECO, LIV), na.rm=T)) %>%
+    dplyr::select(region_id, dimension, score) %>%
+    dplyr::mutate(goal  = 'LE')
 
   # rbind to all scores
   scores = scores %>%
@@ -1526,18 +1513,20 @@ LSP = function(layers, ref_pct_cmpa=30, ref_pct_cp=30, status_year){
 
 SP = function(scores){
 
-  d = within(
-    dcast(
-      scores,
-      region_id + dimension ~ goal, value.var='score',
-      subset=.(goal %in% c('ICO','LSP') & !dimension %in% c('pressures','resilience')))
-    , {
-      goal = 'SP'
-      score = rowMeans(cbind(ICO, LSP), na.rm = TRUE)})
-
+  s <- scores %>%
+    filter(goal %in% c('ICO','LSP'),
+           dimension %in% c('status', 'trend', 'future', 'score')) %>%
+    group_by(region_id, dimension) %>%
+    summarize(score = mean(score, na.rm=TRUE)) %>%
+    ungroup() %>%
+    arrange(region_id) %>%
+    mutate(goal = "SP") %>%
+    select(region_id, goal, dimension, score) %>%
+    data.frame()
 
   # return all scores
-  return(rbind(scores, d[,c('region_id','goal','dimension','score')]))
+  return(rbind(scores, s))
+
 }
 
 
