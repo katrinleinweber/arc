@@ -122,9 +122,6 @@ LE,le_workforcesize_adj,le_workforcesize_adj_arc2016.csv,jobs,jobs,Modeled Livel
 LE pressures,le_sector_weight,le_sector_weight_gl2016.csv,weight,value,Jobs weighting,Jobs weighting by sector (defaulting to 1),equal,,le_sector_weight_arc2016,~/github/ohi-global/eez2016/layers/le_sector_weight.csv,rgn_id,,sector,,weight,,TRUE,,,1,1,TRUE,,,,9,FALSE
 LIV ECO,le_popn,le_population_arc2016.csv,count,count,Total population by subregion,Population data from census,equal,,le_population_arc2016,~/github/arc/cricle2016/layers/le_population_arc2016.csv,rgn_id,,,year,count,,TRUE,2000,2015,2266,2897177,FALSE,,,,9,FALSE
 LSP,lsp_prot_area_inland1km,lsp_prot_area_inland1km_gl2016.csv,area_km2,km^2,Coastal protected areas inland 1km,"Coastal protected areas inland to 1km from the UN WDPA. 
-=======
-",equal,global trends were applied equally to all regions.,ico_spp_popn_trend,~/github/ohi-global/eez2016/layers/ico_spp_popn_trend.csv,rgn_id,,,year,area_km2,,TRUE,0,2014,0,15649.5,FALSE,,,,9,FALSE
-LSP,lsp_prot_area_inland1km,lsp_prot_area_inland1km_gl2016.csv,area_km2,km^2,Coastal protected areas inland 1km,"Coastal protected areas inland to 1km from the UN WDPA. 
 >>>>>>> 941e2641d4123c2148eb834a7e8d0b506d1ccbef
 
 Data sources:
