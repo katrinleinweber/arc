@@ -13,8 +13,7 @@
 ## load ohicore and libraries used in functions.r models
 if (!"ohicore" %in% (.packages())) {
   suppressWarnings(require(ohicore))
-  library(tidyr)
-  library(dplyr)
+  library(tidyverse)
 }
 
 ## set working directory to the scenario that contains conf and layers directories

@@ -272,25 +272,39 @@ MAR = function(layers, status_year){
     mutate(status = ifelse(mar_pop / ref_95pct > 1,
                            1,
                            mar_pop / ref_95pct))
-  status <- ry %>%
-    filter(year %in% status_year) %>%
-    select(rgn_id, status) %>%
-    mutate(status = round(status*100, 2))
+
+  ## placeholder trend for ARC repo; see next for global status (ARC didn't have enough data)
+  status <- data.frame(rgn_id = 1:9,
+                       status = 30)
+
+  ## global calculation for status
+  # status <- ry %>%
+  #   filter(year %in% status_year) %>%
+  #   select(rgn_id, status) %>%
+  #   mutate(status = round(status*100, 2))
+  #
+
 
 
   # get MAR trend
-  trend = ry %>%
-    group_by(rgn_id) %>%
-    # filter(!is.na(status)) %>%
-    filter(year %in% (status_year-4):(status_year)) %>%
-    do(mdl = lm(status ~ year, data=.)) %>%
-    summarize(rgn_id, trend = coef(mdl)['year'] * 5) %>%
-    ungroup()
 
-  trend <- trend %>%
-    mutate(trend = ifelse(trend>1, 1, trend)) %>%
-    mutate(trend = ifelse(trend<(-1), (-1), trend)) %>%
-    mutate(trend = round(trend, 2))
+  ## placeholder trend for ARC repo; see next for global trend (ARC didn't have enough data)
+  trend <- data.frame(rgn_id = 1:9,
+                      trend = 0)
+
+  ## global calculation for trend
+  # trend = ry %>%
+  #   group_by(rgn_id) %>%
+  #   # filter(!is.na(status)) %>%
+  #   filter(year %in% (status_year-4):(status_year)) %>%
+  #   do(mdl = lm(status ~ year, data=.)) %>%
+  #   summarize(rgn_id, trend = coef(mdl)['year'] * 5) %>%
+  #   ungroup()
+  #
+  # trend <- trend %>%
+  #   mutate(trend = ifelse(trend>1, 1, trend)) %>%
+  #   mutate(trend = ifelse(trend<(-1), (-1), trend)) %>%
+  #   mutate(trend = round(trend, 2))
 
   # return scores
   scores = status %>%
