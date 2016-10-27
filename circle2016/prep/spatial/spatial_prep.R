@@ -12,7 +12,7 @@ library(tmap)
 source('~/github/ohiprep/src/R/common.R')
 
 ### Sorting Shape Files ####
-library('dplyr'); library('tidyr'); library('stringr'); library('readr')
+library('dplyr'); library('tidyr'); library('stringr')
 
 ### We will do some visualization of maps toward the end with `ggplot2` and `tmap` packages.
 library('ggplot2')
@@ -35,10 +35,25 @@ spatial_dir<- 'circle2016/prep/spatial'
 layer_arc<- 'arctic_eezs'
 poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
 
+
+
 ##Try and add buffer
-arc_rgn_buff<- rgeos::gBuffer(poly_arc_rgn, byid=FALSE, width=-0.5,capStyle = "ROUND")
+arc_rgn_buff<- rgeos::gBuffer(poly_arc_rgn, byid=FALSE, width=1000,capStyle = "ROUND")
 
+##Read in Arctic Land file
+land_arc<- 'arctic_land'
+arc_land<- readOGR(dsn= spatial_dir, layer = land_arc, stringsAsFactors = FALSE)
 
+### Simplify Polygons in order to intersect (well known hack)
+arc_land <- gBuffer(poly_arc_land, byid=TRUE, width=0)
+poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0)
+# simplify the polgons a tad (tweak 0.00001 to your liking)
+poly_arc_rgn <- gSimplify(poly_arc_rgn, tol = 0.00001)
+poly_arc_land <- gSimplify(poly_arc_land, tol = 0.00001)
+
+##Merge Land and EEZ
+library(spatstat)
+arc_merge<-raster::union(arc_land, poly_arc_rgn)
 
 poly_arc_ebsa<- readOGR(dsn= spatial_dir, layer = 'EBSA_0511_JC_area_sort') # read in ebsa file
 p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
