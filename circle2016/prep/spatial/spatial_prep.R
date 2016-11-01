@@ -49,33 +49,7 @@ poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0)
 poly_arc_rgn <- gSimplify(poly_arc_rgn, tol = 0.00001)
 poly_arc_land <- gSimplify(poly_arc_land, tol = 0.00001)
 
-##Merge Land and EEZ
 
-arc_merge<-raster::union(arc_land, poly_arc_rgn)
-
-poly_arc_ebsa<- readOGR(dsn= spatial_dir, layer = 'EBSA_0511_JC_area_sort') # read in ebsa file
-p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
-poly_arc_ebsa<- spTransform(poly_arc_ebsa, p4s_arc) #reproject ebsa map to same as arctic
-### Calculate area of EBSAs in each region, and attach to polygons
-poly_arc_ebsa@data$area_km2 <- gArea(poly_arc_ebsa, byid = TRUE) / 1e6
-poly_arc_rgn@data$area_km2 <- gArea(poly_arc_rgn, byid = TRUE) / 1e6
-
-### Simplify Polygons in order to intersect (well known hack)
-poly_arc_ebsa <- gBuffer(poly_arc_ebsa, byid=TRUE, width=0)
-poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0)
-# simplify the polgons a tad (tweak 0.00001 to your liking)
-poly_arc_rgn <- gSimplify(poly_arc_rgn, tol = 0.00001)
-poly_arc_ebsa <- gSimplify(poly_arc_ebsa, tol = 0.00001)
-
-### Summarize EBSA in each region
-poly_arc_ebsa_rgn<- raster::intersect(poly_arc_ebsa, poly_arc_rgn) #intersect ebsa and map
-ebsa_area_df <- poly_arc_ebsa@data %>%
-  group_by(rgn_id, rgn_name, rgn_code) %>%
-  summarize(ebsa_area_km2 = sum(area_km2)) %>%
-  left_join(poly_arc_rgn@data %>%
-              select(rgn_id, tot_area_km2 = area_km2),
-            by = 'rgn_id') %>%
-  mutate(ebsa_area_pct = round(ebsa_area_km2 / tot_area_km2, 3) * 100)
 
 
 ##### Sorting out MPA Layer ######
@@ -119,10 +93,6 @@ poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = F
 
 
 
-
-
-
-
 ext <- extent(poly_arc_rgn); ext
 ext1 <- poly_arc_rgn@bbox; ext1
 ext@xmin <- round(ext@xmin - 5000, -4); ext@ymin <- round(ext@ymin - 5000, -4) #what does the -4 mean?
@@ -163,14 +133,27 @@ prot_area_df <- wdpa_rgn_df %>%
             by = 'rgn_id')
 
 knitr::kable(prot_area_df)
+### Cross tabulate OHI/EEZ rasters. This givees number of protected cells with year of protection within each region. NA = unprotected cells
 
-###Sort out extent of MPA layer
-rast_wdpa<- raster::trim(rast_wdpa, values=NA)
+rast_df <- raster::crosstab(rast_wdpa_proj, rast_arc, useNA = TRUE, progress = 'text') %>%
+  as.data.frame() %>%
+  setNames(c('year', 'rgn_id', 'n_cells')) %>%
+  mutate(year   = as.integer(as.character(year)),
+         rgn_id = as.integer(as.character(rgn_id))) %>%
+  arrange(rgn_id, year)
 
-ext <- raster::extent(c('xmin' = -12e6, 'xmax' = -8e6, 'ymin' = 5e6, 'ymax' = 1e7))
-rast_wdpa_crop <- raster::crop(rast_wdpa, ext)
+#### calculate protected area total by region####
+lsp_thresh<- 0.30
 
-wdpa_p4s<- CRS('+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs') # get CRS of the wdpa raster
-poly_arc_mol<- spTransform(poly_arc_rgn, wdpa_p4s) # transform the arc rgn map to same as wdpa raster and extract the extent
-ext <- raster::extent(c('xmin' = -9791080, 'xmax' = 9429227, 'ymin' = 6524604, 'ymax' = 8922460)) #use mol extent to crop the wdpa raster
-rast_wdpa_crop <- raster::crop(rast_wdpa, ext)
+prot_eez <- rast_df %>%
+  group_by(rgn_id) %>%
+  mutate(n_cells_tot = sum(n_cells),
+         n_cells_cum = cumsum(n_cells),
+         a_tot_km2   = n_cells_tot / 4,
+         a_prot_km2  = n_cells_cum / 4) %>%
+  ungroup() %>%
+  filter(!is.na(year))  %>% ### this ditches non-protected cell counts but already counted in n_cells_tot
+  mutate(pct_prot   = round(n_cells_cum / n_cells_tot, 4),
+         lsp_status = round(ifelse(pct_prot > lsp_thresh, 100, (pct_prot / lsp_thresh) * 100), 2)) %>%
+  distinct() #still have NA in rgn_id?
+write_csv(prot_eez, file.path('~/github/arc/circle2016/prep/spatial/area_protected_eez.csv'))
