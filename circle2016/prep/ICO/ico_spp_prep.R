@@ -87,4 +87,4 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
     write_csv(region_prop_df, 'rgn_prop_file.csv')
 
 
-  return(invisible(region_prop_df))
+
