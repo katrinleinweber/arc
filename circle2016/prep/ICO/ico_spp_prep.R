@@ -86,5 +86,19 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
     message(sprintf('Writing loiczid/csq/cell proportions/cell areas by region to: \n  %s', rgn_prop_file))
     write_csv(region_prop_df, 'rgn_prop_file.csv')
 
+####Read in species cell summary in######
 
+summary_by_loiczid<- read_csv('~/github/ohiprep/globalprep/spp_ico/v2016/summary/cell_spp_summary_by_loiczid.csv')
 
+region_summary<- summary_by_loiczid %>%
+  inner_join(region_prop_df, by= 'loiczid')%>%
+  mutate(cell_area_weight_cat     = cellarea * n_cat_spp * proportionArea,
+         cell_area_weight_trend   = cellarea * n_tr_spp * proportionArea,
+         area_weighted_mean_cat   = weighted_mean_cat   * cell_area_weight_cat,
+         area_weighted_mean_trend = weighted_mean_trend * cell_area_weight_trend) %>%
+  arrange(loiczid)
+
+region_sums <- region_summary %>%
+  group_by(rgn_id) %>%
+  summarize(rgn_mean_cat   = sum(area_weighted_mean_cat)/sum(cell_area_weight_cat),
+            rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))
