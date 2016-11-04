@@ -447,12 +447,13 @@ NP <- function(scores, layers, status_year, debug = FALSE){
     dplyr::select(rgn_id = id_num, year, species_code = category, score = val_num) %>%
     group_by(rgn_id, species_code)
 
-  status= np_harvest %>%
+  status = np_harvest %>%
     filter(year >= max(year, na.rm=T)) %>%
-    mutate(score= round(score*100),
-           dimension= 'status') %>%
-    dplyr::select(rgn_id, species_code, dimension, score)%>%
-    data.frame()
+    mutate(score= round(score*100)) %>%
+    dplyr::select(rgn_id, species_code, score) %>%
+    data.frame() %>%
+    tidyr::complete(rgn_id = full_seq(rgn_id, period = 1),  ## add regions without harvest, set as NA
+                    fill = list(score = NA))
 
   trend = np_harvest %>%
     filter(year >= max(year, na.rm=T) - 4) %>%
@@ -460,6 +461,8 @@ NP <- function(scores, layers, status_year, debug = FALSE){
     do(mdl = lm(score ~ year, data=.)) %>%
     summarize(rgn_id, species_code,
               score = coef(mdl)['year'] * 5) %>%
+    tidyr::complete(rgn_id = full_seq(rgn_id, period = 1),  ## add regions without harvest, set as NA
+                    fill = list(score = NA)) %>%
     ungroup()
 
   trend <- trend %>%
@@ -482,7 +485,8 @@ NP <- function(scores, layers, status_year, debug = FALSE){
     group_by(region_id, dimension) %>%
     summarise(score = mean(score, na.rm=TRUE)) %>%  # summarize scores because of species_code
     mutate(goal='NP') %>%                           # add NP identifier
-    select(goal, dimension, region_id, score)       # arrange as Toolbox expects
+    select(goal, dimension, region_id, score) %>%   # arrange as Toolbox expects
+    data.frame()
 
   ## return scores
   return(scores)
