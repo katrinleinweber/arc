@@ -442,46 +442,47 @@ AO = function(layers,
 }
 
 NP <- function(scores, layers, status_year, debug = FALSE){
-np_harvest = SelectLayersData(layers, layer ='np_harvest') %>%
-  dplyr::select(rgn_id = id_num, year, species_code = category, score = val_num) %>%
-  group_by(rgn_id, species_code)
 
-status= np_harvest %>%
-  filter(year >= max(year, na.rm=T)) %>%
-  mutate(score= round(score*100),
-    dimension= 'status') %>%
-  dplyr::select(rgn_id, species_code, dimension, score)%>%
-  data.frame()
+  np_harvest = SelectLayersData(layers, layer ='np_harvest') %>%
+    dplyr::select(rgn_id = id_num, year, species_code = category, score = val_num) %>%
+    group_by(rgn_id, species_code)
 
-trend = np_harvest %>%
-  filter(year >= max(year, na.rm=T) - 4) %>%
-  group_by(rgn_id, species_code) %>%
-  do(mdl = lm(score ~ year, data=.)) %>%
-  summarize(rgn_id, species_code,
-            score = coef(mdl)['year'] * 5) %>%
-  ungroup()
+  status= np_harvest %>%
+    filter(year >= max(year, na.rm=T)) %>%
+    mutate(score= round(score*100),
+           dimension= 'status') %>%
+    dplyr::select(rgn_id, species_code, dimension, score)%>%
+    data.frame()
 
-trend <- trend %>%
-  mutate(score = round(score, 2)) %>%
-  mutate(dimension = 'trend') %>%
-  mutate(score = ifelse(score < (-1), -1, score)) %>%
-  mutate(score = ifelse(score > 1, 1, score)) %>%
-  dplyr::select(rgn_id, species_code, dimension, score) %>%
-  ungroup()%>%
-  data.frame()
+  trend = np_harvest %>%
+    filter(year >= max(year, na.rm=T) - 4) %>%
+    group_by(rgn_id, species_code) %>%
+    do(mdl = lm(score ~ year, data=.)) %>%
+    summarize(rgn_id, species_code,
+              score = coef(mdl)['year'] * 5) %>%
+    ungroup()
 
- # create scores variable, including summarizing by rgn_id, dimension
-scores = status %>%                              # combine status variable...
-  select(region_id=rgn_id, score) %>%
-  mutate(dimension='status') %>%
-  rbind(                                         # ...with trend variable
-    trend %>%
-      select(region_id=rgn_id, score) %>%
-      mutate(dimension='trend')) %>%
-  group_by(region_id, dimension) %>%
-  summarise(score = mean(score, na.rm=TRUE)) %>%  # summarize scores because of species_code
-  mutate(goal='NP') %>%                           # add NP identifier
-  select(goal, dimension, region_id, score)       # arrange as Toolbox expects
+  trend <- trend %>%
+    mutate(score = round(score, 2)) %>%
+    mutate(dimension = 'trend') %>%
+    mutate(score = ifelse(score < (-1), -1, score)) %>%
+    mutate(score = ifelse(score > 1, 1, score)) %>%
+    dplyr::select(rgn_id, species_code, dimension, score) %>%
+    ungroup()%>%
+    data.frame()
+
+  # create scores variable, including summarizing by rgn_id, dimension
+  scores = status %>%                              # combine status variable...
+    select(region_id=rgn_id, score) %>%
+    mutate(dimension='status') %>%
+    rbind(                                         # ...with trend variable
+      trend %>%
+        select(region_id=rgn_id, score) %>%
+        mutate(dimension='trend')) %>%
+    group_by(region_id, dimension) %>%
+    summarise(score = mean(score, na.rm=TRUE)) %>%  # summarize scores because of species_code
+    mutate(goal='NP') %>%                           # add NP identifier
+    select(goal, dimension, region_id, score)       # arrange as Toolbox expects
 
   ## return scores
   return(scores)
