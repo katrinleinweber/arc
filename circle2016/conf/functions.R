@@ -470,14 +470,22 @@ trend <- trend %>%
   ungroup()%>%
   data.frame()
 
-scores = rbind(status, trend) %>%
-  dplyr::mutate(goal='NP') %>%
-   data.frame()
+ # create scores variable, including summarizing by rgn_id, dimension
+scores = status %>%                              # combine status variable...
+  select(region_id=rgn_id, score) %>%
+  mutate(dimension='status') %>%
+  rbind(                                         # ...with trend variable
+    trend %>%
+      select(region_id=rgn_id, score) %>%
+      mutate(dimension='trend')) %>%
+  group_by(region_id, dimension) %>%
+  summarise(score = mean(score, na.rm=TRUE)) %>%  # summarize scores because of species_code
+  mutate(goal='NP') %>%                           # add NP identifier
+  select(goal, dimension, region_id, score)       # arrange as Toolbox expects
 
-scores<- scores %>% group_by(rgn_id, dimension) %>%
-  summarise(score2 = mean(score, na.rm=TRUE))
+  ## return scores
+  return(scores)
 
-return(scores)
 }
 
 CS <- function(layers){
