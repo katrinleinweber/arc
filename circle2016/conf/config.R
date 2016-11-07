@@ -1,9 +1,9 @@
 # region data layers----
 # a list of possible id fields used in datalayers (most will use rgn_id, but not always)
-layers_id_fields        = c('rgn_id','cntry_key', 'fao_id', 'fao_saup_id', 'country_id','saup_id','fao_ohi_id') 
+layers_id_fields        = c('rgn_id','cntry_key', 'fao_id', 'fao_saup_id', 'country_id','saup_id','fao_ohi_id')
 
 # the official list of regions (and corresponding names)
-layer_region_labels     = 'rgn_labels'   
+layer_region_labels     = 'rgn_labels'
 
 # the official ocean areas of each region (used to weight each subregions contribution to the region score)
 layer_region_areas      = 'rgn_area'
@@ -12,12 +12,12 @@ layer_region_areas      = 'rgn_area'
 
 # For goals with elements (e.g., for coastal protection: mangrove, saltmarsh, seagrass), these data layers describe how to
 # weight the contribution of each goal element to calculate the final goal pressure and resilience dimensions.
-resilience_element = list('NP'  = 'np_harvest_product_weight',
+resilience_element = list(
                              'CS'  = 'element_wts_cs_km2_x_storage' ,
                              'CP'  = 'element_wts_cp_km2_x_protection',
                              'HAB' = 'element_wts_hab_pres_abs'             )
 
-pressures_element  = list('NP'  = 'np_harvest_product_weight',
+pressures_element  = list(
                              'CS'  = 'element_wts_cs_km2_x_storage'  ,
                              'CP'  = 'element_wts_cp_km2_x_protection' ,
                              'LIV' = 'le_sector_weight' ,
