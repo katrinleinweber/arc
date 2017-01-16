@@ -26,29 +26,77 @@ library('rgeos')    ### vector spatial analysis tools
 library('raster')   ### raster stuff, but some handy tools that work great for vector spatial data as well
 library('maptools') ### an alternate package with good spatial analysis tools
 library('spatstat')
+library('tiff')
 
 ##Read in Shape file map of arctic
 
 ##laeaCRS <- CRS("+init=epsg:3572") #Arctic Projection
 
 
-
+spatial_dir<- 'circle2016/prep/spatial'
+layer_arc<- 'arctic_eezs'
+poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
 
 
 ##Try and add buffer
-arc_rgn_buff<- rgeos::gBuffer(poly_arc_rgn, byid=FALSE, width=1000,capStyle = "ROUND")
+#arc_rgn_buff<- rgeos::gBuffer(poly_arc_rgn, byid=FALSE, width=1000,capStyle = "ROUND")
 
 ##Read in Arctic Land file
 land_arc<- 'arctic_land'
 arc_land<- readOGR(dsn= spatial_dir, layer = land_arc, stringsAsFactors = FALSE)
 
-### Simplify Polygons in order to intersect (well known hack)
-arc_land <- gBuffer(poly_arc_land, byid=TRUE, width=0)
-poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0)
-# simplify the polgons a tad (tweak 0.00001 to your liking)
+### Had some trouble with croping arc land so Simplify Polygons in order to intersect (well known hack)# simplify the polgons a tad (tweak 0.00001 to your liking)
 poly_arc_rgn <- gSimplify(poly_arc_rgn, tol = 0.00001)
-poly_arc_land <- gSimplify(poly_arc_land, tol = 0.00001)
+arc_land <- gSimplify(arc_land, tol = 0.00001)
+arc_land <- gBuffer(arc_land, byid=TRUE, width=0) # these go in to solve topology problems
+poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0) # solve topology problems
 
+#crop arc_land to scale of poly_arc_rgn
+crop_arc_land<- raster::crop(arc_land, extent(-2104837, 3571809, -2556503, 2595893))
+
+
+##Apply positive buffer to land shapefile
+crop_arc_land_buffer <- gBuffer(crop_arc_land, byid=FALSE, width=5556) #5556m = 3nm
+arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3km buffer separated into regions
+
+## create raster of arc_3km_buffer
+p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
+ext <- extent(arc_3km_buffer); ext
+ext1 <- arc_3km_buffer@bbox; ext1
+ext@xmin <- round(ext@xmin - 5000, -4); ext@ymin <- round(ext@ymin - 5000, -4) #what does the -4 mean?
+### expand the extents out to round 10 km edges
+ext@xmax <- round(ext@xmax + 5000, -4); ext@ymax <- round(ext@ymax + 5000, -4)
+
+reso <- 500 ### BC Albers uses meters as units, set resolution to a 0.5-km grid
+xcol <- (ext@xmax - ext@xmin)/reso ### determine # of columns from extents and resolution
+yrow <- (ext@ymax - ext@ymin)/reso ### determine # of rows
+rast_base <- raster(ext, yrow, xcol, crs = p4s_arc)
+
+rast_base ### inspect it: resolution and extents are nice and clean
+
+rast_arc_3km<- rasterize(rast_arc_3km, rast_base) #rasterize EEZs with the rasterbase
+writeRaster(rast_arc_3km, filename="rast_arc_3km.tif", overwrite=TRUE)
+
+
+##Need to create land shape file which is divided into regions
+#poly_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
+#poly_arc_land<- raster::intersect(poly_arc_land, poly_arc_rgn)
+## Going to try and read in tif file for 1km inshore buffer.
+
+
+rast_1km_file <- file.path(dir_M, 'git-annex/globalprep/spatial/d2014/data/rgn_mol_raster_500m/rgn_inland1km_mol_500mcell.tif')
+rast_1km_buffer <- raster::raster(rast_1km_file)
+
+raster::plot(rast_1km_buffer)
+##Need to reproject into arc projection
+p4s_1km<- CRS('+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs')
+p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
+crop_arc_reproject<- spTransform(crop_arc_land, p4s_1km) #reprojected arc so can crop it
+#crop raster to arctic
+arc_1km<- crop(rast_1km_buffer, crop_arc_reproject) #crop to wider arctic
+arc_1km <- projectRaster(arc_1km, crs = p4s_arc) #project back to arctic coordinates
+## save progress - but need to work out how to split into regions
+writeRaster(arc_1km, filename="rast_arc_1km.tif", overwrite=TRUE)
 
 
 
@@ -60,7 +108,7 @@ goal     <- 'lsp'
 scenario <- 'v2016'
 dir_anx       <- file.path(dir_M, 'git-annex/globalprep')
 dir_goal      <- file.path('~/github/ohiprep/globalprep', goal, scenario)
-dir_goal_anx  <- file.path(dir_anx,            goal, scenario)
+dir_goal_anx  <- file.path(dir_anx, goal, scenario)
 dir_data_wdpa <- file.path(dir_anx, '_raw_data/wdpa_mpa', 'd2016')
 
 #source(file.path(dir_goal, 'lsp_prep_wdpa_poly.R'))
@@ -87,26 +135,24 @@ rast_wdpa <- raster::raster(rast_wdpa_file)
 raster::plot(rast_wdpa)
 
 ##WDPA file read in - next rasterise buffer layers.
-spatial_dir<- 'circle2016/prep/spatial'
-layer_arc<- 'arctic_eezs'
-poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
 
 
 
-ext <- extent(poly_arc_rgn); ext
-ext1 <- poly_arc_rgn@bbox; ext1
-ext@xmin <- round(ext@xmin - 5000, -4); ext@ymin <- round(ext@ymin - 5000, -4) #what does the -4 mean?
+
+ext2 <- extent(poly_arc_rgn); ext2
+ext3 <- poly_arc_rgn@bbox; ext3
+ext2@xmin <- round(ext2@xmin - 5000, -4); ext2@ymin <- round(ext2@ymin - 5000, -4) #what does the -4 mean?
 ### expand the extents out to round 10 km edges
-ext@xmax <- round(ext@xmax + 5000, -4); ext@ymax <- round(ext@ymax + 5000, -4)
+ext2@xmax <- round(ext2@xmax + 5000, -4); ext2@ymax <- round(ext2@ymax + 5000, -4)
 
 reso <- 500 ### BC Albers uses meters as units, set resolution to a 0.5-km grid
-xcol <- (ext@xmax - ext@xmin)/reso ### determine # of columns from extents and resolution
-yrow <- (ext@ymax - ext@ymin)/reso ### determine # of rows
-rast_base <- raster(ext, yrow, xcol, crs = p4s_arc)
+xcol <- (ext2@xmax - ex2t@xmin)/reso ### determine # of columns from extents and resolution
+yrow <- (ext2@ymax - ext2@ymin)/reso ### determine # of rows
+rast_base2 <- raster(ext2, yrow, xcol, crs = p4s_arc)
 
-rast_base ### inspect it: resolution and extents are nice and clean
+rast_base2 ### inspect it: resolution and extents are nice and clean
 
-rast_arc<- rasterize(poly_arc_rgn, rast_base)
+rast_arc<- rasterize(poly_arc_rgn, rast_base2) #rasterize EEZs with the rasterbase
 
 rast_wdpa_proj<- projectRaster(rast_wdpa, rast_arc, method= 'ngb') #reproject wdpa into arc CRS
 

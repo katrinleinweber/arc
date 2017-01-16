@@ -102,3 +102,8 @@ region_sums <- region_summary %>%
   group_by(rgn_id) %>%
   summarize(rgn_mean_cat   = sum(area_weighted_mean_cat)/sum(cell_area_weight_cat),
             rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))
+
+###Read in cells_spp for am and iucn
+
+am_cells_spp<- read.csv('/home/shares/ohi/git-annex/globalprep/spp_ico/v2016/int/am_cells_spp_prob0.csv')
+iucn_cells_spp<-read.csv('/home/shares/ohi/git-annex/globalprep/spp_ico/v2016/int/iucn_cells_spp.csv')
