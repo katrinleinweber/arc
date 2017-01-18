@@ -56,7 +56,7 @@ crop_arc_land<- raster::crop(arc_land, extent(-2104837, 3571809, -2556503, 25958
 
 
 ##Apply positive buffer to land shapefile
-crop_arc_land_buffer <- gBuffer(crop_arc_land, byid=FALSE, width=5556) #5556m = 3nm
+crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5556) #5556m = 3nm
 arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3km buffer separated into regions
 
 ## create raster of arc_3km_buffer
