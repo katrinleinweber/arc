@@ -53,10 +53,12 @@ poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0) # solve topology probl
 
 #crop arc_land to scale of poly_arc_rgn
 crop_arc_land<- raster::crop(arc_land, extent(-2104837, 3571809, -2556503, 2595893))
-
+rm(arc_land)
+crop_arc_land <- gBuffer(crop_arc_land, byid=TRUE, width=0) # try solve issue of crashing
+crop_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
 
 ##Apply positive buffer to land shapefile
-crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5556)
+crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5500, capStyle = "round", joinStyle = "round")
 arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3km buffer separated into regions
 
 ## create raster of arc_3km_buffer
@@ -84,17 +86,17 @@ writeRaster(rast_arc_3km, filename="rast_arc_3km.tif", overwrite=TRUE)
 ## Going to try and read in tif file for 1km inshore buffer.
 
 
-rast_1km_file <- file.path(dir_M, 'git-annex/globalprep/spatial/d2014/data/rgn_mol_raster_500m/rgn_inland1km_mol_500mcell.tif')
-rast_1km_buffer <- raster::raster(rast_1km_file)
+rast_3nm_file <- file.path(dir_M, 'git-annex/globalprep/spatial/d2014/data/rgn_mol_raster_500m/rgn_offshore3nm_mol_500mcell.tif')
+rast_1nm_buffer <- raster::raster(rast_3nm_file)
 
-raster::plot(rast_1km_buffer)
+raster::plot(rast_3nm_buffer)
 ##Need to reproject into arc projection
-p4s_1km<- CRS('+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs')
+p4s_3nm<- CRS('+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs')
 p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
-crop_arc_reproject<- spTransform(crop_arc_land, p4s_1km) #reprojected arc so can crop it
+crop_arc_reproject<- spTransform(crop_arc_land, p4s_3nm) #reprojected arc so can crop it
 #crop raster to arctic
-arc_1km<- crop(rast_1km_buffer, crop_arc_reproject) #crop to wider arctic
-arc_1km <- projectRaster(arc_1km, crs = p4s_arc) #project back to arctic coordinates
+arc_3nm<- crop(rast_3nm_buffer, crop_arc_reproject) #crop to wider arctic
+arc_3nm <- projectRaster(arc_3nm, crs = p4s_arc) #project back to arctic coordinates
 ## save progress - but need to work out how to split into regions
 writeRaster(arc_1km, filename="rast_arc_1km.tif", overwrite=TRUE)
 
