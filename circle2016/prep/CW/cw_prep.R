@@ -44,3 +44,17 @@ chem_scaled2<- raster::crop(chem_scaled, rast_arc, progress='text')#crop to arct
 
 data <- raster::extract(chem_scaled2, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
 write.csv(data, "po_chemicals_arc2016.csv")
+
+## Land based nutrients
+
+nutrients <- raster(file.path(save_loc_rasts, "global_plumes_pest_2013_log_scaled_extend.tif"))
+nutrients<- raster::crop(nutrients, rast_arc, progress='text')#crop to arctic
+nutrient_data <- raster::extract(nutrients, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+write.csv(nutrient_data, "po_nutrients_arc2016.csv")
+
+##Pathogen data not spatial and is for EEZs - use national level data
+
+####Trash
+trash <- raster('/home/shares/ohi/git-annex/globalprep/cw_pressure_trash/v2015/output/weight_rescale_icemask.tif')
+trash_data <- raster::extract(trash, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+write.csv(trash_data, "po_trash_arc2016.csv")
