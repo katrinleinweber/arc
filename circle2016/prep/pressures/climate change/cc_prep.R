@@ -41,3 +41,26 @@ click(pressure_stack[[5]])
 
 ##extract
 sst_data <- raster::extract(pressure_stack, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+prs_sst<- gather(sst_data, "year", "pressure_score", starts_with("sea"))
+prs_sst2 <- prs_sst %>%
+  mutate(year=substr(year, 23,26)) %>%
+  mutate(year = as.numeric(year)) %>%
+  dplyr::select(ID, year, pressure_score)
+
+###extract data more easily
+saveData <- function(newYear){
+
+  assessYear <- newYear + 4
+  criteria_year <- ~year == newYear
+
+  sst  <- prs_sst2 %>%
+    filter_(criteria_year) %>%
+    dplyr::select(ID, pressure_score) %>%
+    arrange(ID)
+
+  write.csv(sst, file.path(spatial_dir, sprintf('sst_%s.csv', assessYear)), row.names=FALSE)
+}
+### extract data
+for(newYear in (max(prs_sst2$year) - 4):(max(prs_sst2$year))){
+  saveData(newYear)
+}
