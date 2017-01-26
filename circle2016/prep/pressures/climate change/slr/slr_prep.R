@@ -49,7 +49,7 @@ prs_slr2 <- prs_slr %>%
 ###extract data more easily
 saveData <- function(newYear){
 
-  assessYear <- newYear + 4
+  assessYear <- newYear + 1
   criteria_year <- ~year == newYear
 
   slr  <- prs_slr2 %>%
@@ -57,7 +57,7 @@ saveData <- function(newYear){
     dplyr::select(ID, pressure_score) %>%
     arrange(ID)
 
-  write.csv(sst, file.path(spatial_dir, sprintf('slr_%s.csv', assessYear)), row.names=FALSE)
+  write.csv(slr, file.path(spatial_dir, sprintf('slr_%s.csv', assessYear)), row.names=FALSE)
 }
 ### extract data
 for(newYear in (max(prs_slr2$year) - 4):(max(prs_slr2$year))){
