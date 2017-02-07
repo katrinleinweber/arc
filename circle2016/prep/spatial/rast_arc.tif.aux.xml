@@ -1,0 +1,17 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <CategoryNames>
+      <Category></Category>
+      <Category>Alaska</Category>
+      <Category>Nunavut</Category>
+      <Category>Beaufort Sea</Category>
+      <Category>Russia</Category>
+      <Category>svalbard</Category>
+      <Category>norway</Category>
+      <Category>Jan Mayen</Category>
+      <Category>west</Category>
+      <Category>east</Category>
+      <Category>banana</Category>
+    </CategoryNames>
+  </PAMRasterBand>
+</PAMDataset>

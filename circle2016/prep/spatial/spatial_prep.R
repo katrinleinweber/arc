@@ -148,7 +148,7 @@ ext2@xmin <- round(ext2@xmin - 5000, -4); ext2@ymin <- round(ext2@ymin - 5000, -
 ext2@xmax <- round(ext2@xmax + 5000, -4); ext2@ymax <- round(ext2@ymax + 5000, -4)
 
 reso <- 500 ### BC Albers uses meters as units, set resolution to a 0.5-km grid
-xcol <- (ext2@xmax - ex2t@xmin)/reso ### determine # of columns from extents and resolution
+xcol <- (ext2@xmax - ext2@xmin)/reso ### determine # of columns from extents and resolution
 yrow <- (ext2@ymax - ext2@ymin)/reso ### determine # of rows
 rast_base2 <- raster(ext2, yrow, xcol, crs = p4s_arc)
 
