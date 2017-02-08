@@ -13,6 +13,7 @@ library('tiff')
 library(readr)
 library(data.table)
 library(parallel)
+library(datalimited)
 
 
 ## Paths for data
@@ -188,3 +189,129 @@ stks <- df%>%
          nyrs >= min_yrs)%>%
   left_join(taxon_res)%>%                  #add resilience information
   dplyr::select(year,Scientific_Name,Common_Name,fao_rgn,stock_id,TaxonKey,Resilience,tons)
+write.csv(stks, "spatial_catch_pre_bbmsy.csv", row.names=FALSE)
+
+################# Load Catch Data###########
+
+catch<- read.csv('circle2016/prep/FIS/SAUP_rgns/spatial_catch_pre_bbmsy.csv')%>%
+  rename(common = Common_Name)
+
+####Catch MSY#####
+
+cmsy_fits <- plyr::dlply(catch, c("stock_id", "common"), function(x) {
+
+  #make sure the data is ordered from 1950 to 2010
+  x <- arrange(x,year)
+  out <- cmsy(ct = x$tons, yr = x$year,  start_r = resilience(x$Resilience[1]),
+              reps = 2e4)
+  out$year <- x$year
+  out
+}, .parallel = TRUE)
+
+fake_data <- data.frame(bbmsy_q2.5 = NA, bbmsy_q25 = NA, bbmsy_q50 = NA,
+                        bbmsy_q75 = NA, bbmsy_q97.5 = NA)
+
+cmsy_bbmsy <- plyr::ldply(cmsy_fits, function(x) {
+  bbmsy_cmsy <- x$biomass[, -1] / x$bmsy
+  bbmsy_out <- tryCatch({
+    bbmsy_out <- summarize_bbmsy(bbmsy_cmsy)
+    bbmsy_out$year <- x$year
+    bbmsy_out}, error = function(e) fake_data)
+})
+cmsy_bbmsy$model <- "CMSY"
+write.csv(cmsy_bbmsy, "cmsy_bbmsy.csv", row.names=FALSE)
+
+nas <- cmsy_bbmsy%>%
+  group_by(stock_id)%>%
+  summarize(m = mean(bbmsy_mean))%>%
+  filter(is.na(m))
+
+nrow(nas)
+
+##### Catch MSY with a Uniform Prior########
+cmsy_fits_uni <- plyr::dlply(catch, c("stock_id", "common"), function(x) {
+
+  #make sure the data is ordered from 1950 to 2010
+  x <- arrange(x,year)
+
+  out <- cmsy(x$tons, yr = x$year,  start_r = resilience(x$Resilience[1]),
+              reps = 2e4, finalbio = c(0.01, 0.7))
+  out$year <- x$year
+  out
+}, .parallel = TRUE)
+
+fake_data <- data.frame(bbmsy_q2.5 = NA, bbmsy_q25 = NA, bbmsy_q50 = NA,
+                        bbmsy_q75 = NA, bbmsy_q97.5 = NA)
+
+cmsy_bbmsy_uni <- plyr::ldply(cmsy_fits_uni, function(x) {
+  bbmsy_cmsy <- x$biomass[, -1] / x$bmsy
+  bbmsy_out <- tryCatch({
+    bbmsy_out <- summarize_bbmsy(bbmsy_cmsy)
+    bbmsy_out$year <- x$year
+    bbmsy_out}, error = function(e) fake_data)
+})
+cmsy_bbmsy_uni$model <- "CMSY_uniform"
+
+write.csv(cmsy_bbmsy_uni, "cmsy_bbmsy_uni_prior.csv", row.names=FALSE)
+
+####COMSIR########
+#The output of running COMSIR created 57 individual dataframes.
+#This is a result of debugging.
+#I kept getting a “missing value where TRUE/FALSE needed” error but wasn’t able to identify what species was causing this
+#so I split the stocks into batches to run. After getting the error, often just rerunning the model would produce results without any changes.
+
+all.stocks<-unique(catch$stock_id)
+#for loop
+batches <- seq(1,36,8) ##creates a sequence of 1-36, by 8 each time.
+
+for (i in 1:length(batches)){
+
+  print(i)
+
+  start <- batches[i]
+  end <- start+7 #related to sequence above
+
+  batchn <- all.stocks[start:end]
+
+  #subset the catch to match stocks in each of the 5 batches
+  #input<-subset(catch, stock_id%in%get(paste("batch",i,".stocks",sep="")))
+  input<-subset(catch, stock_id%in%batchn)
+
+  #run the comsir model function on each stock_id within input
+
+  comsir_fits <- plyr::dlply(input, c("stock_id", "common"), function(x) {
+    out <- comsir(ct = x$tons, yr = x$year,  start_r = resilience(x$Resilience[1]),
+                  nsim = 1e5, n_posterior = 5e3)
+  }, .parallel = TRUE)
+
+
+  fake_data <- data.frame(bbmsy_q2.5 = NA, bbmsy_q25 = NA, bbmsy_q50 = NA,
+                          bbmsy_q75 = NA, bbmsy_q97.5 = NA)
+
+  #take the fits and create a dataframe with the bbmsy
+
+  comsir_bbmsy <- plyr::ldply(comsir_fits, function(x) {
+    tryCatch({
+      out <- reshape2::dcast(x$quantities, sample_id ~ yr, value.var = "bbmsy")[,-1]
+      out <- summarize_bbmsy(out)
+      out$year <- unique(x$quantities$yr)
+      out},
+      error = function(e) fake_data)
+  })
+
+  #add model column defining COM-SIR
+  comsir_bbmsy$model <- "COM-SIR"
+
+  #save as csv
+  write.csv(comsir_bbmsy,file=paste0("circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy/bbmsy_",i,".csv"))
+
+}
+
+###combine in to one table####
+
+files <- list.files('circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy',full.names=T)
+
+tables <- lapply(files, read.csv)
+comsir_all <- do.call(rbind, tables)
+
+write.csv(comsir_all,file='circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy/comsir_bbmsy.csv')
