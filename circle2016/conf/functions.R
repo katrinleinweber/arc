@@ -9,15 +9,15 @@ Setup = function(){
 FIS = function(layers, status_year){
 
   #catch data
-  c = SelectLayersData(layers, layers='fis_meancatch', narrow = TRUE) %>%
-    select(
+  c = SelectLayersData(layers, layers='fis_meancatch_arc2016', narrow = TRUE) %>%
+    dplyr::select(
       rgn_id    = id_num,
       stock_id_taxonkey = category,
       year,
       catch          = val_num)
   # b_bmsy data
-  b = SelectLayersData(layers, layer='fis_b_bmsy', narrow = TRUE) %>%
-    select(
+  b = SelectLayersData(layers, layer='fis_b_bmsy_arc2016', narrow = TRUE) %>%
+    dplyr::select(
       rgn_id         = id_num,
       stock_id      = category,
       year,
@@ -43,7 +43,7 @@ FIS = function(layers, status_year){
     mutate(year = as.numeric(as.character(year))) %>%
     mutate(rgn_id = as.numeric(as.character(rgn_id))) %>%
     mutate(taxon_key = as.numeric(as.character(taxon_key))) %>%
-    select(rgn_id, year, stock_id, taxon_key, catch)
+    dplyr::select(rgn_id, year, stock_id, taxon_key, catch)
 
   # general formatting:
   b <- b %>%
@@ -77,7 +77,7 @@ FIS = function(layers, status_year){
   # -----------------------------------------------------------------------
   data_fis <- c %>%
     left_join(b, by=c('rgn_id', 'stock_id', 'year')) %>%
-    select(rgn_id, stock_id, year, taxon_key, catch, bmsy, score)
+    dplyr::select(rgn_id, stock_id, year, taxon_key, catch, bmsy, score)
 
 
   # ------------------------------------------------------------------------
@@ -98,7 +98,7 @@ FIS = function(layers, status_year){
     mutate(Median_score_global = quantile(score, probs=c(0.5), na.rm=TRUE)) %>%
     ungroup() %>%
     mutate(Median_score = ifelse(is.na(Median_score), Median_score_global, Median_score)) %>%
-    select(-Median_score_global)
+    dplyr::select(-Median_score_global)
 
   #  *************NOTE *****************************
   #  In some cases, it may make sense to alter the
@@ -119,12 +119,12 @@ FIS = function(layers, status_year){
 
   gap_fill_data <- data_fis_gf %>%
     mutate(gap_fill = ifelse(is.na(penalty), "none", "median")) %>%
-    select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
+    dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
   write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
 
   status_data <- data_fis_gf %>%
-    select(rgn_id, stock_id, year, catch, score)
+    dplyr::select(rgn_id, stock_id, year, catch, score)
 
 
   # ------------------------------------------------------------------------
