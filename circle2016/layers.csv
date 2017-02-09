@@ -35,24 +35,18 @@ Data sources:
 
 - [World Health Organization and United Nations Children's Fund's Joint Monitoring Programme (WHO/UNICEF's JMP)](http://www.wssinfo.org/data-estimates/table)
 ",equal,global trends were applied equally to all regions.,cw_pathogen_trend,~/github/ohi-global/eez2016/layers/cw_pathogen_trend.csv,rgn_id,,,,trend,,TRUE,,,-0.010709182,0.000499869,FALSE,,,,9,FALSE
-FIS,fis_b_bmsy,fis_b_bmsy_gl2016.csv,b_bmsy,B / B_msy,B/Bmsy estimates obtained using the catch-MSY method,"The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
+FIS,fis_b_bmsy_arc2016,fis_b_bmsy_arc2016.csv,b_bmsy,B / B_msy,B/Bmsy estimates obtained using the catch-MSY method,"The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
 
 - Martell, S., & Froese, R. (2013). **A simple method for estimating MSY from catch and resilience**. _Fish and Fisheries_ 14(4): 504-514. [doi:10.1111/j.1467-2979.2012.00485.x](https://dx/doi/org/10.1111/j.1467-2979.2012.00485.x)
-",,,fis_b_bmsy,~/github/ohi-global/eez2016/layers/fis_b_bmsy.csv,fao_id,,taxon_name,year,b_bmsy,,TRUE,1954,2011,0.05435161,1.986959253,FALSE,,,,9,FALSE
-FIS,fis_meancatch,fis_meancatch_gl2016.csv,mean_catch,metric tons,Catch data for each Taxon/FAO/SAU region averaged across years,"Mean catch-per-taxon values within each Sea Around Us/FAO fishing area.
+",,,fis_b_bmsy_arc2016,~/github/arc/circle2016/layers/fis_b_bmsy_arc2016.csv,fao_id,,taxon_name,year,b_bmsy,,TRUE,1954,2011,0.05435161,1.986959253,FALSE,,,,9,FALSE
+FIS,fis_meancatch_arc2016,fis_meancatch_arc2016.csv,mean_catch,metric tons,Catch data for each Taxon/FAO/SAU region averaged across years,"Mean catch-per-taxon values within each Sea Around Us/FAO fishing area.
 
 Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch,~/github/ohi-global/eez2016/layers/fis_meancatch.csv,,fao_saup_id,taxon_name_key,year,mean_catch,,TRUE,2006,2011,8.18E-18,4787769.755,FALSE,,,,9,FALSE
-FIS,fis_proparea_saup2rgn,fis_proparea_saup2rgn_gl2016.csv,prop_area,proportion,proportion area of each SAUP within each OHI reporting region,"Lookup table of Sea Around Us Project regions to Ocean Health Index region identifiers.
-
-Data sources:
-
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)
-",,,fis_proparea_saup2rgn,~/github/ohi-global/eez2016/layers/fis_proparea_saup2rgn.csv,saup_id,,rgn_id,,prop_area,,TRUE,,,0.001436938,1,TRUE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,,fao_saup_id,taxon_name_key,year,mean_catch,,TRUE,2006,2011,8.18E-18,4787769.755,FALSE,,,,9,FALSE
 FP,fp_wildcaught_weight,fp_wildcaught_weight_gl2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 
 Data sources:
