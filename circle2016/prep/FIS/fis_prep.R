@@ -315,3 +315,39 @@ tables <- lapply(files, read.csv)
 comsir_all <- do.call(rbind, tables)
 
 write.csv(comsir_all,file='circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy/comsir_bbmsy.csv')
+
+####SSCOM######
+
+test_stks <- sample(unique(catch$stock_id),5,replace=F)
+
+dat <- catch%>%filter(stock_id %in% test_stks)
+
+system.time(
+  plyr::d_ply(catch,"stock_id", function(x) {
+
+    filename <- paste0('circle2016/prep/FIS/catch_model_bmsy/sscom-',unique(x$stock_id)[1], ".rds")
+
+    if (!exists(filename)) {
+      out <- tryCatch({
+        sscom(
+          ct            = x$tons,
+          yr            = x$year,
+          start_r       = resilience(catch$Resilience[1]),
+          NburninPrelim = 1000,  #1000
+          NiterPrelim   = 2000,  #2000
+          NthinPrelim   = 1,     # 1
+          NchainsPrelim = 20,   #100
+          NburninJags   = 1e3,   #1e6
+          NiterJags     = 3e3,   #3e6
+          NthinJags     = 2,  #1000
+          Nchains       = 3,
+          return_jags   = TRUE)
+      }, error = function(e) NA)
+
+      out$output$species <- x$stock_id
+      out$bbmsy$species <- x$ctock_id
+      saveRDS(out, file = filename)
+
+    }
+
+  }, .parallel = TRUE))

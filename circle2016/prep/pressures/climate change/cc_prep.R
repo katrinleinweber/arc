@@ -64,3 +64,4 @@ saveData <- function(newYear){
 for(newYear in (max(prs_sst2$year) - 4):(max(prs_sst2$year))){
   saveData(newYear)
 }
+
