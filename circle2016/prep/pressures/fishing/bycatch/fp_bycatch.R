@@ -90,7 +90,7 @@ saveData <- function(newYear){ # newYear= 2012
 
   criteria_year <- ~year == newYear
 
-  tmp  <- lb_data %>%
+  tmp  <- hb_data %>%
     filter_(criteria_year) %>%
     dplyr::select(ID, pressure_score) %>%
     arrange(ID)
@@ -100,5 +100,45 @@ saveData <- function(newYear){ # newYear= 2012
 
 ### extract data
 for(newYear in (max(hb_data$year) - 3):(max(hb_data$year))){
+  saveData(newYear)
+}
+
+####Artisinal Bycatch#####
+
+#paths
+dir_git <- file.path(dir_M,'git-annex/globalprep/prs_fish/v2016/out/artisanal')
+rasts <- list.files(dir_git)
+
+pressure_stack <- stack()
+for(raster in rasts){ # raster = "art_press_2003-2007.tif"
+  tmp <- raster(file.path(dir_git, raster))
+  pressure_stack <- stack(pressure_stack, tmp)
+}
+region_stats <- raster::extract(pressure_stack, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+
+fp_prs<-  gather(region_stats, "year", "pressure_score", starts_with("art"))
+lb_data <- fp_prs %>%
+  mutate(year = substring(year, 16, 19)) %>%
+  mutate(year = as.numeric(year)) %>%
+  mutate(year = year + 6) %>%
+  dplyr::select(ID, year, pressure_score)
+
+#extract
+
+# function to extract data more easily
+saveData <- function(newYear){ # newYear= 2012
+
+  criteria_year <- ~year == newYear
+
+  tmp  <- lb_data %>%
+    filter_(criteria_year) %>%
+    dplyr::select(ID, pressure_score) %>%
+    arrange(ID)
+
+  write.csv(tmp, sprintf('prep/pressures/fishing/bycatch/artisinal/art_fish_lb_%s.csv', newYear), row.names=FALSE)
+}
+
+### extract data
+for(newYear in (max(lb_data$year) - 3):(max(lb_data$year))){
   saveData(newYear)
 }
