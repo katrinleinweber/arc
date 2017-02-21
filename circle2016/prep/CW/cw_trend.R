@@ -31,3 +31,6 @@ writeOGR(poly_arc_3nm, dsn = 'prep/spatial', layer = 'poly_arc_3nm', driver = "E
 #           progress='text')
 
 data <- raster::extract(chem_scaled, poly_arc_3nm, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+status_data<- data %>% dplyr::select(ID, pressure_score = chemical_pollution_2013_scaled)
+write.csv(status_data, "cw_chemical_score_3nm_arc2016.csv", row.names=FALSE)
+
