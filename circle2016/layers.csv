@@ -28,7 +28,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E)
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","equal","global trends were applied equally to all regions.","cw_nutrient_trend","~/github/ohi-global/eez2016/layers/cw_nutrient_trend.csv","rgn_id",,,,"trend",,TRUE,,,1.33937619974348e-06,0.112572639499454,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","equal","global trends were applied equally to all regions.","cw_nutrient_trend","~/github/ohi-global/eez2016/layers/cw_nutrient_trend.csv","rgn_id",,,,"trend",,TRUE,,,0.00000133937619974348,0.112572639499454,TRUE,,,,9,FALSE
 "CW","cw_pathogen_trend","cw_pathogen_trend_gl2016.csv","trend","trend score","Trends in access to improved sanitation as a proxy for pathogen pollution trend","Trends in percent of population without access to improved sanitation facilities.
 
 Data sources:
@@ -46,7 +46,7 @@ Data sources:
 Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2010,2.77901833407453e-12,301524.808637003,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2010,0.00000000000277901833407453,301524.808637003,FALSE,,,,9,FALSE
 "FP","fp_wildcaught_weight","fp_wildcaught_weight_gl2016.csv","w_fis","proportion","Fisheries weighting factor","Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 
 Data sources:
@@ -130,13 +130,13 @@ Data sources:
 
 Data sources:
 
-- CIESIN & CIAT (Center for International Earth Science Information Network /Columbia University & Centro Internacional de Agricultura Tropical) (2005). **Gridded Population of the World, Version 3 (GPWv3): Population Density Grid, Future Estimates**. Palisades, NY. [NASA Socioeconomic Data and Applications Center (SEDAC)](http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-density-future-estimates)","raster","spatial data was extracted for each region. ","mar_coastalpopn_inland25mi","/Volumes/ohi/git-annex/clip-n-ship/arc/layers/mar_coastalpopn_inland25km_lyr.csv","rgn_id",,,"year","popsum",,TRUE,2005,2013,100,100,FALSE,,,,9,FALSE
+- CIESIN & CIAT (Center for International Earth Science Information Network /Columbia University & Centro Internacional de Agricultura Tropical) (2005). **Gridded Population of the World, Version 3 (GPWv3): Population Density Grid, Future Estimates**. Palisades, NY. [NASA Socioeconomic Data and Applications Center (SEDAC)](http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-density-future-estimates)","raster","spatial data was extracted for each region. ","mar_coastalpopn_inland25mi","/Volumes/ohi/git-annex/clip-n-ship/arc/layers/mar_coastalpopn_inland25km_lyr.csv","rgn_id",,,"year","popsum",,TRUE,2005,2015,599053,4133843,FALSE,,,,9,FALSE
 "MAR","mar_harvest_species","mar_harvest_species_gl2016.csv","species","species name","Mariculture species harvested","Lookup table for mariculture: species Latin names and species code. 
 
 Data sources:
 
 - [FAO global aquaculture production](http://www.fao.org/fishery/statistics/global-aquaculture-production/en)","equal","global mariculture species were applied equally to each region.","mar_harvest_species","~/github/ohi-global/eez2016/layers/mar_harvest_species.csv",,,"species_code",,,"species",TRUE,,,,,FALSE,,,,9,
-"MAR","mar_harvest_tonnes","mar_harvest_tonnes_arc2016.csv","tonnes","tons","Mariculture harvest","Mariculture harvest Russia/Norway reports","area_offshore_3nm","global mariculture harvest (tonnes) data were applied to each region after weighting by each region's offshore area to 3nm. ","mar_harvest_tonnes","~/github/arc/circle2016/layers/mar_harvest_tonnes_arc2016.csv","rgn_id",,"species_code","year","tonnes",,TRUE,2003,2014,0,489843,FALSE,"x,x.1,x.2,x.3,x.4",,,9,FALSE
+"MAR","mar_harvest_tonnes","mar_harvest_tonnes_arc2016.csv","tonnes","tons","Mariculture harvest","Mariculture harvest Russia/Norway reports","area_offshore_3nm","global mariculture harvest (tonnes) data were applied to each region after weighting by each region's offshore area to 3nm. ","mar_harvest_tonnes","~/github/arc/circle2016/layers/mar_harvest_tonnes_arc2016.csv","rgn_id",,"species_code","year","tonnes",,TRUE,2003,2014,0,489843,FALSE,,,,9,FALSE
 "MAR","mar_sustainability_score","mar_sustainability_score_gl2016.csv","sust_coeff","sustainability","Mariculture sustainability score","Mariculture sustainability and mariculture regulations indicated by the Mariculture Sustainability Index (MSI). 
 
 Data sources:
@@ -228,7 +228,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/ohi-global/eez2016/layers/po_nutrients.csv","rgn_id",,"x",,"pressure_score",,TRUE,,,6.564755722874e-07,0.00623263659409471,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/ohi-global/eez2016/layers/po_nutrients.csv","rgn_id",,"x",,"pressure_score",,TRUE,,,0.0000006564755722874,0.00623263659409471,TRUE,,,,9,FALSE
 "pressures","sp_alien","sp_alien_gl2016.csv","pressures.score","pressure score","Alien species","The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 
 Data sources:
@@ -257,7 +257,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster | equal","","po_nutrients_3nm","~/github/ohi-global/eez2016/layers/po_nutrients_3nm.csv","rgn_id",,,,"pressure_score",,TRUE,,,4.63160956846201e-06,0.118426612054867,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster | equal","","po_nutrients_3nm","~/github/ohi-global/eez2016/layers/po_nutrients_3nm.csv","rgn_id",,,,"pressure_score",,TRUE,,,0.00000463160956846201,0.118426612054867,TRUE,,,,9,FALSE
 "pressures CW","po_pathogens","po_pathogens_gl2016.csv","pressure_score","pressure score","Access to improved sanitation as a proxy for pathogen pollution","Population without access to improved sanitation facilities. 
 
 Data sources:
