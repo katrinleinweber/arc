@@ -30,3 +30,4 @@ writeOGR(poly_arc_3nm, dsn = 'prep/spatial', layer = 'poly_arc_3nm', driver = "E
 #           filename=file.path(rast_locs, "Frazier/inland_3nm.tif"), overwrite=TRUE,
 #           progress='text')
 
+data <- raster::extract(chem_scaled, poly_arc_3nm, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
