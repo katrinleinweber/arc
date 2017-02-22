@@ -151,12 +151,14 @@ FIS = function(layers, status_year){
   # -----------------------------------------------------------------------
 
   status <-  status_data %>%
-    filter(year==status_year) %>%
+    group_by(rgn_id) %>% #group by rgn_id and add max year in to get status
+    filter(year >= max(year, na.rm=T)) %>%
     mutate(
       score     = round(status*100, 1),
       dimension = 'status') %>%
-    select(region_id=rgn_id, score, dimension)
+    dplyr::select(region_id=rgn_id, score, dimension)
 
+  status_year<- 2010
   trend_years <- status_year:(status_year-4)
   first_trend_year <- min(trend_years)
 
@@ -172,11 +174,11 @@ FIS = function(layers, status_year){
     mutate(score = ifelse(score > 1, 1, score)) %>%
     mutate(score = ifelse(score < (-1), (-1), score))
 
-  # assemble dimensions
-  scores <- rbind(status, trend) %>%
-    mutate(goal='FIS') %>%
-    filter(region_id != 255)
-  scores <- data.frame(scores)
+  # return scores
+  scores= full_join(status, trend)%>%
+    mutate(goal='FIS')%>%
+    data.frame()
+
 
   return(scores)
 }
