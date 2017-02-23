@@ -268,3 +268,40 @@ prot_3nm <- rast_df %>%
          lsp_status = round(ifelse(pct_prot > lsp_thresh, 100, (pct_prot / lsp_thresh) * 100), 2)) %>%
   distinct() #still have NA in rgn_id?
 write_csv(prot_3nm, file.path('~/github/arc/circle2016/prep/spatial/area_protected_3nm.csv'))
+
+##combine
+prot_eez<- read.csv('prep/spatial/area_protected_eez.csv')
+
+prot_df <- prot_3nm %>%
+  dplyr::select(rgn_id, year,
+                lsp_st_3nm = lsp_status,
+                a_prot_3nm = a_prot_km2,
+                a_tot_3nm  = a_tot_km2) %>%
+  full_join(prot_eez %>%
+              dplyr::select(rgn_id, year,
+                            lsp_st_eez = lsp_status,
+                            a_prot_eez = a_prot_km2,
+                            a_tot_eez  = a_tot_km2),
+            by = c('rgn_id', 'year')) %>%
+  mutate(lsp_st_3nm = ifelse(is.na(lsp_st_3nm), 0, lsp_st_3nm),
+         lsp_st_eez = ifelse(is.na(lsp_st_eez), 0, lsp_st_eez))%>%
+         lsp_status = lsp_st_3nm %>%
+  distinct()
+write_csv(prot_df, file.path('prep/LSP/area_protected_total.csv'))
+
+prot_df_recent <- prot_df %>%
+  filter(year >= 2000)
+
+#set file paths to write.csv to
+a_prot_offshore_file <- file.path('prep/LSP/lsp_protected_offshore3nm.csv')
+a_prot_eez_file      <- file.path('prep/LSP/lsp_protected_eez.csv')
+a_tot_offshore_file  <- file.path('prep/LSP/lsp_a_total_offshore3nm.csv')
+a_tot_eez_file       <- file.path('prep/LSP/lsp_a_total_eez.csv')
+
+
+write_csv(prot_df_recent %>% dplyr::select(rgn_id, year, a_prot_3nm), a_prot_offshore_file)
+write_csv(prot_df_recent %>% dplyr::select(rgn_id, year, a_tot_3nm), a_tot_offshore_file)
+
+write_csv(prot_df_recent %>% dplyr::select(rgn_id, year, a_prot_eez), a_prot_eez_file)
+write_csv(prot_df_recent %>% dplyr::select(rgn_id, year, a_tot_eez), a_tot_eez_file)
+
