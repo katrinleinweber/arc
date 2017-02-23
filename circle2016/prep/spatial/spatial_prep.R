@@ -59,7 +59,7 @@ crop_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
 
 ##Apply positive buffer to land shapefile
 crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5500, capStyle = "round", joinStyle = "round")
-arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3km buffer separated into regions
+arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3nm buffer separated into regions
 
 ## create raster of arc_3km_buffer
 p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
@@ -205,3 +205,66 @@ prot_eez <- rast_df %>%
          lsp_status = round(ifelse(pct_prot > lsp_thresh, 100, (pct_prot / lsp_thresh) * 100), 2)) %>%
   distinct() #still have NA in rgn_id?
 write_csv(prot_eez, file.path('~/github/arc/circle2016/prep/spatial/area_protected_eez.csv'))
+
+
+#####3nm###
+
+rast_wdpa_file <- file.path(dir_goal_anx, 'int/wdpa_designated_mol.tif')
+rast_wdpa <- raster::raster(rast_wdpa_file)
+
+rast_3nm_arc<- file.path('prep/spatial/rast_arc_3km.tif')
+rast_3nm_arc<- raster::raster(rast_3nm_arc)
+
+#rast_wdpa_proj<- projectRaster(rast_wdpa, rast_3nm_arc, method= 'ngb') #reproject wdpa into arc CRS
+#writeRaster(rast_wdpa_proj, filename="rast_wdpa_laea.tif")
+
+spatial_dir<- 'prep/spatial'
+layer_arc3<- 'poly_arc_3nm'
+poly_arc_3nm<- readOGR(dsn= spatial_dir, layer = layer_arc3, stringsAsFactors = FALSE)
+
+wdpa_by_rgn <- raster::extract(rast_wdpa_proj, poly_arc_3nm, weights = FALSE, progress='text')
+names(wdpa_by_rgn) <- poly_arc_3nm@data$rgn_id
+### For the dataframe without cell weights, each list is just a
+### vector of values, so we can simply assign that to a column in
+### the data frame.
+wdpa_rgn_df <- data.frame()
+for (rgn_id in names(wdpa_by_rgn)) {
+  temp_df <- data.frame(rgn_id = as.numeric(rgn_id),
+                        year   = unlist(wdpa_by_rgn[[rgn_id]]))
+  wdpa_rgn_df <- rbind(wdpa_rgn_df, temp_df)
+}
+
+prot_area_df <- wdpa_rgn_df %>%
+  group_by(rgn_id) %>%
+  summarize(cells_mpa     = sum(!is.na(year)),
+            cells_tot     = n(),
+            prot_area_pct = round(cells_mpa/cells_tot, 3) * 100) %>%
+  left_join(poly_arc_3nm@data %>%
+              dplyr::select(rgn_id),
+            by = 'rgn_id')
+
+knitr::kable(prot_area_df)
+### Cross tabulate OHI/EEZ rasters. This givees number of protected cells with year of protection within each region. NA = unprotected cells
+
+rast_df <- raster::crosstab(rast_wdpa_proj, rast_3nm_arc, useNA = TRUE, progress = 'text') %>%
+  as.data.frame() %>%
+  setNames(c('year', 'rgn_id', 'n_cells')) %>%
+  mutate(year   = as.integer(as.character(year)),
+         rgn_id = as.integer(as.character(rgn_id))) %>%
+  arrange(rgn_id, year)
+
+#### calculate protected area total by region####
+lsp_thresh<- 0.30
+
+prot_3nm <- rast_df %>%
+  group_by(rgn_id) %>%
+  mutate(n_cells_tot = sum(n_cells),
+         n_cells_cum = cumsum(n_cells),
+         a_tot_km2   = n_cells_tot / 4,
+         a_prot_km2  = n_cells_cum / 4) %>%
+  ungroup() %>%
+  filter(!is.na(year))  %>% ### this ditches non-protected cell counts but already counted in n_cells_tot
+  mutate(pct_prot   = round(n_cells_cum / n_cells_tot, 4),
+         lsp_status = round(ifelse(pct_prot > lsp_thresh, 100, (pct_prot / lsp_thresh) * 100), 2)) %>%
+  distinct() #still have NA in rgn_id?
+write_csv(prot_3nm, file.path('~/github/arc/circle2016/prep/spatial/area_protected_3nm.csv'))
