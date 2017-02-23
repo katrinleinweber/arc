@@ -119,7 +119,7 @@ Data sources:
 
 Data sources:
 
-- United Nations - World Conservation Monitoring Centre's World Database on Protected Areas (WDPA) through [Protected Planet](http://www.protectedplanet.net)","raster | area_offshore3nm","","lsp_prot_area_offshore3nm","~/github/ohi-global/eez2016/layers/lsp_prot_area_offshore3nm.csv",,,,,,,FALSE,,,,,FALSE,,,,9,
+- United Nations - World Conservation Monitoring Centre's World Database on Protected Areas (WDPA) through [Protected Planet](http://www.protectedplanet.net)","raster | area_offshore3nm","","lsp_prot_area_offshore3nm","~/github/ohi-global/eez2016/layers/lsp_prot_area_offshore3nm.csv","rgn_id",,,"year","area_km2",,TRUE,2000,2014,0,89325.5,FALSE,,,,9,FALSE
 "MAR","mar_coastalpopn_inland25km","mar_coastalpopn_inland25km_sc2014-raster.csv","popsum","people","Coastal population inland 25 kilometers","Coastal population, defined as the total population inland of 25 kilometers, extracted from Gridded Population of the World (GPW) Population Density Grid Future Estimates.
 
 Data sources:
@@ -354,7 +354,7 @@ Data sources:
 Data sources:
 
 - [VLIZ Maritime Boundaries Geodatabase, version 7](http://www.marineregions.org/)
-","raster","spatial data was extracted for each region.","rgn_area_offshore3nm","~/github/ohi-global/eez2016/layers/rgn_area_offshore3nm.csv",,,,,,,FALSE,,,,,FALSE,,,,9,
+","raster","spatial data was extracted for each region.","rgn_area_offshore3nm","~/github/ohi-global/eez2016/layers/rgn_area_offshore3nm.csv","rgn_id",,,"year","area_km2",,TRUE,2000,2014,781,252429.25,FALSE,,,,9,FALSE
 "spatial","rgn_georegion_labels","rgn_georegion_labels_gl2016.csv","label","label","Georegion labels per region, at 3 georegion levels","Lookup table of Ocean Health Index regions and UN georegion names at 3 georegion levels.
 
 Data sources:
