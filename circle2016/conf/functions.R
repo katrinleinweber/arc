@@ -1188,21 +1188,21 @@ LSP = function(layers, ref_pct_cmpa=30, ref_pct_cp=30, status_year=2014){
     dplyr::select(region_id, year, cmpa = lsp_prot_area_offshore3nm)
 
   # fill in time series for all regions and generate cumulative sum
-  r.yrs <- expand.grid(region_id = unique(ry$region_id),
-                       year = unique(ry$year)) %>%
-    left_join(ry, by=c('region_id', 'year')) %>%
-    arrange(region_id, year) %>%
-    mutate(cmpa = ifelse(is.na(cmpa), 0, cmpa)) %>%
-    group_by(region_id) %>%
-    mutate(cmpa_cumsum  = cumsum(cmpa)) %>%
-    ungroup() %>%
-    mutate(pa_cumsum     = cmpa_cumsum)
+ # r.yrs <- expand.grid(region_id = unique(ry$region_id),
+  #                     year = unique(ry$year)) %>%
+   # left_join(ry, by=c('region_id', 'year')) %>%
+    #arrange(region_id, year) %>%
+    #mutate(cmpa = ifelse(is.na(cmpa), 0, cmpa)) %>%
+    #group_by(region_id) %>%
+    #mutate(cmpa_cumsum  = cumsum(cmpa)) %>%
+    #ungroup() %>%
+    #mutate(pa_cumsum     = cmpa_cumsum)
 
-  # get percent of total area that is protected for inland1km (cp) and offshore3nm (cmpa) per year
+  # get percent of total area that is protected for offshore3nm (cmpa) per year
   # and calculate status score
-  r.yrs = r.yrs %>%
+  r.yrs = ry %>%
     full_join(r, by="region_id") %>%
-    mutate(pct_cmpa  = pmin(cmpa_cumsum / area_offshore3nm * 100, 100),
+    mutate(pct_cmpa  = pmin(cmpa / area_offshore3nm * 100, 100),
            prop_protected    = (pmin(pct_cmpa / ref_pct_cmpa, 1)))
 
   # extract status based on specified year
