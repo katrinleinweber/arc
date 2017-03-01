@@ -710,68 +710,37 @@ CP <- function(layers){
 
 
 TR = function(layers, status_year, debug = FALSE, pct_ref = 90) {
-  ### Updated July 2015 - Casey O'Hara
-  ### * adjusted model to use percent employment in tourism when available.
-  ### * set up layers for travel warnings.
+  ## formula:
+  ##  E   = Ep                         # Ep: % of direct tourism jobs. tr_jobs_pct_tourism.csv
+  ##  S   = (S_score - 1) / (7 - 1)    # S_score: raw TTCI score, not normalized (1-7). tr_sustainability.csv
+  ##  Xtr = E * S
 
-  #Inputs:
-  # * U  = tr_unemployment.csv:     Percent unemployment (0-100%)
-  # * S_score  = tr_sustainability.csv:   TTCI score, not normalized (1-7)
-  # * Ed = tr_jobs_tourism.csv:     Number of jobs, direct employment in tourism
-  # * Ep = tr_jobs_pct_tourism.csv: Percent of direct tourism jobs
-  # * L  = tr_jobs_total.csv:       Total labor force
-  # formula:
-  #  E       = ifelse(is.na(Ep), Ed / (L - (L * U)), Ep)    # Ep is direct percentage of labor in tourism; if not available, calc the hard way
-  #  S       = (S_score - 1) / (7 - 1)                      # S_score is raw score (from 1:7).  Subtract 1 and normalize.
-  #  Xtr     = E * S
-
-  # get regions
-  rgn_names = layers$data[[conf$config$layer_region_labels]] %>%
-    dplyr::select(rgn_id, rgn_name = label) %>%
-    mutate(rgn_name = as.character(rgn_name))
-
-  tr_data  <- layers$data[['tr_jobs_tourism']]     %>%
-    dplyr::select(-layer) %>%
-    full_join(layers$data[['tr_jobs_pct_tourism']] %>%
-                dplyr::select(-layer),
-              by = c('rgn_id','year'))             %>%
-    full_join(layers$data[['tr_unemployment']]     %>%
-                dplyr::select(-layer),
-              by = c('rgn_id','year'))             %>%
-    full_join(layers$data[['tr_jobs_total']]       %>%
-                dplyr::select(-layer),
-              by = c('rgn_id','year'))             %>%
-    full_join(layers$data[['tr_sustainability']]   %>%
-                dplyr::select(-layer),
-              by = c('rgn_id'))                    %>%
-    full_join(rgn_names, by = 'rgn_id')            %>%
-    filter(year <= status_year)
+  ## read in layers
+  tr_data  <- full_join(
+    layers$data[['tr_jobs_pct_tourism']] %>%
+      dplyr::select(-layer),
+    layers$data[['tr_sustainability']] %>%
+      dplyr::select(-layer),
+    by = c('rgn_id'))
 
   tr_model <- tr_data %>%
     mutate(
-      E   = ifelse(is.na(Ep), Ed / (L - (L * U)), Ep),
+      E   = pct,
       S   = (S_score - 1) / (7 - 1), # scale score from 1 to 7.
-      Xtr = E * S ) %>%
-    filter(year <= status_year & year > status_year - 5)
-  # five data years, four intervals
+      Xtr = E * S )
+  # five data years for trend calcs
 
-  # regions with Travel Warnings at http://travel.state.gov/content/passports/english/alertswarnings.html
-  rgn_travel_warnings <- layers$data[['tr_travelwarnings']] %>%
-    dplyr::select(rgn_name, multiplier) %>%
-    mutate(rgn_name = as.character(rgn_name)) %>%
-    left_join(rgn_names, by = 'rgn_name') %>%
-    filter(!is.na(rgn_id))
 
-  tr_model <- tr_model %>%
-    left_join(rgn_travel_warnings %>%
-                dplyr::select(-rgn_name),
-              by = 'rgn_id') %>%
-    mutate(Xtr = ifelse(!is.na(multiplier), multiplier * Xtr, Xtr)) %>%
-    dplyr::select(-multiplier)
+
+  ## No  travel warnings for arctic
+
+  ## end if (exists('scenarios'))
 
   ### Calculate status based on quantile reference (see function call for pct_ref)
+  pct_ref=90
   tr_model <- tr_model %>%
-    dplyr::select(rgn_id, rgn_name, year, Xtr) %>%
+    dplyr::select(rgn_id, year, Xtr) %>%
+    filter(year!=2015)%>% #only one with 2015 data so this automatically comes out as 1.0 in status
     left_join(tr_model %>%
                 group_by(year) %>%
                 summarize(Xtr_q = quantile(Xtr, probs = pct_ref/100, na.rm = TRUE)),
@@ -779,11 +748,10 @@ TR = function(layers, status_year, debug = FALSE, pct_ref = 90) {
     mutate(
       Xtr_rq  = ifelse(Xtr / Xtr_q > 1, 1, Xtr / Xtr_q)) # rescale to qth percentile, cap at 1
 
-
-
   ## reference points
   ref_point <- tr_model %>%
-    filter(year == status_year) %>%
+    group_by(rgn_id)%>%
+    filter(year >= max(tr_model$year)) %>%
     dplyr::select(Xtr_q) %>%
     unique()
   rp <- read.csv('temp/referencePoints.csv', stringsAsFactors=FALSE) %>%
@@ -795,14 +763,20 @@ TR = function(layers, status_year, debug = FALSE, pct_ref = 90) {
 
   # calculate trend
   tr_trend <- tr_model %>%
+    group_by(rgn_id) %>% #group by rgn_id and add max year in to get status
+    filter(year >= max(year, na.rm=T) -4)%>%
+    ungroup()%>%
     filter(!is.na(Xtr_rq)) %>%
     arrange(year, rgn_id) %>%
     group_by(rgn_id) %>%
-    do(mod = lm(Xtr_rq ~ year, data = .)) %>%
-    do(data.frame(
-      rgn_id    = .$rgn_id,
-      dimension = 'trend',
-      score     =  max(min(coef(.$mod)[['year']] * 5, 1), -1)))
+    do(mdl = lm(Xtr_rq ~ year, data=.)) %>%
+    summarize(rgn_id, trend = coef(mdl)['year'] * 5)%>%
+    ungroup() %>%
+    mutate(trend = ifelse(trend>1, 1, trend)) %>%
+    mutate(trend = ifelse(trend<(-1), (-1), trend)) %>%
+    mutate(trend = round(trend, 4)) %>%
+    dplyr::select(rgn_id, score = trend) %>%
+    mutate(dimension = "trend")
 
   # get status (as last year's value)
   tr_status <- tr_model %>%
@@ -810,23 +784,13 @@ TR = function(layers, status_year, debug = FALSE, pct_ref = 90) {
     group_by(rgn_id) %>%
     summarize(
       dimension = 'status',
-      score     = last(Xtr_rq) * 100)
+      score     = last(Xtr_rq) * 100)%>%
+    ungroup()
 
   # bind status and trend by rows
   tr_score <- bind_rows(tr_status, tr_trend) %>%
     mutate(goal = 'TR')
 
-  if (conf$config$layer_region_labels=='rgn_global'){
-    # assign NA for uninhabitated islands
-    unpopulated = layers$data[['le_popn']] %>%
-      group_by(rgn_id) %>%
-      filter(count==0) %>%
-      dplyr::select(rgn_id)
-    tr_score$score = ifelse(tr_score$rgn_id %in% unpopulated$rgn_id, NA, tr_score$score)
-
-    #     # replace North Korea value with 0
-    #     tr_score$score[tr_score$rgn_id == 21] = 0
-  }
 
   # return final scores
   scores = tr_score %>%
