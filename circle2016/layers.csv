@@ -28,7 +28,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E)
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_nutrient_trend,~/github/ohi-global/eez2016/layers/cw_nutrient_trend.csv,rgn_id,,,,trend,,TRUE,,,1.33938E-06,0.112572639,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_nutrient_trend,~/github/ohi-global/eez2016/layers/cw_nutrient_trend.csv,rgn_id,,,,trend,,TRUE,,,1.34E-06,0.112572639,TRUE,,,,9,FALSE
 CW,cw_pathogen_trend,cw_pathogen_trend_gl2016.csv,trend,trend score,Trends in access to improved sanitation as a proxy for pathogen pollution trend,"Trends in percent of population without access to improved sanitation facilities.
 
 Data sources:
@@ -46,7 +46,7 @@ FIS,fis_meancatch_arc2016,fis_meancatch_arc2016.csv,mean_catch,metric tons,Catch
 Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.77902E-12,301524.8086,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
 FP,fp_wildcaught_weight,fp_wildcaught_weight_gl2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 
 Data sources:
@@ -222,7 +222,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56476E-07,0.006232637,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
 pressures,sp_alien,sp_alien_gl2016.csv,pressures.score,pressure score,Alien species,"The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 
 Data sources:
@@ -251,7 +251,7 @@ Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_nutrients_3nm,~/github/ohi-global/eez2016/layers/po_nutrients_3nm.csv,rgn_id,,,,pressure_score,,TRUE,,,4.63161E-06,0.118426612,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_nutrients_3nm,~/github/ohi-global/eez2016/layers/po_nutrients_3nm.csv,rgn_id,,,,pressure_score,,TRUE,,,4.63E-06,0.118426612,TRUE,,,,9,FALSE
 pressures CW,po_pathogens,po_pathogens_gl2016.csv,pressure_score,pressure score,Access to improved sanitation as a proxy for pathogen pollution,"Population without access to improved sanitation facilities. 
 
 Data sources:
@@ -381,24 +381,24 @@ Data sources:
 
 - [International Union for Conservation of Nature (IUCN)](http://www.iucnredlist.org/technical-documents/classification-schemes/threats-classification-scheme)
 ",equal,global trends were applied equally to each region. ,spp_trend,~/github/arc/circle2016/layers/spp_trend_arc2016.csv,rgn_id,,,,score,,TRUE,,,-0.246419683,-0.040942201,FALSE,,,,9,FALSE
-TR,tr_jobs_pct_tourism,tr_jobs_pct_tourism_gl2016.csv,Ep,percent,Percent direct employment in tourism,"Percent direct employment in tourism (WTTC).
+TR,tr_jobs_pct_tourism,tr_jobs_pct_tourism_arc2016.csv,Ep,percent,Percent direct employment in tourism,"Percent direct employment in tourism (WTTC).
 
 Data sources:
 
 - [World Travel and Tourism Council (WTTC)](http://www.wttc.org/research/economic-data-search-tool/)
-",population_inland25km,global tourism employee data were applied to each region after weighting by each region's coastal population.,tr_jobs_pct_tourism,~/github/ohi-global/eez2016/layers/tr_jobs_pct_tourism.csv,rgn_id,,,year,ep,,TRUE,1989,2013,0.00141717,0.0744584,TRUE,,,,9,FALSE
-TR,tr_jobs_total,tr_jobs_total_gl2016.csv,L,people,Total labor force,"Total labor force (number of people 15 years old and older who can supply labor for the production of goods and services) from World Bank assessments.
+",population_inland25km,global tourism employee data were applied to each region after weighting by each region's coastal population.,tr_jobs_pct_tourism,~/github/arc/circle2016/layers/tr_jobs_pct_tourism_arc2016.csv,rgn_id,,,year,ep,,TRUE,1989,2013,0.00141717,0.0744584,TRUE,,,,9,FALSE
+TR,tr_jobs_total,tr_jobs_total_arc2016.csv,L,people,Total labor force,"Total labor force (number of people 15 years old and older who can supply labor for the production of goods and services) from World Bank assessments.
 
 Data sources:
 
 - [The World Bank](http://data.worldbank.org/indicator/SL.TLF.TOTL.IN)
-",population_inland25km,global total labor force data were applied to each region after weighting by each region's coastal population.,tr_jobs_total,~/github/ohi-global/eez2016/layers/tr_jobs_total.csv,rgn_id,,,year,l,,TRUE,1989,2013,2143500,158959000,FALSE,,,,9,FALSE
-TR,tr_jobs_tourism,tr_jobs_tourism_gl2016.csv,Ed,jobs,Direct employment in tourism,"Direct employment in tourism (WTTC).
+",population_inland25km,global total labor force data were applied to each region after weighting by each region's coastal population.,tr_jobs_total,~/github/arc/circle2016/layers/tr_jobs_total_arc2016.csv,rgn_id,,,year,l,,TRUE,1989,2013,2143500,158959000,FALSE,,,,9,FALSE
+TR,tr_jobs_tourism,tr_jobs_tourism_arc2016.csv,Ed,jobs,Direct employment in tourism,"Direct employment in tourism (WTTC).
 
 Data sources:
 
 - [World Travel and Tourism Council (WTTC)](http://www.wttc.org/research/economic-data-search-tool/)
-",population_inland25km,global tourism employee data were applied to each region after weighting by each region's coastal population.,tr_jobs_tourism,~/github/ohi-global/eez2016/layers/tr_jobs_tourism.csv,rgn_id,,,year,ed,,TRUE,1989,2013,100181,6018170,FALSE,,,,9,FALSE
+",population_inland25km,global tourism employee data were applied to each region after weighting by each region's coastal population.,tr_jobs_tourism,~/github/arc/circle2016/layers/tr_jobs_tourism_arc2016.csv,rgn_id,,,year,ed,,TRUE,1989,2013,100181,6018170,FALSE,,,,9,FALSE
 TR,tr_sustainability,tr_sustainability_gl2016.csv,S_score,score,Sustainability index,"Tourism Competitiveness Index (TTCI) from the World Economic Forum
 
 Data sources:
@@ -409,9 +409,9 @@ TR,tr_travelwarnings,tr_travelwarnings_gl2016.csv,multiplier,score,Travel warnin
 Data sources:
 
 - [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,,,rgn_name,,multiplier,,TRUE,,,0,1,TRUE,,,,9,FALSE
-TR,tr_unemployment,tr_unemployment_gl2016.csv,U,percent ,Percent unemployment,"Percent unemployment (The World Bank).
+TR,tr_unemployment,tr_unemployment_arc2016.csv,U,percent ,Percent unemployment,"Percent unemployment (The World Bank).
 
 Data sources:
 
 - [The World Bank](http://data.worldbank.org/indicator/SL.UEM.TOTL.ZS)
-",equal,global unemployment percentages were applied equally to each region. ,tr_unemployment,~/github/ohi-global/eez2016/layers/tr_unemployment.csv,rgn_id,,,year,u,,TRUE,1989,2013,0.025,0.133,TRUE,,,,9,FALSE
+",equal,global unemployment percentages were applied equally to each region. ,tr_unemployment,~/github/arc/circle2016/layers/tr_unemployment_arc2016.csv,rgn_id,,,year,u,,TRUE,1989,2013,0.025,0.133,TRUE,,,,9,FALSE
