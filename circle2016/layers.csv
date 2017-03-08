@@ -50,7 +50,7 @@ Data sources:
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
-FIS,fis_comsir_bmsy,fis_comsir_bmsy_arc2016.csv,bbmsy,B / B_msy,B/Bmsy estimates obtained using the comsir method,,,,,,,,,,,,,,,,,,,,,,
+FIS,fis_comsir_bmsy_arc2016,fis_comsir_bmsy_arc2016.csv,bbmsy,B / B_msy,B/Bmsy estimates obtained using the comsir method,,,,,,,,,,,,,,,,,,,,,,
 FP,fp_wildcaught_weight,fp_wildcaught_weight_gl2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 =======
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
