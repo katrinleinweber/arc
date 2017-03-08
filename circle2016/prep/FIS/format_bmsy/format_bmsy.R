@@ -33,7 +33,7 @@ comsir <- read.csv('circle2016/prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv')
   dplyr::select(stock_id, year, comsir_bbmsy=mean_5year)
 
 ## Mean catch data created in "meanCatch.R"
-mean_catch <- read.csv("circle2016/prep/FIS/meancatch/mean_catch.csv") %>%
+mean_catch <- read.csv("circle2016/prep/FIS/meancatch/fis_mean_catch_arc2016.csv") %>%
   mutate(stock_id_taxonkey = as.character(stock_id_taxonkey)) %>%
   mutate(taxon_key = str_sub(stock_id_taxonkey, -6, -1)) %>%
   mutate(stock_id = substr(stock_id_taxonkey, 1, nchar(stock_id_taxonkey)-7))
