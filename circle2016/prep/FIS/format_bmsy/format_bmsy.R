@@ -4,11 +4,11 @@ library(tidyr)
 library(zoo)
 library(stringr)
 
-cmsy <- read.csv('circle2016/prep/FIS/catch_model_bmsy/cmsy_bbmsy.csv') %>%
+cmsy <- read.csv('prep/FIS/catch_model_bmsy/cmsy_bbmsy.csv') %>%
   mutate(prior = 'constrained') %>%
   filter(!is.na(bbmsy_mean))
 
-comsir <- read.csv('circle2016/prep/FIS/catch_model_bmsy/comsir_bbmsy.csv') %>%
+comsir <- read.csv('prep/FIS/catch_model_bmsy/comsir_bbmsy.csv') %>%
   mutate(prior = 'NA') %>%
   filter(!is.na(bbmsy_mean))
 
@@ -18,7 +18,7 @@ new_b_bmsy <- function(b_bmsy=constrained, method = "comsir"){
     arrange(stock_id, year) %>%
     group_by(stock_id) %>%
     mutate(mean_5year = rollmean(bbmsy_mean, 5, align="right", fill=NA))
-  write.csv(b_bmsy, sprintf('circle2016/prep/FIS/meanbmsy/%s_b_bmsy_%s_mean5yrs.csv', method, unique(b_bmsy$prior)), row.names=FALSE)
+  write.csv(b_bmsy, sprintf('prep/FIS/meanbmsy/%s_b_bmsy_%s_mean5yrs.csv', method, unique(b_bmsy$prior)), row.names=FALSE)
 }
 
 new_b_bmsy(cmsy, method="cmsy")
@@ -29,11 +29,11 @@ new_b_bmsy(comsir, method="comsir")
 cmsy <- read.csv('circle2016/prep/FIS/meanbmsy/cmsy_b_bmsy_constrained_mean5yrs.csv') %>%
   dplyr::select(stock_id, year, cmsy_bbmsy=mean_5year)
 
-comsir <- read.csv('circle2016/prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv') %>%
+comsir <- read.csv('prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv') %>%
   dplyr::select(stock_id, year, comsir_bbmsy=mean_5year)
 
 ## Mean catch data created in "meanCatch.R"
-mean_catch <- read.csv("circle2016/prep/FIS/meancatch/fis_mean_catch_arc2016.csv") %>%
+mean_catch <- read.csv("prep/FIS/meancatch/fis_mean_catch_arc2016.csv") %>%
   mutate(stock_id_taxonkey = as.character(stock_id_taxonkey)) %>%
   mutate(taxon_key = str_sub(stock_id_taxonkey, -6, -1)) %>%
   mutate(stock_id = substr(stock_id_taxonkey, 1, nchar(stock_id_taxonkey)-7))
@@ -71,7 +71,7 @@ comsir_mc <- mean_catch %>%
   filter(!is.na(bbmsy)) %>%
   unique()
 
-write.csv(data, file='circle2016/prep/FIS/fis_comsir_bbmsy_noRAM.csv', row.names=FALSE)
+write.csv(comsir_mc, file='prep/FIS/fis_comsir_bbmsy_noRAM.csv', row.names=FALSE)
 
 ###Explore for high BBMSY###
 
