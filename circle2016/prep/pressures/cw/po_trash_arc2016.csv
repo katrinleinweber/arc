@@ -1,4 +1,4 @@
-rgn_id,weight_rescale_icemask
+rgn_id,pressure_score
 1,0.050648014
 2,0.202162055
 3,0.116374896
