@@ -50,9 +50,10 @@ Data sources:
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
+FIS,fis_comsir_bmsy,fis_comsir_bmsy_arc2016,bbmsy,B / B_msy,B/Bmsy estimates obtained using the comsir method,,,,,,,,,,,,,,,,,,,,,,
 FP,fp_wildcaught_weight,fp_wildcaught_weight_gl2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 =======
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.77902E-12,301524.8086,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
 HAB CS CP,hab_extent,hab_extent_gl2016.csv,km2,km^2,Habitat extent,"Habitat extent
 
 Data sources:
@@ -227,7 +228,7 @@ Data sources:
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
 pressures,sp_alien,sp_alien_gl2016.csv,pressures.score,pressure score,Alien species,"The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 =======
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56476E-07,0.006232637,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
 pressures,sp_genetic,sp_genetic_gl2016.csv,pressures.score,pressure score,Introduced species as a proxy for genetic escapes ,"Statistics on native or introduced species from the Mariculture Sustainibility Index (MSI). 
 
 Data sources:
