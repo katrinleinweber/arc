@@ -24,12 +24,12 @@ FIS = function(layers, status_year){
       bmsy           = val_num)
 
   #comsir data
-  f = SelectLayersData(layers, layer='fis_comsir_bmsy_arc2016', narrow = TRUE) %>%
-    dplyr::select(
-      rgn_id         = id_num,
-      stock_id      = category,
-      year,
-      bmsy           = val_num)
+  #f = SelectLayersData(layers, layer='fis_comsir_bmsy_arc2016', narrow = TRUE) %>%
+    #dplyr::select(
+      #rgn_id         = id_num,
+      #stock_id      = category,
+      #year,
+      #bmsy           = val_num)
 
   # The following stocks are fished in multiple regions and have high b/bmsy values
   # Due to the underfishing penalty, this actually penalizes the regions that have the highest
@@ -45,7 +45,7 @@ FIS = function(layers, status_year){
   # separate out the stock_id and taxonkey:
   c <- c %>%
     mutate(stock_id_taxonkey = as.character(stock_id_taxonkey)) %>%
-    mutate(taxon_key = str_sub(stock_id_taxonkey, -6, -1)) %>%
+    mutate(taxon_key = stringr::str_sub(stock_id_taxonkey, -6, -1)) %>%
     mutate(stock_id = substr(stock_id_taxonkey, 1, nchar(stock_id_taxonkey)-7)) %>%
     mutate(catch = as.numeric(catch)) %>%
     mutate(year = as.numeric(as.character(year))) %>%
