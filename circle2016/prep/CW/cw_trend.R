@@ -94,3 +94,23 @@ for(scenario_year in 2012:2015){ #scenario_year=2015
     dplyr::select(ID, pressure_score)
   write.csv(score_data, file.path('prep/CW', sprintf('cw_chemical_score_3nm_%s.csv', scenario_year)), row.names=FALSE)
   }
+
+#####TREND CALCULATIONS#######
+
+new_data<- read.csv('prep/CW/cw_chemical_score_3nm_arc2016.csv')
+new_data<- new_data%>%
+  mutate(year = 2013) %>%
+  rename(chemical_pollution_2013_scaled = pressure_score)%>%
+  rename(rgn_id = ID)
+
+old_data <- read.csv("prep/CW/chemical_data_offshore_3nm.csv")
+old_data <- gather(old_data, "year", "pressure_score", starts_with("chemical"))
+old_data <- old_data %>%
+  mutate(year = gsub("chemical_pollution_", "", year)) %>%
+  mutate(year = gsub("_scaled", "", year)) %>%
+  mutate(year = as.numeric(as.character(year))) %>%
+  dplyr::select(ID, year, pressure_score)%>%
+  rename(rgn_id = ID)
+
+trend_data <- rbind(new_data, old_data)
+summary(trend_data)
