@@ -23,6 +23,14 @@ FIS = function(layers, status_year){
       year,
       bmsy           = val_num)
 
+  #comsir data
+  f = SelectLayersData(layers, layer='fis_comsir_bmsy_arc2016', narrow = TRUE) %>%
+    dplyr::select(
+      rgn_id         = id_num,
+      stock_id      = category,
+      year,
+      bmsy           = val_num)
+
   # The following stocks are fished in multiple regions and have high b/bmsy values
   # Due to the underfishing penalty, this actually penalizes the regions that have the highest
   # proportion of catch of these stocks.  The following corrects this problem:
