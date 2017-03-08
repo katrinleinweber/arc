@@ -1238,10 +1238,10 @@ CW = function(layers){
 
   # layers
   lyrs <- c('po_pathogens', 'po_nutrients_3nm', 'po_chemicals_3nm', 'po_trash',
-            'cw_pesticide_trend', 'cw_fertilizer_trend', 'cw_coastalpopn_trend', 'cw_pathogen_trend')
+            'cw_chemical_trend', 'cw_nutrient_trend', 'cw_trash_trend', 'cw_pathogen_trend')
 
   d <-  SelectLayersData(layers, layers=lyrs)  %>%
-    dplyr::select(region_id = id_num, layer, value = val_num)
+    select(region_id = id_num, layer, value = val_num)
 
   ### function to calculate geometric mean:
   geometric.mean2 <- function (x, na.rm = TRUE) {
@@ -1275,7 +1275,7 @@ CW = function(layers){
   # return scores
   scores = rbind(d_pressures, d_trends) %>%
     mutate(goal = "CW") %>%
-    dplyr::select(region_id, goal, dimension, score) %>%
+    select(region_id, goal, dimension, score) %>%
     data.frame()
 
   ## reference points

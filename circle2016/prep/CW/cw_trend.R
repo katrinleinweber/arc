@@ -97,10 +97,9 @@ for(scenario_year in 2012:2015){ #scenario_year=2015
 
 #####TREND CALCULATIONS#######
 
-new_data<- read.csv('prep/CW/cw_chemical_score_3nm_arc2016.csv')
-new_data<- new_data%>%
+chem_data<- read.csv('prep/CW/cw_chemical_score_3nm_arc2016.csv')
+new_data<- chem_data%>%
   mutate(year = 2013) %>%
-  rename(chemical_pollution_2013_scaled = pressure_score)%>%
   rename(rgn_id = ID)
 
 old_data <- read.csv("prep/CW/chemical_data_offshore_3nm.csv")
@@ -114,3 +113,25 @@ old_data <- old_data %>%
 
 trend_data <- rbind(new_data, old_data)
 summary(trend_data)
+
+## trend calculated on 3nm (not eez)
+for(scenario_year in 2012:2016){ #scenario_year=2012
+
+  ## NOTE: trends for 2012 are calculated with 3 years of data
+  ##      trends for 2013 are calculaed with 4 years of data, the other years are calculated with 5 years data
+  trend_years <- (scenario_year-7):(scenario_year-3)
+  adj_trend_year <- ifelse(scenario_year %in% 2016:2014, (scenario_year-7), 2007)
+
+  trends <- trend_data %>%
+    filter(!is.na(pressure_score)) %>%
+    group_by(rgn_id) %>%
+    do(mdl = lm(pressure_score ~ year, data=., subset=year %in% trend_years),
+       adjust_trend = .$pressure_score[.$year == adj_trend_year]) %>%
+    summarize(rgn_id, trend = ifelse(coef(mdl)['year']==0, 0, coef(mdl)['year']/adjust_trend * 5)) %>%
+    ungroup() %>%
+    mutate(trend = ifelse(trend>1, 1, trend)) %>%
+    mutate(trend = ifelse(trend<(-1), (-1), trend)) %>%
+    mutate(trend = round(trend, 4)) %>%
+    dplyr::select(rgn_id, trend)
+  write.csv(trends, file.path('prep/CW/final_trend', sprintf('cw_chemical_trend_%s_new.csv', scenario_year)), row.names=FALSE)
+}
