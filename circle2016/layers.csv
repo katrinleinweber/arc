@@ -9,13 +9,13 @@ AO,ao_need,ao_need_gl2016.csv,value,current international $,"Purchasing power pa
 Data sources:
 
 - The World Bank [GDP per capita, PPP (current international $)](http://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD)",equal,global purchasing power parity information was applied equally to all regions.,ao_need,~/github/ohi-global/eez2016/layers/ao_need.csv,rgn_id,,,year,value,,TRUE,1990,2013,0.068090281,0.508947133,TRUE,,,,9,FALSE
-CW,cw_chemical_trend,cw_chemical_trend_gl2016.csv,trend,trend score,Trends in chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
+CW,cw_chemical_trend,cw_chemical_trend_arc2016.csv,trend,trend score,Trends in chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_chemical_trend,~/github/ohi-global/eez2016/layers/cw_chemical_trend.csv,rgn_id,,,,trend,,TRUE,,,-0.000253113,0.002231989,FALSE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_chemical_trend,~/github/ohi-global/eez2016/layers/cw_chemical_trend_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.000253113,0.002231989,FALSE,,,,9,FALSE
 CW,cw_coastalpopn_trend,cw_coastalpopn_trend_gl2016.csv,trend,trend score,Coastal human population as a proxy for trend in trash,"Coastal population, defined as the total population inland of 25 miles, extracted from Gridded Population of the World (GPW) Population Density Grid Future Estimates.
 
 Data sources:
