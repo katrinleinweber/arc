@@ -16,12 +16,6 @@ Data sources:
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_chemical_trend,~/github/ohi-global/eez2016/layers/cw_chemical_trend_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.000253113,0.002231989,FALSE,,,,9,FALSE
-CW,cw_coastalpopn_trend,cw_coastalpopn_trend_gl2016.csv,trend,trend score,Coastal human population as a proxy for trend in trash,"Coastal population, defined as the total population inland of 25 miles, extracted from Gridded Population of the World (GPW) Population Density Grid Future Estimates.
-
-Data sources:
-
-- Center for International Earth Science Information Network (CIESIN)/Columbia University 
-- CIESIN & CIAT (Center for International Earth Science Information Network (CIESIN)/Columbia University, & Centro Internacional de Agricultura Tropical (CIAT)) (2005). **Gridded Population of the World, Version 3 (GPWv3): Population Density Grid, Future Estimates**. Palisades, NY. [NASA Socioeconomic Data and Applications Center (SEDAC)](http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-density-future-estimates)",equal,global trends were applied equally to all regions.,cw_coastalpopn_trend,~/github/ohi-global/eez2016/layers/cw_coastalpopn_trend.csv,rgn_id,,,,trend,,TRUE,,,-0.061697401,0.053740954,FALSE,,,,9,FALSE
 CW,cw_nutrient_trend,cw_nutrient_trend_arc2016.csv,trend,trend score,Trends in fertilizer pollution as a proxy for nutrient pollution,"Modeled data based on fertilizer consumption from the Food and Agricultural Organization (FAO; Halpern et al. 2015). 
 
 Data sources:
@@ -30,13 +24,13 @@ Data sources:
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 <<<<<<< HEAD
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",equal,global trends were applied equally to all regions.,cw_nutrient_trend,~/github/ohi-global/arc2016/layers/cw_nutrient_trend_arc2016.csv,rgn_id,,,,trend,,TRUE,,,1.34E-06,0.112572639,TRUE,,,,9,FALSE
-CW,cw_pathogen_trend,cw_pathogen_trend_gl2016.csv,trend,trend score,Trends in access to improved sanitation as a proxy for pathogen pollution trend,"Trends in percent of population without access to improved sanitation facilities.
+CW,cw_pathogen_trend,cw_pathogen_trend_arc2016.csv,trend,trend score,Trends in access to improved sanitation as a proxy for pathogen pollution trend,"Trends in percent of population without access to improved sanitation facilities.
 >>>>>>> 2eafba1d31af759687c432300aaa068c22f671db
 
 Data sources:
 
 - [World Health Organization and United Nations Children's Fund's Joint Monitoring Programme (WHO/UNICEF's JMP)](http://www.wssinfo.org/data-estimates/table)
-",equal,global trends were applied equally to all regions.,cw_pathogen_trend,~/github/ohi-global/eez2016/layers/cw_pathogen_trend.csv,rgn_id,,,,trend,,TRUE,,,-0.010709182,0.000499869,FALSE,,,,9,FALSE
+",equal,global trends were applied equally to all regions.,cw_pathogen_trend,~/github/ohi-global/arc2016/layers/cw_pathogen_trend_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.010709182,0.000499869,FALSE,,,,9,FALSE
 FIS,fis_b_bmsy_arc2016,fis_b_bmsy_arc2016.csv,bbmsy,B / B_msy,B/Bmsy estimates obtained using the catch-MSY method,"The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
