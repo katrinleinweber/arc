@@ -19,7 +19,7 @@ p4s_ice<- CRS('+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +a
 #regions_ice<- spTransform(poly_arc_rgn, p4s_ice) #reprojected arc so can crop it
 #writeOGR(regions_ice, dsn = 'prep/spatial', layer = 'regions_sea_ice', driver = "ESRI Shapefile"
 
-maps<- file.path('prep/spatial/pts')
+maps<- file.path('prep/spatial')
 
 # identify the year to save raw data file (Need to create this file)
 assessYear <- 'v2016'

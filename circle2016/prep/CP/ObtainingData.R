@@ -99,7 +99,7 @@ for (p in poles){
         r_type[r_water==1]=3
         r_type[r_shore==1]=2
         r_type[r_hole==1]=4
-        writeRaster(r_type, file.path(maps, sprintf('tmp2/%s_type.tif',p), overwrite=T))
+        writeRaster(r_type, file.path(maps, sprintf('pts/tmp2/%s_type.tif',p), overwrite=T))
         r.typ <- raster(file.path(maps, sprintf('tmp2/%s_type.tif',p)))
 
         OHIregion <- readOGR(dsn=file.path('prep/spatial'), layer=sprintf("regions_%s_seaice", p))
