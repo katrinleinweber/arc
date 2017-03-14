@@ -31,7 +31,7 @@ Data sources:
 
 - [World Health Organization and United Nations Children's Fund's Joint Monitoring Programme (WHO/UNICEF's JMP)](http://www.wssinfo.org/data-estimates/table)
 ",equal,global trends were applied equally to all regions.,cw_pathogen_trend,~/github/ohi-global/arc2016/layers/cw_pathogen_trend_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.010709182,0.000499869,FALSE,,,,9,FALSE
-CW,cw_trash_trend,cw_trash_trend_arc2016.csv,trend,trend score,Trends in plastic pollution,Trends in plastic,equal,global trends were applied equally to all regions.,cw_trash_trend,~/github/ohi-global/arc2016/layers/cw_trsh_trend_arc2016.csv,,,,,,,,,,,,,,,,,
+CW,cw_trash_trend,cw_trash_trend_arc2016.csv,trend,trend score,Trends in plastic pollution,Trends in plastic,equal,global trends were applied equally to all regions.,cw_trash_trend,~/github/ohi-global/arc2016/layers/cw_trash_trend_arc2016.csv,rgn_id,,,,trend,,,,,,,,,,,,
 FIS,fis_b_bmsy_arc2016,fis_b_bmsy_arc2016.csv,bbmsy,B / B_msy,B/Bmsy estimates obtained using the catch-MSY method,"The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
