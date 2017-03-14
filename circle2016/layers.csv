@@ -211,21 +211,21 @@ Data sources:
 
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org/)
 ",equal,global pressures data were applied equally to all regions.,hd_subtidal_sb,~/github/ohi-global/eez2016/layers/hd_subtidal_sb.csv,rgn_id,,,,pressures.score,,TRUE,,,0,0.06528264,TRUE,,,,9,FALSE
-pressures,po_chemicals,po_chemicals_gl2016.csv,pressure_score,pressure score,Chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
+pressures,po_chemicals,po_chemicals_arc2016.csv,pressure_score,pressure score,Chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_chemicals,~/github/ohi-global/eez2016/layers/po_chemicals.csv,rgn_id,,,,pressure_score,,TRUE,,,0.03588768,0.217506184,TRUE,,,,9,FALSE
-pressures,po_nutrients,po_nutrients_gl2016.csv,pressure_score,pressure score,Fertilizer pollution as a proxy for nutrient pollution,"Modeled data based on fertilizer consumption from the Food and Agricultural Organization (FAO, Halpern et al. 2015). 
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_chemicals,~/github/arc/circle2016/layers/po_chemicals_arc2016.csv,rgn_id,,,,pressure_score,,TRUE,,,0.03588768,0.217506184,TRUE,,,,9,FALSE
+pressures,po_nutrients,po_nutrients_arc2016.csv,pressure_score,pressure score,Fertilizer pollution as a proxy for nutrient pollution,"Modeled data based on fertilizer consumption from the Food and Agricultural Organization (FAO, Halpern et al. 2015). 
 
 Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 <<<<<<< HEAD
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/arc/circle2016/layers/po_nutrients_arc2016.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
 pressures,sp_alien,sp_alien_gl2016.csv,pressures.score,pressure score,Alien species,"The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 =======
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster,spatial data was extracted for each region. ,po_nutrients,~/github/ohi-global/eez2016/layers/po_nutrients.csv,rgn_id,,x,,pressure_score,,TRUE,,,6.56E-07,0.006232637,TRUE,,,,9,FALSE
@@ -239,35 +239,35 @@ pressures,ss_wgi,ss_wgi_gl2016.csv,score,pressure score,Weakness of governance i
 Data sources:
 
 - [Worldwide Governance Indicators (WGI)](http://info.worldbank.org/governance/wgi/index.asp)",equal,global pressures data were applied equally to all regions.,ss_wgi,~/github/ohi-global/eez2016/layers/ss_wgi.csv,rgn_id,,,,score,,TRUE,,,0.137874993,0.64237194,TRUE,,,,9,FALSE
-pressures CW,po_chemicals_3nm,po_chemicals_3nm_gl2016.csv,pressure_score,pressure score,Coastal chemical pollution within 3 nm offshore,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015), primarily land-based chemical pollution due to 3nm offshore buffer.
+pressures CW,po_chemicals_3nm,po_chemicals_3nm_arc2016.csv,pressure_score,pressure score,Coastal chemical pollution within 3 nm offshore,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015), primarily land-based chemical pollution due to 3nm offshore buffer.
 
 Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_chemicals_3nm,~/github/ohi-global/eez2016/layers/po_chemicals_3nm.csv,rgn_id,,,,pressure_score,,TRUE,,,0.049063058,0.386744753,TRUE,,,,9,FALSE
-pressures CW,po_nutrients_3nm,po_nutrients_3nm_gl2016.csv,pressure_score,pressure score,Coastal fertilizer pollution as a proxy for nutrient pollution within 3nm offshore,"Modeled data based on fertilizer consumption from the Food and Agricultural Organization (FAO, Halpern et al. 2015). 
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_chemicals_3nm,~/github/ohi-global/arc2016/layers/po_chemicals_3nm_arc2016.csv,rgn_id,,,,pressure_score,,TRUE,,,0.049063058,0.386744753,TRUE,,,,9,FALSE
+pressures CW,po_nutrients_3nm,po_nutrients_3nm_arc2016.csv,pressure_score,pressure score,Coastal fertilizer pollution as a proxy for nutrient pollution within 3nm offshore,"Modeled data based on fertilizer consumption from the Food and Agricultural Organization (FAO, Halpern et al. 2015). 
 
 Data sources:
 
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 <<<<<<< HEAD
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_nutrients_3nm,~/github/ohi-global/eez2016/layers/po_nutrients_3nm.csv,rgn_id,,,,pressure_score,,TRUE,,,4.63E-06,0.118426612,TRUE,,,,9,FALSE
-pressures CW,po_pathogens,po_pathogens_gl2016.csv,pressure_score,pressure score,Access to improved sanitation as a proxy for pathogen pollution,"Population without access to improved sanitation facilities. 
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)",raster | equal,,po_nutrients_3nm,~/github/ohi-global/arc2016/layers/po_nutrients_3nm_arc2016.csv,rgn_id,,,,pressure_score,,TRUE,,,4.63E-06,0.118426612,TRUE,,,,9,FALSE
+pressures CW,po_pathogens,po_pathogens_arc2016.csv,pressure_score,pressure score,Access to improved sanitation as a proxy for pathogen pollution,"Population without access to improved sanitation facilities. 
 >>>>>>> 2eafba1d31af759687c432300aaa068c22f671db
 
 Data sources:
 
 - [World Health Organization and United Nations Children's Fund's Joint Monitoring Programme (WHO/UNICEF's JMP)](http://www.wssinfo.org/data-estimates/table)
-",raster,spatial data was extracted for each region. ,po_pathogens,~/github/ohi-global/eez2016/layers/po_pathogens.csv,rgn_id,,,,pressure_score,,TRUE,,,0,0.119031117,TRUE,,,,9,FALSE
-pressures CW,po_trash,po_trash_gl2016.csv,pressure_score,pressure score,Trash pollution,"Global marine plastics (Eriksen et al. 2014)
+",raster,spatial data was extracted for each region. ,po_pathogens,~/github/ohi-global/arc2016/layers/po_pathogens_arc2016.csv,rgn_id,,,,pressure_score,,TRUE,,,0,0.119031117,TRUE,,,,9,FALSE
+pressures CW,po_trash,po_trash_arc2016.csv,pressure_score,pressure score,Trash pollution,"Global marine plastics (Eriksen et al. 2014)
 
 Data sources:
 
 - Eriksen M., Lebreton, L. C. M., Carson, H. S., Thiel, M., Moore, C. J. and Borerro, J. C.  (2014). 
 **Plastic pollution in the worldâs oceans: more than 5 trillion plastic pieces weighing over 250,000 tons afloat at sea**. _PLoS ONE_ 9:e111913. [doi:10.1371/journal.pone.0111913](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0111913). 
-- J. Afflerbach et al. (2015). [Methods](https://github.com/OHI-Science/ohiprep/tree/master/globalprep/CW_pressure_trash) ",equal,global pressures data were applied equally to all regions.,po_trash,~/github/ohi-global/eez2016/layers/po_trash.csv,rgn_id,,,,pressure_score,,TRUE,,,0.2287456,0.470546551,TRUE,,,,9,FALSE
+- J. Afflerbach et al. (2015). [Methods](https://github.com/OHI-Science/ohiprep/tree/master/globalprep/CW_pressure_trash) ",equal,global pressures data were applied equally to all regions.,po_trash,~/github/ohi-global/arc2016/layers/po_trash_arc2016.csv,rgn_id,,,,pressure_score,,TRUE,,,0.2287456,0.470546551,TRUE,,,,9,FALSE
 pressures resilience,element_wts_cp_km2_x_protection,element_wts_cp_km2_x_protection_gl2016.csv,extent_rank,extent*rank,Used to weight elements of coastal protection goal,"Habitat extent multiplied by habitat protection rank for: coral, mangrove (offshore and inland 1km), saltmarsh, sea ice (shoreline), and seagrass",equal,global pressures data were applied equally to all regions.,element_wts_cp_km2_x_protection,~/github/ohi-global/eez2016/layers/element_wts_cp_km2_x_protection.csv,rgn_id,,habitat,,extent_rank,,TRUE,,,3.493,2800227.273,FALSE,,,,9,FALSE
 pressures resilience,element_wts_cs_km2_x_storage,element_wts_cs_km2_x_storage_gl2016.csv,extent_rank,extent*CS capacity,Used to weight elements of carbon storage goal,"Habitat extent mulitiplied by habitat carbon storage capacity for: mangrove, saltmarsh and seagrass",area_offshore_3nm,global habitat extent was applied to each region after weighting by each region's offshore area to 3nm. ,element_wts_cs_km2_x_storage,~/github/ohi-global/eez2016/layers/element_wts_cs_km2_x_storage.csv,rgn_id,,habitat,,extent_rank,,TRUE,,,289.919,3306870,FALSE,,,,9,FALSE
 pressures resilience,element_wts_hab_pres_abs,element_wts_hab_pres_abs_gl2016.csv,boolean,boolean,Used to weight elements of habitat goal,List of regions with habitat (all habitats are weighted equally),equal,global pressures data were applied equally to all regions.,element_wts_hab_pres_abs,~/github/ohi-global/eez2016/layers/element_wts_hab_pres_abs.csv,rgn_id,,habitat,,boolean,,TRUE,,,1,1,TRUE,,,,9,FALSE
