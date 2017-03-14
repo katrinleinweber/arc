@@ -385,13 +385,13 @@ Data sources:
 - [International Union for Conservation of Nature (IUCN)](http://www.iucnredlist.org/technical-documents/classification-schemes/threats-classification-scheme)
 <<<<<<< HEAD
 ",equal,global trends were applied equally to each region. ,spp_trend,~/github/arc/circle2016/layers/spp_trend_arc2016.csv,rgn_id,,,,score,,TRUE,,,-0.246419683,-0.040942201,FALSE,,,,9,FALSE
-TR,tr_jobs_pct_tourism,tr_jobs_pct_tourism_arc2016.csv,Ep,percent,Percent direct employment in tourism,"Percent direct employment in tourism (WTTC).
+TR,tr_jobs_pct_tourism,tr_jobs_pct_tourism_arc2016.csv,pct,percent,Percent direct employment in tourism,"Percent direct employment in tourism (WTTC).
 =======
-",equal,global trends were applied equally to each region. ,spp_trend,~/github/arc/circle2016/layers/spp_trend_arc2016.csv,rgn_id,,,,score,,TRUE,,,-0.246419683,-0.040942201,FALSE,,,,9,FALSE
-TR,tr_jobs_total,tr_jobs_total_arc2016.csv,L,people,Total labor force,"Total labor force (number of people 15 years old and older who can supply labor for the production of goods and services) from World Bank assessments.
+",equal,global trends were applied equally to each region. ,spp_trend,~/github/arc/circle2016/layers/spp_trend_arc2016.csv,rgn_id,,,year,score,,TRUE,,,-0.246419683,-0.040942201,FALSE,,,,9,FALSE
+TR,tr_jobs_total,tr_jobs_total_arc2016.csv,employed,people,Total labor force,"Total labor force (number of people 15 years old and older who can supply labor for the production of goods and services) from World Bank assessments.
 =======
 ",population_inland25km,global tourism employee data were applied to each region after weighting by each region's coastal population.,tr_jobs_pct_tourism,~/github/ohi-global/eez2016/layers/tr_jobs_pct_tourism.csv,rgn_id,,,year,ep,,TRUE,1989,2013,0.00141717,0.0744584,TRUE,,,,9,FALSE
-TR,tr_jobs_tourism,tr_jobs_tourism_arc2016.csv,Ed,jobs,Direct employment in tourism,"Direct employment in tourism (WTTC).
+TR,tr_jobs_tourism,tr_jobs_tourism_arc2016.csv,jobs,jobs,Direct employment in tourism,"Direct employment in tourism (WTTC).
 =======
 ",population_inland25km,global total labor force data were applied to each region after weighting by each region's coastal population.,tr_jobs_total,~/github/ohi-global/eez2016/layers/tr_jobs_total.csv,rgn_id,,,year,l,,TRUE,1989,2013,2143500,158959000,FALSE,,,,9,FALSE
 TR,tr_sustainability,tr_sustainability_gl2016.csv,S_score,score,Sustainability index,"Tourism Competitiveness Index (TTCI) from the World Economic Forum
@@ -406,6 +406,6 @@ Data sources:
 
 <<<<<<< HEAD
 - [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,rgn_name,,rgn_name,,multiplier,,TRUE,,,0,1,TRUE,,,,9,FALSE
-TR,tr_unemployment,tr_unemployment_arc2016.csv,U,percent ,Percent unemployment,"Percent unemployment (The World Bank).
+TR,tr_unemployment,tr_unemployment_arc2016.csv,percent,percent ,Percent unemployment,"Percent unemployment (The World Bank).
 =======
 - [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,rgn_id,,rgn_name,,multiplier,,TRUE,,,0,1,TRUE,,,,9,FALSE
