@@ -99,8 +99,8 @@ for (p in poles){
         r_type[r_water==1]=3
         r_type[r_shore==1]=2
         r_type[r_hole==1]=4
-        writeRaster(r_type, file.name= (maps, sprintf('pts/tmp2/%s_type.tif',p)), overwrite=T))
-        r.typ <- raster(file.path(maps, sprintf('tmp2/%s_type.tif',p)))
+        writeRaster(r_type, file.path(maps, sprintf('pts/tmp2/%s_type.tif',p)), overwrite=T)
+        r.typ <- raster(file.path(maps, sprintf('pts/tmp2/%s_type.tif',p)))
 
         OHIregion <- readOGR(dsn=file.path('prep/spatial'), layer=sprintf("regions_%s_seaice", p))
         OHIregion_raster <- rasterize(OHIregion, r.typ, field="rgn_id", progress="text") # convert shapefile to a raster
@@ -112,7 +112,7 @@ for (p in poles){
         detach("package:tidyr", unload=TRUE)
         library("raster")
         OHIregion_points@data$type_nsidc <- extract(r.typ, OHIregion_points) #extract data from the ice data created above
-        writeOGR(OHIregion_points, dsn= file.path(maps, "tmp") , driver='ESRI Shapefile', layer=sprintf('%s_type_rgns_pts',p)) #save file
+        writeOGR(OHIregion_points, dsn= file.path(maps, "tmp") , driver='ESRI Shapefile', layer=sprintf('%s_type_rgns_pts',p), overwrite=T) #save file
       }
 
       #########################################################
@@ -123,7 +123,7 @@ for (p in poles){
       ### If at the start of the data, this reads in the points shp file created above
       # this assumes that the range starts with 1979:
       if (yr==1979 & mo==1){
-        pts =  readOGR(dsn=file.path('prep/spatial/pts'), layer=sprintf("%s_type_rgns_pts", p))
+        pts =  readOGR(dsn=file.path('prep/spatial/tmp'), layer=sprintf("%s_type_rgns_pts", p))
       }
 
       # add raster data (r) to the stack (s) and name:
