@@ -107,9 +107,9 @@ for (p in poles){
         OHIregion_raster[is.na(OHIregion_raster)] <- 0   #replace missing values with zero
         OHIregion_points <- rasterToPoints(OHIregion_raster, spatial=TRUE) #convert raster to points shapefile
         names(OHIregion_points@data) <- "rgn_id"
-        OHIregion_points@data <- left_join(OHIregion_points@data, OHIregion@data, by="rgn_id") #add some data to raster
-        detach("package:dplyr", unload=TRUE)
-        detach("package:tidyr", unload=TRUE)
+        OHIregion_points@data <- dplyr::left_join(OHIregion_points@data, OHIregion@data, by="rgn_id") #add some data to raster
+        detach_package(dplyr)
+        detach_package(tidyr)
         library("raster")
         OHIregion_points@data$type_nsidc <- extract(r.typ, OHIregion_points) #extract data from the ice data created above
         writeOGR(OHIregion_points, dsn= file.path(maps, "tmp") , driver='ESRI Shapefile', layer=sprintf('%s_type_rgns_pts',p), overwrite=T) #save file

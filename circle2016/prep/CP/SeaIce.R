@@ -46,4 +46,18 @@ n.pym=length(poles)*length(years)*length(months)
 i.pym = 0
 t0 = Sys.time()
 
+##run this first so packages can be detached in obtaining data###
+detach_package <- function(pkg, character.only = FALSE)
+{
+  if(!character.only)
+  {
+    pkg <- deparse(substitute(pkg))
+  }
+  search_item <- paste("package", pkg, sep = ":")
+  while(search_item %in% search())
+  {
+    detach(search_item, unload = TRUE, character.only = TRUE)
+  }
+}
 source("prep/CP/ObtainingData.R")
+
