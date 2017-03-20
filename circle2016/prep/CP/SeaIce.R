@@ -39,7 +39,7 @@ prj.mol = '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m 
 ub.n = 'ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_nasateam_seaice/final-gsfc/north/monthly'
 ub.s = 'ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_nasateam_seaice/final-gsfc/south/monthly'
 
-poles = c('n','s')
+poles = 'p'
 years = c(1979:final.year)  #Full range of data
 months = 1:12
 n.pym=length(poles)*length(years)*length(months)
@@ -60,4 +60,5 @@ detach_package <- function(pkg, character.only = FALSE)
   }
 }
 source("prep/CP/ObtainingData.R")
+
 

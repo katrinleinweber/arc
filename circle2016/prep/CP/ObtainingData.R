@@ -1,7 +1,7 @@
 
 
 for (p in poles){
-  #p='n'  #testing
+  p='n'  #testing
 
   ######################################################
   ## Create an empty raster stack with appropriate dimensions
@@ -81,7 +81,7 @@ for (p in poles){
       ###    5. saves file as: s_type_rgns_pts.shp or n_type_rgns_pts.shp
       ###
       #######################################################################################################
-      pts.shp = file.path(maps, sprintf('%s_type_rgns_pts.shp', p))
+      pts.shp = file.path(maps, sprintf('tmp/%s_type_rgns_pts.shp', p))
 
       if (!file.exists(pts.shp)){ #if this file exists in the working directory this is not run.
         ## This takes the raster cells that are identified as something other than ice (i.e., land, water, etc.)
@@ -125,17 +125,6 @@ for (p in poles){
       if (yr==1979 & mo==1){
         pts =  readOGR(dsn=file.path('prep/spatial/tmp'), layer=sprintf("%s_type_rgns_pts", p))
       }
-
-      # add raster data (r) to the stack (s) and name:
-      s.names = names(s) # class(s) # nlayers(s)
-      if (nlayers(s) == 0){
-        s = stack(r)
-        names(s) = p.y.m
-      } else {
-        s = stack(s, r)
-        names(s) = c(s.names, p.y.m)
-      }
-
 
       # extracts data from the downloaded raster and appends it to the shp file
       pts@data[p.y.m] = raster::extract(r, pts) # summary(pts@data[p.y.m]); head(pts@data); table(pts$s198001, pts$rgn)
