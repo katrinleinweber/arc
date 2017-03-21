@@ -126,6 +126,16 @@ for (p in poles){
         pts =  readOGR(dsn=file.path('prep/spatial/tmp'), layer=sprintf("%s_type_rgns_pts", p))
       }
 
+      # add raster data (r) to the stack (s) and name:
+      s.names = names(s) # class(s) # nlayers(s)
+      if (nlayers(s) == 0){
+        s = stack(r)
+        names(s) = p.y.m
+      } else {
+        s = stack(s, r)
+        names(s) = c(s.names, p.y.m)
+      }
+
       # extracts data from the downloaded raster and appends it to the shp file
       pts@data[p.y.m] = raster::extract(r, pts) # summary(pts@data[p.y.m]); head(pts@data); table(pts$s198001, pts$rgn)
 
