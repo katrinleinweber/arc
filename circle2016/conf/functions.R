@@ -594,22 +594,6 @@ CP <- function(layers){
     dplyr::select(rgn_id, habitat, km2) %>%
     mutate(habitat = as.character(habitat))
 
-  # sum mangrove_offshore + mangrove_inland1km = mangrove to match with extent and trend
-  mangrove_extent <- extent %>%
-    filter(habitat %in% c('mangrove_inland1km','mangrove_offshore'))
-
-  if (nrow(mangrove_extent) > 0){
-    mangrove_extent <- mangrove_extent %>%
-      group_by(rgn_id) %>%
-      summarize(km2 = sum(km2, na.rm = TRUE)) %>%
-      mutate(habitat='mangrove') %>%
-      ungroup()
-  }
-
-  extent <- extent %>%
-    filter(!habitat %in% c('mangrove','mangrove_inland1km','mangrove_offshore')) %>%  #do not use all mangrove
-    rbind(mangrove_extent)  #just the inland 1km and offshore
-
 
   health <-  layers$data[['hab_health']] %>%
     dplyr::select(rgn_id, habitat, health) %>%
@@ -665,7 +649,7 @@ CP <- function(layers){
       filter(!is.na(rank) & !is.na(trend) & !is.na(extent))
 
     if (nrow(d_trend) > 0 ){
-      scores_CP <- rbind_list(
+      scores_CP <- bind_rows(
         scores_CP,
         d_trend %>%
           group_by(rgn_id) %>%
@@ -1307,7 +1291,7 @@ HAB = function(layers){
   d <- health %>%
     full_join(trend, by = c('rgn_id', 'habitat')) %>%
     full_join(extent, by = c('rgn_id', 'habitat')) %>%
-    filter(habitat %in% c('coral','mangrove','saltmarsh','seaice_edge','seagrass','soft_bottom')) %>%
+    filter(habitat %in% c('seaice_edge','soft_bottom')) %>%
     mutate(w  = ifelse(!is.na(extent) & extent > 0, 1, NA)) %>%
     filter(!is.na(w))
 
