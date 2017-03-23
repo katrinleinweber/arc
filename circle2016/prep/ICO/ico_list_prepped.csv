@@ -1,0 +1,140 @@
+comname,sciname,ico_gl,ico_rgn_id,iucn_sid,subpop,cat
+Arctic skua,Stercorarius parasiticus,FALSE,8,22694245,NA,LC
+Arctic skua,Stercorarius parasiticus,FALSE,9,22694245,NA,LC
+Arctic skua,Stercorarius parasiticus,FALSE,5,22694245,NA,LC
+Arctic skua,Stercorarius parasiticus,FALSE,6,22694245,NA,LC
+Arctic tern,Sterna paradisaea,FALSE,8,22694629,NA,LC
+Arctic tern,Sterna paradisaea,FALSE,9,22694629,NA,LC
+Arctic tern,Sterna paradisaea,FALSE,7,22694629,NA,LC
+Arctic tern,Sterna paradisaea,FALSE,5,22694629,NA,LC
+Arctic tern,Sterna paradisaea,FALSE,6,22694629,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,8,8010,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,9,8010,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,5,8010,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,6,8010,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,7,8010,NA,LC
+Beluga Whale,Delphinapterus leucas,FALSE,1,6335,NA,NT
+Beluga Whale,Delphinapterus leucas,FALSE,1,61442,Cook Inlet subpopulation,CR
+Beluga Whale,Delphinapterus leucas,FALSE,2,6335,NA,NT
+Beluga Whale,Delphinapterus leucas,FALSE,2,61442,Cook Inlet subpopulation,CR
+Beluga Whale,Delphinapterus leucas,FALSE,3,6335,NA,NT
+Beluga Whale,Delphinapterus leucas,FALSE,3,61442,Cook Inlet subpopulation,CR
+Beluga whale,Delphinapterus leucas,FALSE,8,6335,NA,NT
+Beluga whale,Delphinapterus leucas,FALSE,8,61442,Cook Inlet subpopulation,CR
+Beluga whale,Delphinapterus leucas,FALSE,9,6335,NA,NT
+Beluga whale,Delphinapterus leucas,FALSE,9,61442,Cook Inlet subpopulation,CR
+Black guillemot,Cepphus grylle,FALSE,8,22694861,NA,LC
+Black guillemot,Cepphus grylle,FALSE,9,22694861,NA,LC
+Black guillemot,Cepphus grylle,FALSE,5,22694861,NA,LC
+Black guillemot,Cepphus grylle,FALSE,6,22694861,NA,LC
+Blue whale,Balaenoptera musculus,TRUE,NA,2477,NA,EN
+Bottlenosed dolphin,Tursiops truncatus,FALSE,8,22563,NA,LC
+Bottlenosed dolphin,Tursiops truncatus,FALSE,8,194300,Fiordland subpopulation,CR
+Bottlenosed dolphin,Tursiops truncatus,FALSE,8,16369383,Mediterranean subpopulation,VU
+Bottlenosed dolphin,Tursiops truncatus,FALSE,9,22563,NA,LC
+Bottlenosed dolphin,Tursiops truncatus,FALSE,9,194300,Fiordland subpopulation,CR
+Bottlenosed dolphin,Tursiops truncatus,FALSE,9,16369383,Mediterranean subpopulation,VU
+Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,22563,NA,LC
+Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,194300,Fiordland subpopulation,CR
+Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,16369383,Mediterranean subpopulation,VU
+Bowhead whale,Balaena mysticetus,TRUE,NA,2469,Okhotsk Sea subpopulation,EN
+Bowhead whale,Balaena mysticetus,TRUE,NA,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead whale,Balaena mysticetus,TRUE,NA,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead whale,Balaena mysticetus,TRUE,NA,2467,NA,LC
+Common guillemot,Uria aalge,FALSE,8,22694841,NA,LC
+Common guillemot,Uria aalge,FALSE,9,22694841,NA,LC
+Common guillemot,Uria aalge,FALSE,7,22694841,NA,LC
+Eider,Somateria mollissima,FALSE,5,22680405,NA,NT
+Eider,Somateria mollissima,FALSE,8,22680405,NA,NT
+Eider,Somateria mollissima,FALSE,9,22680405,NA,NT
+Fin whale,Balaenoptera physalus,TRUE,NA,16208224,Mediterranean subpopulation,VU
+Fin whale,Balaenoptera physalus,TRUE,NA,2478,NA,EN
+fulmar,Fulmarus glacialis,FALSE,5,22697866,NA,LC
+Fulmar,Fulmarus glacialis,FALSE,8,22697866,NA,LC
+Fulmar,Fulmarus glacialis,FALSE,9,22697866,NA,LC
+Glaucous gull,Larus hyperboreus,FALSE,5,22694343,NA,LC
+Glaucous gull,Larus hyperboreus,FALSE,8,22694343,NA,LC
+Glaucous gull,Larus hyperboreus,FALSE,9,22694343,NA,LC
+Harbour porpoise,Phocoena phocoena,FALSE,4,17027,NA,LC
+Harbour porpoise,Phocoena phocoena,FALSE,4,17031,Baltic Sea subpopulation,CR
+Harbour Porpoise,Phocoena phocoena,FALSE,2,17027,NA,LC
+Harbour Porpoise,Phocoena phocoena,FALSE,2,17031,Baltic Sea subpopulation,CR
+Harbour Porpoise,Phocoena phocoena,FALSE,3,17027,NA,LC
+Harbour Porpoise,Phocoena phocoena,FALSE,3,17031,Baltic Sea subpopulation,CR
+Harbour porpoise,Phocoena phocoena,FALSE,8,17027,NA,LC
+Harbour porpoise,Phocoena phocoena,FALSE,8,17031,Baltic Sea subpopulation,CR
+Harbour porpoise,Phocoena phocoena,FALSE,9,17027,NA,LC
+Harbour porpoise,Phocoena phocoena,FALSE,9,17031,Baltic Sea subpopulation,CR
+Harbour seal,Phoca vitulina,FALSE,4,17013,NA,LC
+Harbour seal,Phoca vitulina,FALSE,5,17013,NA,LC
+Harbour seal,Phoca vitulina,FALSE,2,17013,NA,LC
+Harbour seal,Phoca vitulina,FALSE,3,17013,NA,LC
+Harbour seal,Phoca vitulina,FALSE,8,17013,NA,LC
+Harbour seal,Phoca vitulina,FALSE,9,17013,NA,LC
+Hooded Seal,Cystophora cristata,FALSE,2,6204,NA,VU
+Hooded Seal,Cystophora cristata,FALSE,3,6204,NA,VU
+Hooded seal,Cystophora cristata,FALSE,8,6204,NA,VU
+Hooded seal,Cystophora cristata,FALSE,9,6204,NA,VU
+Hooded seal,Cystophora cristata,FALSE,5,6204,NA,VU
+Humpback Whale,Megaptera novaeangliae,TRUE,NA,132835,Arabian Sea subpopulation,EN
+Humpback Whale,Megaptera novaeangliae,TRUE,NA,13006,NA,LC
+Humpback Whale,Megaptera novaeangliae,TRUE,NA,132832,Oceania subpopulation,EN
+Ivory Gull,Pagophila eburnea,FALSE,2,22694473,NA,NT
+Ivory Gull,Pagophila eburnea,FALSE,3,22694473,NA,NT
+Ivory gull,Pagophila eburnea,FALSE,8,22694473,NA,NT
+Ivory gull,Pagophila eburnea,FALSE,9,22694473,NA,NT
+Ivory gull,Pagophila eburnea,FALSE,5,22694473,NA,NT
+Killer Whale,Orcinus orca,FALSE,2,15421,NA,DD
+Killer Whale,Orcinus orca,FALSE,3,15421,NA,DD
+Killer whale,Orcinus orca,FALSE,8,15421,NA,DD
+Killer whale,Orcinus orca,FALSE,9,15421,NA,DD
+Killer whale,Orcinus orca,FALSE,NA,15421,NA,DD
+King Eider,Somateria spectabilis,FALSE,8,22680409,NA,LC
+King Eider,Somateria spectabilis,FALSE,9,22680409,NA,LC
+King eider,Somateria spectabilis,FALSE,5,22680409,NA,LC
+Little auk,Alle alle,FALSE,5,22694837,NA,LC
+Little auk,Alle alle,FALSE,8,22694837,NA,LC
+Little auk,Alle alle,FALSE,9,22694837,NA,LC
+Minke whale,Balaenoptera acutorostrata,TRUE,NA,2474,NA,LC
+Narhwal,Monodon monoceros,FALSE,8,13704,NA,NT
+Narhwal,Monodon monoceros,FALSE,9,13704,NA,NT
+Narwhal,Monodon monoceros,FALSE,2,13704,NA,NT
+Narwhal,Monodon monoceros,FALSE,3,13704,NA,NT
+Narwhal,Monodon monoceros,FALSE,5,13704,NA,NT
+Narwhale,Monodon monoceros,FALSE,4,13704,NA,NT
+North Atlantic right whale,Eubalaena glacialis,FALSE,8,41712,NA,EN
+North Atlantic right whale,Eubalaena glacialis,FALSE,9,41712,NA,EN
+North Atlantic right whale,Eubalaena glacialis,FALSE,4,41712,NA,EN
+Pink-footed Goose,Anser brachyrhynchus,FALSE,5,22679872,NA,LC
+Pink-footed Goose,Anser brachyrhynchus,FALSE,8,22679872,NA,LC
+Pink-footed Goose,Anser brachyrhynchus,FALSE,9,22679872,NA,LC
+Polar bear,Ursus maritimus,TRUE,NA,22823,NA,VU
+Pomarine,Stercorarius pomarinus,FALSE,8,22694240,NA,LC
+Pomarine,Stercorarius pomarinus,FALSE,9,22694240,NA,LC
+Pomarine skua,Stercorarius pomarinus,FALSE,5,22694240,NA,LC
+Purple sandpiper,Calidris maritima,FALSE,8,22693420,NA,LC
+Purple sandpiper,Calidris maritima,FALSE,9,22693420,NA,LC
+purple sandpipers,Calidris maritima,FALSE,5,22693420,NA,LC
+Ringed plover,Charadrius hiaticula,FALSE,5,22693759,NA,LC
+Ringed Plover,Charadrius hiaticula,FALSE,8,22693759,NA,LC
+Ringed Plover,Charadrius hiaticula,FALSE,9,22693759,NA,LC
+Ringed seal,Pusa hispida,FALSE,2,41672,NA,LC
+Ringed seal,Pusa hispida,FALSE,3,41672,NA,LC
+Ringed seal,Pusa hispida,FALSE,8,41672,NA,LC
+Ringed seal,Pusa hispida,FALSE,9,41672,NA,LC
+Ringed seal,Pusa hispida,FALSE,5,41672,NA,LC
+Salmon,Salmo salar,FALSE,6,19855,NA,LR/lc
+Salmon,Salmo salar,FALSE,8,19855,NA,LR/lc
+Salmon,Salmo salar,FALSE,9,19855,NA,LR/lc
+sanderling,Calidris alba,FALSE,5,22693369,NA,LC
+Sanderling,Calidris alba,FALSE,8,22693369,NA,LC
+Sanderling,Calidris alba,FALSE,9,22693369,NA,LC
+Sei whale,Balaenoptera borealis,TRUE,NA,2475,NA,EN
+Walrus,Odobenus rosmarus,FALSE,2,15106,NA,DD
+Walrus,Odobenus rosmarus,FALSE,3,15106,NA,DD
+Walrus,Odobenus rosmarus,FALSE,4,15106,NA,DD
+Walrus,Odobenus rosmarus,FALSE,5,15106,NA,DD
+White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,11142,NA,LC
+White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,11142,NA,LC
+White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,11142,NA,LC
+White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,11142,NA,LC
