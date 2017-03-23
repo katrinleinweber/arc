@@ -3,7 +3,7 @@
 ##
 ######################################
 
-source('../ohiprep/src/R/common.R')
+source('~/github/ohiprep/src/R/common.R')
 
 library(raster)
 library(rgdal)
@@ -12,7 +12,7 @@ library(dplyr)
 
 ##Arc region in mol
 
-spatial_dir<- 'circle2016/prep/spatial'
+spatial_dir<- 'prep/spatial'
 layer_arc<- 'arctic_eezs'
 poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
 p4s_arc<- CRS('+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs') #create p4s in mol to match chem data
@@ -39,12 +39,13 @@ plot(pressure_stack[[5]], col=rev(heat.colors(255)))
 click(pressure_stack[[5]])
 
 ##extract
-slr_data <- raster::extract(pressure_stack, poly_arc_rgn2, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
+slr_data <- raster::extract(pressure_stack, poly_arc_rgn, na.rm=TRUE, normalizeWeights=FALSE, fun=mean, df=TRUE, progress="text")
 prs_slr<- gather(slr_data, "year", "pressure_score", starts_with("slr"))
 prs_slr2 <- prs_slr %>%
   mutate(year=gsub('slr_', '', year)) %>%
   mutate(year = as.numeric(year)) %>%
-  dplyr::select(ID, year, pressure_score)
+  dplyr::select(ID=rgn_id, year, pressure_score)%>%
+  filter(rgn_id!=10)
 
 ###extract data more easily
 saveData <- function(newYear){
