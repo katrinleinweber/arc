@@ -205,7 +205,7 @@ pressures,hd_subtidal_hb,hd_subtidal_hb_gl2016.csv,value,pressure score,High byc
 Data sources:
 
 - [Reefs at Risk Revisited](http://www.wri.org/publication/reefs-at-risk-revisited) ",equal,global pressures data were applied equally to all regions.,hd_subtidal_hb,~/github/ohi-global/eez2016/layers/hd_subtidal_hb.csv,rgn_id,,,,value,,TRUE,,,0,0.06528264,TRUE,,,,9,FALSE
-pressures,hd_subtidal_sb,hd_subtidal_sb_gl2016.csv,pressures.score,pressure score,Demersal destructive commercial fishing practices relative to soft-bottom habitat area as a proxy for soft bottom habitat destruction,"Spatially distributed commercial catch data by fishing gear type, developed by Sea Around Us Project and habitat data.
+pressures,hd_subtidal_sb,hd_subtidal_sb_arc2016.csv,pressures.score,pressure score,Demersal destructive commercial fishing practices relative to soft-bottom habitat area as a proxy for soft bottom habitat destruction,"Spatially distributed commercial catch data by fishing gear type, developed by Sea Around Us Project and habitat data.
 
 Data sources:
 
