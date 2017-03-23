@@ -1,122 +1,118 @@
 comname,sciname,ico_gl,ico_rgn_id
-Arctic skua,Stercocarius parasiticus,,8
-Arctic skua,Stercocarius parasiticus,,9
-Arctic skua,Stercocarius parasiticus,,5
-Arctic skua,Stercocarius parasiticus,,6
-Arctic tern,Sterna paradisaea,,8
-Arctic tern,Sterna paradisaea,,9
-Arctic tern,Sterna paradisaea,,7
-Arctic tern ,Sterna paradisaea,,5
-Arctic tern ,Sterna paradisaea,,6
-Bearded seal,Erignathus barbatus,,8
-Bearded seal,Erignathus barbatus,,9
-Bearded seal ,Erignathus barbatus,,5
-Bearded seal ,Erignathus barbatus,,6
-Bearded seal ,Erignathus barbatus,,7
-Beluga Whale,Delphinapterus leucas,,1
-Beluga Whale,Delphinapterus leucas,,2
-Beluga Whale,Delphinapterus leucas,,3
-Beluga whale,Delphinapterus leucas,,8
-Beluga whale,Delphinapterus leucas,,9
-Black guillemot,Cepphus grylle,,8
-Black guillemot,Cepphus grylle,,9
-Black guillemot ,Cepphus grylle,,5
-Black guillemot ,Cepphus grylle,,6
+Arctic skua,Stercorarius parasiticus,FALSE,8
+Arctic skua,Stercorarius parasiticus,FALSE,9
+Arctic skua,Stercorarius parasiticus,FALSE,5
+Arctic skua,Stercorarius parasiticus,FALSE,6
+Arctic tern,Sterna paradisaea,FALSE,8
+Arctic tern,Sterna paradisaea,FALSE,9
+Arctic tern,Sterna paradisaea,FALSE,7
+Arctic tern ,Sterna paradisaea,FALSE,5
+Arctic tern ,Sterna paradisaea,FALSE,6
+Bearded seal,Erignathus barbatus,FALSE,8
+Bearded seal,Erignathus barbatus,FALSE,9
+Bearded seal ,Erignathus barbatus,FALSE,5
+Bearded seal ,Erignathus barbatus,FALSE,6
+Bearded seal ,Erignathus barbatus,FALSE,7
+Beluga Whale,Delphinapterus leucas,FALSE,1
+Beluga Whale,Delphinapterus leucas,FALSE,2
+Beluga Whale,Delphinapterus leucas,FALSE,3
+Beluga whale,Delphinapterus leucas,FALSE,8
+Beluga whale,Delphinapterus leucas,FALSE,9
+Black guillemot,Cepphus grylle,FALSE,8
+Black guillemot,Cepphus grylle,FALSE,9
+Black guillemot ,Cepphus grylle,FALSE,5
+Black guillemot ,Cepphus grylle,FALSE,6
 Blue whale,Balaenoptera musculus,TRUE,NA
-Bottlenosed dolphin,Tursiops truncatus,,8
-Bottlenosed dolphin,Tursiops truncatus,,9
-Bottle-nosed dolphin,Tursiops truncatus,,4
+Bottlenosed dolphin,Tursiops truncatus,FALSE,8
+Bottlenosed dolphin,Tursiops truncatus,FALSE,9
+Bottle-nosed dolphin,Tursiops truncatus,FALSE,4
 Bowhead whale,Balaena mysticetus,TRUE,NA
-Common guillemot,Uria aalge,,8
-Common guillemot,Uria aalge,,9
-Common guillemot ,Uria aalge,,7
-Eider,Somateria mollissima,,5
-Eider,Somateria mollissima,,8
-Eider,Somateria mollissima,,9
+Common guillemot,Uria aalge,FALSE,8
+Common guillemot,Uria aalge,FALSE,9
+Common guillemot ,Uria aalge,FALSE,7
+Eider,Somateria mollissima,FALSE,5
+Eider,Somateria mollissima,FALSE,8
+Eider,Somateria mollissima,FALSE,9
 Fin whale,Balaenoptera physalus,TRUE,NA
-fulmar,Fulmarus glacialis,,5
-Fulmar,Fulmarus glacialis,,8
-Fulmar,Fulmarus glacialis,,9
-Glaucous gull,Larus hyperboreus,,5
-Glaucous gull,Larus hyperboreus,,8
-Glaucous gull,Larus hyperboreus,,9
-Harbour porpoise,Phocoena phocoena,,4
-Harbour Porpoise,Phocoena phocoena vomerina,,2
-Harbour Porpoise,Phocoena phocoena vomerina,,3
-Harbour porpoise,Phocoena phocoena vomerina,,8
-Harbour porpoise,Phocoena phocoena vomerina,,9
-Harbour seal,Phoca vitulina,,4
-Harbour seal,Phoca vitulina,,5
-Harbour Seal,Phoca vitulina concolor,,2
-Harbour Seal,Phoca vitulina concolor,,3
-Harbour seal,Phoca vitulina concolor,,8
-Harbour seal,Phoca vitulina concolor,,9
-Hooded Seal,Cystophora cristata,,2
-Hooded Seal,Cystophora cristata,,3
-Hooded seal,Cystophora cristata,,8
-Hooded seal,Cystophora cristata,,9
-Hooded seal ,Cystophora cristata,,5
+fulmar,Fulmarus glacialis,FALSE,5
+Fulmar,Fulmarus glacialis,FALSE,8
+Fulmar,Fulmarus glacialis,FALSE,9
+Glaucous gull,Larus hyperboreus,FALSE,5
+Glaucous gull,Larus hyperboreus,FALSE,8
+Glaucous gull,Larus hyperboreus,FALSE,9
+Harbour porpoise,Phocoena phocoena,FALSE,4
+Harbour Porpoise,Phocoena phocoena,FALSE,2
+Harbour Porpoise,Phocoena phocoena,FALSE,3
+Harbour porpoise,Phocoena phocoena,FALSE,8
+Harbour porpoise,Phocoena phocoena,FALSE,9
+Harbour seal,Phoca vitulina,FALSE,4
+Harbour seal,Phoca vitulina,FALSE,5
+Harbour seal,Phoca vitulina,FALSE,2
+Harbour seal,Phoca vitulina,FALSE,3
+Harbour seal,Phoca vitulina,FALSE,8
+Harbour seal,Phoca vitulina,FALSE,9
+Hooded Seal,Cystophora cristata,FALSE,2
+Hooded Seal,Cystophora cristata,FALSE,3
+Hooded seal,Cystophora cristata,FALSE,8
+Hooded seal,Cystophora cristata,FALSE,9
+Hooded seal ,Cystophora cristata,FALSE,5
 Humpback Whale,Megaptera novaeangliae,TRUE,NA
-Ivory Gull,Pagophila eburnea,,2
-Ivory Gull,Pagophila eburnea,,3
-Ivory gull,Pagophila eburnea,,8
-Ivory gull,Pagophila eburnea,,9
-Ivory gull ,Pagophila eburnea,,5
-Killer Whale,Orcinus orca,,2
-Killer Whale,Orcinus orca,,3
-Killer whale,Orcinus orca,,8
-Killer whale,Orcinus orca,,9
-Killer whale ,Orcinus orca,,
-King Eider,Somateria spectabilis,,8
-King Eider,Somateria spectabilis,,9
-King eider ,Somateria spectabilis,,5
-Little auk ,Alle alle,,5
-Little auk ,Alle alle,,8
-Little auk ,Alle alle,,9
+Ivory Gull,Pagophila eburnea,FALSE,2
+Ivory Gull,Pagophila eburnea,FALSE,3
+Ivory gull,Pagophila eburnea,FALSE,8
+Ivory gull,Pagophila eburnea,FALSE,9
+Ivory gull ,Pagophila eburnea,FALSE,5
+Killer Whale,Orcinus orca,FALSE,2
+Killer Whale,Orcinus orca,FALSE,3
+Killer whale,Orcinus orca,FALSE,8
+Killer whale,Orcinus orca,FALSE,9
+Killer whale ,Orcinus orca,FALSE,
+King Eider,Somateria spectabilis,FALSE,8
+King Eider,Somateria spectabilis,FALSE,9
+King eider ,Somateria spectabilis,FALSE,5
+Little auk ,Alle alle,FALSE,5
+Little auk ,Alle alle,FALSE,8
+Little auk ,Alle alle,FALSE,9
 Minke whale,Balaenoptera acutorostrata,TRUE,NA
-Narhwal,Monodon monoceros,,8
-Narhwal,Monodon monoceros,,9
-Narwhal,Monodon monoceros,,2
-Narwhal,Monodon monoceros,,3
-Narwhal ,Monodon monoceros,,5
-Narwhale,Monodon monoceros,,4
-North Atlantic right whale,Eubalaena glacialis,,8
-North Atlantic right whale,Eubalaena glacialis,,9
-North Atlantic right whale,Eubalaena glacialis,,4
-Pink-footed Goose,Anser brachyrhynchus,,5
-Pink-footed Goose,Anser brachyrhynchus,,8
-Pink-footed Goose,Anser brachyrhynchus,,9
+Narhwal,Monodon monoceros,FALSE,8
+Narhwal,Monodon monoceros,FALSE,9
+Narwhal,Monodon monoceros,FALSE,2
+Narwhal,Monodon monoceros,FALSE,3
+Narwhal ,Monodon monoceros,FALSE,5
+Narwhale,Monodon monoceros,FALSE,4
+North Atlantic right whale,Eubalaena glacialis,FALSE,8
+North Atlantic right whale,Eubalaena glacialis,FALSE,9
+North Atlantic right whale,Eubalaena glacialis,FALSE,4
+Pink-footed Goose,Anser brachyrhynchus,FALSE,5
+Pink-footed Goose,Anser brachyrhynchus,FALSE,8
+Pink-footed Goose,Anser brachyrhynchus,FALSE,9
 Polar bear,Ursus maritimus,TRUE,NA
-Pomarine,Stercorarius pomarinus,,8
-Pomarine,Stercorarius pomarinus,,9
-Pomarine skua ,Stercorarius pomarinus,,5
-Purple sandpiper,Calidris maritima,,8
-Purple sandpiper,Calidris maritima,,9
-purple sandpipers,Calidris maritima,,5
-Ringed plover,Charadrius hiaticula,,5
-Ringed Plover,Charadrius hiaticula,,8
-Ringed Plover,Charadrius hiaticula,,9
-Ringed Seal,Phoca hispida,,2
-Ringed Seal,Phoca hispida,,3
-Ringed seal,Phoca hispida,,8
-Ringed seal,Phoca hispida,,9
-Ringed seal ,Phoca hispida,,5
-Salmon,Salmo salar,,6
-Salmon,Salmo salar,,8
-Salmon,Salmo salar,,9
-sanderling,Calidris alba,,5
-Sanderling,Calidris alba,,8
-Sanderling,Calidris alba,,9
+Pomarine,Stercorarius pomarinus,FALSE,8
+Pomarine,Stercorarius pomarinus,FALSE,9
+Pomarine skua ,Stercorarius pomarinus,FALSE,5
+Purple sandpiper,Calidris maritima,FALSE,8
+Purple sandpiper,Calidris maritima,FALSE,9
+purple sandpipers,Calidris maritima,FALSE,5
+Ringed plover,Charadrius hiaticula,FALSE,5
+Ringed Plover,Charadrius hiaticula,FALSE,8
+Ringed Plover,Charadrius hiaticula,FALSE,9
+Ringed seal,Pusa hispida,FALSE,2
+Ringed seal,Pusa hispida,FALSE,3
+Ringed seal,Pusa hispida,FALSE,8
+Ringed seal,Pusa hispida,FALSE,9
+Ringed seal ,Pusa hispida,FALSE,5
+Salmon,Salmo salar,FALSE,6
+Salmon,Salmo salar,FALSE,8
+Salmon,Salmo salar,FALSE,9
+sanderling,Calidris alba,FALSE,5
+Sanderling,Calidris alba,FALSE,8
+Sanderling,Calidris alba,FALSE,9
 Sei whale,Balaenoptera borealis,TRUE,NA
-Walrus,Odobenus rosmarus,,2
-Walrus,Odobenus rosmarus,,3
-Walrus,Odobenus rosmarus,,4
-Walrus,Odobenus rosmarus,,5
-White-beaked dolphin ,Lagenorhynchus albirostris,,8
-White-beaked dolphin ,Lagenorhynchus albirostris,,9
-White-beaked dolphin ,Lagenorhynchus albirostris,,4
-White-beaked dolphin ,Lagenorhynchus albirostris,,5
-,,,
-,,,
-,,,
-,,,
+Walrus,Odobenus rosmarus,FALSE,2
+Walrus,Odobenus rosmarus,FALSE,3
+Walrus,Odobenus rosmarus,FALSE,4
+Walrus,Odobenus rosmarus,FALSE,5
+White-beaked dolphin ,Lagenorhynchus albirostris,FALSE,8
+White-beaked dolphin ,Lagenorhynchus albirostris,FALSE,9
+White-beaked dolphin ,Lagenorhynchus albirostris,FALSE,4
+White-beaked dolphin ,Lagenorhynchus albirostris,FALSE,5
