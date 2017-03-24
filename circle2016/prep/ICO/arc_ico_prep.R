@@ -34,6 +34,11 @@ mc_get_from_api <- function(url, param_vec) {
                str_replace('result.', ''))
 }
 
+library(jsonlite)
+### api_key stored on git-annex so outside users can use their own key
+api_key <- scan(file.path(dir_anx, 'api_key.csv'), what = 'character')
+
+
 ###Filtering the complete IUCN species list to include only the identified Iconic Species, we then use the IUCN API
 ##to access the list of countries in which each species occurs,
 ##from http://apiv3.iucnredlist.org/api/v3/species/countries/id/?token=.
