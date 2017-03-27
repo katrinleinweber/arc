@@ -6,6 +6,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694245,Extant,Native,Native,6,Norway
 22694245,Extant,Native,Native,4,Russia
 22694245,Extant,Native,Native,5,Svalbard
+22694245,Extant,Native,Native,7,Jan Mayen
 22694245,Extant,Native,Native,1,Alaska
 22694629,Extant,Native,Native,2,Nunavut
 22694629,Extant,Native,Native,3,Beaufort
@@ -14,6 +15,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694629,Extant,Native,Native,6,Norway
 22694629,Extant,Native,Native,4,Russia
 22694629,Extant,Native,Native,5,Svalbard
+22694629,Extant,Native,Native,7,Jan Mayen
 22694629,Extant,Native,Native,1,Alaska
 8010,Extant,Native,Native,2,Nunavut
 8010,Extant,Native,Native,3,Beaufort
@@ -22,6 +24,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 8010,Extant,Native,Native,6,Norway
 8010,Extant,Native,Native,4,Russia
 8010,Extant,Native,Native,5,Svalbard
+8010,Extant,Native,Native,7,Jan Mayen
 8010,Extant,Native,Native,1,Alaska
 6335,Extant,Native,Native,2,Nunavut
 6335,Extant,Native,Native,3,Beaufort
@@ -30,6 +33,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 6335,Extant,Vagrant,Vagrant,6,Norway
 6335,Extant,Native,Native,4,Russia
 6335,Extant,Native,Native,5,Svalbard
+6335,Extant,Native,Native,7,Jan Mayen
 6335,Extant,Native,Native,1,Alaska
 61442,Extant,Native,Native,1,Alaska
 22694861,Extant,Native,Native,2,Nunavut
@@ -39,6 +43,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694861,Extant,Native,Native,6,Norway
 22694861,Extant,Native,Native,4,Russia
 22694861,Extant,Native,Native,5,Svalbard
+22694861,Extant,Native,Native,7,Jan Mayen
 22694861,Extant,Native,Native,1,Alaska
 2477,Extant,Native,Native,2,Nunavut
 2477,Extant,Native,Native,3,Beaufort
@@ -60,6 +65,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 2472,Extant,Native,Native,8,West Greenland
 2472,Extant,Native,Native,9,East Greenland
 2472,Extant,Native,Native,5,Svalbard
+2472,Extant,Native,Native,7,Jan Mayen
 2467,Extant,Native,Native,2,Nunavut
 2467,Extant,Native,Native,3,Beaufort
 2467,Extant,Native,Native,8,West Greenland
@@ -72,6 +78,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694841,Extant,Native,Native,6,Norway
 22694841,Extant,Native,Native,4,Russia
 22694841,Extant,Native,Native,5,Svalbard
+22694841,Extant,Native,Native,7,Jan Mayen
 22694841,Extant,Native,Native,1,Alaska
 22680405,Extant,Native,Native,2,Nunavut
 22680405,Extant,Native,Native,3,Beaufort
@@ -80,6 +87,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22680405,Extant,Native,Native,6,Norway
 22680405,Extant,Native,Native,4,Russia
 22680405,Extant,Native,Native,5,Svalbard
+22680405,Extant,Native,Native,7,Jan Mayen
 22680405,Extant,Native,Native,1,Alaska
 2478,Extant,Native,Native,2,Nunavut
 2478,Extant,Native,Native,3,Beaufort
@@ -88,6 +96,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 2478,Extant,Native,Native,6,Norway
 2478,Extant,Native,Native,4,Russia
 2478,Extant,Native,Native,5,Svalbard
+2478,Extant,Native,Native,7,Jan Mayen
 2478,Extant,Native,Native,1,Alaska
 22697866,Extant,Native,Native,2,Nunavut
 22697866,Extant,Native,Native,3,Beaufort
@@ -96,6 +105,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22697866,Extant,Native,Native,6,Norway
 22697866,Extant,Native,Native,4,Russia
 22697866,Extant,Native,Native,5,Svalbard
+22697866,Extant,Native,Native,7,Jan Mayen
 22697866,Extant,Native,Native,1,Alaska
 22694343,Extant,Native,Native,2,Nunavut
 22694343,Extant,Native,Native,3,Beaufort
@@ -104,6 +114,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694343,Extant,Native,Native,6,Norway
 22694343,Extant,Native,Native,4,Russia
 22694343,Extant,Native,Native,5,Svalbard
+22694343,Extant,Native,Native,7,Jan Mayen
 22694343,Extant,Native,Native,1,Alaska
 17027,Extant,Native,Native,2,Nunavut
 17027,Extant,Native,Native,3,Beaufort
@@ -120,6 +131,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 17013,Extant,Native,Native,6,Norway
 17013,Extant,Native,Native,4,Russia
 17013,Extant,Native,Native,5,Svalbard
+17013,Extant,Native,Native,7,Jan Mayen
 17013,Extant,Native,Native,1,Alaska
 6204,Extant,Native,Native,2,Nunavut
 6204,Extant,Native,Native,3,Beaufort
@@ -128,6 +140,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 6204,Extant,Native,Native,6,Norway
 6204,Extant,Vagrant,Vagrant,4,Russia
 6204,Extant,Vagrant,Vagrant,5,Svalbard
+6204,Extant,Vagrant,Vagrant,7,Jan Mayen
 6204,Extant,Vagrant,Vagrant,1,Alaska
 13006,Extant,Native,Native,2,Nunavut
 13006,Extant,Native,Native,3,Beaufort
@@ -143,6 +156,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694473,Extant,Vagrant,Vagrant,6,Norway
 22694473,Extant,Native,Native,4,Russia
 22694473,Extant,Native,Native,5,Svalbard
+22694473,Extant,Native,Native,7,Jan Mayen
 22694473,Extant,Native,Native,1,Alaska
 15421,Extant,Native,Native,2,Nunavut
 15421,Extant,Native,Native,3,Beaufort
@@ -151,6 +165,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 15421,Extant,Native,Native,6,Norway
 15421,Extant,Native,Native,4,Russia
 15421,Extant,Native,Native,5,Svalbard
+15421,Extant,Native,Native,7,Jan Mayen
 15421,Extant,Native,Native,1,Alaska
 22680409,Extant,Native,Native,2,Nunavut
 22680409,Extant,Native,Native,3,Beaufort
@@ -159,6 +174,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22680409,Extant,Native,Native,6,Norway
 22680409,Extant,Native,Native,4,Russia
 22680409,Extant,Native,Native,5,Svalbard
+22680409,Extant,Native,Native,7,Jan Mayen
 22680409,Extant,Native,Native,1,Alaska
 22694837,Extant,Native,Native,2,Nunavut
 22694837,Extant,Native,Native,3,Beaufort
@@ -167,6 +183,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22694837,Extant,Native,Native,6,Norway
 22694837,Extant,Native,Native,4,Russia
 22694837,Extant,Native,Native,5,Svalbard
+22694837,Extant,Native,Native,7,Jan Mayen
 22694837,Extant,Native,Native,1,Alaska
 2474,Extant,Native,Native,2,Nunavut
 2474,Extant,Native,Native,3,Beaufort
@@ -175,6 +192,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 2474,Extant,Native,Native,6,Norway
 2474,Extant,Native,Native,4,Russia
 2474,Extant,Native,Native,5,Svalbard
+2474,Extant,Native,Native,7,Jan Mayen
 2474,Extant,Native,Native,1,Alaska
 13704,Extant,Native,Native,2,Nunavut
 13704,Extant,Native,Native,3,Beaufort
@@ -183,6 +201,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 13704,Extant,Vagrant,Vagrant,6,Norway
 13704,Extant,Native,Native,4,Russia
 13704,Extant,Native,Native,5,Svalbard
+13704,Extant,Native,Native,7,Jan Mayen
 13704,Extant,Vagrant,Vagrant,1,Alaska
 41712,Extant,Native,Native,2,Nunavut
 41712,Extant,Native,Native,3,Beaufort
@@ -197,6 +216,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22679872,Extant,Native,Native,6,Norway
 22679872,Extant,Vagrant,Vagrant,4,Russia
 22679872,Extant,Native,Native,5,Svalbard
+22679872,Extant,Native,Native,7,Jan Mayen
 22679872,Extant,Vagrant,Vagrant,1,Alaska
 22823,Extant,Native,Native,2,Nunavut
 22823,Extant,Native,Native,3,Beaufort
@@ -205,6 +225,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22823,Extant,Native,Native,6,Norway
 22823,Extant,Native,Native,4,Russia
 22823,Extant,Native,Native,5,Svalbard
+22823,Extant,Native,Native,7,Jan Mayen
 22823,Extant,Native,Native,1,Alaska
 22694240,Extant,Native,Native,2,Nunavut
 22694240,Extant,Native,Native,3,Beaufort
@@ -220,6 +241,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22693420,Extant,Native,Native,6,Norway
 22693420,Extant,Native,Native,4,Russia
 22693420,Extant,Native,Native,5,Svalbard
+22693420,Extant,Native,Native,7,Jan Mayen
 22693420,Extant,Native,Native,1,Alaska
 22693759,Extant,Native,Native,2,Nunavut
 22693759,Extant,Native,Native,3,Beaufort
@@ -228,6 +250,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22693759,Extant,Native,Native,6,Norway
 22693759,Extant,Native,Native,4,Russia
 22693759,Extant,Native,Native,5,Svalbard
+22693759,Extant,Native,Native,7,Jan Mayen
 22693759,Extant,Native,Native,1,Alaska
 41672,Extant,Native,Native,2,Nunavut
 41672,Extant,Native,Native,3,Beaufort
@@ -236,6 +259,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 41672,Extant,Native,Native,6,Norway
 41672,Extant,Native,Native,4,Russia
 41672,Extant,Native,Native,5,Svalbard
+41672,Extant,Native,Native,7,Jan Mayen
 41672,Extant,Native,Native,1,Alaska
 19855,Extant,Native,Native,2,Nunavut
 19855,Extant,Native,Native,3,Beaufort
@@ -251,6 +275,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 22693369,Extant,Native,Native,6,Norway
 22693369,Extant,Native,Native,4,Russia
 22693369,Extant,Native,Native,5,Svalbard
+22693369,Extant,Native,Native,7,Jan Mayen
 22693369,Extant,Native,Native,1,Alaska
 2475,Extant,Native,Native,2,Nunavut
 2475,Extant,Native,Native,3,Beaufort
@@ -265,6 +290,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 15106,Extant,Native,Native,9,East Greenland
 15106,Extant,Native,Native,4,Russia
 15106,Extant,Native,Native,5,Svalbard
+15106,Extant,Native,Native,7,Jan Mayen
 15106,Extant,Native,Native,1,Alaska
 11142,Extant,Native,Native,2,Nunavut
 11142,Extant,Native,Native,3,Beaufort
@@ -273,4 +299,5 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name
 11142,Extant,Native,Native,6,Norway
 11142,Extant,Native,Native,4,Russia
 11142,Extant,Native,Native,5,Svalbard
+11142,Extant,Native,Native,7,Jan Mayen
 11142,Extant,Native,Native,1,Alaska

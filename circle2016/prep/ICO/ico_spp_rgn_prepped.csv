@@ -7,10 +7,12 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 22694629,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
 22694629,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
 22694629,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
 8010,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
 8010,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
 8010,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
 8010,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
 6335,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
 6335,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
 6335,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
@@ -37,6 +39,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2472,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
 2472,Extant,Native,Native,9,East Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
 2472,Extant,Native,Native,5,Svalbard,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2472,Extant,Native,Native,7,Jan Mayen,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
 2467,Extant,Native,Native,2,Nunavut,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
 2467,Extant,Native,Native,3,Beaufort,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
 2467,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
@@ -44,6 +47,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2467,Extant,Native,Native,1,Alaska,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
 22694841,Extant,Native,Native,8,West Greenland,Common guillemot,Uria aalge,FALSE,8,NA,LC
 22694841,Extant,Native,Native,9,East Greenland,Common guillemot,Uria aalge,FALSE,9,NA,LC
+22694841,Extant,Native,Native,7,Jan Mayen,Common guillemot,Uria aalge,FALSE,7,NA,LC
 22680405,Extant,Native,Native,8,West Greenland,Eider,Somateria mollissima,FALSE,8,NA,NT
 22680405,Extant,Native,Native,9,East Greenland,Eider,Somateria mollissima,FALSE,9,NA,NT
 22680405,Extant,Native,Native,5,Svalbard,Eider,Somateria mollissima,FALSE,5,NA,NT
@@ -54,6 +58,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2478,Extant,Native,Native,6,Norway,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
 2478,Extant,Native,Native,4,Russia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
 2478,Extant,Native,Native,5,Svalbard,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Extant,Native,Native,7,Jan Mayen,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
 2478,Extant,Native,Native,1,Alaska,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
 22697866,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
 22697866,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
@@ -107,6 +112,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2474,Extant,Native,Native,6,Norway,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
 2474,Extant,Native,Native,4,Russia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
 2474,Extant,Native,Native,5,Svalbard,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Extant,Native,Native,7,Jan Mayen,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
 2474,Extant,Native,Native,1,Alaska,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
 13704,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
 13704,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
@@ -126,6 +132,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 22823,Extant,Native,Native,6,Norway,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
 22823,Extant,Native,Native,4,Russia,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
 22823,Extant,Native,Native,5,Svalbard,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Extant,Native,Native,7,Jan Mayen,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
 22823,Extant,Native,Native,1,Alaska,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
 22694240,Extant,Native,Native,8,West Greenland,Pomarine,Stercorarius pomarinus,FALSE,8,NA,LC
 22694240,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
