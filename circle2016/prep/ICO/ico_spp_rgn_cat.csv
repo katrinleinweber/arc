@@ -172,54 +172,71 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2472,Balaena mysticetus,2e3,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2e3,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2e3,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2e3,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2001.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2001.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2001.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2001.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2002.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2002.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2002.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2002.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2003.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2003.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2003.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2003.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2004.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2004.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2004.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2004.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2005.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2005.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2005.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2005.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2006.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2006.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2006.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2006.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2007.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2007.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2007.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2007.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2008.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2008.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2008.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2008.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2009.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2009.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2009.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2009.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2010.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2010.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2010.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2010.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2011.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2011.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2011.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2011.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2012.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2012.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2012.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2012.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2013.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2013.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2013.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2013.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2014.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2014.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2014.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2014.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2015.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2015.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2015.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2015.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2016.0,CR,0.8,8,West Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2016.0,CR,0.8,9,East Greenland,Bowhead whale,TRUE,NA,Extant
 2472,Balaena mysticetus,2016.0,CR,0.8,5,Svalbard,Bowhead whale,TRUE,NA,Extant
+2472,Balaena mysticetus,2016.0,CR,0.8,7,Jan Mayen,Bowhead whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,8,West Greenland,Minke whale,TRUE,NA,Extant
@@ -227,6 +244,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2e3,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2e3,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -235,6 +253,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2001.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2001.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -243,6 +262,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2002.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2002.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -251,6 +271,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2003.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2003.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -259,6 +280,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2004.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2004.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -267,6 +289,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2005.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2005.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -275,6 +298,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2006.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2006.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -283,6 +307,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2007.0,NT,0.2,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2007.0,NT,0.2,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -291,6 +316,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2008.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2008.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -299,6 +325,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2009.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2009.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -307,6 +334,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2010.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2010.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -315,6 +343,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2011.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2011.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -323,6 +352,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2012.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2012.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -331,6 +361,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2013.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2013.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -339,6 +370,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2014.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2014.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -347,6 +379,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2015.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2015.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,2,Nunavut,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,3,Beaufort,Minke whale,TRUE,NA,Extant
@@ -355,6 +388,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,6,Norway,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,4,Russia,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,5,Svalbard,Minke whale,TRUE,NA,Extant
+2474,Balaenoptera acutorostrata,2016.0,LC,0.0,7,Jan Mayen,Minke whale,TRUE,NA,Extant
 2474,Balaenoptera acutorostrata,2016.0,LC,0.0,1,Alaska,Minke whale,TRUE,NA,Extant
 2475,Balaenoptera borealis,2e3,EN,0.6,2,Nunavut,Sei whale,TRUE,NA,Extant
 2475,Balaenoptera borealis,2e3,EN,0.6,3,Beaufort,Sei whale,TRUE,NA,Extant
@@ -601,6 +635,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2e3,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2e3,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2e3,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2e3,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2e3,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2001.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2001.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -609,6 +644,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2001.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2001.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2001.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2001.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2001.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2002.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2002.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -617,6 +653,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2002.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2002.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2002.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2002.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2002.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2003.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2003.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -625,6 +662,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2003.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2003.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2003.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2003.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2003.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2004.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2004.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -633,6 +671,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2004.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2004.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2004.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2004.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2004.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2005.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2005.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -641,6 +680,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2005.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2005.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2005.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2005.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2005.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2006.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2006.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -649,6 +689,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2006.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2006.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2006.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2006.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2006.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2007.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2007.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -657,6 +698,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2007.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2007.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2007.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2007.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2007.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2008.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2008.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -665,6 +707,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2008.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2008.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2008.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2008.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2008.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2009.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2009.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -673,6 +716,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2009.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2009.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2009.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2009.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2009.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2010.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2010.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -681,6 +725,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2010.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2010.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2010.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2010.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2010.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2011.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2011.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -689,6 +734,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2011.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2011.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2011.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2011.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2011.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2012.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2012.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -697,6 +743,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2012.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2012.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2012.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2012.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2012.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2013.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2013.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -705,6 +752,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2013.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2013.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2013.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2013.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2013.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2014.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2014.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -713,6 +761,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2014.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2014.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2014.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2014.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2014.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2015.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2015.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -721,6 +770,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2015.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2015.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2015.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2015.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2015.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2016.0,EN,0.6,2,Nunavut,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2016.0,EN,0.6,3,Beaufort,Fin whale,TRUE,NA,Extant
@@ -729,6 +779,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 2478,Balaenoptera physalus,2016.0,EN,0.6,6,Norway,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2016.0,EN,0.6,4,Russia,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2016.0,EN,0.6,5,Svalbard,Fin whale,TRUE,NA,Extant
+2478,Balaenoptera physalus,2016.0,EN,0.6,7,Jan Mayen,Fin whale,TRUE,NA,Extant
 2478,Balaenoptera physalus,2016.0,EN,0.6,1,Alaska,Fin whale,TRUE,NA,Extant
 6204,Cystophora cristata,2e3,LC,0.0,2,Nunavut,Hooded Seal,FALSE,2,Extant
 6204,Cystophora cristata,2e3,LC,0.0,3,Beaufort,Hooded Seal,FALSE,3,Extant
@@ -904,70 +955,87 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 8010,Erignathus barbatus,2e3,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2e3,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2e3,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2e3,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2001.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2001.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2001.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2001.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2001.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2002.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2002.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2002.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2002.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2002.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2003.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2003.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2003.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2003.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2003.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2004.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2004.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2004.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2004.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2004.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2005.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2005.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2005.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2005.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2005.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2006.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2006.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2006.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2006.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2006.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2007.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2007.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2007.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2007.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2007.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2008.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2008.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2008.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2008.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2008.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2009.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2009.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2009.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2009.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2009.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2010.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2010.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2010.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2010.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2010.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2011.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2011.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2011.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2011.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2011.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2012.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2012.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2012.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2012.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2012.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2013.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2013.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2013.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2013.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2013.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2014.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2014.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2014.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2014.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2014.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2015.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2015.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2015.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2015.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2015.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 8010,Erignathus barbatus,2016.0,LC,0.0,8,West Greenland,Bearded seal,FALSE,8,Extant
 8010,Erignathus barbatus,2016.0,LC,0.0,9,East Greenland,Bearded seal,FALSE,9,Extant
 8010,Erignathus barbatus,2016.0,LC,0.0,6,Norway,Bearded seal,FALSE,6,Extant
 8010,Erignathus barbatus,2016.0,LC,0.0,5,Svalbard,Bearded seal,FALSE,5,Extant
+8010,Erignathus barbatus,2016.0,LC,0.0,7,Jan Mayen,Bearded seal,FALSE,7,Extant
 11142,Lagenorhynchus albirostris,2e3,LC,0.0,8,West Greenland,White-beaked dolphin,FALSE,8,Extant
 11142,Lagenorhynchus albirostris,2e3,LC,0.0,9,East Greenland,White-beaked dolphin,FALSE,9,Extant
 11142,Lagenorhynchus albirostris,2e3,LC,0.0,4,Russia,White-beaked dolphin,FALSE,4,Extant
@@ -1672,6 +1740,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2e3,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2e3,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2e3,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2e3,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2e3,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2001.0,CD,0.3,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2001.0,CD,0.3,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1680,6 +1749,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2001.0,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2001.0,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2001.0,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2001.0,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2001.0,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2002.0,CD,0.3,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2002.0,CD,0.3,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1688,6 +1758,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2002.0,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2002.0,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2002.0,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2002.0,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2002.0,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2003.0,CD,0.3,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2003.0,CD,0.3,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1696,6 +1767,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2003.0,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2003.0,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2003.0,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2003.0,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2003.0,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2004.0,CD,0.3,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2004.0,CD,0.3,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1704,6 +1776,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2004.0,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2004.0,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2004.0,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2004.0,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2004.0,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2005.0,CD,0.3,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2005.0,CD,0.3,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1712,6 +1785,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2005.0,CD,0.3,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2005.0,CD,0.3,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2005.0,CD,0.3,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2005.0,CD,0.3,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2005.0,CD,0.3,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2006.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2006.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1720,6 +1794,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2006.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2006.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2006.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2006.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2006.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2007.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2007.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1728,6 +1803,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2007.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2007.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2007.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2007.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2007.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2008.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2008.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1736,6 +1812,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2008.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2008.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2008.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2008.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2008.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2009.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2009.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1744,6 +1821,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2009.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2009.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2009.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2009.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2009.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2010.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2010.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1752,6 +1830,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2010.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2010.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2010.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2010.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2010.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2011.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2011.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1760,6 +1839,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2011.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2011.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2011.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2011.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2011.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2012.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2012.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1768,6 +1848,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2012.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2012.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2012.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2012.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2012.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2013.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2013.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1776,6 +1857,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2013.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2013.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2013.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2013.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2013.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2014.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2014.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1784,6 +1866,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2014.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2014.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2014.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2014.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2014.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2015.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2015.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1792,6 +1875,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2015.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2015.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2015.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2015.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2015.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2016.0,VU,0.4,2,Nunavut,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2016.0,VU,0.4,3,Beaufort,Polar bear,TRUE,NA,Extant
@@ -1800,6 +1884,7 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22823,Ursus maritimus,2016.0,VU,0.4,6,Norway,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2016.0,VU,0.4,4,Russia,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2016.0,VU,0.4,5,Svalbard,Polar bear,TRUE,NA,Extant
+22823,Ursus maritimus,2016.0,VU,0.4,7,Jan Mayen,Polar bear,TRUE,NA,Extant
 22823,Ursus maritimus,2016.0,VU,0.4,1,Alaska,Polar bear,TRUE,NA,Extant
 41672,Pusa hispida,2e3,LC,0.0,2,Nunavut,Ringed seal,FALSE,2,Extant
 41672,Pusa hispida,2e3,LC,0.0,3,Beaufort,Ringed seal,FALSE,3,Extant
@@ -2485,70 +2570,87 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22694629,Sterna paradisaea,2e3,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2e3,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2e3,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2e3,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2001.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2001.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2001.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2001.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2001.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2002.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2002.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2002.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2002.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2002.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2003.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2003.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2003.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2003.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2003.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2004.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2004.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2004.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2004.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2004.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2005.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2005.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2005.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2005.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2005.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2006.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2006.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2006.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2006.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2006.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2007.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2007.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2007.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2007.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2007.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2008.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2008.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2008.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2008.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2008.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2009.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2009.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2009.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2009.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2009.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2010.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2010.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2010.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2010.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2010.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2011.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2011.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2011.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2011.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2011.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2012.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2012.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2012.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2012.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2012.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2013.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2013.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2013.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2013.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2013.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2014.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2014.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2014.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2014.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2014.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2015.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2015.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2015.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2015.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2015.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694629,Sterna paradisaea,2016.0,LC,0.0,8,West Greenland,Arctic tern,FALSE,8,Extant
 22694629,Sterna paradisaea,2016.0,LC,0.0,9,East Greenland,Arctic tern,FALSE,9,Extant
 22694629,Sterna paradisaea,2016.0,LC,0.0,6,Norway,Arctic tern,FALSE,6,Extant
 22694629,Sterna paradisaea,2016.0,LC,0.0,5,Svalbard,Arctic tern,FALSE,5,Extant
+22694629,Sterna paradisaea,2016.0,LC,0.0,7,Jan Mayen,Arctic tern,FALSE,7,Extant
 22694837,Alle alle,2e3,LC,0.0,8,West Greenland,Little auk,FALSE,8,Extant
 22694837,Alle alle,2e3,LC,0.0,9,East Greenland,Little auk,FALSE,9,Extant
 22694837,Alle alle,2e3,LC,0.0,5,Svalbard,Little auk,FALSE,5,Extant
@@ -2602,38 +2704,55 @@ iucn_sid,sciname,year,cat,cat_score,rgn_id,rgn_name,comname,ico_gl,ico_rgn_id,pr
 22694837,Alle alle,2016.0,LC,0.0,5,Svalbard,Little auk,FALSE,5,Extant
 22694841,Uria aalge,2e3,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2e3,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2e3,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2001.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2001.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2001.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2002.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2002.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2002.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2003.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2003.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2003.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2004.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2004.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2004.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2005.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2005.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2005.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2006.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2006.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2006.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2007.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2007.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2007.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2008.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2008.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2008.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2009.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2009.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2009.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2010.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2010.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2010.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2011.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2011.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2011.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2012.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2012.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2012.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2013.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2013.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2013.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2014.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2014.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2014.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2015.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2015.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2015.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694841,Uria aalge,2016.0,LC,0.0,8,West Greenland,Common guillemot,FALSE,8,Extant
 22694841,Uria aalge,2016.0,LC,0.0,9,East Greenland,Common guillemot,FALSE,9,Extant
+22694841,Uria aalge,2016.0,LC,0.0,7,Jan Mayen,Common guillemot,FALSE,7,Extant
 22694861,Cepphus grylle,2e3,LC,0.0,8,West Greenland,Black guillemot,FALSE,8,Extant
 22694861,Cepphus grylle,2e3,LC,0.0,9,East Greenland,Black guillemot,FALSE,9,Extant
 22694861,Cepphus grylle,2e3,LC,0.0,6,Norway,Black guillemot,FALSE,6,Extant
