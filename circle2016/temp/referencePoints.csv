@@ -13,3 +13,4 @@
 "CW","spatial: pressures scaled from 0-1 at raster level",NA
 "HAB","Health/condition variable based on current vs. historic extent","varies for each region/habitat"
 "SPP","Average of IUCN risk categories, scaled to historic extinction",NA
+"ICO","scaled IUCN risk categories",NA
