@@ -89,6 +89,7 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
 ####Read in species cell summary in######
 
 summary_by_loiczid<- read_csv('~/github/ohiprep/globalprep/spp_ico/v2016/summary/cell_spp_summary_by_loiczid.csv')
+region_prop_df<- read_csv('prep/ICO/rgn_prop_file.csv')
 
 region_summary<- summary_by_loiczid %>%
   inner_join(region_prop_df, by= 'loiczid')%>%
@@ -101,7 +102,9 @@ region_summary<- summary_by_loiczid %>%
 region_sums <- region_summary %>%
   group_by(rgn_id) %>%
   summarize(rgn_mean_cat   = sum(area_weighted_mean_cat)/sum(cell_area_weight_cat),
-            rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))
+            rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))%>%
+  mutate(status = ((1 - rgn_mean_cat) - 0.25) / 0.75)
+write_csv(region_sums, 'prep/SPP/spp_summary.csv')
 
 ###Read in cells_spp for am and iucn
 
