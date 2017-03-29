@@ -296,8 +296,8 @@ Data sources:
 resilience,hd_habitat,hd_habitat_gl2016.csv,resilience score,resilience score,CBD survey: habitat,"Convention on Biological Diversity (Habitat related regulations and protections)
 
 - [Convention on Biological Diversity (CBD) Third National Report (habitat related questions) 2005](http://www.cbd.int/reports/search/default.shtml)",equal,global resilience data were applied equally to all regions.,hd_habitat,~/github/ohi-global/eez2016/layers/hd_habitat.csv,rgn_id,,,,resilience.score,,TRUE,,,0.363636364,1,TRUE,,,,9,FALSE
-resilience,hd_mpa_coast,hd_mpa_coast_gl2016.csv,resilience.score,resilience score,Protected marine area,LSP scores,raster | area_offshore3nm,,hd_mpa_coast,~/github/ohi-global/eez2016/layers/hd_mpa_coast.csv,rgn_id,,,,resilience.score,,TRUE,,,0.151798369,1,TRUE,,,,9,FALSE
-resilience,hd_mpa_eez,hd_mpa_eez_gl2016.csv,resilience.score,resilience score,Protected marine area in eez,LSP model applied to eez,equal,,hd_mpa_eez,~/github/ohi-global/eez2016/layers/hd_mpa_eez.csv,rgn_id,,,,resilience.score,,TRUE,,,0.033495461,0.433243054,TRUE,,,,9,FALSE
+resilience,hd_mpa_coast,hd_mpa_coast_arc2016.csv,resilience.score,resilience score,Protected marine area,LSP scores,raster | area_offshore3nm,,hd_mpa_coast,~/github/ohi-global/eez2016/layers/hd_mpa_coast.csv,rgn_id,,,,resilience.score,,TRUE,,,0.151798369,1,TRUE,,,,9,FALSE
+resilience,hd_mpa_eez,hd_mpa_eez_arc2016.csv,resilience.score,resilience score,Protected marine area in eez,LSP model applied to eez,equal,,hd_mpa_eez,~/github/ohi-global/eez2016/layers/hd_mpa_eez.csv,rgn_id,,,,resilience.score,,TRUE,,,0.033495461,0.433243054,TRUE,,,,9,FALSE
 resilience,li_gci,li_gci_gl2016.csv,score,resilience score,GCI: competitiveness in achieving sustained economic prosperity,"Global Competitiveness Index (GCI) scores from the World Economic Forum.
 
 Data sources:
