@@ -51,7 +51,7 @@ Data sources:
 
 - Martell, S., & Froese, R. (2013). **A simple method for estimating MSY from catch and resilience**. _Fish and Fisheries_ 14(4): 504-514. [doi:10.1111/j.1467-2979.2012.00485.x](https://dx/doi/org/10.1111/j.1467-2979.2012.00485.x)
 ",,,fis_comsir_bmsy_arc2016,,rgn_id,,stock_id,year,bbmsy,,TRUE,2001,2010,0.00438262,1.959316796,FALSE,,,,9,FALSE
-FP,fp_wildcaught_weight,fp_wildcaught_weight_gl2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
+FP,fp_wildcaught_weight,fp_wildcaught_weight_arc2016.csv,w_fis,proportion,Fisheries weighting factor,"Proportion of wild caught fisheries yield to mariculture yield, based on FAO fisheries statistics.
 =======
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,fis_meancatch_arc2016,~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv,rgn_id,,,,w_fis,,TRUE,,,0.650584056,1,TRUE,,,,9,FALSE
 HAB CS CP,hab_extent,hab_extent_arc2016.csv,km2,km^2,Habitat extent,"Habitat extent
