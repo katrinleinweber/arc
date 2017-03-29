@@ -267,8 +267,8 @@ resilience,fp_mora,fp_mora_gl2016.csv,value,resilience score,CBD survey: fishing
 resilience,fp_mora_artisanal,fp_mora_artisanal_gl2016.csv,value,resilience score,CBD survey: artisanal fishing,"Convention on Biological Diversity (Artisanal fishing related regulations and protections)
 
 - [Convention on Biological Diversity (CBD) Third National Report (habitat related questions) 2005](http://www.cbd.int/reports/search/default.shtml)",,,fp_mora_artisanal,~/github/ohi-global/eez2016/layers/fp_mora_artisanal.csv,rgn_id,,,,value,,TRUE,,,0.619839141,0.704591795,TRUE,,,,9,FALSE
-resilience,fp_mpa_coast,fp_mpa_coast_gl2016.csv,resilience.score,resilience score,Protected marine area,LSP scores,raster | area_offshore3nm,,fp_mpa_coast,~/github/ohi-global/eez2016/layers/fp_mpa_coast.csv,rgn_id,,,,resilience.score,,TRUE,,,0.151798369,1,TRUE,,,,9,FALSE
-resilience,fp_mpa_eez,fp_mpa_eez_gl2016.csv,resilience.score,resilience score,Protected marine area in eez,LSP model applied to eez,equal,,fp_mpa_eez,~/github/ohi-global/eez2016/layers/fp_mpa_eez.csv,rgn_id,,,,resilience.score,,TRUE,,,0.033495461,0.433243054,TRUE,,,,9,FALSE
+resilience,fp_mpa_coast,fp_mpa_coast_arc2016.csv,resilience.score,resilience score,Protected marine area,LSP scores,raster | area_offshore3nm,,fp_mpa_coast,~/github/ohi-global/eez2016/layers/fp_mpa_coast.csv,rgn_id,,,,resilience.score,,TRUE,,,0.151798369,1,TRUE,,,,9,FALSE
+resilience,fp_mpa_eez,fp_mpa_eez_arc2016.csv,resilience.score,resilience score,Protected marine area in eez,LSP model applied to eez,equal,,fp_mpa_eez,~/github/ohi-global/eez2016/layers/fp_mpa_eez.csv,rgn_id,,,,resilience.score,,TRUE,,,0.033495461,0.433243054,TRUE,,,,9,FALSE
 resilience,g_cites,g_cites_gl2016.csv,resilience_score,resilience score,Resilience from commitment to CITES,"Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) signatories.
 
 Data sources:
