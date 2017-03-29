@@ -23,7 +23,7 @@ setwd('~/github/arc/circle2016')
 conf = ohicore::Conf('conf')
 
 ## check that scenario layers files in the \layers folder match layers.csv registration. Layers files are not modified.
-ohicore::CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
+ohicore::CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields) ohi
 
 ## load scenario layers for ohicore to access. Layers files are not modified.
 layers = ohicore::Layers('layers.csv', 'layers')

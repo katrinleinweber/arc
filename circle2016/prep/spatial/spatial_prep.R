@@ -271,6 +271,7 @@ write_csv(prot_3nm, file.path('~/github/arc/circle2016/prep/spatial/area_protect
 
 ##combine
 prot_eez<- read.csv('prep/spatial/area_protected_eez.csv')
+prot_3nm<- read.csv('prep/spatial/area_protected_3nm.csv')
 
 prot_df <- prot_3nm %>%
   dplyr::select(rgn_id, year,
