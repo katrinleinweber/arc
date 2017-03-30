@@ -306,7 +306,7 @@ resilience,sp_alien_species,sp_alien_species_gl2016.csv,resilience score,resilie
 Data sources:
 
 - [Convention on Biological Diversity (CBD)](http://www.cbd.int/reports/search/default.shtml)",equal,global resilience data were applied equally to all regions.,sp_alien_species,~/github/ohi-global/eez2016/layers/sp_alien_species.csv,rgn_id,,,,resilience.score,,TRUE,,,0.125,0.75,TRUE,,,,9,FALSE
-resilience,species_diversity_3nm,species_diversity_3nm_gl2016.csv,score,resilience score,Coastal ecological integrity,"Marine species diversity as a proxy for ecological integrity: coastal (IUCN).
+resilience,species_diversity_3nm,species_diversity_3nm_arc2016.csv,score,resilience score,Coastal ecological integrity,"Marine species diversity as a proxy for ecological integrity: coastal (IUCN).
 
 Data sources:
 
