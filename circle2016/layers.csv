@@ -382,7 +382,7 @@ TR,tr_travelwarnings,tr_travelwarnings_gl2016.csv,multiplier,score,Travel warnin
 Data sources:
 
 <<<<<<< HEAD
-- [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,,,rgn_name,,multiplier,,TRUE,,,0,1,TRUE,,,,9,FALSE
+- [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,rgn_id,,rgn_name,,multiplier,,TRUE,,,0,1,TRUE,,,,9,FALSE
 TR,tr_unemployment,tr_unemployment_arc2016.csv,percent,percent ,Percent unemployment,"Percent unemployment (The World Bank).
 =======
 - [U.S. Department of State](http://travel.state.gov/content/passports/english/alertswarnings.html)",,,tr_travelwarnings,~/github/ohi-global/eez2016/layers/tr_travelwarnings.csv,rgn_id,,,year,percent,,TRUE,2001,2015,0,18.09,FALSE,,,,9,FALSE
