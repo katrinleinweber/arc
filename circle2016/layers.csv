@@ -323,7 +323,7 @@ resilience,wgi_all,wgi_all_gl2016.csv,score,resilience score,Strength of governa
 Data sources:
 
 - [Worldwide Governance Indicators (WGI)](http://info.worldbank.org/governance/wgi/index.asp)",equal,global resilience data were applied equally to all regions.,wgi_all,~/github/ohi-global/eez2016/layers/wgi_all.csv,rgn_id,,,,score,,TRUE,,,0.35762806,0.862125007,TRUE,,,,9,FALSE
-spatial,rgn_area,rgn_area_gl2016.csv,area_km2,km^2,Region area of total EEZ ocean,"Area of Ocean Health Index regions based on exclusive economic zones (VLIZ 2012). 
+spatial,rgn_area,rgn_area_arc2016.csv,area_km2,km^2,Region area of total EEZ ocean,"Area of Ocean Health Index regions based on exclusive economic zones (VLIZ 2012). 
 
 Data sources:
 
