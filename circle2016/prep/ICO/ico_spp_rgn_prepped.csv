@@ -13,6 +13,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 8010,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
 8010,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
 8010,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
 6335,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
 6335,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
 6335,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
@@ -62,7 +63,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2478,Extant,Native,Native,1,Alaska,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
 22697866,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
 22697866,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
-22697866,Extant,Native,Native,5,Svalbard,fulmar,Fulmarus glacialis,FALSE,5,NA,LC
+22697866,Extant,Native,Native,5,Svalbard,Fulmar,Fulmarus glacialis,FALSE,5,NA,LC
 22694343,Extant,Native,Native,8,West Greenland,Glaucous gull,Larus hyperboreus,FALSE,8,NA,LC
 22694343,Extant,Native,Native,9,East Greenland,Glaucous gull,Larus hyperboreus,FALSE,9,NA,LC
 22694343,Extant,Native,Native,5,Svalbard,Glaucous gull,Larus hyperboreus,FALSE,5,NA,LC
@@ -138,7 +139,7 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 22694240,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
 22693420,Extant,Native,Native,8,West Greenland,Purple sandpiper,Calidris maritima,FALSE,8,NA,LC
 22693420,Extant,Native,Native,9,East Greenland,Purple sandpiper,Calidris maritima,FALSE,9,NA,LC
-22693420,Extant,Native,Native,5,Svalbard,purple sandpipers,Calidris maritima,FALSE,5,NA,LC
+22693420,Extant,Native,Native,5,Svalbard,Purple sandpipers,Calidris maritima,FALSE,5,NA,LC
 22693759,Extant,Native,Native,8,West Greenland,Ringed Plover,Charadrius hiaticula,FALSE,8,NA,LC
 22693759,Extant,Native,Native,9,East Greenland,Ringed Plover,Charadrius hiaticula,FALSE,9,NA,LC
 22693759,Extant,Native,Native,5,Svalbard,Ringed plover,Charadrius hiaticula,FALSE,5,NA,LC
@@ -147,12 +148,13 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 41672,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
 41672,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
 41672,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
 19855,Extant,Native,Native,8,West Greenland,Salmon,Salmo salar,FALSE,8,NA,LR/lc
 19855,Extant,Native,Native,9,East Greenland,Salmon,Salmo salar,FALSE,9,NA,LR/lc
 19855,Extant,Native,Native,6,Norway,Salmon,Salmo salar,FALSE,6,NA,LR/lc
 22693369,Extant,Native,Native,8,West Greenland,Sanderling,Calidris alba,FALSE,8,NA,LC
 22693369,Extant,Native,Native,9,East Greenland,Sanderling,Calidris alba,FALSE,9,NA,LC
-22693369,Extant,Native,Native,5,Svalbard,sanderling,Calidris alba,FALSE,5,NA,LC
+22693369,Extant,Native,Native,5,Svalbard,Sanderling,Calidris alba,FALSE,5,NA,LC
 2475,Extant,Native,Native,2,Nunavut,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
 2475,Extant,Native,Native,3,Beaufort,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
 2475,Extant,Native,Native,8,West Greenland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
@@ -160,10 +162,13 @@ iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_g
 2475,Extant,Native,Native,6,Norway,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
 2475,Extant,Native,Native,4,Russia,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
 2475,Extant,Native,Native,1,Alaska,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+22680412,Extant,Native,Native,1,Alaska,Spectacled Eider,Somateria fischeri,FALSE,1,NA,LC
+17023,Extant,Native,Native,1,Alaska,Spotted seal,Phoca largha,FALSE,1,NA,DD
 15106,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
 15106,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
 15106,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
 15106,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
 11142,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
 11142,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
 11142,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC

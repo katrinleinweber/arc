@@ -47,7 +47,7 @@ api_key <- scan(file.path(dir_anx, 'api_key.csv'), what = 'character')
 
 
 spp_df_all <- read_csv(file.path(dir_goal, 'int/spp_list_from_api.csv'))
-ico_list_raw <- read_csv(file.path('prep/ICO/ico_list_raw.csv'))
+ico_list_raw <- read_csv(file.path('circle2016/prep/ICO/ico_list_raw.csv'))
 
 spp_ico <- spp_df_all %>%
   filter(sciname %in% ico_list_raw$sciname)
@@ -62,14 +62,14 @@ ico_list <- ico_list_raw %>%
             by = 'sciname') %>%
   filter(!is.na(iucn_sid))
 
-write_csv(ico_list, file.path('prep/ICO/ico_list_prepped.csv'))
+write_csv(ico_list, file.path('circle2016/prep/ICO/ico_list_prepped.csv'))
 
 ### for each species ID, get country list
 ico_country_url <- 'http://apiv3.iucnredlist.org/api/v3/species/countries/id/%s?token=%s'
 
 ico_spp_countries <- mc_get_from_api(ico_country_url, ico_list$iucn_sid)
 
-rgn_iucn2ohi <- read_csv(file.path('prep/ICO/rgns_iucn2arc.csv'))
+rgn_iucn2ohi <- read_csv(file.path('circle2016/prep/ICO/rgns_iucn2arc.csv'))
 
 ico_spp_rgn_raw <- ico_spp_countries %>%
   dplyr::select(-code, -count, iucn_sid = name, iucn_rgn_name = country) %>%
@@ -92,10 +92,10 @@ ico_spp_rgn_raw <- ico_spp_rgn_raw %>%
   filter(!is.na(rgn_id)) %>%
   distinct()
 
-write_csv(ico_spp_rgn_raw, file.path('prep/ICO/ico_spp_rgn_raw.csv'))
+write_csv(ico_spp_rgn_raw, file.path('circle2016/prep/ICO/ico_spp_rgn_raw.csv'))
 
-ico_spp_rgn_raw <- read_csv(file.path('prep/ICO/ico_spp_rgn_raw.csv'))
-ico_list <- read_csv(file.path('prep/ICO/ico_list_prepped.csv'))
+ico_spp_rgn_raw <- read_csv(file.path('circle2016/prep/ICO/ico_spp_rgn_raw.csv'))
+ico_list <- read_csv(file.path('circle2016/prep/ICO/ico_list_prepped.csv'))
 
 ico_spp_rgn_prepped <- ico_spp_rgn_raw %>%
   left_join(ico_list,
@@ -106,11 +106,11 @@ ico_spp_rgn_prepped <- ico_spp_rgn_raw %>%
 ico_spp_rgn_prepped <- ico_spp_rgn_prepped %>%
   filter(ico_gl == TRUE | ico_rgn_id == rgn_id)
 
-write_csv(ico_spp_rgn_prepped, file.path('prep/ICO/ico_spp_rgn_prepped.csv'))
+write_csv(ico_spp_rgn_prepped, file.path('circle2016/prep/ICO/ico_spp_rgn_prepped.csv'))
 
 ### for each species ID, get past assessments
 ico_past_assess_url <- 'http://apiv3.iucnredlist.org/api/v3/species/history/id/%s?token=%s'
-ico_list <- read_csv(file.path('prep/ICO/ico_list_prepped.csv'))
+ico_list <- read_csv(file.path('circle2016/prep/ICO/ico_list_prepped.csv'))
 
 ico_assess_raw <- mc_get_from_api(ico_past_assess_url, ico_list$iucn_sid)
 
@@ -123,7 +123,7 @@ ico_assess_raw <- ico_assess_raw %>%
               distinct(),
             by = 'iucn_sid')
 
-write_csv(ico_assess_raw, file.path('prep/ICO/ico_assessments_raw.csv'))
+write_csv(ico_assess_raw, file.path('circle2016/prep/ICO/ico_assessments_raw.csv'))
 
 DT::datatable(ico_assess_raw, caption = 'ICO species and past IUCN assessments')
 #New category <- original category/description
@@ -142,7 +142,7 @@ DT::datatable(ico_assess_raw, caption = 'ICO species and past IUCN assessments')
 ### Clean up the time series
 ### iucn_sid | year | code | category | sciname
 
-ico_assess_raw <- read_csv(file.path('prep/ICO/ico_assessments_raw.csv'))
+ico_assess_raw <- read_csv(file.path('circle2016/prep/ICO/ico_assessments_raw.csv'))
 
 ico_assess <- ico_assess_raw %>%
   rename(cat = code, cat_txt = category) %>%
@@ -167,11 +167,11 @@ ico_assess <- ico_assess %>%
   distinct() %>%
   arrange(iucn_sid, year)
 
-write_csv(ico_assess, file.path('prep/ICO/ico_assess_clean.csv'))
+write_csv(ico_assess, file.path('circle2016/prep/ICO/ico_assess_clean.csv'))
 
 #####Using tidyr::complete() and tidyr::fill(), we create a full time series for all species from the earliest assessment to the most recent year.###
-ico_assess <- read_csv(file.path('prep/ICO/ico_assess_clean.csv'))
-ico_list <- read_csv(file.path('prep/ICO/ico_list_prepped.csv'))
+ico_assess <- read_csv(file.path('circle2016/prep/ICO/ico_assess_clean.csv'))
+ico_list <- read_csv(file.path('circle2016/prep/ICO/ico_list_prepped.csv'))
 
 ico_assess_full <- ico_assess %>%
   select(-sciname) %>%
@@ -209,13 +209,13 @@ ico_spp_cat <- ico_spp_cat %>%
   ungroup() %>%
   distinct()
 
-write_csv(ico_spp_cat, file.path('prep/ICO/ico_spp_cat.csv'))
+write_csv(ico_spp_cat, file.path('circle2016/prep/ICO/ico_spp_cat.csv'))
 
-ico_cat_ts_abbr <- read_csv(file.path('prep/ICO/ico_spp_cat.csv')) %>%
+ico_cat_ts_abbr <- read_csv(file.path('circle2016/prep/ICO/ico_spp_cat.csv')) %>%
   select(iucn_sid, sciname, year, cat, cat_score) %>%
   filter(year >= 2000)
 
-ico_spp_rgn <- read_csv(file.path('prep/ICO/ico_spp_rgn_prepped.csv')) %>%
+ico_spp_rgn <- read_csv(file.path('circle2016/prep/ICO/ico_spp_rgn_prepped.csv')) %>%
   select(rgn_id, rgn_name, iucn_sid, comname, sciname, ico_gl, ico_rgn_id, presence)
 
 ico_spp_rgn_cat <- ico_cat_ts_abbr %>%
@@ -242,11 +242,11 @@ ico_spp_rgn_cat <- ico_spp_rgn_cat %>%
   filter(ico_gl | ico_rgn_id == rgn_id) %>% ### Keep (all globally iconic) and (regionally iconic in region only)
   distinct()
 
-write_csv(ico_spp_rgn_cat, file.path('prep/ICO/ico_spp_rgn_cat.csv'))
+write_csv(ico_spp_rgn_cat, file.path('circle2016/prep/ICO/ico_spp_rgn_cat.csv'))
 
 ### Report and summarize estimate of regional iconic species status
 
-ico_spp_rgn_cat <- read_csv(file.path('prep/ICO/ico_spp_rgn_cat.csv'))
+ico_spp_rgn_cat <- read_csv(file.path('circle2016/prep/ICO/ico_spp_rgn_cat.csv'))
 
 # Report out for toolbox format (rgn_id | sciname | category or popn_trend for each species within a region).
 # Note: in toolbox, group_by(rgn_id, sciname) and then summarize(category = mean(category)) to
@@ -287,15 +287,15 @@ ico_sum <- ico_status_raw %>%
   left_join(ico_status_calc, by = c('rgn_id', 'rgn_name', 'year')) %>%
   left_join(ico_trend, by = c('rgn_id', 'year'))
 
-write_csv(ico_sum, file.path('prep/ICO/ico_summary.csv'))
+write_csv(ico_sum, file.path('circle2016/prep/ICO/ico_summary.csv'))
 # Report out for finalized status and trend values per region.
 
 ico_status_raw1 <- ico_status_raw %>%
   dplyr::select(rgn_id, sciname, iucn_sid, year, category = cat)
 
-write_csv(ico_status_raw1, file.path('prep/ICO/output/ico_spp_iucn_status.csv'))
-write_csv(ico_status_calc, file.path('prep/ICO/output/ico_status_calc.csv'))
-write_csv(ico_trend,       file.path('prep/ICO/output/ico_trend.csv'))
+write_csv(ico_status_raw1, file.path('circle2016/prep/ICO/output/ico_spp_iucn_status.csv'))
+write_csv(ico_status_calc, file.path('circle2016/prep/ICO/output/ico_status_calc.csv'))
+write_csv(ico_trend,       file.path('circle2016/prep/ICO/output/ico_trend.csv'))
 
 
 ico_status_raw1[duplicated(ico_status_raw1 ), ]

@@ -91,6 +91,9 @@ iucn_sid,year,code,category,sciname
 8010,2016,LC,Least Concern,Erignathus barbatus
 8010,2008,LC,Least Concern,Erignathus barbatus
 8010,1996,LR/lc,Lower Risk/least concern,Erignathus barbatus
+8010,2016,LC,Least Concern,Erignathus barbatus
+8010,2008,LC,Least Concern,Erignathus barbatus
+8010,1996,LR/lc,Lower Risk/least concern,Erignathus barbatus
 6335,2012,NT,Near Threatened,Delphinapterus leucas
 6335,2008,NT,Near Threatened,Delphinapterus leucas
 6335,1996,VU,Vulnerable,Delphinapterus leucas
@@ -675,6 +678,9 @@ iucn_sid,year,code,category,sciname
 41672,2016,LC,Least Concern,Pusa hispida
 41672,2008,LC,Least Concern,Pusa hispida
 41672,1996,LR/lc,Lower Risk/least concern,Pusa hispida
+41672,2016,LC,Least Concern,Pusa hispida
+41672,2008,LC,Least Concern,Pusa hispida
+41672,1996,LR/lc,Lower Risk/least concern,Pusa hispida
 19855,1996,LR/lc,Lower Risk/least concern,Salmo salar
 19855,1996,LR/lc,Lower Risk/least concern,Salmo salar
 19855,1996,LR/lc,Lower Risk/least concern,Salmo salar
@@ -705,6 +711,21 @@ iucn_sid,year,code,category,sciname
 2475,2008,EN,Endangered,Balaenoptera borealis
 2475,1996,EN,Endangered,Balaenoptera borealis
 2475,1994,V,Vulnerable,Balaenoptera borealis
+22680412,2016,LC,Least Concern,Somateria fischeri
+22680412,2012,LC,Least Concern,Somateria fischeri
+22680412,2009,LC,Least Concern,Somateria fischeri
+22680412,2008,LC,Least Concern,Somateria fischeri
+22680412,2004,LC,Least Concern,Somateria fischeri
+22680412,2000,LR/lc,Lower Risk/least concern,Somateria fischeri
+22680412,1996,VU,Vulnerable,Somateria fischeri
+22680412,1994,VU,Vulnerable,Somateria fischeri
+22680412,1988,LR/lc,Lower Risk/least concern,Somateria fischeri
+17023,2016,LC,Least Concern,Phoca largha
+17023,2008,DD,Data Deficient,Phoca largha
+17023,1996,LR/lc,Lower Risk/least concern,Phoca largha
+15106,2016,VU,Vulnerable,Odobenus rosmarus
+15106,2008,DD,Data Deficient,Odobenus rosmarus
+15106,1996,LR/lc,Lower Risk/least concern,Odobenus rosmarus
 15106,2016,VU,Vulnerable,Odobenus rosmarus
 15106,2008,DD,Data Deficient,Odobenus rosmarus
 15106,1996,LR/lc,Lower Risk/least concern,Odobenus rosmarus

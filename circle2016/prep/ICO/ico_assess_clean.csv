@@ -5,8 +5,8 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 2467,1990,VU,Vulnerable,Balaena mysticetus,0.4
 2467,1994,VU,Vulnerable,Balaena mysticetus,0.4
 2467,1996,CD,Lower Risk/conservation dependent,Balaena mysticetus,0.3
-2467,2008,LC,Least Concern,Balaena mysticetus,0.0
-2467,2012,LC,Least Concern,Balaena mysticetus,0.0
+2467,2008,LC,Least Concern,Balaena mysticetus,0
+2467,2012,LC,Least Concern,Balaena mysticetus,0
 2468,1996,CD,Lower Risk/conservation dependent,Balaena mysticetus,0.3
 2469,1996,EN,Endangered,Balaena mysticetus,0.6
 2469,2012,EN,Endangered,Balaena mysticetus,0.6
@@ -15,7 +15,7 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 2472,2008,CR,Critically Endangered,Balaena mysticetus,0.8
 2472,2012,CR,Critically Endangered,Balaena mysticetus,0.8
 2474,1996,NT,Lower Risk/near threatened,Balaenoptera acutorostrata,0.2
-2474,2008,LC,Least Concern,Balaenoptera acutorostrata,0.0
+2474,2008,LC,Least Concern,Balaenoptera acutorostrata,0
 2475,1994,VU,Vulnerable,Balaenoptera borealis,0.4
 2475,1996,EN,Endangered,Balaenoptera borealis,0.6
 2475,2008,EN,Endangered,Balaenoptera borealis,0.6
@@ -34,40 +34,42 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 2478,1996,EN,Endangered,Balaenoptera physalus,0.6
 2478,2008,EN,Endangered,Balaenoptera physalus,0.6
 2478,2013,EN,Endangered,Balaenoptera physalus,0.6
-6204,1996,LC,Lower Risk/least concern,Cystophora cristata,0.0
+6204,1996,LC,Lower Risk/least concern,Cystophora cristata,0
 6204,2008,VU,Vulnerable,Cystophora cristata,0.4
 6204,2016,VU,Vulnerable,Cystophora cristata,0.4
 6335,1996,VU,Vulnerable,Delphinapterus leucas,0.4
 6335,2008,NT,Near Threatened,Delphinapterus leucas,0.2
 6335,2012,NT,Near Threatened,Delphinapterus leucas,0.2
-8010,1996,LC,Lower Risk/least concern,Erignathus barbatus,0.0
-8010,2008,LC,Least Concern,Erignathus barbatus,0.0
-8010,2016,LC,Least Concern,Erignathus barbatus,0.0
-11142,1996,LC,Lower Risk/least concern,Lagenorhynchus albirostris,0.0
-11142,2008,LC,Least Concern,Lagenorhynchus albirostris,0.0
-11142,2012,LC,Least Concern,Lagenorhynchus albirostris,0.0
+8010,1996,LC,Lower Risk/least concern,Erignathus barbatus,0
+8010,2008,LC,Least Concern,Erignathus barbatus,0
+8010,2016,LC,Least Concern,Erignathus barbatus,0
+11142,1996,LC,Lower Risk/least concern,Lagenorhynchus albirostris,0
+11142,2008,LC,Least Concern,Lagenorhynchus albirostris,0
+11142,2012,LC,Least Concern,Lagenorhynchus albirostris,0
 13006,1965,T,"""Less rare but believed to be threatened-requires watching""",Megaptera novaeangliae,0.6
 13006,1986,EN,Endangered,Megaptera novaeangliae,0.6
 13006,1988,EN,Endangered,Megaptera novaeangliae,0.6
 13006,1990,VU,Vulnerable,Megaptera novaeangliae,0.4
 13006,1994,VU,Vulnerable,Megaptera novaeangliae,0.4
 13006,1996,VU,Vulnerable,Megaptera novaeangliae,0.4
-13006,2008,LC,Least Concern,Megaptera novaeangliae,0.0
+13006,2008,LC,Least Concern,Megaptera novaeangliae,0
 13704,2008,NT,Near Threatened,Monodon monoceros,0.2
 13704,2012,NT,Near Threatened,Monodon monoceros,0.2
-15106,1996,LC,Lower Risk/least concern,Odobenus rosmarus,0.0
+15106,1996,LC,Lower Risk/least concern,Odobenus rosmarus,0
 15106,2016,VU,Vulnerable,Odobenus rosmarus,0.4
 15421,1996,CD,Lower Risk/conservation dependent,Orcinus orca,0.3
-17013,1996,LC,Lower Risk/least concern,Phoca vitulina,0.0
-17013,2008,LC,Least Concern,Phoca vitulina,0.0
-17013,2016,LC,Least Concern,Phoca vitulina,0.0
+17013,1996,LC,Lower Risk/least concern,Phoca vitulina,0
+17013,2008,LC,Least Concern,Phoca vitulina,0
+17013,2016,LC,Least Concern,Phoca vitulina,0
+17023,1996,LC,Lower Risk/least concern,Phoca largha,0
+17023,2016,LC,Least Concern,Phoca largha,0
 17027,1996,VU,Vulnerable,Phocoena phocoena,0.4
-17027,2008,LC,Least Concern,Phocoena phocoena,0.0
+17027,2008,LC,Least Concern,Phocoena phocoena,0
 17031,1996,VU,Vulnerable,Phocoena phocoena,0.4
 17031,2008,CR,Critically Endangered,Phocoena phocoena,0.8
-19855,1996,LC,Lower Risk/least concern,Salmo salar,0.0
-22563,2008,LC,Least Concern,Tursiops truncatus,0.0
-22563,2012,LC,Least Concern,Tursiops truncatus,0.0
+19855,1996,LC,Lower Risk/least concern,Salmo salar,0
+22563,2008,LC,Least Concern,Tursiops truncatus,0
+22563,2012,LC,Least Concern,Tursiops truncatus,0
 22823,1965,T,"""Less rare but believed to be threatened-requires watching""",Ursus maritimus,0.6
 22823,1982,VU,Vulnerable,Ursus maritimus,0.4
 22823,1986,VU,Vulnerable,Ursus maritimus,0.4
@@ -78,9 +80,9 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22823,2006,VU,Vulnerable,Ursus maritimus,0.4
 22823,2008,VU,Vulnerable,Ursus maritimus,0.4
 22823,2015,VU,Vulnerable,Ursus maritimus,0.4
-41672,1996,LC,Lower Risk/least concern,Pusa hispida,0.0
-41672,2008,LC,Least Concern,Pusa hispida,0.0
-41672,2016,LC,Least Concern,Pusa hispida,0.0
+41672,1996,LC,Lower Risk/least concern,Pusa hispida,0
+41672,2008,LC,Least Concern,Pusa hispida,0
+41672,2016,LC,Least Concern,Pusa hispida,0
 41712,2008,EN,Endangered,Eubalaena glacialis,0.6
 41712,2012,EN,Endangered,Eubalaena glacialis,0.6
 61442,2006,CR,Critically Endangered,Delphinapterus leucas,0.8
@@ -90,128 +92,137 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 194300,2011,CR,Critically Endangered,Tursiops truncatus,0.8
 16208224,2012,VU,Vulnerable,Balaenoptera physalus,0.4
 16369383,2012,VU,Vulnerable,Tursiops truncatus,0.4
-22679872,1988,LC,Lower Risk/least concern,Anser brachyrhynchus,0.0
-22679872,1994,LC,Lower Risk/least concern,Anser brachyrhynchus,0.0
-22679872,2000,LC,Lower Risk/least concern,Anser brachyrhynchus,0.0
-22679872,2004,LC,Least Concern,Anser brachyrhynchus,0.0
-22679872,2008,LC,Least Concern,Anser brachyrhynchus,0.0
-22679872,2009,LC,Least Concern,Anser brachyrhynchus,0.0
-22679872,2012,LC,Least Concern,Anser brachyrhynchus,0.0
-22679872,2015,LC,Least Concern,Anser brachyrhynchus,0.0
-22679872,2016,LC,Least Concern,Anser brachyrhynchus,0.0
-22680405,1988,LC,Lower Risk/least concern,Somateria mollissima,0.0
-22680405,1994,LC,Lower Risk/least concern,Somateria mollissima,0.0
-22680405,2000,LC,Lower Risk/least concern,Somateria mollissima,0.0
-22680405,2004,LC,Least Concern,Somateria mollissima,0.0
-22680405,2008,LC,Least Concern,Somateria mollissima,0.0
-22680405,2009,LC,Least Concern,Somateria mollissima,0.0
-22680405,2012,LC,Least Concern,Somateria mollissima,0.0
+22679872,1988,LC,Lower Risk/least concern,Anser brachyrhynchus,0
+22679872,1994,LC,Lower Risk/least concern,Anser brachyrhynchus,0
+22679872,2000,LC,Lower Risk/least concern,Anser brachyrhynchus,0
+22679872,2004,LC,Least Concern,Anser brachyrhynchus,0
+22679872,2008,LC,Least Concern,Anser brachyrhynchus,0
+22679872,2009,LC,Least Concern,Anser brachyrhynchus,0
+22679872,2012,LC,Least Concern,Anser brachyrhynchus,0
+22679872,2015,LC,Least Concern,Anser brachyrhynchus,0
+22679872,2016,LC,Least Concern,Anser brachyrhynchus,0
+22680405,1988,LC,Lower Risk/least concern,Somateria mollissima,0
+22680405,1994,LC,Lower Risk/least concern,Somateria mollissima,0
+22680405,2000,LC,Lower Risk/least concern,Somateria mollissima,0
+22680405,2004,LC,Least Concern,Somateria mollissima,0
+22680405,2008,LC,Least Concern,Somateria mollissima,0
+22680405,2009,LC,Least Concern,Somateria mollissima,0
+22680405,2012,LC,Least Concern,Somateria mollissima,0
 22680405,2015,NT,Near Threatened,Somateria mollissima,0.2
 22680405,2016,NT,Near Threatened,Somateria mollissima,0.2
-22680409,1988,LC,Lower Risk/least concern,Somateria spectabilis,0.0
-22680409,1994,LC,Lower Risk/least concern,Somateria spectabilis,0.0
-22680409,2000,LC,Lower Risk/least concern,Somateria spectabilis,0.0
-22680409,2004,LC,Least Concern,Somateria spectabilis,0.0
-22680409,2008,LC,Least Concern,Somateria spectabilis,0.0
-22680409,2009,LC,Least Concern,Somateria spectabilis,0.0
-22680409,2012,LC,Least Concern,Somateria spectabilis,0.0
-22680409,2016,LC,Least Concern,Somateria spectabilis,0.0
-22693369,1988,LC,Lower Risk/least concern,Calidris alba,0.0
-22693369,1994,LC,Lower Risk/least concern,Calidris alba,0.0
-22693369,2000,LC,Lower Risk/least concern,Calidris alba,0.0
-22693369,2004,LC,Least Concern,Calidris alba,0.0
-22693369,2008,LC,Least Concern,Calidris alba,0.0
-22693369,2009,LC,Least Concern,Calidris alba,0.0
-22693369,2012,LC,Least Concern,Calidris alba,0.0
-22693369,2016,LC,Least Concern,Calidris alba,0.0
-22693420,1988,LC,Lower Risk/least concern,Calidris maritima,0.0
-22693420,1994,LC,Lower Risk/least concern,Calidris maritima,0.0
-22693420,2000,LC,Lower Risk/least concern,Calidris maritima,0.0
-22693420,2004,LC,Least Concern,Calidris maritima,0.0
-22693420,2008,LC,Least Concern,Calidris maritima,0.0
-22693420,2009,LC,Least Concern,Calidris maritima,0.0
-22693420,2012,LC,Least Concern,Calidris maritima,0.0
-22693420,2016,LC,Least Concern,Calidris maritima,0.0
-22693759,1988,LC,Lower Risk/least concern,Charadrius hiaticula,0.0
-22693759,1994,LC,Lower Risk/least concern,Charadrius hiaticula,0.0
-22693759,2000,LC,Lower Risk/least concern,Charadrius hiaticula,0.0
-22693759,2004,LC,Least Concern,Charadrius hiaticula,0.0
-22693759,2008,LC,Least Concern,Charadrius hiaticula,0.0
-22693759,2009,LC,Least Concern,Charadrius hiaticula,0.0
-22693759,2012,LC,Least Concern,Charadrius hiaticula,0.0
-22693759,2016,LC,Least Concern,Charadrius hiaticula,0.0
-22694240,1988,LC,Lower Risk/least concern,Stercorarius pomarinus,0.0
-22694240,1994,LC,Lower Risk/least concern,Stercorarius pomarinus,0.0
-22694240,2000,LC,Lower Risk/least concern,Stercorarius pomarinus,0.0
-22694240,2004,LC,Least Concern,Stercorarius pomarinus,0.0
-22694240,2008,LC,Least Concern,Stercorarius pomarinus,0.0
-22694240,2009,LC,Least Concern,Stercorarius pomarinus,0.0
-22694240,2012,LC,Least Concern,Stercorarius pomarinus,0.0
-22694240,2016,LC,Least Concern,Stercorarius pomarinus,0.0
-22694245,1988,LC,Lower Risk/least concern,Stercorarius parasiticus,0.0
-22694245,1994,LC,Lower Risk/least concern,Stercorarius parasiticus,0.0
-22694245,2000,LC,Lower Risk/least concern,Stercorarius parasiticus,0.0
-22694245,2004,LC,Least Concern,Stercorarius parasiticus,0.0
-22694245,2008,LC,Least Concern,Stercorarius parasiticus,0.0
-22694245,2009,LC,Least Concern,Stercorarius parasiticus,0.0
-22694245,2012,LC,Least Concern,Stercorarius parasiticus,0.0
-22694245,2016,LC,Least Concern,Stercorarius parasiticus,0.0
-22694343,1988,LC,Lower Risk/least concern,Larus hyperboreus,0.0
-22694343,1994,LC,Lower Risk/least concern,Larus hyperboreus,0.0
-22694343,2000,LC,Lower Risk/least concern,Larus hyperboreus,0.0
-22694343,2004,LC,Least Concern,Larus hyperboreus,0.0
-22694343,2008,LC,Least Concern,Larus hyperboreus,0.0
-22694343,2009,LC,Least Concern,Larus hyperboreus,0.0
-22694343,2012,LC,Least Concern,Larus hyperboreus,0.0
-22694343,2016,LC,Least Concern,Larus hyperboreus,0.0
-22694473,1988,LC,Lower Risk/least concern,Pagophila eburnea,0.0
-22694473,1994,LC,Lower Risk/least concern,Pagophila eburnea,0.0
-22694473,2000,LC,Lower Risk/least concern,Pagophila eburnea,0.0
-22694473,2004,LC,Least Concern,Pagophila eburnea,0.0
+22680409,1988,LC,Lower Risk/least concern,Somateria spectabilis,0
+22680409,1994,LC,Lower Risk/least concern,Somateria spectabilis,0
+22680409,2000,LC,Lower Risk/least concern,Somateria spectabilis,0
+22680409,2004,LC,Least Concern,Somateria spectabilis,0
+22680409,2008,LC,Least Concern,Somateria spectabilis,0
+22680409,2009,LC,Least Concern,Somateria spectabilis,0
+22680409,2012,LC,Least Concern,Somateria spectabilis,0
+22680409,2016,LC,Least Concern,Somateria spectabilis,0
+22680412,1988,LC,Lower Risk/least concern,Somateria fischeri,0
+22680412,1994,VU,Vulnerable,Somateria fischeri,0.4
+22680412,1996,VU,Vulnerable,Somateria fischeri,0.4
+22680412,2000,LC,Lower Risk/least concern,Somateria fischeri,0
+22680412,2004,LC,Least Concern,Somateria fischeri,0
+22680412,2008,LC,Least Concern,Somateria fischeri,0
+22680412,2009,LC,Least Concern,Somateria fischeri,0
+22680412,2012,LC,Least Concern,Somateria fischeri,0
+22680412,2016,LC,Least Concern,Somateria fischeri,0
+22693369,1988,LC,Lower Risk/least concern,Calidris alba,0
+22693369,1994,LC,Lower Risk/least concern,Calidris alba,0
+22693369,2000,LC,Lower Risk/least concern,Calidris alba,0
+22693369,2004,LC,Least Concern,Calidris alba,0
+22693369,2008,LC,Least Concern,Calidris alba,0
+22693369,2009,LC,Least Concern,Calidris alba,0
+22693369,2012,LC,Least Concern,Calidris alba,0
+22693369,2016,LC,Least Concern,Calidris alba,0
+22693420,1988,LC,Lower Risk/least concern,Calidris maritima,0
+22693420,1994,LC,Lower Risk/least concern,Calidris maritima,0
+22693420,2000,LC,Lower Risk/least concern,Calidris maritima,0
+22693420,2004,LC,Least Concern,Calidris maritima,0
+22693420,2008,LC,Least Concern,Calidris maritima,0
+22693420,2009,LC,Least Concern,Calidris maritima,0
+22693420,2012,LC,Least Concern,Calidris maritima,0
+22693420,2016,LC,Least Concern,Calidris maritima,0
+22693759,1988,LC,Lower Risk/least concern,Charadrius hiaticula,0
+22693759,1994,LC,Lower Risk/least concern,Charadrius hiaticula,0
+22693759,2000,LC,Lower Risk/least concern,Charadrius hiaticula,0
+22693759,2004,LC,Least Concern,Charadrius hiaticula,0
+22693759,2008,LC,Least Concern,Charadrius hiaticula,0
+22693759,2009,LC,Least Concern,Charadrius hiaticula,0
+22693759,2012,LC,Least Concern,Charadrius hiaticula,0
+22693759,2016,LC,Least Concern,Charadrius hiaticula,0
+22694240,1988,LC,Lower Risk/least concern,Stercorarius pomarinus,0
+22694240,1994,LC,Lower Risk/least concern,Stercorarius pomarinus,0
+22694240,2000,LC,Lower Risk/least concern,Stercorarius pomarinus,0
+22694240,2004,LC,Least Concern,Stercorarius pomarinus,0
+22694240,2008,LC,Least Concern,Stercorarius pomarinus,0
+22694240,2009,LC,Least Concern,Stercorarius pomarinus,0
+22694240,2012,LC,Least Concern,Stercorarius pomarinus,0
+22694240,2016,LC,Least Concern,Stercorarius pomarinus,0
+22694245,1988,LC,Lower Risk/least concern,Stercorarius parasiticus,0
+22694245,1994,LC,Lower Risk/least concern,Stercorarius parasiticus,0
+22694245,2000,LC,Lower Risk/least concern,Stercorarius parasiticus,0
+22694245,2004,LC,Least Concern,Stercorarius parasiticus,0
+22694245,2008,LC,Least Concern,Stercorarius parasiticus,0
+22694245,2009,LC,Least Concern,Stercorarius parasiticus,0
+22694245,2012,LC,Least Concern,Stercorarius parasiticus,0
+22694245,2016,LC,Least Concern,Stercorarius parasiticus,0
+22694343,1988,LC,Lower Risk/least concern,Larus hyperboreus,0
+22694343,1994,LC,Lower Risk/least concern,Larus hyperboreus,0
+22694343,2000,LC,Lower Risk/least concern,Larus hyperboreus,0
+22694343,2004,LC,Least Concern,Larus hyperboreus,0
+22694343,2008,LC,Least Concern,Larus hyperboreus,0
+22694343,2009,LC,Least Concern,Larus hyperboreus,0
+22694343,2012,LC,Least Concern,Larus hyperboreus,0
+22694343,2016,LC,Least Concern,Larus hyperboreus,0
+22694473,1988,LC,Lower Risk/least concern,Pagophila eburnea,0
+22694473,1994,LC,Lower Risk/least concern,Pagophila eburnea,0
+22694473,2000,LC,Lower Risk/least concern,Pagophila eburnea,0
+22694473,2004,LC,Least Concern,Pagophila eburnea,0
 22694473,2005,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2006,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2008,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2010,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2012,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2016,NT,Near Threatened,Pagophila eburnea,0.2
-22694629,1988,LC,Lower Risk/least concern,Sterna paradisaea,0.0
-22694629,1994,LC,Lower Risk/least concern,Sterna paradisaea,0.0
-22694629,2000,LC,Lower Risk/least concern,Sterna paradisaea,0.0
-22694629,2004,LC,Least Concern,Sterna paradisaea,0.0
-22694629,2008,LC,Least Concern,Sterna paradisaea,0.0
-22694629,2009,LC,Least Concern,Sterna paradisaea,0.0
-22694629,2010,LC,Least Concern,Sterna paradisaea,0.0
-22694629,2012,LC,Least Concern,Sterna paradisaea,0.0
-22694629,2016,LC,Least Concern,Sterna paradisaea,0.0
-22694837,1988,LC,Lower Risk/least concern,Alle alle,0.0
-22694837,1994,LC,Lower Risk/least concern,Alle alle,0.0
-22694837,2000,LC,Lower Risk/least concern,Alle alle,0.0
-22694837,2004,LC,Least Concern,Alle alle,0.0
-22694837,2008,LC,Least Concern,Alle alle,0.0
-22694837,2009,LC,Least Concern,Alle alle,0.0
-22694837,2012,LC,Least Concern,Alle alle,0.0
-22694837,2016,LC,Least Concern,Alle alle,0.0
-22694841,1988,LC,Lower Risk/least concern,Uria aalge,0.0
-22694841,1994,LC,Lower Risk/least concern,Uria aalge,0.0
-22694841,2000,LC,Lower Risk/least concern,Uria aalge,0.0
-22694841,2004,LC,Least Concern,Uria aalge,0.0
-22694841,2008,LC,Least Concern,Uria aalge,0.0
-22694841,2009,LC,Least Concern,Uria aalge,0.0
-22694841,2012,LC,Least Concern,Uria aalge,0.0
-22694841,2016,LC,Least Concern,Uria aalge,0.0
-22694861,1988,LC,Lower Risk/least concern,Cepphus grylle,0.0
-22694861,1994,LC,Lower Risk/least concern,Cepphus grylle,0.0
-22694861,2000,LC,Lower Risk/least concern,Cepphus grylle,0.0
-22694861,2004,LC,Least Concern,Cepphus grylle,0.0
-22694861,2008,LC,Least Concern,Cepphus grylle,0.0
-22694861,2009,LC,Least Concern,Cepphus grylle,0.0
-22694861,2012,LC,Least Concern,Cepphus grylle,0.0
-22694861,2016,LC,Least Concern,Cepphus grylle,0.0
-22697866,1988,LC,Lower Risk/least concern,Fulmarus glacialis,0.0
-22697866,1994,LC,Lower Risk/least concern,Fulmarus glacialis,0.0
-22697866,2000,LC,Lower Risk/least concern,Fulmarus glacialis,0.0
-22697866,2004,LC,Least Concern,Fulmarus glacialis,0.0
-22697866,2008,LC,Least Concern,Fulmarus glacialis,0.0
-22697866,2009,LC,Least Concern,Fulmarus glacialis,0.0
-22697866,2012,LC,Least Concern,Fulmarus glacialis,0.0
-22697866,2016,LC,Least Concern,Fulmarus glacialis,0.0
+22694629,1988,LC,Lower Risk/least concern,Sterna paradisaea,0
+22694629,1994,LC,Lower Risk/least concern,Sterna paradisaea,0
+22694629,2000,LC,Lower Risk/least concern,Sterna paradisaea,0
+22694629,2004,LC,Least Concern,Sterna paradisaea,0
+22694629,2008,LC,Least Concern,Sterna paradisaea,0
+22694629,2009,LC,Least Concern,Sterna paradisaea,0
+22694629,2010,LC,Least Concern,Sterna paradisaea,0
+22694629,2012,LC,Least Concern,Sterna paradisaea,0
+22694629,2016,LC,Least Concern,Sterna paradisaea,0
+22694837,1988,LC,Lower Risk/least concern,Alle alle,0
+22694837,1994,LC,Lower Risk/least concern,Alle alle,0
+22694837,2000,LC,Lower Risk/least concern,Alle alle,0
+22694837,2004,LC,Least Concern,Alle alle,0
+22694837,2008,LC,Least Concern,Alle alle,0
+22694837,2009,LC,Least Concern,Alle alle,0
+22694837,2012,LC,Least Concern,Alle alle,0
+22694837,2016,LC,Least Concern,Alle alle,0
+22694841,1988,LC,Lower Risk/least concern,Uria aalge,0
+22694841,1994,LC,Lower Risk/least concern,Uria aalge,0
+22694841,2000,LC,Lower Risk/least concern,Uria aalge,0
+22694841,2004,LC,Least Concern,Uria aalge,0
+22694841,2008,LC,Least Concern,Uria aalge,0
+22694841,2009,LC,Least Concern,Uria aalge,0
+22694841,2012,LC,Least Concern,Uria aalge,0
+22694841,2016,LC,Least Concern,Uria aalge,0
+22694861,1988,LC,Lower Risk/least concern,Cepphus grylle,0
+22694861,1994,LC,Lower Risk/least concern,Cepphus grylle,0
+22694861,2000,LC,Lower Risk/least concern,Cepphus grylle,0
+22694861,2004,LC,Least Concern,Cepphus grylle,0
+22694861,2008,LC,Least Concern,Cepphus grylle,0
+22694861,2009,LC,Least Concern,Cepphus grylle,0
+22694861,2012,LC,Least Concern,Cepphus grylle,0
+22694861,2016,LC,Least Concern,Cepphus grylle,0
+22697866,1988,LC,Lower Risk/least concern,Fulmarus glacialis,0
+22697866,1994,LC,Lower Risk/least concern,Fulmarus glacialis,0
+22697866,2000,LC,Lower Risk/least concern,Fulmarus glacialis,0
+22697866,2004,LC,Least Concern,Fulmarus glacialis,0
+22697866,2008,LC,Least Concern,Fulmarus glacialis,0
+22697866,2009,LC,Least Concern,Fulmarus glacialis,0
+22697866,2012,LC,Least Concern,Fulmarus glacialis,0
+22697866,2016,LC,Least Concern,Fulmarus glacialis,0

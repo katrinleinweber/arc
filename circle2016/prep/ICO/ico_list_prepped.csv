@@ -8,6 +8,7 @@ Arctic tern,Sterna paradisaea,FALSE,9,22694629,NA,LC
 Arctic tern,Sterna paradisaea,FALSE,7,22694629,NA,LC
 Arctic tern,Sterna paradisaea,FALSE,5,22694629,NA,LC
 Arctic tern,Sterna paradisaea,FALSE,6,22694629,NA,LC
+Bearded seal,Erignathus barbatus,FALSE,1,8010,NA,LC
 Bearded seal,Erignathus barbatus,FALSE,8,8010,NA,LC
 Bearded seal,Erignathus barbatus,FALSE,9,8010,NA,LC
 Bearded seal,Erignathus barbatus,FALSE,5,8010,NA,LC
@@ -49,7 +50,7 @@ Eider,Somateria mollissima,FALSE,8,22680405,NA,NT
 Eider,Somateria mollissima,FALSE,9,22680405,NA,NT
 Fin whale,Balaenoptera physalus,TRUE,NA,16208224,Mediterranean subpopulation,VU
 Fin whale,Balaenoptera physalus,TRUE,NA,2478,NA,EN
-fulmar,Fulmarus glacialis,FALSE,5,22697866,NA,LC
+Fulmar,Fulmarus glacialis,FALSE,5,22697866,NA,LC
 Fulmar,Fulmarus glacialis,FALSE,8,22697866,NA,LC
 Fulmar,Fulmarus glacialis,FALSE,9,22697866,NA,LC
 Glaucous gull,Larus hyperboreus,FALSE,5,22694343,NA,LC
@@ -114,10 +115,11 @@ Pomarine,Stercorarius pomarinus,FALSE,9,22694240,NA,LC
 Pomarine skua,Stercorarius pomarinus,FALSE,5,22694240,NA,LC
 Purple sandpiper,Calidris maritima,FALSE,8,22693420,NA,LC
 Purple sandpiper,Calidris maritima,FALSE,9,22693420,NA,LC
-purple sandpipers,Calidris maritima,FALSE,5,22693420,NA,LC
+Purple sandpipers,Calidris maritima,FALSE,5,22693420,NA,LC
 Ringed plover,Charadrius hiaticula,FALSE,5,22693759,NA,LC
 Ringed Plover,Charadrius hiaticula,FALSE,8,22693759,NA,LC
 Ringed Plover,Charadrius hiaticula,FALSE,9,22693759,NA,LC
+Ringed seal,Pusa hispida,FALSE,1,41672,NA,LC
 Ringed seal,Pusa hispida,FALSE,2,41672,NA,LC
 Ringed seal,Pusa hispida,FALSE,3,41672,NA,LC
 Ringed seal,Pusa hispida,FALSE,8,41672,NA,LC
@@ -126,10 +128,13 @@ Ringed seal,Pusa hispida,FALSE,5,41672,NA,LC
 Salmon,Salmo salar,FALSE,6,19855,NA,LR/lc
 Salmon,Salmo salar,FALSE,8,19855,NA,LR/lc
 Salmon,Salmo salar,FALSE,9,19855,NA,LR/lc
-sanderling,Calidris alba,FALSE,5,22693369,NA,LC
+Sanderling,Calidris alba,FALSE,5,22693369,NA,LC
 Sanderling,Calidris alba,FALSE,8,22693369,NA,LC
 Sanderling,Calidris alba,FALSE,9,22693369,NA,LC
 Sei whale,Balaenoptera borealis,TRUE,NA,2475,NA,EN
+Spectacled Eider,Somateria fischeri,FALSE,1,22680412,NA,LC
+Spotted seal,Phoca largha,FALSE,1,17023,NA,DD
+Walrus,Odobenus rosmarus,FALSE,1,15106,NA,DD
 Walrus,Odobenus rosmarus,FALSE,2,15106,NA,DD
 Walrus,Odobenus rosmarus,FALSE,3,15106,NA,DD
 Walrus,Odobenus rosmarus,FALSE,4,15106,NA,DD
