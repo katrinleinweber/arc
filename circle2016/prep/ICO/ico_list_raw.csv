@@ -8,6 +8,7 @@ Arctic tern,Sterna paradisaea,FALSE,9
 Arctic tern,Sterna paradisaea,FALSE,7
 Arctic tern ,Sterna paradisaea,FALSE,5
 Arctic tern ,Sterna paradisaea,FALSE,6
+Bearded seal,Erignathus barbatus,FALSE,1
 Bearded seal,Erignathus barbatus,FALSE,8
 Bearded seal,Erignathus barbatus,FALSE,9
 Bearded seal ,Erignathus barbatus,FALSE,5
@@ -34,7 +35,7 @@ Eider,Somateria mollissima,FALSE,5
 Eider,Somateria mollissima,FALSE,8
 Eider,Somateria mollissima,FALSE,9
 Fin whale,Balaenoptera physalus,TRUE,NA
-fulmar,Fulmarus glacialis,FALSE,5
+Fulmar,Fulmarus glacialis,FALSE,5
 Fulmar,Fulmarus glacialis,FALSE,8
 Fulmar,Fulmarus glacialis,FALSE,9
 Glaucous gull,Larus hyperboreus,FALSE,5
@@ -92,10 +93,11 @@ Pomarine,Stercorarius pomarinus,FALSE,9
 Pomarine skua ,Stercorarius pomarinus,FALSE,5
 Purple sandpiper,Calidris maritima,FALSE,8
 Purple sandpiper,Calidris maritima,FALSE,9
-purple sandpipers,Calidris maritima,FALSE,5
+Purple sandpipers,Calidris maritima,FALSE,5
 Ringed plover,Charadrius hiaticula,FALSE,5
 Ringed Plover,Charadrius hiaticula,FALSE,8
 Ringed Plover,Charadrius hiaticula,FALSE,9
+Ringed seal,Pusa hispida,FALSE,1
 Ringed seal,Pusa hispida,FALSE,2
 Ringed seal,Pusa hispida,FALSE,3
 Ringed seal,Pusa hispida,FALSE,8
@@ -104,10 +106,14 @@ Ringed seal ,Pusa hispida,FALSE,5
 Salmon,Salmo salar,FALSE,6
 Salmon,Salmo salar,FALSE,8
 Salmon,Salmo salar,FALSE,9
-sanderling,Calidris alba,FALSE,5
+Sanderling,Calidris alba,FALSE,5
 Sanderling,Calidris alba,FALSE,8
 Sanderling,Calidris alba,FALSE,9
 Sei whale,Balaenoptera borealis,TRUE,NA
+Spectacled Eider,Somateria fischeri,FALSE,1
+Spotted seal,Phoca largha,FALSE,1
+Steller's Eider,Polysticta steller,FALSE,1
+Walrus,Odobenus rosmarus,FALSE,1
 Walrus,Odobenus rosmarus,FALSE,2
 Walrus,Odobenus rosmarus,FALSE,3
 Walrus,Odobenus rosmarus,FALSE,4
