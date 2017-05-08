@@ -1,0 +1,53 @@
+iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_gl,ico_rgn_id,subpop,cat
+2469,Extant,Native,Native,4,Russia,Bowhead,Balaena mysticetus,NA,4,Okhotsk Sea subpopulation,EN
+2468,Extant,Native,Native,2,Nunavut,Bowhead,Balaena mysticetus,NA,2,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,Extant,Native,Native,3,Beaufort,Bowhead,Balaena mysticetus,NA,3,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,Extant,Native,Native,4,Russia,Bowhead,Balaena mysticetus,NA,4,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,Extant,Native,Native,1,Alaska,Bowhead,Balaena mysticetus,NA,1,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2472,Extant,Native,Native,8,West Greenland,Bowhead,Balaena mysticetus,NA,8,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2467,Extant,Native,Native,2,Nunavut,Bowhead,Balaena mysticetus,NA,2,NA,LC
+2467,Extant,Native,Native,3,Beaufort,Bowhead,Balaena mysticetus,NA,3,NA,LC
+2467,Extant,Native,Native,8,West Greenland,Bowhead,Balaena mysticetus,NA,8,NA,LC
+2467,Extant,Native,Native,1,Alaska,Bowhead,Balaena mysticetus,NA,1,NA,LC
+8010,Extant,Native,Native,2,Nunavut,Bearded Seal,Erignathus barbatus,NA,2,NA,LC
+8010,Extant,Native,Native,3,Beaufort,Bearded Seal,Erignathus barbatus,NA,3,NA,LC
+8010,Extant,Native,Native,4,Russia,Bearded Seal,Erignathus barbatus,NA,4,NA,LC
+8010,Extant,Native,Native,5,Svalbard,Bearded Seal,Erignathus barbatus,NA,5,NA,LC
+8010,Extant,Native,Native,1,Alaska,Bearded Seal,Erignathus barbatus,NA,1,NA,LC
+41672,Extant,Native,Native,2,Nunavut,Ringed Seal,Pusa hispida,NA,2,NA,LC
+41672,Extant,Native,Native,8,West Greenland,Ringed Seal,Pusa hispida,NA,8,NA,LC
+41672,Extant,Native,Native,9,East Greenland,Ringed Seal,Pusa hispida,NA,9,NA,LC
+41672,Extant,Native,Native,4,Russia,Ringed Seal,Pusa hispida,NA,4,NA,LC
+41672,Extant,Native,Native,5,Svalbard,Ringed Seal,Pusa hispida,NA,5,NA,LC
+41672,Extant,Native,Native,1,Alaska,Ringed Seal,Pusa hispida,NA,1,NA,LC
+17023,Extant,Native,Native,4,Russia,Spotted Seal,Phoca largha,NA,4,NA,DD
+17023,Extant,Native,Native,1,Alaska,Spotted Seal,Phoca largha,NA,1,NA,DD
+15106,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,NA,2,NA,DD
+15106,Extant,Native,Native,8,West Greenland,Walrus,Odobenus rosmarus,NA,8,NA,DD
+15106,Extant,Native,Native,9,East Greenland,Walrus,Odobenus rosmarus,NA,9,NA,DD
+15106,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,NA,4,NA,DD
+15106,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,NA,1,NA,DD
+41671,Extant,Native,Native,2,Nunavut,Harp Seal,Pagophilus groenlandicus,NA,2,NA,LC
+41671,Extant,Native,Native,8,West Greenland,Harp Seal,Pagophilus groenlandicus,NA,8,NA,LC
+41671,Extant,Native,Native,9,East Greenland,Harp Seal,Pagophilus groenlandicus,NA,9,NA,LC
+6335,Extant,Native,Native,2,Nunavut,Beluga,Delphinapterus leucas,NA,2,NA,NT
+6335,Extant,Native,Native,3,Beaufort,Beluga,Delphinapterus leucas,NA,3,NA,NT
+6335,Extant,Native,Native,8,West Greenland,Beluga,Delphinapterus leucas,NA,8,NA,NT
+6335,Extant,Native,Native,4,Russia,Beluga,Delphinapterus leucas,NA,4,NA,NT
+22823,Extant,Native,Native,2,Nunavut,Polar Bear,Ursus maritimus,NA,2,NA,VU
+22823,Extant,Native,Native,3,Beaufort,Polar Bear,Ursus maritimus,NA,3,NA,VU
+22823,Extant,Native,Native,8,West Greenland,Polar Bear,Ursus maritimus,NA,8,NA,VU
+22823,Extant,Native,Native,9,East Greenland,Polar Bear,Ursus maritimus,NA,9,NA,VU
+41670,Extant,Native,Native,4,Russia,Ribbon seal,Histriophoca fasciata,NA,4,NA,DD
+8097,Extant,Native,Native,4,Russia,Gray Whale,Eschrichtius robustus,NA,4,NA,LC
+8099,Extant,Native,Native,4,Russia,Gray Whale,Eschrichtius robustus,NA,4,western subpopulation,CR
+2478,Extant,Native,Native,8,West Greenland,Fin Whale,Balaenoptera physalus,NA,8,NA,EN
+9250,Extant,Native,Native,8,West Greenland,Pilot Whale,Globicephala melas,NA,8,NA,DD
+9250,Extant,Native,Native,9,East Greenland,Pilot Whale,Globicephala melas,NA,9,NA,DD
+2474,Extant,Native,Native,8,West Greenland,Minke Whale,Balaenoptera acutorostrata,NA,8,NA,LC
+2474,Extant,Native,Native,9,East Greenland,Minke Whale,Balaenoptera acutorostrata,NA,9,NA,LC
+17027,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,NA,8,NA,LC
+17027,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,NA,9,NA,LC
+13006,Extant,Native,Native,8,West Greenland,Humpback whale,Megaptera novaeangliae,NA,8,NA,LC
+6204,Extant,Native,Native,8,West Greenland,Hooded,Cystophora cristata,NA,8,NA,VU
+6204,Extant,Native,Native,9,East Greenland,Hooded,Cystophora cristata,NA,9,NA,VU

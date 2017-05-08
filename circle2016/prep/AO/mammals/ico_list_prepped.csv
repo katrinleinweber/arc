@@ -1,0 +1,74 @@
+comname,sciname,ico_gl,ico_rgn_id,iucn_sid,subpop,cat
+Bowhead,Balaena mysticetus,NA,1,2469,Okhotsk Sea subpopulation,EN
+Bowhead,Balaena mysticetus,NA,1,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead,Balaena mysticetus,NA,1,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead,Balaena mysticetus,NA,1,2467,NA,LC
+Bearded Seal,Erignathus barbatus,NA,1,8010,NA,LC
+Ringed Seal,Pusa hispida,NA,1,41672,NA,LC
+Spotted Seal,Phoca largha,NA,1,17023,NA,DD
+Walrus,Odobenus rosmarus,NA,1,15106,NA,DD
+Harp Seal,Pagophilus groenlandicus,NA,2,41671,NA,LC
+Walrus,Odobenus rosmarus,NA,2,15106,NA,DD
+Bowhead,Balaena mysticetus,NA,2,2469,Okhotsk Sea subpopulation,EN
+Bowhead,Balaena mysticetus,NA,2,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead,Balaena mysticetus,NA,2,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead,Balaena mysticetus,NA,2,2467,NA,LC
+Beluga,Delphinapterus leucas,NA,2,6335,NA,NT
+Beluga,Delphinapterus leucas,NA,2,61442,Cook Inlet subpopulation,CR
+Bearded Seal,Erignathus barbatus,NA,2,8010,NA,LC
+Ringed Seal,Pusa hispida,NA,2,41672,NA,LC
+Polar Bear,Ursus maritimus,NA,2,22823,NA,VU
+Bowhead,Balaena mysticetus,NA,3,2469,Okhotsk Sea subpopulation,EN
+Bowhead,Balaena mysticetus,NA,3,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead,Balaena mysticetus,NA,3,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead,Balaena mysticetus,NA,3,2467,NA,LC
+Beluga,Delphinapterus leucas,NA,3,6335,NA,NT
+Beluga,Delphinapterus leucas,NA,3,61442,Cook Inlet subpopulation,CR
+Bearded Seal,Erignathus barbatus,NA,3,8010,NA,LC
+Polar Bear,Ursus maritimus,NA,3,22823,NA,VU
+Bearded Seal,Erignathus barbatus,NA,4,8010,NA,LC
+Ringed Seal,Pusa hispida,NA,4,41672,NA,LC
+Spotted Seal,Phoca largha,NA,4,17023,NA,DD
+Ribbon seal,Histriophoca fasciata,NA,4,41670,NA,DD
+Walrus,Odobenus rosmarus,NA,4,15106,NA,DD
+Bowhead,Balaena mysticetus,NA,4,2469,Okhotsk Sea subpopulation,EN
+Bowhead,Balaena mysticetus,NA,4,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead,Balaena mysticetus,NA,4,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead,Balaena mysticetus,NA,4,2467,NA,LC
+Beluga,Delphinapterus leucas,NA,4,6335,NA,NT
+Beluga,Delphinapterus leucas,NA,4,61442,Cook Inlet subpopulation,CR
+Gray Whale,Eschrichtius robustus,NA,4,8097,NA,LC
+Gray Whale,Eschrichtius robustus,NA,4,8099,western subpopulation,CR
+Bearded Seal,Erignathus barbatus,NA,5,8010,NA,LC
+Ringed Seal,Pusa hispida,NA,5,41672,NA,LC
+Fin Whale,Balaenoptera physalus,NA,8,16208224,Mediterranean subpopulation,VU
+Fin Whale,Balaenoptera physalus,NA,8,2478,NA,EN
+Pilot Whale,Globicephala melas,NA,8,9250,NA,DD
+Pilot Whale,Globicephala melas,NA,8,16376479,Mediterranean subpopulation,DD
+Walrus,Odobenus rosmarus,NA,8,15106,NA,DD
+Beluga,Delphinapterus leucas,NA,8,6335,NA,NT
+Beluga,Delphinapterus leucas,NA,8,61442,Cook Inlet subpopulation,CR
+Minke Whale,Balaenoptera acutorostrata,NA,8,2474,NA,LC
+Harbour porpoise,Phocoena phocoena,NA,8,17027,NA,LC
+Harbour porpoise,Phocoena phocoena,NA,8,17031,Baltic Sea subpopulation,CR
+Polar Bear,Ursus maritimus,NA,8,22823,NA,VU
+Humpback whale,Megaptera novaeangliae,NA,8,132835,Arabian Sea subpopulation,EN
+Humpback whale,Megaptera novaeangliae,NA,8,13006,NA,LC
+Humpback whale,Megaptera novaeangliae,NA,8,132832,Oceania subpopulation,EN
+Bowhead,Balaena mysticetus,NA,8,2469,Okhotsk Sea subpopulation,EN
+Bowhead,Balaena mysticetus,NA,8,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+Bowhead,Balaena mysticetus,NA,8,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+Bowhead,Balaena mysticetus,NA,8,2467,NA,LC
+Harp Seal,Pagophilus groenlandicus,NA,8,41671,NA,LC
+Ringed Seal,Pusa hispida,NA,8,41672,NA,LC
+Hooded,Cystophora cristata,NA,8,6204,NA,VU
+Polar Bear,Ursus maritimus,NA,9,22823,NA,VU
+Pilot Whale,Globicephala melas,NA,9,9250,NA,DD
+Pilot Whale,Globicephala melas,NA,9,16376479,Mediterranean subpopulation,DD
+Walrus,Odobenus rosmarus,NA,9,15106,NA,DD
+Minke Whale,Balaenoptera acutorostrata,NA,9,2474,NA,LC
+Harbour porpoise,Phocoena phocoena,NA,9,17027,NA,LC
+Harbour porpoise,Phocoena phocoena,NA,9,17031,Baltic Sea subpopulation,CR
+Harp Seal,Pagophilus groenlandicus,NA,9,41671,NA,LC
+Ringed Seal,Pusa hispida,NA,9,41672,NA,LC
+Hooded,Cystophora cristata,NA,9,6204,NA,VU
