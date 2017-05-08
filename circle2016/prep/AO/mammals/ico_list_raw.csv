@@ -1,7 +1,7 @@
 comname,sciname,ico_gl,ico_rgn_id
 Bowhead,Balaena mysticetus,,1
 Bearded Seal,Erignathus barbatus,,1
-Ringed Seal,Pusa hispida hispida,,1
+Ringed Seal,Pusa hispida,,1
 Spotted Seal,Phoca largha,,1
 Walrus,Odobenus rosmarus,,1
 Narwhal,Monodon monocerosÿ,,2
@@ -10,7 +10,7 @@ Walrus,Odobenus rosmarus,,2
 Bowhead,Balaena mysticetus,,2
 Beluga,Delphinapterus leucas,,2
 Bearded Seal,Erignathus barbatus,,2
-Ringed Seal,Pusa hispida hispida,,2
+Ringed Seal,Pusa hispida,,2
 Polar Bear,Ursus maritimus,,2
 Bowhead,Balaena mysticetus,,3
 Beluga,Delphinapterus leucas,,3
@@ -18,7 +18,7 @@ Bearded Seal,Erignathus barbatus,,3
 Ringed Seal,Pusa hispida hispida,,3
 Polar Bear,Ursus maritimus,,3
 Bearded Seal,Erignathus barbatus,,4
-Ringed Seal,Pusa hispida hispida,,4
+Ringed Seal,Pusa hispida,,4
 Spotted Seal,Phoca largha,,4
 Ribbon seal,Histriophoca fasciata,,4
 Walrus,Odobenus rosmarus,,4
@@ -26,7 +26,7 @@ Bowhead,Balaena mysticetus,,4
 Beluga,Delphinapterus leucas,,4
 Gray Whale,Eschrichtius robustus,,4
 Bearded Seal,Erignathus barbatus,,5
-Ringed Seal,Pusa hispida hispida,,5
+Ringed Seal,Pusa hispida,,5
 Fin Whale,Balaenoptera physalus,,8
 Pilot Whale,Globicephala melas,,8
 Walrus,Odobenus rosmarus,,8
@@ -38,7 +38,7 @@ Polar Bear,Ursus maritimus,,8
 Humpback whale,Megaptera novaeangliae,,8
 Bowhead,Balaena mysticetus,,8
 Harp Seal,Pagophilus groenlandicus,,8
-Ringed Seal,Pusa hispida hispida,,8
+Ringed Seal,Pusa hispida,,8
 Hooded,Cystophora cristata,,8
 Polar Bear,Ursus maritimus,,9
 Pilot Whale,Globicephala melas,,9
@@ -47,5 +47,5 @@ Narwhal,Monodon monocerosÿ,,9
 Minke Whale,Balaenoptera acutorostrata,,9
 Harbour porpoise,Phocoena phocoena,,9
 Harp Seal,Pagophilus groenlandicus,,9
-Ringed Seal,Pusa hispida hispida,,9
+Ringed Seal,Pusa hispida,,9
 Hooded,Cystophora cristata,,9
