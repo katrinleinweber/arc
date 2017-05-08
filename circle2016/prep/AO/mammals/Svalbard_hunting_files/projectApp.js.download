@@ -1,0 +1,94 @@
+﻿$(document).ready(function () {
+    highContrast();
+    blockQuote();
+    initxxemxx();
+    ScaleImage();
+});
+
+function highContrast() {
+    var is_highcontrast = $.cookie('is_highcontrast');
+    if (is_highcontrast)
+        switchToHighContrast();
+
+    $('a#highContrast').click(function (event) {
+        event.preventDefault();
+        var is_highcontrast = $.cookie('is_highcontrast');
+
+        if (!is_highcontrast)
+            switchToHighContrast();
+        else
+            switchToStandardContrast();
+    });
+}
+
+function ScaleImage() {
+    var imageblocks = document.getElementsByClassName("imageblockcontent");
+    if (imageblocks != undefined && imageblocks.length > 0) {
+        for (var i = 0; i < imageblocks.length; i++) {
+            var img = imageblocks[i].getElementsByTagName("img");
+            if (img != null) {
+                var src = img[0].dataset.src;
+                if (src.indexOf("?") > -1)
+                    src = src.substring(0, src.indexOf("?"));
+                var captions = imageblocks[i].getElementsByClassName("flex-caption");
+                var width = captions[0].clientWidth;
+                src = src + "?w=" + width;
+                img[0].src = src;
+            }
+        }
+    }
+}
+
+function switchToHighContrast() {
+    $.cookie('is_highcontrast', '1', { expires: 7, path: '/' });
+
+    $('head').append('<link rel=\"stylesheet\" href=\"/Static/css/style-contrast.css\" id=\"highContrastStyle\"/>');
+    $('head').append('<link rel=\"stylesheet\" href=\"/Static/css/style-contrast-adaptions.css\" id=\"highContrastAdaptionStyle\"/>');
+
+    $('span#highContrastOn').show();
+    $('span#highContrastOff').hide();
+}
+
+function switchToStandardContrast() {
+    $.removeCookie('is_highcontrast', { expires: 7, path: '/' });
+
+    var hcsElement = document.getElementById('highContrastStyle');
+    hcsElement.parentNode.removeChild(hcsElement);
+    var hcasElement = document.getElementById('highContrastAdaptionStyle');
+    hcasElement.parentNode.removeChild(hcasElement);
+
+    $('span#highContrastOn').hide();
+    $('span#highContrastOff').show();
+}
+
+function blockQuote() {
+    $('blockquote').prepend('<i class="icon-quote-left icon-4x pull-left icon-muted"></i>');
+}
+
+function initxxemxx() {
+    $(".xxemxx").click(function (e) {
+        e.preventDefault();
+        var key = $(this).attr("key");
+        if (key.length > 65) {
+            var mailkey = key.substring(65);
+            key = key.substring(0, 65);
+            var mail = "";
+            for (var i = 0; i < mailkey.length; i++) {
+                var found = false;
+                for (var k = 0; k < key.length; k++) {
+                    if (mailkey[i] == key[k]) {
+                        var pos = k - i - mailkey.length + 65;
+                        pos = pos % 65;
+                        mail += key[pos];
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    mail += mailkey[i];
+                }
+            }
+            mail = "mailto:" + mail;
+            window.location.href = mail;
+        }
+    });
+}

@@ -1,0 +1,1901 @@
+/// routines to implement #19: 
+/// if user holds mouse on the text then text is automatically started to play
+/// if text is inside master class container, then text should be selected/played from mouse position till the end of the container
+/// otherwise, only text below cursor should be selected/played
+/// 
+///  Stop button stops the playing, and tap/hold mouse starts playing.
+///  No restart if playing, stop must be pressed if you want other starting point.
+///  No restart even if user tap/hold mouse on the area outside of the currently played text.
+(function (vFactAutoPlay, $, undefined) {
+	"use strict";
+
+	var m_TimerId;
+	var m_HoverElement;
+	var m_AreMouseHandlersAttached = false; //mouse handlers have been attached by calling vFactAutoPlay.EnableMouseHandlers
+	var m_MasterContainerId = '';
+	var m_IsMobile = false;
+    
+    /// set mousemove and mouseenter handler: if mouse is hold inside of specified node for specified time 
+    /// then funcStartPlay() should be called.
+	vFactAutoPlay.EnableMouseHandlers = function ($bodyNode, waitMouseIsStoppedBeforeStartToPlayMS, funcStartPlay, vFact_highlighted_to_read) {
+	    if (m_AreMouseHandlersAttached) { //if mouse handlers are already attached, detach them at first
+	        vFactAutoPlay.DisableMouseHandlers();
+	    }
+	    m_IsMobile = false;
+	    m_AreMouseHandlersAttached = true;
+
+	    $bodyNode.on("mousemove", function (event) {
+		    //console.log("mousemove", "timer", waitMouseIsStoppedBeforeStartToPlayMS);
+	        clearTimeout(m_TimerId);
+	        m_TimerId = setTimeout(
+                function () {
+                    /// ensure, that document is not played at this moment
+                    /// if the document is played, then we shouldn't restart the play; user must stop play at first by pressing Stop button.
+                    if (! $("." + vFact_highlighted_to_read, window.parent.document).length) {
+                        //console.log("restart play");
+			            funcStartPlay();
+                    }
+                }, waitMouseIsStoppedBeforeStartToPlayMS);
+	    });
+
+	    $("*", window.parent.document).on('mouseleave' , function (event) {
+		//console.log("mouse leave", m_HoverElement);
+		m_HoverElement = null;
+	    });
+
+	    $("*", window.parent.document).on('mouseenter' , function (event) {
+	        if (m_HoverElement != undefined) {
+	            if ($.contains(this, m_HoverElement)) {
+			        return;
+			    }
+
+			    /// if we have hierarchy a\b\c
+			    /// then mouseenter event can be fired for c, then for b, then for a
+			    /// we need to ignore this event for all parent items 
+			    /// or if any child node is already selected as "hovered"
+	            var parent = $(m_HoverElement).closest("." + vFact_highlighted_to_read);
+			    if (parent != null && parent.length > 0) {
+			        return;
+			    }
+
+// follow way doesn't work in appropriate way in Chrome and IE, so we use above approach with using ".closest"
+// 			        var e = event.toElement || event.relatedTarget;
+// 			        if (e.parentNode == this || e == this) {
+// 			            console.log("ignore mouse enter for", this);
+// 			            return;
+// 			        }
+			}
+
+		    //console.log("mouse enter", m_HoverElement);
+	        m_HoverElement = this;
+	    });
+	};
+
+	vFactAutoPlay.vFact_ActivateAutoPlayOnMobile = function ($bodyNode, waitMouseIsStoppedBeforeStartToPlayMS, funcStartPlay, vFact_highlighted_to_read) {
+	    //under IOS the play is started when user make long tap on text area
+	    //to detect long tap we need to control touch start, touch move and touch end events
+	    //play is started on touch-end event if:
+	    //1) user hasn't moved mouse since touch start or the movement distance is relatively small
+        //2) time between touch start and touch stop is higher then specified threshold
+
+	    if (m_AreMouseHandlersAttached) { //if mouse handlers are already attached, detach them at first
+	        vFactAutoPlay.DisableMouseHandlers();
+	    }
+
+	    m_IsMobile = true;
+	    m_AreMouseHandlersAttached = true;
+
+	    var m_StartTime;
+	    var end_coords = null;
+	    var start_x, start_y; //touch start coordinates
+
+        $bodyNode.on('touchstart',function(event) {
+            m_StartTime = new Date().getTime(); 
+		    end_coords = null;
+		    start_x = event.originalEvent.targetTouches[0].pageX;
+		    start_y = event.originalEvent.targetTouches[0].pageY;
+	    	//console.log("touchstart", start_x, start_y);
+        });
+
+	    $bodyNode.on("touchmove", function(event) {
+	        //console.log("touchmove");
+            end_coords = event.originalEvent.targetTouches[0];
+        });
+
+        $bodyNode.on('touchend',function(event) {
+            //console.log("touchend", start_x, start_y);
+            var endTime = new Date().getTime();
+		    if (end_coords) {
+		        //console.log("end", end_coords.pageX, end_coords.pageY);
+		        //console.log("distance", Math.abs(start_x-end_coords.pageX), Math.abs(start_y-end_coords.pageY));
+		    }
+        		
+		    if ( //if user hasn't moved the mouse  OR the distance of movement is relatively small than we have "hold" event - play should be started
+                (!end_coords
+			        || (Math.abs(start_x-end_coords.pageX) < 20 && Math.abs(start_y-end_coords.pageY) < 20) 
+		        ) && (endTime - m_StartTime) / 1000 > 0.3 //time between touch start/stop is higher then specified threshold
+		                                                  //this time should be less then standard time for long tap
+                                                          //to avoid collisions with long-tap-action of start selection in browser
+            ) {
+                //console.log('tap hold event');      
+		        m_HoverElement = event.target;
+		        funcStartPlay();
+	    	}
+        });
+	};
+
+    /// remove mousemove and mouseenter handlers from specified node
+	vFactAutoPlay.DisableMouseHandlers = function ($masterContainerNode) {
+	    clearTimeout(m_TimerId);
+	    if ($masterContainerNode) {
+	        if (m_IsMobile) {
+	            $masterContainerNode.off('touchstart');            
+	            $masterContainerNode.off('touchmove');
+	            $masterContainerNode.off('touchend');
+            } else {
+	            $masterContainerNode.off('mousemove'); //todo 1.7: replace off by unbind
+	            $('*').off('mouseenter');
+	            $('*').off('mouseleave');
+	        }
+	    }
+
+	    m_HoverElement = undefined;
+	    m_AreMouseHandlersAttached = false;
+	};
+
+	/// returns hoverElement if $masterContainerNode is a parent of hoverElement
+	function getHoverNodeIfItIsInsideContainer($masterContainerNode) {
+	    if (m_HoverElement && $masterContainerNode.length > 0) {
+	        var parent = $(m_HoverElement).closest('#' + $masterContainerNode.get(0).id, window.parent.document);
+  		    if (parent != null && parent.length > 0) {
+  			    return m_HoverElement;
+  		    }	
+		}
+		return null;
+	}
+
+    /// select all text from specified node till the end of master container node
+    /// if master container is not specified, select specified node only
+	vFactAutoPlay.makeSelection = function (firstNode, optionalMasterContainerNode) {
+	    if (window.parent.document.createRange) { //not IE or IE >= 11
+	        var dest = window.parent.document.createRange();
+	        if (optionalMasterContainerNode == undefined) { //there is no master container, select first node only
+	            dest.selectNodeContents(firstNode);                 
+	        } else { //master container is specified, so select text from firstNode up to the end of master container
+	            dest.setStartBefore(firstNode);
+	            dest.setEndAfter(optionalMasterContainerNode);
+	        }
+	        var sel = window.parent.document.getSelection();
+	        sel.removeAllRanges();
+	        sel.addRange(dest);
+        } else { //IE < 11
+	        var range = window.parent.document.body.createTextRange();
+	        if (optionalMasterContainerNode == undefined) {
+	            range.moveToElementText(firstNode);
+	            range.select();
+	        } else {
+                //make selection from start of firstNode up to end of master container
+	            range.moveToElementText(firstNode);
+	            var whole_node_range = window.parent.document.body.createTextRange(); //range for the whole master container
+	            whole_node_range.moveToElementText(optionalMasterContainerNode);
+	            range.setEndPoint("EndToEnd", whole_node_range);
+	            range.select();
+	        }
+	    }
+	};
+
+    /// select text in the browser from position under the mouse
+    /// if hovered item is inside of master container, select text till the end of master container
+    /// if item is outside of master container, select only current node
+	vFactAutoPlay.selectTextUnderMouse = function () {
+	    //console.log("vFactAutoPlay.selectTextUnderMouse", m_MasterContainerId);
+	    var node;
+	    if (m_MasterContainerId) {
+	        //console.log("vFactAutoPlay.selectTextUnderMouse. 1");
+	        node = getHoverNodeIfItIsInsideContainer($("#" + m_MasterContainerId, window.parent.document));
+	        if (node) { //create range from current node till the end of master container	
+	            //console.log("vFactAutoPlay.selectTextUnderMouse. 2");
+	            vFactAutoPlay.makeSelection(node, $("#" + m_MasterContainerId, window.parent.document).get(0));
+	            return;
+	        }
+	    }
+	    //console.log("vFactAutoPlay.selectTextUnderMouse. 3");
+
+	    node = m_HoverElement;
+	    if (node) { //select only current node (=node under mouse cursor)
+	        //console.log("vFactAutoPlay.selectTextUnderMouse. 4");
+	        vFactAutoPlay.makeSelection(node);
+	    }
+	};
+
+    /// masterContainerIds can contain commaseperated list of id's 
+    /// if first not found, we need to try second, etc
+    /// return either found master container id or null if no id is found
+	vFactAutoPlay.findMasterContainerId = function (masterContainerIds) {
+	    m_MasterContainerId = "";
+	    if (masterContainerIds != "") {
+	        var ids = masterContainerIds.split(",");
+	        var len = ids.length;
+            var i;
+	        for (i = 0; i < len; i++) {
+	            try {
+	                if (window.parent.document.getElementById(ids[i])) {
+	                    //console.log("vFactAutoPlay.findMasterContainerId", ids[i]);
+	                    m_MasterContainerId = ids[i];
+	                    return m_MasterContainerId;
+	                }
+	            }
+	            catch (e) { }
+	        }
+	    }    
+	};
+
+	vFactAutoPlay.getMasterContainerId = function () {
+	    //console.log("vFactAutoPlay.getMasterContainerId.1", m_MasterContainerId);
+	    return m_MasterContainerId;
+	}
+
+} ( window.vFactAutoPlay = window.vFactAutoPlay || {}, jQuery ));
+
+ 
+/* ====================================================== */
+
+/// routines to user rangy library
+/// http://stackoverflow.com/questions/3454152/cross-browser-selection-range-library
+(function (vFactRangy, $, undefined) {
+    "use strict";
+
+    vFactRangy.surroundSelectedText = function (templateElement, rootNode, filterTextNodes) {
+        var range, sel = rangy.getSelection(rootNode);
+        var ranges = sel.getAllRanges();
+        //console.log("surroundSelectedText", templateElement, sel, ranges.length);
+        var textNodes, textNode, el, i, len, j, jLen;
+        var parent_element;
+        //console.log(ranges.length);
+        for (i = 0, len = ranges.length; i < len; ++i) {
+            range = ranges[i];
+            // If one or both of the range boundaries falls in the middle
+            // of a text node, the following line splits the text node at the
+            // boundary
+            range.splitBoundaries();
+
+            // The first parameter below is an array of valid nodeTypes
+            // (in this case, text nodes only)
+            textNodes = range.getNodes([3]);
+            //console.log("All nodes:", textNodes);
+
+             for (j = 0, jLen = textNodes.length; j < jLen; ++j) {
+                 textNode = textNodes[j];
+                 //we don't need to wrap input items
+                 if (! filterTextNodes || filterTextNodes(textNode) ) {
+                    if (textNode.nodeValue.trim()) {
+                        el = templateElement.cloneNode(false);
+                        textNode.parentNode.insertBefore(el, textNode);
+                        el.appendChild(textNode);
+                        //console.log("Append span for", textNode);
+                    } else {
+                        //console.log("Ignore span for", textNode);
+                    }
+                }
+            }
+        }
+    };
+
+    /// select all UHRT items in the selected text that are suitable according to optional filterIsUHRT
+    /// add class classForReadableInputItems to each selected UHRT item
+    vFactRangy.addClassToUHRTinSelectedText = function (rootNode, classForUHRT, filterIsUHRT) {
+        var range, sel = rangy.getSelection(rootNode);
+        var ranges = sel.getAllRanges();
+        //console.log("surroundSelectedText", templateElement, sel, ranges.length);
+        var node1, el, i, len, j, jLen, all_nodes1;
+        for (i = 0, len = ranges.length; i < len; ++i) {
+            range = ranges[i];
+            // If one or both of the range boundaries falls in the middle
+            // of a text node, the following line splits the text node at the
+            // boundary
+            range.splitBoundaries();
+
+            // The first parameter below is an array of valid nodeTypes
+            all_nodes1 = range.getNodes([1]);
+
+            for (j = 0, jLen = all_nodes1.length; j < jLen; ++j) {
+                node1 = all_nodes1[j];
+                if ($(node1).is(":input") || $(node1).get(0).tagName === "IMG") {
+                    if (! filterIsUHRT || filterIsUHRT(node1)) {
+                        if (classForUHRT) {
+                            $(node1).addClass(classForUHRT);
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    /// wrap selected text by span with specified class name
+    /// @optionalClassForInputElements - optional class that should be added to INPUT, TEXTAREA and
+    vFactRangy.surroundSelectedTextBySpan = function (requiredSpanClassName, rootNode) {
+        var span = document.createElement("span");
+        span.className = requiredSpanClassName;
+
+        vFactRangy.surroundSelectedText(span, rootNode);
+    };
+
+    /// wrap selected text by span with specified class name
+    /// @optionalClassForInputElements - optional class that should be added to INPUT, TEXTAREA and all other UHRT
+    vFactRangy.surroundSelectedTextBySpan_AddClassToReadableInputItems = function (requiredSpanClassName, rootNode, classForUHRT, filterIsUHRT) {
+        var span = document.createElement("span");
+        span.className = requiredSpanClassName;
+
+        vFactRangy.surroundSelectedText(span, rootNode, function(textNode) {
+            var parent_node = textNode.parentNode;
+            if ($(parent_node).is(":input")) {
+                //we don't need to wrap item by span if it's parent is input item
+                //we should avoid follow html:  <textarea>aaa</textarea> => <textarea><span>aaa</span></textarea>
+                //instead of it we should mark the parent by specified class IF the class is not undefined
+                return false;
+            } else if ($(parent_node).parents(":input").length) {
+                //do nothing
+                //avoid <select><option><span class="sentence">Option1</span></option></select>
+                return false;
+            } else if ($(textNode).tagName === "IMG") {
+                //do nothing
+                //we don't need to surround img node (with alt text) by span tags
+                return false;
+            }
+            return true; //this is not INPUT element
+        });
+
+        vFactRangy.addClassToUHRTinSelectedText(rootNode, classForUHRT, filterIsUHRT);
+    };
+
+
+    /// some of items from arrayIds can be not exist
+    /// returns number of actually processed items
+    vFactRangy.surroundElementsWithSpecifiedIdsBySpan_AddClassToReadableInputItems = function (arrayIds
+        , requiredSpanClassName, rootNode, win
+    ) {
+        var span = document.createElement("span");
+        span.className = requiredSpanClassName;
+
+        var dest = 0;
+        for (var i = 0; i < arrayIds.length; ++i) {
+        //select element with specified id
+            if (vFactRangy.selectTextForTheNodeWithId(arrayIds[i], win)) {
+                //surround all text items in the selection by spans; INPUT and other UHRT items are ignored here
+                vFactRangy.surroundSelectedText(span, rootNode);
+                ++dest;
+            }
+        }
+
+        return dest;
+    };
+
+    // /// in rootNode (= window.parent.document)
+    // /// find all span-items with class = rootClass (= "span.vFact_highlighted_to_read")
+    // /// find embedded span-items with class=embeddedClass  (= "span.word")
+    // /// remove both root and embedded spans
+    // vFactRangy.removeSpansWithClass = function (rootClass, embeddedClass, rootNode) {
+    //     $("span." + rootClass, rootNode)
+    //     .each(function () {
+    //         if (embeddedClass) {
+    //             //remove embedded spans marked by embeddedClass
+    //             $("span." + embeddedClass, this).each(function () {
+    //                 $(this).replaceWith($(this).text()); //$(this).replaceWith(this.childNodes);
+    //             });
+    //             vFactRangy.mergeChildTextNodes($(this), $(this))
+    //         }
+    //         //remove root span
+    //         $(this).replaceWith(this.childNodes);
+    //     });
+    // };
+
+    /// merge sequences of text nodes to single text nodes; remove nodes that are not used anymore
+    /// usually, "el" is a SPAN with class = ".vFact_highlighted_to_read"
+    vFactRangy.mergeChildTextNodes = function (el) {
+        if (el.length == 0) return;
+        //if (el.find('.vFact_highlighted_to_read').length > 0) return;
+        var prevNode = null;
+        var nodeToRemove = [];
+        for (var i = 0, childs = el.get(0).childNodes; i < childs.length; i++) {
+            var child = childs[i];
+            if (child.nodeType == 3) {
+                if (prevNode != null) {
+                    prevNode.nodeValue = prevNode.nodeValue + child.nodeValue;
+                    nodeToRemove.push(child);
+                } else {
+                    prevNode = child;
+                }
+            } else {
+                prevNode = null;
+            }
+        }
+
+        $.each(nodeToRemove, function (el) {
+            $(this).remove();
+        });
+    };
+
+    /// clear selection in browser
+    vFactRangy.clearSelection = function () {
+        var selection = null;
+        if (window.getSelection) {
+            selection = window.getSelection();
+        } else if (document.selection) {
+            selection = document.selection;
+        }
+        if (selection) {
+            if (selection.empty) {
+                selection.empty();
+            }
+            if (selection.removeAllRanges) {
+                selection.removeAllRanges();
+            }
+        }
+    };
+
+    /// search all input items in the node and remove class classForReadableInputItems from them
+    vFactRangy.removeClassFromInputs = function (rootNode, classForReadableInputItems) {
+        $(":input." + classForReadableInputItems + ",img." + classForReadableInputItems, rootNode).each(function() {
+            $(this).removeClass(classForReadableInputItems);
+        });
+    };
+
+    vFactRangy.selectTextForTheNodeWithId = function(containerid, win) {
+        var doc_in_use = win
+            ? win.document
+            : document;
+        var node = doc_in_use.getElementById(containerid);
+        return vFactRangy.selectTextForTheNode(node, win);
+    };
+
+
+    /// select specified item in the document
+    /// support for IE: http://stackoverflow.com/questions/18887431/getselection-not-working-properly-in-chrome
+    /// see also http://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+    vFactRangy.selectTextForTheNode = function(node, win) {
+        // var text = document.getElementById(containerid);
+        // var sel = window.getSelection();
+        // var range = document.createRange();
+        // range.selectNodeContents(text);
+        // sel.removeAllRanges();
+        // sel.addRange(range);
+        var doc_in_use = win
+            ? win.document
+            : document;
+        var win_in_use = win || window;
+        if (node !== null) {
+            var range;
+            var selection;
+
+            if (win_in_use.getSelection) {
+                selection = win_in_use.getSelection();
+                range = doc_in_use.createRange();
+                range.selectNodeContents(node);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            } else if (doc_in_use.body.createTextRange) {
+                //this branch of code produces problem #73 in IE11
+                //so, we use it only if getSelection is not defined (<IE11)
+                range = doc_in_use.body.createTextRange();
+                range.moveToElementText(node);
+                range.select();
+            }
+
+            return true; //the node was found and selected
+        }
+
+        return false; //the node wasn't found and so wasn't processed
+    };
+
+} ( window.vFactRangy = window.vFactRangy || {}, jQuery ));
+
+ 
+/* ====================================================== */
+
+/// Vfact utils
+/// namespace is declared as suggested here:
+/// http://appendto.com/2010/10/how-good-c-habits-can-encourage-bad-javascript-habits-part-1/
+(function (vFactUtils, $, undefined) {
+    "use strict";
+    
+		/// Add iframe to the document and write specified content to it
+    vFactUtils.addIFrame = function (iframeElementId, frameWidth, frameHeight, frameContent) {
+      var newIframe = document.createElement('iframe');
+      newIframe.width = frameWidth;
+			newIframe.height = frameHeight;
+      newIframe.id = iframeElementId;
+      newIframe.src = 'about:blank'; 
+      document.body.appendChild(newIframe);
+
+      var ifrm = document.getElementById(iframeElementId);
+      ifrm = (ifrm.contentWindow) 
+				? ifrm.contentWindow 
+				: (ifrm.contentDocument.document) 
+						? ifrm.contentDocument.document 
+						: ifrm.contentDocument;
+
+      ifrm.document.open();
+      ifrm.document.write(frameContent);
+      ifrm.document.close();  
+    };
+
+    vFactUtils.encodeToUtf8 = function(SrcStr) {
+        //see for explanations:
+        //http://ecmanaut.blogspot.com/2006/07/encoding-decoding-utf8-in-javascript.html
+        return unescape(encodeURIComponent(SrcStr));
+    }
+
+
+} ( window.vFactUtils = window.vFactUtils || {}, jQuery ));
+
+/* ====================================================== */
+
+/** #36: client should have possibility to monitor status of playlist playing 
+and change icon of play button from "play" to "stop "and back;
+    
+    vFact_addIframe => status = 1 (playlist is started to play)
+    vFact_removeiframe => status = 0 (playlist is stopped)
+
+*/
+(function (vFactUnit_ChangePlaylistStatus, $, undefined) {
+    "use strict";
+    
+    // event handler assigned by customer
+    var _OnChangePlaylistStatusEventHandler = null;
+
+    vFactUnit_ChangePlaylistStatus.setEventHandlerOnChangePlaylistStatus = function (funcEventHandler) {
+        //console.log("vFactUnit_ChangePlaylistStatus.setEventHandlerOnChangePlaylistStatus.1");
+        _OnChangePlaylistStatusEventHandler = funcEventHandler;
+        //console.log("vFactUnit_ChangePlaylistStatus.setEventHandlerOnChangePlaylistStatus.2");
+    };
+    
+
+    // this function should be called from detect.js when playing status of the playlist is changed
+    vFactUnit_ChangePlaylistStatus.changePlaylistStatus = function (status) {
+        //console.log("vFactUnit_ChangePlaylistStatus.changePlaylistStatus.1");
+        if (_OnChangePlaylistStatusEventHandler != null) {
+            //console.log("vFactUnit_ChangePlaylistStatus.changePlaylistStatus.2");
+            _OnChangePlaylistStatusEventHandler(status);
+        }
+    }
+
+} (window.vFactUnit_ChangePlaylistStatus = window.vFactUnit_ChangePlaylistStatus || {}, jQuery));
+/* ====================================================== */
+
+(function (vFactDetect2Frames, $, undefined) {
+    "use strict"
+    
+    function removescript() {
+        if (document.getElementById('lesescript')){
+            var ascript = document.getElementById('lesescript');
+            ascript.parentNode.removeChild(ascript);
+        }
+    }
+
+    function resetplayer(){
+        var player = document.getElementById("vfact_testaudio");
+        player.parentNode.removeChild(player);
+        player = document.createElement('audio');
+        player.setAttribute("id", "vfact_testaudio");
+        player.setAttribute("controls", "");
+        document.body.appendChild(player);
+    }
+
+    function test_if_loaded(funcOnFrameLoaded) {
+        var ifrm = document.getElementById('setframe');
+        ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+        try {
+            //the browser throws an exception when I try to access the frame's location.href property if it's cross-domain
+            //http://stackoverflow.com/questions/2516541/best-way-to-determine-if-frame-is-cross-domain
+            var ahref = ifrm.document.location.href;
+            setTimeout(test_if_loaded, 100);
+        } catch (e) {
+            funcOnFrameLoaded();
+        }
+    }
+
+    vFactDetect2Frames.removeIFrame = function() {
+        try {
+            if (document.getElementById('setframe')) {
+                //notify customer about changing status of playlist to "stop"
+                vFactUnit_ChangePlaylistStatus.changePlaylistStatus(0);
+
+                removescript();
+                resetplayer();
+
+                var aframe = document.getElementById('setframe');
+                aframe.parentNode.removeChild(aframe);
+            }
+        } catch(err) {
+            //console.log(err);
+        }
+    }
+
+    /// form for sending data to server for conversion
+    function prepareFormCode(hprotocol, vfactServerRootPath, html5id, txt, lang, speed, conmode, gender, license, domain, pitchMode) {
+        var code = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">";
+        code = code + "<html><head><META HTTP-EQUIV=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>";
+        code = code + "<form id=startplay name=test action=\"" + hprotocol + vfactServerRootPath + "v2.player/mediaplayer.vf\" method=post>";
+        code = code + "<input type=hidden name=text ID=\"text\" value=\"" + txt + "\">";
+        code = code + "<input type=hidden name=speechmode ID=\"speechmode\" value=\"" + speed + "\">";
+        code = code + "<input type=hidden name=pitchmode ID=\"pitchmode\" value=\"" + pitchMode + "\">";
+        code = code + "<input type=hidden name=lic VALUE=\"" + license + "\" ID=\"lic\">";
+        code = code + "<input type=hidden name=conmode ID=\"conmode\" value=\"" + conmode + "\">";
+        code = code + "<input type=hidden name=voices ID=\"voices\" value=\"dk\">";
+        code = code + "<input type=hidden value=\"" + domain + "\" name=domain>";
+        code = code + "<input type=hidden value=\"" + gender + "\" name=gender>";
+        code += "<input type=hidden value=\"js\" name=listtype>";
+        code = code + '<input type=hidden value="' + html5id + "\" name=html5id>"
+        if (lang != "") {
+            code = code + "<input type=hidden value=\"" + lang + "\" name = uselangtag>";
+        }
+        code = code + "</form></body></html>";
+        return code;
+    }
+
+    vFactDetect2Frames.addIFrame = function(hprotocol
+        , vfactServerRootPath
+        , txt, lang, speed, conmode, gender, license, domain
+        , pitchMode
+    ) {
+        var html5id = vFactDetectUtils.vFact_makeHTML5id();
+
+        var fw = "0";
+        var fh = "0";
+        var fb = "0";
+
+        var textdata = prepareFormCode(hprotocol
+            , vfactServerRootPath
+            , html5id
+            , txt, lang, speed, conmode, gender, license, domain
+            , pitchMode
+        );
+        vFactDetect2Frames.removeIFrame();
+
+        var newIframe = document.createElement('iframe');
+        newIframe.width = fw;
+        newIframe.height = fh;
+        newIframe.id = 'setframe';
+
+        newIframe.src = 'about:blank';
+        document.body.appendChild(newIframe);
+        var ifrm = document.getElementById('setframe');
+        ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+
+        ifrm.document.open();
+        ifrm.document.write(textdata);
+        ifrm.document.close();
+        ifrm.document.getElementById('startplay').submit();
+
+        /* WE NEED THIS play-stop FOR IOS AND ANDROID DEVICES */
+    		if (navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i)) {    
+				//play/pause is necessary for mobile only
+				//we disable it for desktop to avoid exception in promise, see #52
+        	document.getElementById("vfact_testaudio").play();
+					document.getElementById("vfact_testaudio").pause();
+			  }
+
+        setTimeout(function() {
+            setTimeout(
+                function() {
+                    removescript();
+                    var fileref = document.createElement('script');
+                    fileref.setAttribute("type","text/javascript");
+                    fileref.setAttribute("src", hprotocol + vfactServerRootPath + "html5playlist/" + html5id + ".js");
+                    fileref.setAttribute("id", "lesescript");
+                    document.getElementsByTagName("head")[0].appendChild(fileref);
+                }, 100 //#60
+            );
+        }, 100);
+
+        //notify customer about changing status of playlist to "playing"
+        vFactUnit_ChangePlaylistStatus.changePlaylistStatus(1);
+    }
+
+} ( window.vFactDetect2Frames = window.vFactDetect2 || {}, jQuery ));
+
+/* ====================================================== */
+
+/**
+ * Created by dv on 22.05.2016.
+ */
+
+(function (vFactDetectUtils, $, undefined) {
+    "use strict";
+
+    /// test if the current browser is Internet Explorer 9
+    vFactDetectUtils.TestIE9 = function() {
+        return (navigator.userAgent.indexOf("MSIE 9.0") !== -1);
+    };
+
+    /// generates unique id for form for sending data to server for conversion
+    vFactDetectUtils.vFact_makeHTML5id = function(){
+        var text = "";
+        var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+        var i;
+
+        for(i = 0; i < 25; i++){
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    };
+
+    /// detect if mp3 or ogg are supported
+    /// http://diveintohtml5.info/everything.html
+    /// @param audioElement - <audio/> node in the document
+    vFactDetectUtils.isHTML5AudioSupported = function (audioElement){
+        var can_play = false;
+        try {
+            if (! vFactDetectUtils.TestIE9 ()) {
+                can_play = ( !!(audioElement.canPlayType && audioElement.canPlayType('audio/mpeg;').replace(/no/, '')) )
+                    || ( !!(audioElement.canPlayType && audioElement.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, '')) );
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        return can_play;
+    };
+
+    /// encode string to utf8
+    vFactDetectUtils.encodeToUtf8 = function (srcString) {
+        //see for explanations:
+        //http://ecmanaut.blogspot.com/2006/07/encoding-decoding-utf8-in-javascript.html
+        //and http://monsur.hossa.in/2012/07/20/utf-8-in-javascript.html
+        return unescape(encodeURIComponent(srcString));
+    };
+
+    /// decode string from utf8
+    vFactDetectUtils.decodeFromUtf8 = function (srcUtf8String) {
+        //see for explanations:
+        //http://ecmanaut.blogspot.com/2006/07/encoding-decoding-utf8-in-javascript.html
+        return decodeURIComponent( escape( srcUtf8String ) );
+    };
+
+    /// clear selection in browser
+    /// http://stackoverflow.com/questions/6186844/clear-a-selection-in-firefox/6187098#6187098
+    vFactDetectUtils.clearSelectionInBrowser = function() {
+        if (window.getSelection) {
+            if (window.getSelection().empty) {  /* Chrome */
+                window.getSelection().empty();
+            } else if (window.getSelection().removeAllRanges) {  /* Firefox */
+                window.getSelection().removeAllRanges();
+            }
+        } else if (document.selection) {  /* All browsers */
+            document.selection.empty();
+        }
+    };
+
+    /// get text selected in the browser
+    vFactDetectUtils.getTextSelectedInBrowser = function() {
+        var txt = '';
+        if (window.getSelection) {
+            txt = window.getSelection();
+            if (txt !== null) { //selection is an object, not string
+                /// check if the string is blank
+                /// http://stackoverflow.com/questions/154059/how-do-you-check-for-an-empty-string-in-javascript
+                /// see also http://stackoverflow.com/questions/1812245/what-is-the-best-way-to-test-for-an-empty-string-with-jquery-out-of-the-box
+                txt = txt.toString();
+                if (!! txt) {
+                    return txt;
+                }
+            }
+        }
+
+        if (document.getSelection) {
+            txt = document.getSelection();
+            if (txt !== null) { //selection is an object, not string
+                txt = txt.toString();
+                if (!!(txt)) {
+                    //console.log("!", txt);
+                    return txt;
+                }
+            }
+        }
+
+        if (document.selection) {
+            txt = document.selection.createRange().text;
+            if (!!(txt)) {
+                return txt;
+            }
+        }
+        return txt;
+    };
+
+    /// wrap selected text by span items with specified class name
+    /// it wraps all text entries including nonreadable ones
+    /// requiredSpanClassName = "vFact_highlighted_to_read"
+    /// rootNode = $(window.parent.document.body).get(0)
+    vFactDetectUtils.wrapSelectedElementsBySpans = function(requiredSpanClassName, rootNode) {
+        vFactRangy.surroundSelectedTextBySpan(requiredSpanClassName, rootNode);
+    };
+
+    /// same as wrapSelectedElementsBySpans, but also it adds classForInputItems to all readable INPUT items
+    vFactDetectUtils.wrapSelectedElementsBySpansAndUHRTitemsByClass  = function(requiredSpanClassName
+        , rootNode
+        , classForInputItems
+        , filterIsInputReadable) {
+        vFactRangy.surroundSelectedTextBySpan_AddClassToReadableInputItems(requiredSpanClassName
+            , rootNode
+            , classForInputItems
+            , filterIsInputReadable);
+    };
+
+    ///  same as wrapSelectedElementsBySpansAndUHRTitemsByClass, but handle elements with specified ids only (not selected text)
+    ///  returns number of actually processed node (the not exist nodes are ignored)
+    vFactDetectUtils.wrapElementsWithSpecifiedIdsBySpansAndUHRTitemsByClass  = function(arrayIds
+        , requiredSpanClassName
+        , rootNode
+        , win) {
+        return vFactRangy.surroundElementsWithSpecifiedIdsBySpan_AddClassToReadableInputItems(arrayIds
+            , requiredSpanClassName
+            , rootNode
+            , win);
+    };
+
+    /// Removes all <span> tags with class "vFact_highlighted_to_read" in the document.
+    /// Removes embedded <span> items with class "word", see #6
+    /// spanClassNameToSearch = vFact_highlighted_to_read
+    /// classesToRemove = "vFact_highlighted_to_read vFact_sentence_highlighted vFact_no_highlight"
+    /// subSpanName = "word"
+    /// rootNode = window.parent.document
+    vFactDetectUtils.removeAllSpansWithSpecifiedClassName = function(classTextBlock, classesToRemove, subSpanName, vFactIdAttr, rootNode, classSentence) {
+        console.log("removeAllSpansWithSpecifiedClassName");
+        $("span." + classTextBlock, rootNode)
+            .removeClass(classesToRemove)
+            .each(function () {
+                vFactHighlighting.unprepareTextBlock(this, subSpanName, vFactIdAttr, classSentence, true);
+            })
+        ;
+    };
+
+    /// #14: wrapSelection has added spans with class "vFact_sentence_highlighted" to whole selected text
+    /// remove spans that is belonged to non-readable text marked by "vFact_DoNotReadAloud" class
+    /// spanClassNameToSearch = vFact_highlighted_to_read
+    /// classesToRemove = "vFact_highlighted_to_read vFact_sentence_highlighted vFact_no_highlight"
+    /// subSpanName = "word"
+    /// rootNode = window.parent.document
+    /// classNameUnreadable = vFact_DoNotReadAloud
+    vFactDetectUtils.removeSpansInUnreadableText = function(spanClassNameToSearch
+        , classesToRemove
+        , subSpanName
+        , rootNode
+        , classNameUnreadable
+    ) {
+        // jQuery.expr[':'].vfact_find_parent = function(a, i, m){
+        //     return jQuery(a).parents(m[3]).length >= 1;  //true if any parent has class vFact_DoNotReadAloud
+        // };
+
+//#39 - texts in "script" and "style" tags are not readable
+        var span_items = $("span." + spanClassNameToSearch, rootNode);
+        span_items.filter((function( index ) {
+            return $(this).parents('.' + classNameUnreadable + ',script,style').length > 0
+        })).removeClass(classesToRemove)
+          .each(function() {
+                $("span." + subSpanName, this).each(function() {
+                    $(this).replaceWith(this.childNodes);
+                });
+                $(this).replaceWith(this.childNodes);
+          });
+    };
+
+    /// if item is readable, returns true
+    /// if item is unreadable, returns false
+    /// if item is not input returns null
+     vFactDetectUtils.checkInputKind = function(inputElement) {
+        if ($(inputElement).is('input') || $(inputElement).is('textarea') || $(inputElement).is('select')) {
+            return !($(inputElement).is('input:password') || $(inputElement).is('input:checkbox') || $(inputElement).is('input:radio'));
+        }
+        return null;
+    };
+
+    /// is string blank?
+    function is_blank(str) {
+        return (!str || /^\s*$/.test(str));
+    }
+    /// check if this not-input element is UHRT (unhighlightable readable text)
+    /// i.e. img with not empty alt
+    /// returns:
+    ///   null - this is not IMG
+    ///   true - this is UHRT
+    ///   false - this is not readable
+    vFactDetectUtils.getNotInputUHRTKind = function(element) {
+        if ($(element).get(0).tagName === 'IMG') {
+            return !is_blank($(element).attr('alt'));
+        }
+        return null;
+    };
+
+    /// generates specified ID for:
+    ///      1) each span with class = "spanClassNameToSearch"
+    ///      2) each readable input element (readable according to checkInputKind)
+    ///      3) each img with not-empty alt text
+    // (i.e to all HRT and UHRT)
+    /// @spanClassNameToSearch = vFact_highlighted_to_read
+    /// @prefix = any common prefix for all ids
+    /// @rootNode = window.parent.document
+    vFactDetectUtils.assignUniqueIdsToSpansAndUHRT = function(vfactIdName, spanClassNameToSearch, prefix, rootNode) {
+        var selector_uhrt = vFactDetectUtils.isImgAltTextReadingAllowed()
+            ? ", img"
+            : '';
+
+        $("span." + spanClassNameToSearch + ', :input' + selector_uhrt, rootNode).each(function() {
+            var kind = vFactDetectUtils.checkInputKind($(this)); // null - not imput, true - UHRT, false - not readable
+            if (kind === null) {
+                kind = vFactDetectUtils.getNotInputUHRTKind($(this));
+                if (kind === null) {
+                    //this is span item
+                    $(this).attr(vfactIdName, _.uniqueId(prefix));
+                }
+            }
+
+            if (kind && ! $(this).attr(vfactIdName)) {
+                //this is UHRT item without id; we need to add ID to it.
+                $(this).attr(vfactIdName, _.uniqueId(prefix));
+            }
+        });
+    };
+
+
+/// check if img\@alt text is allowed to be read in control panel
+/// see #57
+/// global variable vFact_active = true => toolbar is actve
+/// but in test environment this var doesn't exists
+    vFactDetectUtils.isImgAltTextReadingAllowed = function() {
+        if (typeof parent.window.vFact_AllowReadImgAltText !== undefined) {
+            if (parent.window.vFact_AllowReadImgAltText === undefined) {
+                return false;
+            } else {
+                return parent.window.vFact_AllowReadImgAltText;
+            }
+        } else {
+            return false;
+        }
+    };
+
+    vFactDetectUtils.getHashCode = function(str) {
+        var hash = 0, i, chr, len;
+        if (Object.prototype.toString.call(str) == '[object String]') {
+            for (i = 0, len = str.length; i < len; i++) {
+                chr = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        }
+        return hash;
+    };
+
+    /// find closest header node
+    //  if @ID is defined then returns "HX:ID"
+    /// if @ID is not defined, returns "HX=NNN", where NNN is an index of the item inside of the list of children of its parent node
+    /// if current node is not header and it has no parent-header
+    /// then returns null (it means, that this is not standalone node)
+    vFactDetectUtils.getStandaloneId = function(inputElement) {
+        var parent_header = $(inputElement).closest(':header, p, td, li');
+        if (parent_header.length === 0) {
+            return null; //the node is not standalone
+        } else {
+            var id = $(parent_header[0]).attr("ID");
+            var name = $(parent_header[0]).get(0).nodeName;
+            var pos = $(parent_header[0]).index();
+            return (id == null
+                    ? name + "=" + pos
+                    : name + ":" + id)
+                + vFactDetectUtils.getHashCode($(parent_header[0]).text()); //ID and positions can't be not-unique
+        }
+    };
+
+    /// generate json item like {"id":"vf2", "t":"text", "lang":"en"}
+    /// standalone_id is ID of the header node to which the node belongs
+    /// it can be ID of the node itselt (if the node is hXXX) or nearest parent hXXX node.
+    function add_target_json(dest, idValue, kindName, kindValue, defaultLang, standaloneID) {
+        var target_json = {
+            'id': idValue
+        };
+        target_json[kindName] = kindValue;
+
+        //default lang is optional; we don't add the attribute if default lang is not declared
+        if (defaultLang) {
+            target_json["lang"] = defaultLang;
+        }
+
+        //standalone ID is optional; we don't add the attribute if standaloneID is not declared
+        if (standaloneID) {
+            target_json["a"] = standaloneID;
+        }
+        dest.push(target_json);
+    }
+
+    /// extracts all text from span and UHRT items to send it to vfact-main-server
+    /// @spanClassNameToSearch = vFact_highlighted_to_read
+    /// @rootNode = window.parent.document
+    /// @vfactIdName = vfact_id
+    /// @classForInputItems = vFact_INPUT_highlighted_to_read
+    vFactDetectUtils.getWrappedText = function(vfactIdName, spanClassNameToSearch, rootNode, classForInputItems) {
+        var dest = [];
+
+        var selector_uhrt = vFactDetectUtils.isImgAltTextReadingAllowed()
+            ? ',img.' + classForInputItems
+            : '';
+
+        $('span.' + spanClassNameToSearch + ',:input.' + classForInputItems + selector_uhrt, rootNode).each(
+            function() {
+                var kind = vFactDetectUtils.checkInputKind($(this));
+                //we need to detect all parent nodes with lang
+                //and use nearest parent's lang as default language for the span item
+                var tag_with_lang = $(this).parent().closest('[lang]');
+                var default_lang = tag_with_lang === null
+                    ? null
+                    : $(tag_with_lang).attr("lang");
+                var standalone_id = vFactDetectUtils.getStandaloneId($(this));
+
+                if (kind === null) {  //this is span item or non-input UHRT
+                    kind = vFactDetectUtils.getNotInputUHRTKind($(this));
+                    if (kind == null) { //this is span item
+                        add_target_json(dest
+                            , $(this).attr(vfactIdName)
+                            , 't'
+                            , $(this).html()
+                            , default_lang
+                            , standalone_id
+                        );
+                    } else { //this is non-input URHT (img.alt)
+                        var img_attr = $(this).attr("alt");
+                        if (img_attr && ! is_blank(img_attr)) {
+                            add_target_json(dest
+                                , $(this).attr(vfactIdName)
+                                , 'i'
+                                , img_attr
+                                , default_lang
+                                , standalone_id
+                            );
+                        }
+                    }
+                } else if (kind) {  //this is input, textarea or select
+                    add_target_json(dest
+                        , $(this).attr(vfactIdName)
+                        , 'i'
+                        , $(this).val() + "." //we can modify this text, it won't be highlighted
+                        , default_lang
+                        , standalone_id
+                    );
+                }
+            }
+        );
+        return dest;
+    }
+} ( window.vFactDetectUtils = window.vFactDetectUtils || {}, jQuery ));
+
+
+/* ====================================================== */
+
+(function (vFactHighlighting, $, undefined) {
+    "use strict";
+    
+    /// Extract list of unique id from timeArray
+    /// Source array contains follow items: {"id":"vf71","p":"0","n":"8","t":"70"}
+    function get_unique_ids(timeArray) {
+        var i;
+        var uid;
+        var dest_uids = [];
+
+        for(i = 0; i < timeArray.length; i++) {
+            uid = timeArray[i].id;
+            if (dest_uids.indexOf(uid) === -1) {
+                dest_uids.push(uid);
+            }
+        }
+
+        return dest_uids;
+    }
+
+    /// wrap specified word in the node by <span class="word" time="time_ms"/>
+    /// timeArrayItem has follow structure: {"id":"vf71","p":"0","n":"8","t":"70"}
+    /// @param sentenceSplitInfo: array with follow structure
+    ///             [{id: "vfact_id", startPos: "start time of the first word in the sentence"}]
+    vFactHighlighting.wrapWordBySpan = function(node, timeArrayItem, sentenceSplitInfo) {
+        var delta_start_pos = 0;
+        for (var i = 0; i < sentenceSplitInfo.length; ++i) {
+            if (sentenceSplitInfo[i].id === timeArrayItem.id) {
+                delta_start_pos = parseInt(sentenceSplitInfo[i].startPos);
+            }
+        }
+
+        var text = $(node).html();
+        var start_pos = parseInt(timeArrayItem.p) - delta_start_pos;
+        var len = parseInt(timeArrayItem.n);
+        var text_before = text.substr(0, start_pos);
+        var text_word = text.substr(start_pos, len);
+        var text_after = text.substr(start_pos + len);
+
+        //protection against wrong text
+        //if we are going to wrap text "abc"
+        //but actual text is different, i.e. "bce"
+        //then it's smthing wrong.. so it's better to skip the highlighting
+        //then have broken text on the screen
+        //but if x field is not defined then just ignore this "protection" mechanism
+        if (!timeArrayItem.x || timeArrayItem.x === text_word) {
+            var new_text = text_before
+                + "<span class='word' time='" + timeArrayItem.t + "'>" + text_word + "</span>"
+                + text_after;
+            $(node).html(new_text);
+        } else {
+            //console.log("Highlighting is skipped:", text_before, text_word, text_after, timeArrayItem.x, start_pos, len, "'" + text + "'");
+        }
+    };
+
+    function get_nodes_for_uids(uids, rootNode, vFactIdAttr) {
+        var dest = [];
+        for (var i = 0; i < uids.length; ++i) {
+            var nodes = $("[" + vFactIdAttr + "='" + uids[i] + "']", rootNode);
+            if (nodes && nodes.length === 1) {
+                dest.push(nodes[0]);
+            }
+        }
+        return dest;
+    }
+
+    /// Prepare sentences for highlighting according to timeArray
+    /// 1) we need to mark each text block from timeArray by class vFact_textblock_highlighted
+    /// 2) We need to wrap all words by span tag and mark it by class vFact_sentence_highlighted.
+    ///    As soon as multiple text blocks are possible, the sentence can be divided on several parts,
+    ///    each text block contains single part.
+    ///    We need to wrap each part of the sentence by separate span.
+    /// 3) we need to wrap each read-word in the text blocks by span tags
+    ///
+    /// timeArray is array of follow objects:
+    ///    {"id":"vf71","p":"0","n":"8","t":"70"}
+    /// each object is corresponded to a single word that should be highlighted.
+    /// the word is located in the node with vfact_id="id", at position "p"; it has length "n" and
+    /// should be highlighted at time "t" (time is in ms)
+    ///
+    /// To prepare highlighting it's necessary to make follow steps:
+    /// 1) create set of unique id that exist in TimeArray
+    /// 2) find all nodes with such id and mark them by class vFact_highlighted_to_read
+    /// 3) wrap all words by <span class="word" time="t"/>
+    /// @param vshClass = vFact_sentence_highlighted
+    /// @param subSpanName = "word"
+    /// @returns: list of nodes marked by vshClass
+    vFactHighlighting.prepareSentenceHL = function(timeArray, classSentence, subSpanName, vFactIdAttr, rootNode, classTextBlockHighlighted) {
+        //console.log("prepareSentenceHL");
+        if (! timeArray) {
+            return;
+        }
+        var dest = [];
+
+        var uids = get_unique_ids(timeArray);
+        var nodes = get_nodes_for_uids(uids, rootNode, vFactIdAttr);
+
+        // wrap all parts of the sentence by span with class=vshClass
+        var si = vFactHighlighting.splitSentenceOnParts(timeArray, nodes, classSentence, vFactIdAttr);
+
+        _.each(uids, function(uid) {
+            var nodes = $("[" + vFactIdAttr + "='" + uid + "']", rootNode);
+            if (nodes && nodes.length === 1) {
+                var node_text_block = nodes[0];
+                if (node_text_block) {
+                    // add class vFact_sentence_highlighted to node with vfact_id="uid"
+                    if (!$(node_text_block).hasClass(classTextBlockHighlighted)) {
+                        $(node_text_block).addClass(classTextBlockHighlighted);
+                    }
+                    var node_sentence = $("span." + classSentence + "[ref_vfact_id='" + uid +"']", node_text_block);
+                    if (node_sentence && node_sentence.length === 1) {
+                        // wrap item's words from timeArray by span
+                        var len = timeArray.length;
+                        var i;
+                        for (i = len - 1; i >= 0; --i) {
+                            if (timeArray[i].id === uid) {
+                                vFactHighlighting.wrapWordBySpan(node_sentence, timeArray[i], si);
+                            }
+                        }
+                    }
+
+                    dest.push(node_text_block);
+                }
+            }
+        });
+
+        return dest;
+    };
+
+    /// Remove highlighting info from rootNode
+    /// Some nodes are marked by vFact_textblock_highlighted
+    /// in addition, they could contain some spanned words, like <span class="word" time="t"/>
+    /// nextTimeArray is array of words that will be prepared to highlighting next time, so
+    /// for all items from nextTimeArray it's not necessary to remove class vFact_sentence_highlighted
+    /// it's necessary to
+    /// 1) remove all  <span class="word" time="t"/>
+    /// 2) remove all  <span class="vFact_sentence_highlighted"/>
+    /// 3) remove class vFact_textblock_highlighted from all nodes which ids are not exist in nextTimeArray
+    /// vshClass = vFact_sentence_highlighted
+    /// subSpanName = "word"
+    vFactHighlighting.unprepareSentenceHL = function(classTextBlock, subSpanName, vFactIdAttr, rootNode, classSentence) {
+        $("." + classTextBlock, rootNode).each(
+            function() {
+                var vfact_id = $(this).attr(vFactIdAttr);
+                //console.log("unprepareSentenceHL");
+                vFactHighlighting.unprepareTextBlock(this, subSpanName, vFactIdAttr, classSentence
+                    , false
+                    //, ! vfact_id || next_uids.indexOf(vfact_id) === -1
+                );
+            }
+        );
+    };
+
+    /// remove all vfact-spans from specified text span-node
+    /// if removeTextBlockSpan = true then current span-node should be replaced by its content.
+    vFactHighlighting.unprepareTextBlock = function(textBlocNode, subSpanName, vFactIdAttr, classSentence, removeTextBlockSpan) {
+        //console.log(textBlocNode);
+        //remove spanned sentences
+        $("span." + classSentence, textBlocNode).each(function () {
+            $(this).replaceWith(this.childNodes);
+        });
+
+        //remove spanned words
+        $("span." + subSpanName, textBlocNode).each(function () {
+            $(this).replaceWith(this.childNodes);
+        });
+
+        //word 1\nword 2\nword3 => word1 word2 word3
+        //without merging child text nodes the app fails - content of the sentence is modified
+        vFactRangy.mergeChildTextNodes($(textBlocNode)); //workaround for above problem
+
+        //we must remove current span (with vfact_id="xxx") by its content
+        if (removeTextBlockSpan) {
+            $(textBlocNode).replaceWith(textBlocNode.childNodes);
+        }
+    };
+
+    /// for each word from timeArray set timer to start callbackHighlightWord at the moment when the word is started to play
+    vFactHighlighting.setTimeOutsForAllWords = function(timeArray, callbackHighlightWord) {
+        var item_index;
+        for (item_index = 0; item_index < timeArray.length; item_index++) {
+            (function(i) {
+                var item = timeArray[i];
+                setTimeout(function () {
+                    var word_duration = i < timeArray.length - 1
+                        ? timeArray[i + 1].t - item.t
+                        : null; //we don't know duration of last word
+                    callbackHighlightWord(item.id, item.t, word_duration);
+                }, item.t);
+            })(item_index);
+        }
+    };
+
+    //find the node of the specified word
+    //the word is embedded to one of the parent nodes from listTextBlocks - the parent node has vfact_id=textBlockVFactId
+    //word's node has tag "time" = wordStartTime
+    vFactHighlighting.findWordNode = function(listTextBlocks, vfactIdAttr, textBlockVFactId, wordStartTime) {
+        var parent = $.grep(listTextBlocks, function(e){
+            return $(e).attr(vfactIdAttr) == textBlockVFactId;
+        });
+        if (parent.length == 1) {
+            var dest = $(parent[0]).find('[time=' + wordStartTime + ']');
+            if (dest.length == 1) {
+                return dest.get(0);
+            }
+        }
+    };
+
+    /// transform spanned words
+    ///     <span class="word" time="TimeWord3">Word3</span>
+    /// to plain text
+    ///      Word3
+    vFactHighlighting.unwrapSpannedWord = function (spanNode) {
+        //console.log("vFactHighlighting.unwrapSpannedWord");
+        $(spanNode).each(function() {
+            $(this).replaceWith(this.childNodes);
+        });
+    };
+
+    vFactHighlighting.removeHighlightingForTimesArrayDoneItems = function (timesArrayDoneItems, subSpanName, vFactIdAttr, classSentence, rootNode) {
+        if (timesArrayDoneItems) {
+            for (var i = 0; i < timesArrayDoneItems.length; ++i) {
+                $("[vfact_id='" + timesArrayDoneItems[i] + "']", rootNode).each(
+                    function() {
+                        //console.log("removeHighlightingForTimesArrayDoneItems");
+                        vFactHighlighting.unprepareTextBlock(this, subSpanName, vFactIdAttr, classSentence, true);
+                        //$(this).removeClass("vFact_highlighted_to_read");
+                    }
+                );
+            }
+        }    
+    };
+
+    /// timeArray contains list of words that are belong to a sentence
+    /// Wrap the sentence by span tags marked by vshClass
+    /// As soon as multiple text blocks are possible, the sentence can be divided on several parts,
+    /// each text block contains single part.
+    /// We need to wrap each part of the sentence by separate span.
+    ///
+    /// @param textBlockNodes = list of root text block nodes (each text block has vfact_id, the id is used in timeArray)
+    /// @param vshClass = vFact_sentence_highlighted
+    ///
+    /// @return json array of sentence's parts with follow structure:
+    ///     [{"vfact_id" : "start time of the first word in the sentence"}]
+    vFactHighlighting.splitSentenceOnParts = function (timeArray, textBlockNodes, vshClass, vFactIdAttr) {
+        var dest = [];
+        if (timeArray.length === 0) {
+            return dest;
+        }
+
+        var vfact_id = timeArray[0].id;
+        var nodes;
+        var start_index = 0;
+
+        var f = function(final_index) {
+            nodes = $.grep(textBlockNodes, function(e){
+                var sid = $(e).attr(vFactIdAttr);
+                return sid === timeArray[final_index].id;
+            });
+            dest.push(wrap_sentence(nodes[0], timeArray[start_index], timeArray[final_index], vshClass));
+        };
+
+        for (var i = 1; i < timeArray.length; ++i) {
+            if (timeArray[i].id !== vfact_id) {
+                f(i - 1);
+                start_index = i;
+                vfact_id = timeArray[i].id;
+            }
+        }
+        f(timeArray.length - 1);
+
+        return dest;
+    };
+
+    function wrap_sentence(node, timeArrayItemFrom, timeArrayItemTo, vshClass) {
+        var text = $(node).html();
+        var start_pos = parseInt(timeArrayItemFrom.p);
+        var len = parseInt(parseInt(timeArrayItemTo.p) + parseInt(timeArrayItemTo.n)) - start_pos;
+
+        var text_before = text.substr(0, start_pos);
+        var text_sentence = text.substr(start_pos, len);
+        var text_after = text.substr(start_pos + len);
+
+        var new_text = text_before
+            + "<span class=" + vshClass + " ref_vfact_id='" + timeArrayItemFrom.id + "'>" + text_sentence + "</span>"
+            + text_after;
+        $(node).html(new_text);
+
+        return {"id" : timeArrayItemFrom.id, "startPos" : start_pos};
+    }
+
+} ( window.vFactHighlighting = window.vFactHighlighting || {}, jQuery ));
+
+/* ====================================================== */
+
+/**
+ * Created by dv on 22.05.2016.
+ */
+
+(function (vFactDetect2, $, undefined) {
+    "use strict";
+
+    var _HttpProtocol = "";
+    var _vFactServerRootPath = "//speech2.leseweb.dk/";
+    var _CurrentFile;
+    var _CountAudioFiles;
+    /// if both front and background colors for highlighting are transparent
+    /// then it's not necesary to use vFact_sentence_highlighted and add spans with class word
+    var _IsHighlightingEnabled = false;
+    var _AutoScrollIsInProcess = false;
+
+    /// by default autoscroll is allowed
+    /// but it can be disabled in user control panel
+    var _IsAutoscrollAllowed = true;
+
+    /// set http or https protocoal //!TODO: do we need it?
+    vFactDetect2.SetHttpProtocol = function (protocol) {
+        _HttpProtocol = protocol;
+    };
+
+    /// detect if mp3 or ogg are supported
+    /// it uses <audio id="vfact_testaudio"/> for detection
+    vFactDetect2.vFact_detectHTML5Audio = function() {
+        //console.log("vFactDetect2.vFact_detectHTML5Audio");
+        var audio_element = document.getElementById("vfact_testaudio");
+        return audio_element === null
+            ? false
+            : vFactDetectUtils.isHTML5AudioSupported(audio_element);
+    };
+
+    /// inserts vfact CSS to the document
+    function insertStylesheet(colorWords, colorSentences, colorDots) {
+        //console.log("insertStylesheet");
+        var style = $(window.parent.document.body).find('#vFact_stylesheet');
+        if (style.length > 0) {
+            style.remove();
+        }
+        //!TODO: #54: remove padding-bottom: 0px; display: inline; ul.theme_bulletlist span
+        $(window.parent.document.body).append( //#18: we need to manually specify font-size:inherit for each our style to avoid changing font size during playing
+            '<style id="vFact_stylesheet">.vFact_highlighted_to_read {font-size:inherit; font-weight:inherit;font-family:inherit;border-bottom:1px dotted ' + colorDots + '; padding-bottom: 0px; display: inline;}'
+            + ' ul.theme_bulletlist span {font-size:inherit; font-weight:inherit;font-family:inherit;border-bottom:1px dotted ' + colorWords + '; padding-bottom: 0px; display: inline;}'
+            + ' .vFact_sentence_highlighted {font-size:inherit; font-weight:inherit;font-family:inherit;background-color:' + colorSentences + ';padding-bottom: 0px;display: inline;' + '}'
+            + ' .vFact_highlighted_to_read .word {font-size:inherit; font-weight:inherit;font-family:inherit;background-color: inherit; padding-bottom: 0px;display: inline;}'
+            + ' .vFact_highlighted_to_read .word.vFact_highlighted {font-size:inherit; font-weight:inherit;font-family:inherit;padding-bottom: 0px;display: inline; background-color:' + colorWords + ';' + (colorWords == 'transparent' ? '' : 'color:#fff;') + '}'
+            + '</style>');
+    }
+
+    vFactDetect2.vFact_SendHTML5Data = function (txt, lang, speed, conmode, gender, license, domain
+        , color
+        , s_color
+        , pitchMode
+        , dots_color
+    ) {
+        console.log("Colrors", color, s_color, dots_color);
+
+        //console.log("vFactDetect2.vFact_SendHTML5Data");
+        var color_words = ( _.isUndefined(color) || _.isNull(color) || color == "") ? 'transparent' : color;
+        var color_sentence = ( _.isUndefined(s_color) || _.isNull(s_color) || s_color == "") ? 'transparent' : s_color;
+        var color_dots = _.isUndefined(dots_color)
+            ? color_words
+            : (_.isNull(dots_color) || dots_color == "")
+                ? 'transparent'
+                : dots_color;
+
+        _IsHighlightingEnabled = ! (color_words === 'transparent' && color_sentence === 'transparent');
+
+        insertStylesheet(color_words, color_sentence, color_dots);
+        vFactDetect2Frames.addIFrame(_HttpProtocol, _vFactServerRootPath, txt, lang, speed, conmode, gender, license, domain, pitchMode);
+    };
+
+    vFactDetect2.stopplay = function(){
+        //console.log("vFactDetect2.stopplay");
+        var player = document.getElementById("vfact_testaudio");
+        player.pause();
+
+        //remove all additional spans, created by the script
+        // vFactRangy.removeSpansWithClass("vFact_highlighted_to_read", "word", $(window.parent.document.body));
+        // var $root_span = $(".vFact_highlighted_to_read", $(window.parent.document.body));
+        // vFactRangy.mergeChildTextNodes($root_span);
+
+        remove_vFact_sentence_highlighted();
+        vFactDetectUtils.removeAllSpansWithSpecifiedClassName("vFact_highlighted_to_read"
+            , "vFact_highlighted_to_read vFact_no_highlight"
+            , "word"
+            , "vfact_id"
+            , window.parent.document
+            , "vFact_sentence_highlighted"
+        );
+    };
+
+    /// start to play first file in audiofiles
+    function do_play(player) {
+        //console.log("do_play");
+
+//we provide two formats: mp3 and ogg
+//playlist contains only mp3 filenames; we produce ogg names using their mp3 analogs.
+        var node_mp3 = document.createElement('source');
+        node_mp3.id = "mp3Source";
+        node_mp3.type = "audio/mpeg";
+        node_mp3.src = audiofiles[_CurrentFile];
+
+        var node_ogg = document.createElement('source');
+        node_ogg.id = "oggSource";
+        node_ogg.type = "audio/ogg";
+        node_ogg.src = (typeof audiofiles[_CurrentFile] === 'undefined')
+            ? null
+            : audiofiles[_CurrentFile].replace('.mp3','.ogg');
+
+        insert_times_script(audiofiles[_CurrentFile]);
+
+        player.appendChild(node_mp3);
+        player.appendChild(node_ogg);
+
+        player.play();
+    }
+
+    function remove_vFact_sentence_highlighted() {
+        // remove vFact_sentence_highlighted and words from last read sentence
+        vFactHighlighting.unprepareSentenceHL("vFact_highlighted_to_read"
+            , "word"
+            , "vfact_id"
+            , window.parent.document
+            , "vFact_sentence_highlighted"
+        );
+    }
+
+    /// start to play next file in audiofiles
+    function play_next() {
+        //console.log("play_next");
+
+        _CurrentFile++;
+        if (_CurrentFile === _CountAudioFiles) {
+            remove_vFact_sentence_highlighted();
+            vFactRangy.removeClassFromInputs(window.parent.document, "vFact_INPUT_highlighted_to_read");
+            vFactDetectUtils.removeAllSpansWithSpecifiedClassName("vFact_highlighted_to_read"
+                , "vFact_highlighted_to_read vFact_no_highlight"
+                , "word"
+                , "vfact_id"
+                , window.parent.document
+                , "vFact_sentence_highlighted"
+            );
+            vFactDetect2Frames.removeIFrame();
+        } else {
+            //we need to provide both versions of files: mp3 and ogg
+            //browser selects preferable format itself
+            var player = document.getElementById("vfact_testaudio");
+
+            var node_mp3 = document.getElementById("mp3Source");
+            var node_ogg = document.getElementById("oggSource");
+
+            node_mp3.src = audiofiles[_CurrentFile];
+            node_ogg.src = (typeof audiofiles[_CurrentFile] === 'undefined')
+                ? null
+                : audiofiles[_CurrentFile].replace('.mp3','.ogg');
+
+            insert_times_script(audiofiles[_CurrentFile]);
+            player.load(); //without loading FF plays first sound mulitple times
+            player.play();
+        }
+    }
+
+    function remove_times_script(){
+        //console.log("remove_times_script");
+        if (document.getElementById('timesscript')) {
+            var ascript = document.getElementById('timesscript');
+            ascript.parentNode.removeChild(ascript);
+        }
+    }
+
+    function insert_times_script(mp3file){
+        //console.log("insert_times_script", mp3file);
+        remove_times_script();
+        var fileref = document.createElement('script');
+        var afile = mp3file;
+
+        afile = afile.replace('.mp3','.js');
+        fileref.setAttribute("type","text/javascript");
+        fileref.setAttribute("src", afile);
+        fileref.setAttribute("id","timesscript");
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+
+    /// this function is called from Playlist-scripts generated on server
+    vFactDetect2.CallBackFromPlaylist = function(){
+        //console.log("vFactDetect2.CallBackFromPlaylist");
+        /* GET CALLED WHEN PLAYLIST ARRAY (audiofiles) IS LOADED */
+        _CurrentFile = 0;
+        _CountAudioFiles = audiofiles.length;
+        var player = document.getElementById("vfact_testaudio");
+        player.addEventListener('ended'
+            , function (e) {
+                play_next();
+                return false;
+            });
+
+        do_play(player);
+    };
+
+    /// 0 - element is in view, no scroll required
+    /// 1: element should be scrolled up
+    /// -1: element should be scrolled down
+    function getScrollRequired(el, win) {
+        var elem_top = el.getBoundingClientRect().top;
+        var elem_bottom = el.getBoundingClientRect().bottom;
+
+        if (elem_top < 0) {
+            return -1;
+        }
+        if (elem_bottom >= win.innerHeight) {
+            return 1;
+        }
+        return 0;
+    }
+
+    /// the word is reading now
+    /// we need to highlight it on the screen by adding class "vFact_highlighted" to it's node (as result we have: <span class="word vFact_highlighted">text</span>
+    function highlightWord(listTextBlocks, textBlockVFactId, wordStartTime, wordDurationNullable) {
+        //the word is embedded to one of the nodes from listTextBlocks - the node has vfact_id=textBlockVFactId
+        //word's node has tag "time" = wordStartTime
+        //we need to find the node of the word
+        //then add class "vFact_highlighted" to it
+        //then start setTimeout to disable highlighting after specified wordDurationNullable
+        var word_node = vFactHighlighting.findWordNode(listTextBlocks, "vfact_id", textBlockVFactId, wordStartTime);
+        //console.log("highlightWord", $(word_node).html(), "duration", wordDurationNullable, "start time", wordStartTime);
+        if (word_node && _IsAutoscrollAllowed) {
+            //#58: auto scroll using jquery plugin
+            try {
+                var scroll_required = getScrollRequired(word_node, window.parent);
+                //console.log(scroll_required, _AutoScrollIsInProcess);
+                if (! _AutoScrollIsInProcess && scroll_required !== 0) {
+                    //console.log("scroll is required");
+                    _AutoScrollIsInProcess = true;
+                    $(window.parent).scrollTo($(word_node),1500 ,{
+                        interrupt: true
+                        , axis: "y"
+                        , offset: {
+                            left:0
+                            , top: -window.parent.innerHeight / 3 * (scroll_required === 1 ? 2 : 1)
+                        }
+                        , onAfter: function() {
+                            setTimeout(function() {
+                                _AutoScrollIsInProcess = false;
+                            }, 100);
+                            //console.log("scroll is finished");
+                        }
+                        , fail: function() {
+                            //console.log("fail");
+                            _AutoScrollIsInProcess = false;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.log(e);
+            }
+            $(word_node).addClass("vFact_highlighted");
+            if (wordDurationNullable) {
+                //console.log("highlightWord:settimeout", $(word_node).html(), "duration", wordDurationNullable, "start time", wordStartTime);
+                setTimeout(
+                    function () {
+                        removeHighlightWord(listTextBlocks, textBlockVFactId, wordStartTime);
+                    }, wordDurationNullable
+                );
+            }
+        }
+    }
+
+    function removeHighlightWord(listTextBlocks, textBlockVFactId, wordStartTime) {
+        //console.log("removeHighlightWord");
+        var word_node = vFactHighlighting.findWordNode(listTextBlocks, "vfact_id", textBlockVFactId, wordStartTime);
+        if (word_node) {
+            //console.log("removeHighlightWord", $(word_node).html(), wordStartTime);
+            vFactHighlighting.unwrapSpannedWord(word_node);
+        }
+    }
+
+    /// this function is called from TimeArray-scripts generated on server
+    vFactDetect2.CallBackFromTimes = function() {
+        //console.log("vFactDetect2.CallBackFromTimes");
+        //console.log("Time array", JSON.stringify(TimesArray));
+
+        if (! _IsHighlightingEnabled) {
+            return;
+        }
+
+        /* This will be called when the TimesArray is ready
+         The Array could be empty if there are no words in a soundfile (probably: only single word???)
+         or if all items are non-highlightable (i.e. from INPUT nodes)*/
+        var player = document.getElementById("vfact_testaudio");
+
+        //TimeArray is array of follow objects:
+        //{"id":"vf71","p":"0","n":"8","t":"70"}
+        //each item of the array are corresponded to single word that is read by tts engine
+        var time_array = _.clone(TimesArray);
+        var played = false;
+
+        player.addEventListener('playing'
+            , function () {
+                //console.log("player.addEventListener('playing'");
+                if (played) {
+                    return;
+                }
+                played = true;
+
+                //remove previously added <span class="word"/> for all vfact_id from TimesArray
+                vFactHighlighting.unprepareSentenceHL("vFact_highlighted_to_read"
+                    , "word"
+                    , "vfact_id"
+                    , window.parent.document
+                    , "vFact_sentence_highlighted"
+                );
+
+                //highlight all text_blocks from TimeArray, wrap all read-words by span
+                var highlighted_text_blocks = vFactHighlighting.prepareSentenceHL(time_array
+                    , "vFact_sentence_highlighted"
+                    , "word"
+                    , "vfact_id"
+                    , window.parent.document
+                    , "vFact_highlighted_to_read"
+                );
+                //variable highlighted_text_blocks contains all nodes marked by "vFact_sentence_highlighted"
+                //any word-to-read are children of these nodes
+
+                //set timeouts to highlight EACH of words.
+                vFactHighlighting.setTimeOutsForAllWords(time_array
+                    , function (textBlockVFactId, wordStartTime, wordDurationNullable) {
+                        highlightWord(highlighted_text_blocks, textBlockVFactId, wordStartTime, wordDurationNullable);
+                    }
+                );
+            }
+            , false
+        );
+
+        player.addEventListener('ended'
+            , function() {
+                //console.log("player.addEventListener('ended'");
+                vFactHighlighting.removeHighlightingForTimesArrayDoneItems(TimesArrayDoneItems
+                    , "word"
+                    , "vfact_id"
+                    , "vFact_sentence_highlighted"
+                    , window.parent.document);
+            }
+        )
+    };
+
+/// check if VFACT-toolbar is enabled
+/// see #62
+/// global variable vFact_active = true => toolbar is actve
+/// but in test environment this var doesn't exists
+    function is_toolbar_active() {
+        if (typeof parent.window.vFact_active !== undefined) {
+            if (parent.window.vFact_active === undefined) {
+                return true;
+            } else {
+                return parent.window.vFact_active;
+            }
+        } else {
+            return true;
+        }
+    }
+
+
+    /// masterContainerIds can contain commaseperated list of id's
+    /// if first not found, we need to try second, etc
+    /// if it's blank or no id is found then it's the same as autoplay is disabled
+    vFactDetect2.vFact_ActivateAutoPlay = function (masterContainerIds, isMobile, Lang, Speed, Conmode, Gender, License, domain, color, s_color, functStartAutoPlay) {
+        if (vFactAutoPlay.findMasterContainerId(masterContainerIds)) {
+            //console.log('vFact_ActivateAutoPlay.activated:', masterContainerIds, isMobile);
+            if (isMobile) {
+                vFactAutoPlay.vFact_ActivateAutoPlayOnMobile($("body", window.parent.document)
+                    , 1500
+                    , function () {
+                        //we need to start auto play only if toolbar is active
+                        if (is_toolbar_active()) {
+                            return functStartAutoPlay();
+                        }
+                    }
+                    , "vFact_highlighted_to_read");
+            } else {
+                vFactAutoPlay.EnableMouseHandlers($("body", window.parent.document)
+                    , 1500
+                    , function () {
+                        //we need to start auto play only if toolbar is active
+                        if (is_toolbar_active()) {
+                            return functStartAutoPlay();
+                        }
+                    }
+                    , "vFact_highlighted_to_read");
+            }
+        } else {
+            //console.log('vFact_ActivateAutoPlay.ignored:', masterContainerIds);
+        }
+    };
+
+    vFactDetect2.vFact_DeactivateAutoPlay = function() {
+        //console.log('vFact_DeactivateAutoPlay', $("body", window.parent.document));
+        vFactAutoPlay.DisableMouseHandlers($("body", window.parent.document));
+    };
+
+    vFactDetect2.vFact_getTextForAutoPlay = function() {
+        //console.log("vFact_getTextForAutoPlay.1");
+        vFactAutoPlay.selectTextUnderMouse(vFactAutoPlay.getMasterContainerId());
+        //console.log("vFact_getTextForAutoPlay.2");
+        return vFactDetect2.vFact_getSelectedText();
+    };
+
+    // @param funcEventHandler - function that takes single bool parameter (1 - playlist play is started, 0 - playlist play is stopped)
+    vFactDetect2.vFact_setEventHandler_OnChangePlaylistStatus = function(funcEventHandler) {
+        //console.log("vFact_setEventHandler_OnChangePlaylistStatus.1");
+        vFactUnit_ChangePlaylistStatus.setEventHandlerOnChangePlaylistStatus(funcEventHandler);
+        //console.log("vFact_setEventHandler_OnChangePlaylistStatus.2");
+    };
+
+/// call back function for AutoPlay mode
+/// this function executes function in globalfunctions.js when detect.js is fully loaded.
+/// We need this function because the iframe with detect.js is loaded in startleseweb()
+/// (file: scripttemplates/caller.js - function vFact_HTML5Player.init(proto,'#FFAAAA');
+    if (typeof(window.parent.vFact_globalfunctions_AutoPlayInitalization) == 'function') {
+        window.parent.vFact_globalfunctions_AutoPlayInitalization();
+    }
+
+    /// helper function for vFact_getSelectedText
+    function unprepare_previously_prepared_text() {
+        vFactRangy.removeClassFromInputs(window.parent.document, "vFact_INPUT_highlighted_to_read");
+        vFactDetectUtils.removeAllSpansWithSpecifiedClassName("vFact_highlighted_to_read"
+            , "vFact_highlighted_to_read vFact_no_highlight"
+            , "word"
+            , "vfact_id"
+            , window.parent.document
+            , "vFact_sentence_highlighted"
+        );
+    }
+
+    /// helper function for vFact_getSelectedText
+    /// make final step in preparing text to play
+    function finalize_text_preparing() {
+        //remove spans with class "vFact_highlighted_to_read" from unreadable text entries, #14
+        //unreadable text entries are marked by class "vFact_DoNotReadAloud"
+        vFactDetectUtils.removeSpansInUnreadableText("vFact_highlighted_to_read"
+            , "vFact_highlighted_to_read vFact_sentence_highlighted"
+            , "word"
+            , window.parent.document.body
+            , "vFact_DoNotReadAloud"
+        );
+
+        //assign unique vfact_id to all readable items
+        vFactDetectUtils.assignUniqueIdsToSpansAndUHRT("vfact_id"
+            , "vFact_highlighted_to_read"
+            , "vf"
+            , window.parent.document
+        );
+
+        //prepare result json
+        var a = vFactDetectUtils.getWrappedText("vfact_id"
+            , "vFact_highlighted_to_read"
+            , window.parent.document
+            , "vFact_INPUT_highlighted_to_read"
+        );
+
+        //console.log("DEBUG:", JSON.stringify(a));
+        return encodeURI(JSON.stringify(a)); //encodeURI is required; example of problem string: 100%27/29:14+3 second
+    }
+
+
+    /// prepare selected text to play (wrap by span items, add vfact_id, mark by class vFact_XXX, etc)
+    /// returns json with all texts-to-play
+    vFactDetect2.vFact_getSelectedText = function(){
+        //console.log("vFactDetect2.vFact_getSelectedText");
+
+    //unprepare previously prepared text items
+        unprepare_previously_prepared_text();
+
+     //prepare selected text: wrap by spans
+        var img_alt_text_reading_allowed = vFactDetectUtils.isImgAltTextReadingAllowed();
+        vFactDetectUtils.wrapSelectedElementsBySpansAndUHRTitemsByClass("vFact_highlighted_to_read"
+            , window.parent.document
+            , "vFact_INPUT_highlighted_to_read"
+            , function() {
+                return vFactDetectUtils.checkInputKind //input items
+                        || (img_alt_text_reading_allowed && vFactDetectUtils.getNotInputUHRTKind); //or img with alt = all UHRT
+            }
+        );
+
+        return finalize_text_preparing();
+    };
+
+    /// prepare elements with specified id to play (wrap by span items, add vfact_id, mark by class vFact_XXX, etc)
+    /// returns json with all texts-to-play
+    vFactDetect2.vFact_getTextForItems = function(arrayIds) {
+        //unprepare previously prepared text items
+        unprepare_previously_prepared_text();
+
+        //prepare elements with specified id to play: wrap by spans
+        var count_found_nodes = vFactDetectUtils.wrapElementsWithSpecifiedIdsBySpansAndUHRTitemsByClass(arrayIds
+            , "vFact_highlighted_to_read"
+            , window.parent.document
+            , window.parent);
+        if (count_found_nodes === 0) {
+            //we haven't found any node with id from arrayIds
+            return null;
+        }
+
+        return finalize_text_preparing();
+    };
+
+    /// Allow to enable or disable autoscroll mode
+    /// by default autoscroll is allowed
+    vFactDetect2.setAutoScrollAllowed = function(isAllowed) {
+        _IsAutoscrollAllowed = isAllowed;
+    }
+
+} ( window.vFactDetect2 = window.vFactDetect2 || {}, jQuery ));
+
+
+/// server's script calls global function, so we need redirect
+function CallBackFromPlaylist() {
+    vFactDetect2.CallBackFromPlaylist();
+}
+
+/// server's script calls global function, so we need redirect
+function CallBackFromTimes() {
+    vFactDetect2.CallBackFromTimes();
+}
+
+/// call back function for AutoPlay mode
+/// this function executes function in globalfunctions.js when detect.js is fully loaded.
+/// We need this function because the iframe with detect.js is loaded in startleseweb()
+/// (file: scripttemplates/caller.js - function vFact_HTML5Player.init(proto,'#FFAAAA');
+if (typeof(window.parent.vFact_globalfunctions_AutoPlayInitalization) == 'function') {
+    window.parent.vFact_globalfunctions_AutoPlayInitalization();
+}

@@ -1,0 +1,135 @@
+a {
+  color: #0d74b3;
+}
+a:hover, a:focus {
+  color: #004896;
+}
+.btn-link {
+  color: #0d74b3;
+}
+.btn-link:hover, .btn-link:focus {
+  color: #004896;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #003a6d;
+  border-color: #282b7d;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  color: #fff;
+  background-color: #1e355e;
+  border-color: #191b4f;
+}
+.open .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #1e355e;
+  border-color: #191b4f;
+}
+.btn-primary:active, .btn-primary.active {
+  background-image: none;
+}
+.open .btn-primary.dropdown-toggle {
+  background-image: none;
+}
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+  background-color: #003a6d;
+  border-color: #282b7d;
+}
+a.thumbnail:hover, a.thumbnail:focus {
+  border-color: #0d74b3;
+}
+.sitebar {
+  background-color: #0860a0;
+  border-bottom: 1px solid #0860a0;
+}
+.navbar-collapse {
+  padding-right: 0;
+  padding-left: 0;
+}
+.articles-frontpage .post-title a {
+  color: #003a6d;
+  font-weight: bold;
+}
+/*-------------------------------------------------------------------------------------------*/
+/* Call to action */
+/*-------------------------------------------------------------------------------------------*/
+.c2a .c2a-caption {
+  background-color: #003a6d;
+  background-image: none;
+  opacity: 100;
+  filter: alpha(opacity=10000);
+}
+.c2a .c2a-caption .c2a-title {
+  color: #fff;
+}
+.navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background-color: #1870b0;
+  color: #fff;
+}
+.navbar-inverse {
+  background-color: #003a6d;
+  border: none;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #1c3156;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .nav-sidebar li.active a.btn-collapse:hover {
+  background-color: #1c3156;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #1c3156;
+  color: #fff;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: black;
+}
+.dropdown-menu {
+  background-color: #003a6d;
+  border: none;
+}
+.dropdown-menu > li > a {
+  color: #fff;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #1c3156;
+  color: #fff;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  background-color: #1c3156;
+  color: #fff;
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+.panel-primary, .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  border-color: #152643;
+}
+.panel-primary > .panel-heading,
+.panel-primary > .archive1-collapse > .panel-heading {
+  background: #0d72b1;
+  background: -moz-linear-gradient(top, #0d72b1 0, #003b6e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0d72b1), color-stop(100%, #003b6e));
+  background: -webkit-linear-gradient(top, #0d72b1 0, #003b6e 100%);
+  background: -o-linear-gradient(top, #0d72b1 0, #003b6e 100%);
+  background: -ms-linear-gradient(top, #0d72b1 0, #003b6e 100%);
+  background: linear-gradient(to bottom, #0d72b1 0, #003b6e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0d72b1', endColorstr='#003b6e',GradientType=0 );
+  border-bottom-color: #152643;
+  color: #fff;
+}
+.panel-primary > .panel-heading a, .panel-primary > .panel-heading a:hover, .panel-primary > .panel-heading a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.panel-default > .panel-heading a, .panel-default > .panel-heading a:hover, .panel-default > .panel-heading a:focus {
+  color: #333333;
+  text-decoration: underline;
+}
