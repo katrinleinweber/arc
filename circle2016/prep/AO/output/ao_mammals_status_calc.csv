@@ -1,5 +1,5 @@
 rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
-1,Alaska,2e3,0.06,94,5
+1,Alaska,2.00E+03,0.06,94,5
 1,Alaska,2001,0.06,94,5
 1,Alaska,2002,0.06,94,5
 1,Alaska,2003,0.06,94,5
@@ -16,7 +16,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 1,Alaska,2014,0.03,97,5
 1,Alaska,2015,0.03,97,5
 1,Alaska,2016,0.11,89,5
-2,Nunavut,2e3,0.14286,85.714,7
+2,Nunavut,2.00E+03,0.14286,85.714,7
 2,Nunavut,2001,0.14286,85.714,7
 2,Nunavut,2002,0.14286,85.714,7
 2,Nunavut,2003,0.14286,85.714,7
@@ -33,7 +33,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 2,Nunavut,2014,0.10714,89.286,7
 2,Nunavut,2015,0.10714,89.286,7
 2,Nunavut,2016,0.16429,83.571,7
-3,Beaufort,2e3,0.25,75,4
+3,Beaufort,2.00E+03,0.25,75,4
 3,Beaufort,2001,0.25,75,4
 3,Beaufort,2002,0.25,75,4
 3,Beaufort,2003,0.25,75,4
@@ -50,7 +50,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 3,Beaufort,2014,0.1875,81.25,4
 3,Beaufort,2015,0.1875,81.25,4
 3,Beaufort,2016,0.1875,81.25,4
-4,Russia,2e3,0.17857,82.143,7
+4,Russia,2.00E+03,0.17857,82.143,7
 4,Russia,2001,0.17857,82.143,7
 4,Russia,2002,0.17857,82.143,7
 4,Russia,2003,0.17857,82.143,7
@@ -67,7 +67,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 4,Russia,2014,0.15,85,7
 4,Russia,2015,0.15,85,7
 4,Russia,2016,0.20714,79.286,7
-5,Svalbard,2e3,0,100,2
+5,Svalbard,2.00E+03,0,100,2
 5,Svalbard,2001,0,100,2
 5,Svalbard,2002,0,100,2
 5,Svalbard,2003,0,100,2
@@ -84,7 +84,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 5,Svalbard,2014,0,100,2
 5,Svalbard,2015,0,100,2
 5,Svalbard,2016,0,100,2
-8,West Greenland,2e3,0.25909,74.091,11
+8,West Greenland,2.00E+03,0.25909,74.091,11
 8,West Greenland,2001,0.25909,74.091,11
 8,West Greenland,2002,0.25909,74.091,11
 8,West Greenland,2003,0.25909,74.091,11
@@ -101,7 +101,7 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 8,West Greenland,2014,0.18182,81.818,11
 8,West Greenland,2015,0.18182,81.818,11
 8,West Greenland,2016,0.21818,78.182,11
-9,East Greenland,2e3,0.12857,87.143,7
+9,East Greenland,2.00E+03,0.12857,87.143,7
 9,East Greenland,2001,0.12857,87.143,7
 9,East Greenland,2002,0.12857,87.143,7
 9,East Greenland,2003,0.12857,87.143,7
@@ -118,20 +118,3 @@ rgn_id,rgn_name,year,mean_cat,ico_status,n_spp
 9,East Greenland,2014,0.11429,88.571,7
 9,East Greenland,2015,0.11429,88.571,7
 9,East Greenland,2016,0.17143,82.857,7
-NA,NA,2e3,0.55,44.99999999999999,4
-NA,NA,2001,0.55,44.99999999999999,4
-NA,NA,2002,0.55,44.99999999999999,4
-NA,NA,2003,0.55,44.99999999999999,4
-NA,NA,2004,0.55,44.99999999999999,4
-NA,NA,2005,0.55,44.99999999999999,4
-NA,NA,2006,0.55,44.99999999999999,4
-NA,NA,2007,0.55,44.99999999999999,4
-NA,NA,2008,0.65,35,4
-NA,NA,2009,0.65,35,4
-NA,NA,2010,0.65,35,4
-NA,NA,2011,0.65,35,4
-NA,NA,2012,0.65,35,4
-NA,NA,2013,0.65,35,4
-NA,NA,2014,0.65,35,4
-NA,NA,2015,0.65,35,4
-NA,NA,2016,0.65,35,4
