@@ -360,7 +360,17 @@ FP = function(layers, scores){
 
 
 AO = function(layers){
-  scores <-   SelectLayersData(layers, layers='ao_scores_arc2016', narrow = TRUE)
+  scores <-   SelectLayersData(layers, layers='ao_status')%>%
+  dplyr::select(region_id = id_num, score = val_num)
+  scores$dimension<- 'status'
+  scores$goal<- 'AO'
+
+
+  trend<- SelectLayersData(layers, layers='ao_trend')%>%
+    dplyr::select(region_id = id_num, score = val_num)
+  trend$dimension<- 'trend'
+  trend$goal<- 'AO'
+scores<- rbind(scores, trend)
 
   return(scores)
 }
