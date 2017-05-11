@@ -6,6 +6,7 @@ Data sources:
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)",,,ao_meancatch_arc2016,~/github/arc/circle2016/layers/ao_meancatch_arc2016.csv,rgn_id,,stock_id_taxonkey,year,mean_catch,,TRUE,2001,2010,2.78E-12,301524.8086,FALSE,,,,9,FALSE
+AO,ao_mammals_iucn_status_arc2016,ao_mammals_iucn_status_arc2016.csv,category,IUCN risk category,IUCN risk category,IUCN risk category,,,ao_mammals_iucn_status_arc2016,~/github/arc/circle2016/layers/ao_mammals_iucn_status_arc2016.csv,rgn_id,,sciname,year,,category,TRUE,2000,2016,,,FALSE,iucn_sid,,136,9,
 CW,cw_chemical_trend,cw_chemical_trend_arc2016.csv,trend,trend score,Trends in chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
