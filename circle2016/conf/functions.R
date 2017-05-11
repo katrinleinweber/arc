@@ -541,8 +541,8 @@ AO = function(layers,
     mutate(score = ifelse(score < (-1), (-1), score))
 
   # return scores
-  scores= full_join(status, trend)%>%
-    mutate(goal='FIS')%>%
+  scores_ao_fis= full_join(status, trend)%>%
+    mutate(goal='AO_fis')%>%
     data.frame()
 
   ######ARTISINALLY TARGETTED MARINE MAMMALS#####
@@ -617,14 +617,19 @@ AO = function(layers,
 
 
   # return scores
-  scores2 <-  rbind(r.status, r.trend) %>%
-    mutate('goal'='AO') %>%
+  scores_ao_mammals <-  rbind(r.status, r.trend) %>%
+    mutate('goal'='AO_mammals') %>%
     select(goal, dimension, region_id, score) %>%
     data.frame()
 
 ###Finally use sea ice edge scores for coastal protection#######
 
-scores3<- read_csv('prep/AO/scores_cp.csv')
+scores_ao_ice<- read_csv('prep/AO/scores_cp.csv')
+scores_ao_ice<- dplyr::rename(scores_ao_ice, region_id=rgn_id)
+scores_ao_ice$goal<- 'ao_ice'
+
+
+scores<- rbind_all(scores_ao_ice, scores_ao_mammals, scores_ao_fis)
 
   return(scores)
 }

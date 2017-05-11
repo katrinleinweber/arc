@@ -1,0 +1,15 @@
+region_id,score,dimension,goal
+1,45,status,AO_fis
+2,73,status,AO_fis
+3,47.5,status,AO_fis
+4,19,status,AO_fis
+6,90.6,status,AO_fis
+8,92.9,status,AO_fis
+9,22.4,status,AO_fis
+1,-0.0029,trend,AO_fis
+2,0.0527,trend,AO_fis
+3,-0.0048,trend,AO_fis
+4,-0.0784,trend,AO_fis
+6,0.0691,trend,AO_fis
+8,0.1393,trend,AO_fis
+9,0.0187,trend,AO_fis
