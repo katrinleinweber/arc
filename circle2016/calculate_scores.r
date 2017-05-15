@@ -26,50 +26,24 @@ source('PlotMap.r')
 source('PlotMapMulti.r')
 source('PlotFlowerMulti.R')
 
-## Make Maps ----
-PlotMapMulti(scores       = readr::read_csv('scores.csv'),
-             spatial_poly = PrepSpatial('spatial/regions_gcs.geojson'),
-             path_figures = 'reports/figures/maps')
+## Make Maps ---- JSL 15/05: not working because of issue with shape file :(. will follow up
+# PlotMapMulti(scores       = readr::read_csv('scores.csv'),
+#              spatial_poly = PrepSpatial('spatial/regions_gcs.geojson'),
+#              path_figures = 'reports/figures/maps')
 
 
 
 ## Make Flower Plots ----
-rgns_complete <- read.csv('spatial/regions_lookup.csv') %>%
-rgn_names <- read.csv('spatial/regions_lookup_complete.csv') %>%
-  dplyr::rename(rgn_id = region_id)
+rgns_complete <- read.csv('spatial/regions_lookup.csv')
+rgn_names <- rgns_complete
 
-rgns_to_plot <- rgns_complete$region_id
+rgns_to_plot <- rgns_complete$rgn_id
 
 PlotFlowerMulti(scores          = readr::read_csv('scores.csv'),# %>% filter(region_id %in% rgns_to_plot),
                 rgns_to_plot    = rgns_to_plot,
                 rgn_names       = rgn_names,
                 name_fig        = 'reports/figures/flowers',
                 assessment_name = 'The Arctic')
-
-## EEZ regions
-rgns <- rgns_complete %>%
-  filter(type %in% c('eez'))
-rgns_to_plot <- rgns$region_id
-
-PlotFlowerMulti(scores          = readr::read_csv('scores.csv') %>% filter(region_id %in% rgns_to_plot),
-                rgns_to_plot    = rgns_to_plot,
-                rgn_names       = rgn_names,
-                name_fig        = 'reports/figures/EEZ/flower',
-                assessment_name = 'Baltic')
-
-## SUBBASIN regions
-rgns <- rgns_complete %>%
-  filter(type %in% c('subbasin'))
-rgns_to_plot <- rgns$region_id
-
-PlotFlowerMulti(scores          = readr::read_csv('scores.csv') %>% filter(region_id %in% rgns_to_plot),
-                rgns_to_plot    = rgns_to_plot,
-                rgn_names       = rgn_names,
-                name_fig        = 'reports/figures/SUBBASIN/flower',
-                assessment_name = 'Baltic')
-
-
-
 
 
 
