@@ -10,11 +10,10 @@
   ## 3. source configure_toolbox.r to ensure proper configuration
   ## 4. develop goal models in functions.r, running individual goal models line by line
 
-## load ohicore and libraries used in functions.r models
-if (!"ohicore" %in% (.packages())) {
-  suppressWarnings(require(ohicore))
-  library(tidyverse)
-}
+## load required packages after checking whether they are already installed
+pkgs_required <- c('ohicore', 'tidyverse', 'stringr', 'zoo')
+pkgs_check <- pkgs_required[!pkgs_required %in% (.packages())]
+pkgs_installed <- sapply(pkgs_check, FUN = function(x) library(x, character.only = TRUE))
 
 ## set working directory to the scenario that contains conf and layers directories
 setwd('~/github/arc/circle2016')

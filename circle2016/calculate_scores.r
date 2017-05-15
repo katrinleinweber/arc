@@ -12,10 +12,64 @@
 ## in functions.R is a good workflow.
 
 ## run the configure_toolbox.r script to check configuration
-source('configure_toolbox.r')
+source('~/github/arc/circle2016/configure_toolbox.r')
 
 ## calculate scenario scores
 scores = ohicore::CalculateAll(conf, layers)
 
 ## save scores as scores.csv
 write.csv(scores, 'scores.csv', na='', row.names=F)
+
+## make graphics (source until they are added as ohicore functions)
+source('PrepSpatial.R')
+source('PlotMap.r')
+source('PlotMapMulti.r')
+source('PlotFlowerMulti.R')
+
+## Make Maps ----
+PlotMapMulti(scores       = readr::read_csv('scores.csv'),
+             spatial_poly = PrepSpatial('spatial/regions_gcs.geojson'),
+             path_figures = 'reports/figures/maps')
+
+
+
+## Make Flower Plots ----
+rgns_complete <- read.csv('spatial/regions_lookup.csv') %>%
+rgn_names <- read.csv('spatial/regions_lookup_complete.csv') %>%
+  dplyr::rename(rgn_id = region_id)
+
+rgns_to_plot <- rgns_complete$region_id
+
+PlotFlowerMulti(scores          = readr::read_csv('scores.csv'),# %>% filter(region_id %in% rgns_to_plot),
+                rgns_to_plot    = rgns_to_plot,
+                rgn_names       = rgn_names,
+                name_fig        = 'reports/figures/flowers',
+                assessment_name = 'The Arctic')
+
+## EEZ regions
+rgns <- rgns_complete %>%
+  filter(type %in% c('eez'))
+rgns_to_plot <- rgns$region_id
+
+PlotFlowerMulti(scores          = readr::read_csv('scores.csv') %>% filter(region_id %in% rgns_to_plot),
+                rgns_to_plot    = rgns_to_plot,
+                rgn_names       = rgn_names,
+                name_fig        = 'reports/figures/EEZ/flower',
+                assessment_name = 'Baltic')
+
+## SUBBASIN regions
+rgns <- rgns_complete %>%
+  filter(type %in% c('subbasin'))
+rgns_to_plot <- rgns$region_id
+
+PlotFlowerMulti(scores          = readr::read_csv('scores.csv') %>% filter(region_id %in% rgns_to_plot),
+                rgns_to_plot    = rgns_to_plot,
+                rgn_names       = rgn_names,
+                name_fig        = 'reports/figures/SUBBASIN/flower',
+                assessment_name = 'Baltic')
+
+
+
+
+
+
