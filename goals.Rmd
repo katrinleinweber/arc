@@ -1,0 +1,21 @@
+---
+title: "Goals"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, echo=F, warning=FALSE, message=F}
+source("./_site.R")
+```
+
+OHI assessments categorize and score goals representing ocean-derived benefits to people.  
+<br>
+**The Baltic Health Index (BHI) assesses 9 goals, some of which have sub-goals**.  
+Here you will find information about how goals were represented and how data were processed.
+
+------
+
+```{r, child=sprintf('%s/conf/goals.Rmd', dir_scenario)}
+```
