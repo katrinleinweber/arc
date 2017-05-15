@@ -94,27 +94,9 @@ output: html_document
 
 ---- 
 
-## Clean Waters: Eutrophication
+## Clean Waters
 
-```{r, child='goals/EUT.Rmd', results='asis', echo=FALSE}
-```
-
-[**Full data preparation information and code**](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/nutrient/nutrient_prep.Rmd)
-
----- 
-
-## Clean Waters: Trash
-
-```{r, child='goals/TRA.Rmd', results='asis', echo=FALSE}
-```
-
-[**Full data preparation information and code**](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/trash/tra_prep.md)
-
----- 
-
-## Clean Waters: Contaminants
-
-```{r, child='goals/CON.Rmd', results='asis', echo=FALSE}
+```{r, child='goals/CW.Rmd', results='asis', echo=FALSE}
 ```
 
 [**Full data preparation information and code**](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/contaminants/contaminants_prep.Rmd)
