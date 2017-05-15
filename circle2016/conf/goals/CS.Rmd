@@ -1,0 +1,34 @@
+### Goal Description
+
+The Carbon Storage goal captures the ability of the coastal habitats to remove carbon given their carbon uptake rate and health conditions. A score of 100 means all habitats that contribute to carbon removal are still intact or have been restored and they can function to their full carbon burial potential. Highly productive coastal wetland ecosystems or seagrass store substantially large amount of carbon have the highest sequestration rates of any habitats on earth. They are also threatened by under-regulated coastal development but are amenable to restoration and conservation efforts. 
+
+For the BHI, as data was limited we used seagrass (Zostera sp.) coverage data to assess vegetation-based carbon storage. There is high uncertainty associated with using only seagrass data. However, we aim to highlight the need to better monitor marine vegetation in order to understand the carbon storage capacity in coastal areas.  
+
+
+### Model & Data
+
+Seagrass data (Zostera sp.) data were downloaded from the [HELCOM Map & Data service](http://maps.helcom.fi/website/Biodiversity/index.html). Select: Biodiversity >> Redlisted species >> macrophytes >> LC least concern >> Zostera. 
+
+The data were classified as follows: 
+
+-	0 = no observations, 
+-	1 = present before year 1995 or in 1995, 
+-	2 = present after year 1995, 
+-	3 = present before and after year 1995. 
+
+Expert opinion (Christoffer Boström) suggested that no growth of Zostera sp naturally occurs in these BHI ID regions: 12, 15, 17, 19, 21, 22, 23, 24, 37, 38, 39, 40, 41, 42, and were left as NA in this analysis. 
+
+
+### Reference points
+
+A Zostera sp classification of 2 (present after year 1995) or 3 (present before and after year 1995) have used as reference points. 
+
+### Considerations for *BHI 2.0*
+
+Higher-resolution and more recent coverage data should be used for analysis. 
+
+### Other information
+
+
+
+*external advisors/goalkeepers: Christoffer Boström and Markku Viitasalo.*

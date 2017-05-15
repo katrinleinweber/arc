@@ -1,0 +1,38 @@
+### Goal Description
+
+Iconic species are those that are relevant to local cultural identity through a species' relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Habitat-forming species are not included in this definition of iconic species, nor are species that are harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual). This sub-goal assesses how well those species are conserved. 
+
+**For the BHI, a survey identified the following iconic species:**
+
+- Cod  
+- Flounder  
+- Herring  
+- Perch  
+- Pike  
+- Salmon  
+- Trout  
+- Sprat  
+- Grey seal 
+- European otter
+- Harbour seal  
+- Harbour porpoise  
+- Ringed seal
+- White-tailed sea eagle 
+- Common eider
+
+
+### Model & Data
+
+HELCOM provides species checklists for the Baltic that include distribution and a complete list of all species assessed with IUCN criteria. Species were assigned a _threat category_ (ranging from "extinct" to "least concern") and assigned a weight. The goal score is the average weight of all species assessed.
+
+
+### Reference points
+
+The target is for all species are in the "least concern" category; this will produce a score of 100. The lower cut-off point when 75% of species are extinct and score is 0.
+
+### Considerations for *BHI 2.0*
+
+### Other information
+
+
+

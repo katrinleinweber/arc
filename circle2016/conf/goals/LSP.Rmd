@@ -1,0 +1,24 @@
+### Goal Description
+
+The Lasting Special Places sub-goal focuses on those geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons, and assesses how well they are protected.
+**For the BHI, the designation and management of marine protected areas (MPAs) captures the commitment of a country to preserving areas of biological, aesthetic or ecosystem service value.** The designation of MPAs is also included in international agreements, such as the [Convention on Biodiversity's target](https://www.cbd.int/sp/targets/rationale/target-11/) for the designation of 10% of exclusive economic zones (EEZs) to be in MPAs.
+
+### Model & Data
+
+The model assesses the area of MPAs in each country in relation to its EEZs, and their management status. Management status are broken down to three categories and weighted on a 0-1 scale: 
+
+- 0.1 = designated
+- 0.4 = designated and partly managed  
+- 1.0 = designated and managed   
+
+Both MPA area and management status data were downloaded from the [HELCOM MPA](http://mpas.helcom.fi) website.
+
+### Reference points
+
+The target is for 10% of a country's EEZs is designated as MPAs, and are fully managed.
+
+### Considerations for *BHI 2.0*
+
+### Other information
+
+*external advisors/goalkeepers: Sofia Wikström*

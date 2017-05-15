@@ -1,0 +1,31 @@
+### Goal Description
+
+The Livelihoods sub-goal describes livelihood quantity and quality for people living on the coast. Livelihoods includes the number of jobs in different marine related sectors. Ideally, this sub-goal would speak to the quality and quantity of marine jobs in an area. It would encompass all the marine sectors that supply jobs and wages to coastal communities, incorporating information on the sustainability of different sectors while also telling about the working conditions and job satisfaction. 
+
+<!---
+Due to a lack of sector-specific employment information, **for the BHI we used overall employment rate in the Baltic coastal regions to represent ocean-dependent livelihood.**  
+--->
+
+### Model & Data
+
+We downloaded [Eurostat country-level employment rate and target employment rate](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&plugin=0&language=en&pcode=t2020_10&tableSelection=1) from 2008 to 2012. We chose this time frame because ECO status, based on Blue Growth report, used 2010 data. So we wanted to keep the time frame similar. (Data is not available for Russia.)
+
+### Reference points
+
+Country-specific target employment rate for 2010 from Eurostat (http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&plugin=0&language=en&pcode=t2020_10&tableSelection=1 ) have been used. These data are based on employment rate (in %) by sex, age group (20-64). We used Eurostat data from 2010 (same year as the Blue Growth data) and assumed that the same age employment is true for the blue sectors.    
+
+
+
+### Considerations for *BHI 2.0*
+
+<!---
+Regions 19, 22 , 30, and 33 have NA status and trend. 
+
+Russian regions have NA status because no regional data (19,22,33)
+
+Regions with no coast line have no status because not joined to a NUTS region (30)
+--->
+
+### Other information
+
+*external advisors/goalkeepers: Martin Quaas and Wilfried Rickels.*

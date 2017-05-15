@@ -1,0 +1,15 @@
+### Goal Description
+
+People value biodiversity in particular for its existence value. The risk of species extinction generates great emotional and moral concern for many people.
+
+### Model & Data 
+
+HELCOM provides species checklists for the Baltic that include distribution and a complete list of all species assessed with IUCN criteria. Species were assigned a _threat category_ (ranging from "extinct" to "least concern") and assigned a weight. The goal score is the average weight of all species assessed.
+
+### Reference points
+
+The target is for all species are in the "least concern" category; this will produce a score of 100. The lower cut-off point when 75% of species are extinct and score is 0.
+
+### Considerations for *BHI 2.0*
+
+### Other information

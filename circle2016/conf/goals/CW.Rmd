@@ -1,0 +1,33 @@
+### Goal Description
+
+The Contaminant sub-goal of the Clean Water goal captures the degree to which local waters are unpolluted by contaminants. This sub-goal scores highest when the contamination level is below a threshold, which is defined by the Marine Framework Directive. For the BHI three contaminants indicators are proposed, describing different aspects of toxicity: dioxin and dioxin like compounds, polychlorinated biphenyl compounds (PCBs), and perfluorooctanesulfonic acid (PFOS). In addition, a penalty factor has been applied to account for the fact that current monitoring programs do not cover all the registered and harmful contaminants.
+
+### Model & Data
+
+All contaminant data were downloaded from the open-accessible ICES database (see below).
+
+- [PCB data from ICES database](http://dome.ices.dk/views/ContaminantsBiota.aspx)  
+- [Dioxins from ICES database](http://dome.ices.dk/views/ContaminantsBiota.aspx)  
+- [PFOS data from ICES DOME database](http://dome.ices.dk/views/ContaminantsBiota.aspx).  
+
+Data to calculate the penalty factor were taken from: 
+
+-	the CHASE assessment tool to account for the chemicals monitored in the Baltic Sea - _Andersen et al 2016, Environ Monit Assess (2016) 188:115, DOI 10.1007/s10661-016-5121-x_
+-	the [Candidate List (Annex XV of the REACH regulation)]((https://echa.europa.eu/candidate-list-table)), which compiles chemicals that within REACH have been identified as Substances of Very High Concern (SVHC).
+
+
+### Reference points
+
+**ICES-6 PCB**: The target for non-dioxin contaminents like PCBs is set at the threshold of 75 μg/kg ww (wet weight) fish muscle, which is the [EU threshold for fish muscle. See Section 5 Annex, 5.3](http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF). This threshold was also agreed upon as GES indicator at the most recent meeting of the [Working Group on the State of the Environment and Nature Conservation](http://helcom.fi/helcom-at-work/groups/state-and-conservation) April 11-15, 2016. 
+
+**TEQ value for PCBs and Dioxins**: The target for dioxin and dioxin-like compounds is set at 0.0065 TEQ ug /kg ww fish, crustaceans or molluscs (source of target: EQS biota human health). Secondary GES boundary: CB-118 24 μg/kg lw fish liver or muscle (source: EAC). This threshold was agreed upon as GES indicator at the most recent meeting of the [Working Group on the State of the Environment and Nature Conservation](http://helcom.fi/helcom-at-work/groups/state-and-conservation) April 11-15, 2016. This is consistent with the [EU human health thresholds for dioxin and dioxin-like compounds - 6.5 pg/g](http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF); TEQ values from the [World Health Organization 2005](http://www.who.int/ipcs/assessment/tef_values.pdf)  
+
+**PFOS indicator**: The target for PFOS indicators was set from the GES boundary: "9.1 μg/kg wet weight (or 9.1 ng/g ww) with the protection goal of human health"" according to [HELCOM PFOS core indicator document, p.3](http://www.helcom.fi/Core%20Indicators/PFOS_HELCOM%20core%20indicator%202016_web%20version.pdf).  
+
+The status score was penalized requesting that 10% of the “Substances of Very High Concern” should be regularly monitored. 
+
+### Considerations for *BHI 2.0*
+
+### Other information
+
+*external advisors/goalkeepers: Anna Sobek*
