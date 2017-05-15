@@ -309,207 +309,387 @@ Here you will find information about how goals were represented and how data wer
 <hr />
 <div id="food-provision-fisheries" class="section level2">
 <h2>Food Provision: Fisheries</h2>
-<p>Amount of sustainable wild-caught seafood compared to the max sustainable</p>
-<p><span class="math display">\[
-x_{FIS} =  (\prod_{g=1}^{6} SS_{i,g}^{C_{i,g}})^\frac{1}{\sum{C_{i,g}}}
-\]</span></p>
+<div id="goal-description" class="section level3">
+<h3>Goal Description</h3>
+<p>The Fisheries sub-goal of Food Provision describes the ability to maximize the sustainable yield of wild-caught seafood for human consumption. <strong>For the BHI cod and herring stocks in the Baltic Sea were included as wild-caught fisheries</strong>.</p>
+</div>
+<div id="model-data" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>The data used for this goal are composed of cod and herring spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated as a function of the ratio (B’) between the single species current biomass at sea (B) and the reference biomass at maximum sustainable yield (BMSY), as well as the ratio (F’) between the single species current fishing mortality (F) and the fishing mortality at maximum sustainable yield (FMSY). B/Bmsy and F/Fmsy data are converted to scores between 0 and 1 using this <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/FIS/ffms%3By_bbmsy_2_score.png">general relationship</a>.</p>
 <ul>
-<li><p><span class="math inline">\(SS\)</span> stock status score, based on B/Bmsy (biomass / maximum sustainable yield of biomass) and an underharvest penalty adjustment</p></li>
-<li><p><span class="math inline">\(C\)</span> total catch</p></li>
-<li><p><span class="math inline">\(i\)</span> OHI reporting region</p></li>
-<li><p><span class="math inline">\(g\)</span> level of taxonomic grouping (ISSCAAP)</p></li>
+<li><a href="http://www.ices.dk/marine-data/tools/Pages/stock-assessment-graphs.aspx">Cod and herring data accessed from the ICES homepage</a> &gt; search for ‘cod’ or ‘herring’ &gt; specify the ecoregion as Baltic Sea &gt; search for the 2013 assessment.</li>
 </ul>
+</div>
+<div id="reference-points" class="section level3">
+<h3>Reference points</h3>
+<p>The reference point used for the computation are based on the MSY principle and are described as a functional relationship. MSY means the highest theoretical equilibrium yield that can be continuously taken on average from a stock under existing average environmental conditions without significantly affecting the reproduction process <em>(European Union 2013, World Ocean Review 2013).</em></p>
+</div>
+<div id="considerations-for-bhi-2.0" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers are Christian Möllmann &amp; Stefan Neuenfeldt</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/FIS/fis_np_prep.md"><strong>Full data preparation information and code</strong></a>.<br />
+<!--- For goal model code, click [here](link to functions.r in specific commit/release). ---></p>
+<hr />
+</div>
 </div>
 <div id="food-provision-mariculture" class="section level2">
 <h2>Food Provision: Mariculture</h2>
-<p>Amount of sustainable farm-raised seafood compared to max sustainable</p>
-<p><span class="math display">\[
-x_{MAR} =  \frac{Y_{c}}{Y_{r}}
-\]</span></p>
-<p><span class="math display">\[
-Y_{c} = \frac{\sum{1}^{k} Y_{k} * S_{M,k}}{P_{c}}
-\]</span></p>
+<div id="goal-description-1" class="section level3">
+<h3>Goal Description</h3>
+<p>The Mariculture sub-goal of the Food Provision (FP) goal describes a country’s ability to maximize the sustainable yield of farmed fish and shellfish in the ocean for human consumption. Mariculture is not a large industry in the Baltic, but it does provide some food production. <strong>For the BHI rainbow trout production was included in parts of Denmark, Sweden, Germany, and Finland</strong>, using available data. All other BHI regions are scored as NA, and thus MAR will not contribute to their overall FP goal score.</p>
+</div>
+<div id="model-data-1" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>Tonnes of mariculture production data were collected from country databases or reports:</p>
 <ul>
-<li><p><span class="math inline">\(Y\)</span> = current sustainably harvested total yield, current [<span class="math inline">\(c\)</span>] or reference [<span class="math inline">\(r\)</span>]</p></li>
-<li><p><span class="math inline">\(S_{M,k}\)</span> = Sustainability score for each species <span class="math inline">\(k\)</span></p></li>
-<li><p><span class="math inline">\(P_{c}\)</span> = Coastal population within 100km</p></li>
-<li><p><span class="math inline">\(Y_{r} = max(Y_{c})\)</span></p></li>
+<li><p>Sweden <a href="http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Jord--och-skogsbruk-fiske/Vattenbruk/Vattenbruk/">Jorbruksverket</a></p></li>
+<li><p>Denmark <a href="http://agrifish.dk/fisheries/fishery-statistics/aquaculture-statistics/#c32851">Danish Agrifish Agency (Ministry of Environment and Food of Denmark)</a></p></li>
+<li><p>Finland <a href="http://statdb.luke.fi/PXWeb/pxweb/fi/LUKE/LUKE__06%20Kala%20ja%20riista__02%20Rakenne%20ja%20tuotanto__10%20Vesiviljely/?tablelist=true&amp;rxid=5211d344-451e-490d-8651-adb38df626e1">Natural Resources Institute</a></p></li>
+<li><p>Germany <a href="http://www.fao.org/fishery/statistics/software/fishstatj/en#downlApp">FAO FishStatJ</a></p></li>
 </ul>
+</div>
+<div id="reference-points-1" class="section level3">
+<h3>Reference points</h3>
+<p><em>in progress</em></p>
+</div>
+<div id="considerations-for-bhi-2.0-1" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-1" class="section level3">
+<h3>Other information</h3>
+<p><em>Data were compiled primarily by Ginnette Flores Carmenate.</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/MAR/mar_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="artisanal-fishing-opportunity" class="section level2">
 <h2>Artisanal Fishing Opportunity</h2>
-<p>the opportunity to fish artisanally, independent of how many fish are caught</p>
-<p><span class="math display">\[
-x_{AO} = (1 - D_{U}) * S_{AO}
-\]</span></p>
-<p><span class="math display">\[
-D_{U} = (1 - P) * (1 - O_{AO})
-\]</span></p>
+<div id="goal-description-2" class="section level3">
+<h3>Goal Description</h3>
+<p>Artisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, in particular in developing nations. This goal measure whether people who need to fish on a small, local scale have the opportunity to do so. It has three sub-components: stock, access, and need. A score of 100 means the country or region is meeting the needs of artisanal fishermen or communities by implementing institutional supports, providing access to near-shore water, and maintaining the health of targeted species.</p>
+<p><strong>For the BHI, we focus on the <em>stock</em> sub-component and will use this as a proxy for the entire goal.</strong></p>
+</div>
+<div id="model-data-2" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>The artisanal fishing opportunity (AO) model assesses the health of fish stocks, represented by the mean of two core indicators for coastal fish stock abundance prepared by the Baltic Marine Environment Protection Commission - Helsinki Commission (<a href="www.helcom.fi">HELCOM</a>),</p>
 <ul>
-<li><p><span class="math inline">\(D_{U}\)</span> = unmet demand</p></li>
-<li><p><span class="math inline">\(S_{AO}\)</span> = sustainability of fishing methods</p></li>
-<li><p><span class="math inline">\(O_{AO}\)</span> = access to artisanal fishing</p></li>
-<li><p><span class="math inline">\(P\)</span> = gross domestic product (GDP) per capita, adjusted by purchasing power parity (PPP)</p></li>
+<li><p>the [HELCOM Core Indicator Abundance of coastal fish key functional groups] (<a href="http://helcom.fi/baltic-sea-trends/indicators/abundance-of-coastal-fish-key-functional-groups/" class="uri">http://helcom.fi/baltic-sea-trends/indicators/abundance-of-coastal-fish-key-functional-groups/</a>). It evaluates the abundance of selected functional groups of coastal fish in the Baltic Sea. As a rule, Good Environmental Status (GES) is achieved when the abundance of piscivores (i.e. fish that feed on other fish) is high and the abundance of cyprinids (i.e. fish that feed on e.g. benthic invertebrates) is within an acceptable range.</p></li>
+<li><p>the <a href="http://helcom.fi/baltic-sea-trends/indicators/abundance-of-key-coastal-fish-species">HELCOM Core Indicator Abundance of key coastal fish species</a>. It has been evaluated by assessing the status of piscivores and cyprinids during the period 2009-2013. The key coastal fish core indicator evaluates the abundance of typical species of fish, such as perch and flounder, in the coastal areas of the Baltic Sea, to assess environmental status. As a rule, Good Environmental Status (GES) is achieved when the abundance is above a set site and species specific boundary. The current evaluation assesses status during the period 2009-2013.</p></li>
 </ul>
+<p>Each of the indicators was then scaled between 0 and 1. GES is assessed as either GES or sub-GES based on data times series using either a baseline or a trend approach, see HELCOM for explanation (<a href="http://helcom.fi/baltic-sea-trends/indicators/abundance-of-key-coastal-fish-species/good-environmental-status/" class="uri">http://helcom.fi/baltic-sea-trends/indicators/abundance-of-key-coastal-fish-species/good-environmental-status/</a>). There is only a single assessment for each region. For a dataset if a monitoring station receives a “sub-GES” assessment, it is given the status score 0.2.</p>
+<p>Environmental status assessments were provided by Jens Olsson (SLU, Sweden), see also HELCOM FISH-PRO II (<a href="http://www.helcom.fi/helcom-at-work/projects/fish-pro/" class="uri">http://www.helcom.fi/helcom-at-work/projects/fish-pro/</a>). CPUE data used in the GES assessment. Data provided by Jens Olsson was also used in trend. Slopes from each analysis available here, but CPUE data held internally in the BHI database and not accessible here.</p>
+</div>
+<div id="reference-points-2" class="section level3">
+<h3>Reference points</h3>
+<p>Reference point was the maximum possible good environmental status (value = 1).</p>
+</div>
+<div id="considerations-for-bhi-2.0-2" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+<p>Stock was one component of the AO goal. Model could be updated with parameters representing access and need of artisanal fishing opportunities in the future.</p>
+</div>
+<div id="other-information-2" class="section level3">
+<h3>Other information</h3>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/AO/ao_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="natural-products" class="section level2">
 <h2>Natural Products</h2>
-<p>Level of protection of the coast from inundation and erosion compared to the local natural potential</p>
-<p><span class="math display">\[
-x_{NP} = \frac{\sum_{p=1}^{N} w_p * x_p}{N}  
-\]</span></p>
-<p><span class="math display">\[
-x_p = H_p * S_p
-\]</span></p>
-<p><span class="math display">\[
-S_p = 1 - (\frac{E + R}{N})  
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(w_p\)</span> = proportional peak US dollar value of product <span class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(x_p\)</span> = sustainable-harvest score for product <span class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(H_p\)</span> = harvest yield for product <span class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(S_p\)</span> = sustainability of product <span class="math inline">\(p\)</span></p></li>
-<li><p><span class="math inline">\(E\)</span> = exposure term</p></li>
-<li><p><span class="math inline">\(R\)</span> = risk term</p></li>
-</ul>
-<p>￼products:aquaria fishes, corals, sponges, shells, seaweeds, fish oil</p>
+<div id="goal-description-3" class="section level3">
+<h3>Goal Description</h3>
+<p>This goal measures how sustainably people harvest non-food products from the sea. From seashells and sponges to aquarium fish, natural products contribute to local economies and international trade. <strong>For the BHI sprat was included as a natural product</strong> because it often used for fish meal production or animal food.</p>
+</div>
+<div id="model-data-overview" class="section level3">
+<h3>Model &amp; Data Overview</h3>
+<p>The data used for this goal are composed of total sprat spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated exactly as described in the Fisheries goal. The spawning biomass data have been accessed from the <a href="http://www.ices.dk/marine-data/tools/Pages/stock-assessment-graphs.aspx">ICES homepage</a> by searching for ‘sprat’ &gt; specify the ecoregion as Baltic Sea &gt; search for the 2013 assessment.</p>
+</div>
+<div id="reference-points-3" class="section level3">
+<h3>Reference points</h3>
+<p>The reference point used for the computation are based on the MSY principle and are described as a functional relationship. MSY means the highest theoretical equilibrium yield that can be continuously taken on average from a stock under existing average environmental conditions without significantly affecting the reproduction process <em>(European Union 2013, World Ocean Review 2013).</em></p>
+</div>
+<div id="considerations-for-bhi-2.0-3" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-3" class="section level3">
+<h3>Other information</h3>
+<p><em>External advisors/goalkeepers are Christian Möllmann &amp; Stefan Neuenfeldt</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/NP/np_prep.md"><strong>Full data preparation information and code</strong></a>.<br />
+<!--- For goal model code, click [here](link to functions.r in specific commit/release). ---></p>
+<hr />
+</div>
 </div>
 <div id="carbon-storage" class="section level2">
 <h2>Carbon Storage</h2>
-<p>Extent and condition of coastal habitats that store and sequester atmospheric carbon</p>
-<p><span class="math display">\[
-x_{CS} =  \sum_{1}^{k} \frac{C_{s}}{C_{r}} * \frac{A_{k}}{A_{T}}
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(C\)</span> = condition of habitat <span class="math inline">\(k\)</span>, current [<span class="math inline">\(c\)</span>] or reference[<span class="math inline">\(r\)</span>]</p></li>
-<li><p><span class="math inline">\(A\)</span> = area of habitat <span class="math inline">\(k\)</span>, current [<span class="math inline">\(c\)</span>] or total area covered by all habitats assessed [T]</p></li>
-</ul>
-<p>habitats: seagrass beds, salt marshes, mangroves</p>
+<div id="goal-description-4" class="section level3">
+<h3>Goal Description</h3>
+<p>The Carbon Storage goal captures the ability of the coastal habitats to remove carbon given their carbon uptake rate and health conditions. A score of 100 means all habitats that contribute to carbon removal are still intact or have been restored and they can function to their full carbon burial potential. Highly productive coastal wetland ecosystems or seagrass store substantially large amount of carbon have the highest sequestration rates of any habitats on earth. They are also threatened by under-regulated coastal development but are amenable to restoration and conservation efforts.</p>
+<p>For the BHI, as data was limited we used seagrass (Zostera sp.) coverage data to assess vegetation-based carbon storage. There is high uncertainty associated with using only seagrass data. However, we aim to highlight the need to better monitor marine vegetation in order to understand the carbon storage capacity in coastal areas.</p>
 </div>
-<div id="coastal-protection" class="section level2">
-<h2>Coastal Protection</h2>
-<p>Protection from inundation or erosion compared to the local natural potential</p>
-<p><span class="math display">\[
-x_{CP} =  \sum_{k}^{n} \alpha_{k} * \frac{C_{c,k}}{C_{r,k}}
-\]</span></p>
-<p><span class="math display">\[
-\alpha_{k} = \frac{w_{k}*A_{k}}{\sum{w_{k}*A_{k}}}
-\]</span></p>
-<p><span class="math display">\[
-w_{k} = \frac{r_{k}}{\sum{r_{k}}}
-\]</span></p>
+<div id="model-data-3" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>Seagrass data (Zostera sp.) data were downloaded from the <a href="http://maps.helcom.fi/website/Biodiversity/index.html">HELCOM Map &amp; Data service</a>. Select: Biodiversity &gt;&gt; Redlisted species &gt;&gt; macrophytes &gt;&gt; LC least concern &gt;&gt; Zostera.</p>
+<p>The data were classified as follows:</p>
 <ul>
-<li><p><span class="math inline">\(C\)</span> = condition of habitat <span class="math inline">\(k\)</span>, current [<span class="math inline">\(c\)</span>] and reference [<span class="math inline">\(r\)</span>]</p></li>
-<li><p><span class="math inline">\(\alpha\)</span> = weighted area of habitat <span class="math inline">\(k\)</span></p></li>
-<li><p><span class="math inline">\(A\)</span> = area of habitat <span class="math inline">\(k\)</span></p></li>
-<li><p><span class="math inline">\(r\)</span> = habitat protective ability rank weight</p></li>
+<li>0 = no observations,</li>
+<li>1 = present before year 1995 or in 1995,</li>
+<li>2 = present after year 1995,</li>
+<li>3 = present before and after year 1995.</li>
 </ul>
-<p>habitats: salt marshes, seagrass beds, mangroves, coral reefs, sea ice</p>
+<p>Expert opinion (Christoffer Boström) suggested that no growth of Zostera sp naturally occurs in these BHI ID regions: 12, 15, 17, 19, 21, 22, 23, 24, 37, 38, 39, 40, 41, 42, and were left as NA in this analysis.</p>
+</div>
+<div id="reference-points-4" class="section level3">
+<h3>Reference points</h3>
+<p>A Zostera sp classification of 2 (present after year 1995) or 3 (present before and after year 1995) have used as reference points.</p>
+</div>
+<div id="considerations-for-bhi-2.0-4" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+<p>Higher-resolution and more recent coverage data should be used for analysis.</p>
+</div>
+<div id="other-information-4" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers: Christoffer Boström and Markku Viitasalo.</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CS/cs_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="tourism-recreation" class="section level2">
 <h2>Tourism &amp; Recreation</h2>
-<p>Tourism &amp; recreation value, independent of monetary exchange</p>
-<p><span class="math display">\[
-x_{TR} = E_{t} * S_{t} 
-\]</span></p>
-<p><span class="math display">\[
-E_{t} = E_{W} / (L_{t} - L_{t} * U_{t})
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(E\)</span> = tourism employment proportion</p></li>
-<li><p><span class="math inline">\(S\)</span> = sustainability measure</p></li>
-<li><p><span class="math inline">\(E_{W}\)</span> = number of employees in travel and tourism sectors</p></li>
-<li><p><span class="math inline">\(L\)</span> = total labor force</p></li>
-<li><p><span class="math inline">\(U\)</span> = percent unemployment</p></li>
-<li><p><span class="math inline">\(t\)</span> = current year</p></li>
-</ul>
+<div id="goal-description-5" class="section level3">
+<h3>Goal Description</h3>
+<p>Tourism in coastal areas is a major component of thriving coastal communities and a measure of how much people value ocean systems, i.e. by traveling to coastal and ocean areas. This goal is not about the revenue or livelihoods that are generated by tourism and recreation (that is captured in the livelihoods goal) but instead captures the value that people have for experiencing and enjoying coastal areas. A score of 100 means a region utilizes its full recreational potential without harming the ecosystem.</p>
+<p>In the BHI, we used employment data from the EU Study on Blue Growth (see below) to assess the status of Tourism. Three sectors were included: Coastal tourism, Yachting and maris, and Cruise tourism. No sustainability measure of any of the blue sectors exist yet on the Baltic Sea scale, and thus was not included in this study.</p>
+</div>
+<div id="model-data-4" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">EU-Study on Blue Growth</a>, Maritime Policy and the EU Strategy for the Baltic Sea Region” identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) and at sea basin level.</p>
+<!---
+The tourism model incorporates the nights of stay in accommodations and compare that to the reference point. 
+
+We used Eurostat dataset on [nights spent at tourist accommodation establishments](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=tour_occ_nin2&lang=en) by all NUTS regions. [tour_occ_nin2] 
+--->
+</div>
+<div id="reference-points-5" class="section level3">
+<h3>Reference points</h3>
+<p>Study in support of policy measures for maritime and coastal tourism at EU level (Page 157) states that the Nordic Countries sea basins tourism has a potential to grow annually by 2.2 % until 2020. We therefore set the reference point to an annual growth of 2.2% for ten years from 2010 onwards for all three tourism categories (see above).</p>
+</div>
+<div id="considerations-for-bhi-2.0-5" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+<!---MISSING data for region 19, 22, 30, 33 --->
+</div>
+<div id="other-information-5" class="section level3">
+<h3>Other information</h3>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/TR/tr_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="livelihoods-economies-livelihoods" class="section level2">
 <h2>Livelihoods &amp; Economies: Livelihoods</h2>
-<p>Number of jobs and job quality from marine-associated sectors</p>
-<p><span class="math display">\[
-x_{LIV} = \frac{\frac{\sum_{i=1}^{k} j_{c,k}}{\sum_{i=1}^{k} j_{r,k}} + \frac{\sum_{i=1}^{k} g_{m,k}}{\sum_{i=1}^{k} g_{r,k}}}{2}
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(j\)</span> = number of jobs within sector <span class="math inline">\(k\)</span> at current [<span class="math inline">\(c\)</span>] or reference [<span class="math inline">\(r\)</span>] time</p></li>
-<li><p><span class="math inline">\(g\)</span> = average wages per job for sector <span class="math inline">\(k\)</span> at current [<span class="math inline">\(m\)</span>] or reference [<span class="math inline">\(r\)</span>] region</p></li>
-<li><p>sectors (<span class="math inline">\(k\)</span>): tourism, commercial fishing, marine mammal watching, aquarium fishing, wave &amp; tidal energy, mariculture, transportation &amp; shipping, ports &amp; harbors, ship &amp; boatbuilding</p></li>
-</ul>
+<div id="goal-description-6" class="section level3">
+<h3>Goal Description</h3>
+<p>The Livelihoods sub-goal describes livelihood quantity and quality for people living on the coast. Livelihoods includes the number of jobs in different marine related sectors. Ideally, this sub-goal would speak to the quality and quantity of marine jobs in an area. It would encompass all the marine sectors that supply jobs and wages to coastal communities, incorporating information on the sustainability of different sectors while also telling about the working conditions and job satisfaction.</p>
+<!---
+Due to a lack of sector-specific employment information, **for the BHI we used overall employment rate in the Baltic coastal regions to represent ocean-dependent livelihood.**  
+--->
+</div>
+<div id="model-data-5" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>We downloaded <a href="http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;plugin=0&amp;language=en&amp;pcode=t2020_10&amp;tableSelection=1">Eurostat country-level employment rate and target employment rate</a> from 2008 to 2012. We chose this time frame because ECO status, based on Blue Growth report, used 2010 data. So we wanted to keep the time frame similar. (Data is not available for Russia.)</p>
+</div>
+<div id="reference-points-6" class="section level3">
+<h3>Reference points</h3>
+<p>Country-specific target employment rate for 2010 from Eurostat (<a href="http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;plugin=0&amp;language=en&amp;pcode=t2020_10&amp;tableSelection=1" class="uri">http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;plugin=0&amp;language=en&amp;pcode=t2020_10&amp;tableSelection=1</a> ) have been used. These data are based on employment rate (in %) by sex, age group (20-64). We used Eurostat data from 2010 (same year as the Blue Growth data) and assumed that the same age employment is true for the blue sectors.</p>
+</div>
+<div id="considerations-for-bhi-2.0-6" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+<!---
+Regions 19, 22 , 30, and 33 have NA status and trend. 
+
+Russian regions have NA status because no regional data (19,22,33)
+
+Regions with no coast line have no status because not joined to a NUTS region (30)
+--->
+</div>
+<div id="other-information-6" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers: Martin Quaas and Wilfried Rickels.</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/LIV/liv_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="livelihoods-economies-economies" class="section level2">
 <h2>Livelihoods &amp; Economies: Economies</h2>
-<p>Revenue from marine associated sectors</p>
-<p><span class="math display">\[
-x_{ECO} = \sum_{i=1}^{k} \frac{e_{c,k}}{e_{r,k}} 
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(e\)</span> = total adjusted revenue generated from each sector <span class="math inline">\(k\)</span> at current [<span class="math inline">\(c\)</span>] or reference [<span class="math inline">\(r\)</span>] time</p></li>
-<li><p>sectors (<span class="math inline">\(k\)</span>): tourism, commercial fishing, marine mammal watching, aquarium fishing, wave &amp; tidal energy, mariculture, transportation &amp; shipping, ports &amp; harbors, ship &amp; boatbuilding</p></li>
-</ul>
+<div id="goal-description-7" class="section level3">
+<h3>Goal Description</h3>
+<p>The Economies goal captures the economic value associated with marine industries using revenue from marine sectors. It is composed of a single component, revenue. <!--- Due to a lack data from specific sectors, **for the BHI, this goal is measured by per capita GDP of each region, relative to the national per capita GDP.** ---></p>
+</div>
+<div id="model-data-6" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">“EU-Study on Blue Growth, Maritime Policy and the EU Strategy for the Baltic Sea Region”</a>, which provided 2010 sector-specific revenue data, or Gross Value Added (GVA), in the country-specific Appendix. The report also identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) as well as at sea-basin level.</p>
+<p>The goal model compares the combined total revenue per country and the reference revenue of that country. Each country receives the same score because the reference point (see below) is a fixed percentage growth of that country’s revenue in 2010. Country-level data is then distributed to BHI regions. (Due to a lack of data, Russian regions (19, 22, 33) have NA scores.)</p>
+</div>
+<div id="reference-points-7" class="section level3">
+<h3>Reference points</h3>
+<p>As reference points we used a 1.5% annual growth between 2010 and 2020, as envisioned in the blue growth report.</p>
+</div>
+<div id="considerations-for-bhi-2.0-7" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+<!---
+In this assessment, GDP used is for entire NUTS3, but divided among populations along a 25km buffer along the shore. 
+
+Population data was not extracted for the entire NUTS3 area, only for the buffer area.  Therefore, the entire GDP for the NUTS3 is allocated among BHI regions, rather than only the GDP associated with the population in the buffer.
+--->
+</div>
+<div id="other-information-7" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers: Martin Quaas and Wilfried Rickels.</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/ECO/eco_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
 </div>
 <div id="sense-of-place-iconic-species" class="section level2">
 <h2>Sense of Place: Iconic Species</h2>
-<p>Aesthetic connections to and cultural identity with a given region measured through the status of iconic species</p>
-<p><span class="math display">\[
-x_{ICO} = \frac{\sum_{i=1}^{N} S_{i} * w_{i}}{\sum_{i=1}^{N} S_{i}} 
-\]</span></p>
+<div id="goal-description-8" class="section level3">
+<h3>Goal Description</h3>
+<p>Iconic species are those that are relevant to local cultural identity through a species’ relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Habitat-forming species are not included in this definition of iconic species, nor are species that are harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual). This sub-goal assesses how well those species are conserved.</p>
+<p><strong>For the BHI, a survey identified the following iconic species:</strong></p>
 <ul>
-<li><p><span class="math inline">\(S\)</span> = number of assessed species in each threat category <span class="math inline">\(i\)</span></p></li>
-<li><p><span class="math inline">\(w\)</span> = status weight assigned per threat category <span class="math inline">\(i\)</span></p></li>
-<li><p><span class="math inline">\(N\)</span> = 6 threat categories</p></li>
+<li>Cod<br />
+</li>
+<li>Flounder<br />
+</li>
+<li>Herring<br />
+</li>
+<li>Perch<br />
+</li>
+<li>Pike<br />
+</li>
+<li>Salmon<br />
+</li>
+<li>Trout<br />
+</li>
+<li>Sprat<br />
+</li>
+<li>Grey seal</li>
+<li>European otter</li>
+<li>Harbour seal<br />
+</li>
+<li>Harbour porpoise<br />
+</li>
+<li>Ringed seal</li>
+<li>White-tailed sea eagle</li>
+<li>Common eider</li>
 </ul>
-<p>iconic species list: WWF Priority Species</p>
-<p>threat categories: IUCN</p>
 </div>
-<div id="sense-of-place-lasting-special-places" class="section level1">
-<h1>Sense of Place: Lasting Special Places</h1>
-<p>Aesthetic connections to and cultural identity with a given region measured through the status of meaningful locations</p>
-<p><span class="math display">\[
-x_{LSP} = \frac{(\frac{M}{M_{r}} + \frac{C}{C_{r}})}{2} 
-\]</span></p>
+<div id="model-data-7" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>HELCOM provides species checklists for the Baltic that include distribution and a complete list of all species assessed with IUCN criteria. Species were assigned a <em>threat category</em> (ranging from “extinct” to “least concern”) and assigned a weight. The goal score is the average weight of all species assessed.</p>
+</div>
+<div id="reference-points-8" class="section level3">
+<h3>Reference points</h3>
+<p>The target is for all species are in the “least concern” category; this will produce a score of 100. The lower cut-off point when 75% of species are extinct and score is 0.</p>
+</div>
+<div id="considerations-for-bhi-2.0-8" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-8" class="section level3">
+<h3>Other information</h3>
+<p><a href="https://github.com/OHI-Science/bhi/tree/draft/baltic2015/prep/ICO"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
+</div>
+<div id="sense-of-place-lasting-special-places" class="section level2">
+<h2>Sense of Place: Lasting Special Places</h2>
+<div id="goal-description-9" class="section level3">
+<h3>Goal Description</h3>
+<p>The Lasting Special Places sub-goal focuses on those geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons, and assesses how well they are protected. <strong>For the BHI, the designation and management of marine protected areas (MPAs) captures the commitment of a country to preserving areas of biological, aesthetic or ecosystem service value.</strong> The designation of MPAs is also included in international agreements, such as the <a href="https://www.cbd.int/sp/targets/rationale/target-11/">Convention on Biodiversity’s target</a> for the designation of 10% of exclusive economic zones (EEZs) to be in MPAs.</p>
+</div>
+<div id="model-data-8" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>The model assesses the area of MPAs in each country in relation to its EEZs, and their management status. Management status are broken down to three categories and weighted on a 0-1 scale:</p>
 <ul>
-<li><p><span class="math inline">\(M\)</span> = percent protected marine coastal area compared to reference [<span class="math inline">\(r\)</span>] <span class="math inline">\(C\)</span> = percent protected coastline compared to reference [<span class="math inline">\(r\)</span>]</p></li>
-<li><p><span class="math inline">\(C\)</span> = managed area on coastal land (0-1mi)</p></li>
-<li><p><span class="math inline">\(C_{t}\)</span> = total coastal land area</p></li>
+<li>0.1 = designated</li>
+<li>0.4 = designated and partly managed<br />
+</li>
+<li>1.0 = designated and managed</li>
 </ul>
+<p>Both MPA area and management status data were downloaded from the <a href="http://mpas.helcom.fi">HELCOM MPA</a> website.</p>
+</div>
+<div id="reference-points-9" class="section level3">
+<h3>Reference points</h3>
+<p>The target is for 10% of a country’s EEZs is designated as MPAs, and are fully managed.</p>
+</div>
+<div id="considerations-for-bhi-2.0-9" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-9" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers: Sofia Wikström</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/LSP/lsp_prep.md"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
+</div>
 <div id="clean-waters" class="section level2">
 <h2>Clean Waters</h2>
-<p>The degree to which coastal waters are free of contaminants</p>
-<p><span class="math display">\[
-x_{CW} = \sqrt[4]{a * u * l * d}
-\]</span></p>
+<div id="goal-description-10" class="section level3">
+<h3>Goal Description</h3>
+<p>The Contaminant sub-goal of the Clean Water goal captures the degree to which local waters are unpolluted by contaminants. This sub-goal scores highest when the contamination level is below a threshold, which is defined by the Marine Framework Directive. For the BHI three contaminants indicators are proposed, describing different aspects of toxicity: dioxin and dioxin like compounds, polychlorinated biphenyl compounds (PCBs), and perfluorooctanesulfonic acid (PFOS). In addition, a penalty factor has been applied to account for the fact that current monitoring programs do not cover all the registered and harmful contaminants.</p>
+</div>
+<div id="model-data-9" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>All contaminant data were downloaded from the open-accessible ICES database (see below).</p>
 <ul>
-<li><p><span class="math inline">\(a\)</span> = number of coastal people without access to sanitation</p></li>
-<li><p><span class="math inline">\(u\)</span> = 1 – (nutrient input)</p></li>
-<li><p><span class="math inline">\(l\)</span> = 1 – (chemical input)</p></li>
-<li><p><span class="math inline">\(d\)</span> = 1 – (marine debris input, by country)</p></li>
+<li><a href="http://dome.ices.dk/views/ContaminantsBiota.aspx">PCB data from ICES database</a><br />
+</li>
+<li><a href="http://dome.ices.dk/views/ContaminantsBiota.aspx">Dioxins from ICES database</a><br />
+</li>
+<li><a href="http://dome.ices.dk/views/ContaminantsBiota.aspx">PFOS data from ICES DOME database</a>.</li>
+</ul>
+<p>Data to calculate the penalty factor were taken from:</p>
+<ul>
+<li>the CHASE assessment tool to account for the chemicals monitored in the Baltic Sea - <em>Andersen et al 2016, Environ Monit Assess (2016) 188:115, DOI 10.1007/s10661-016-5121-x</em></li>
+<li>the <a href="(https://echa.europa.eu/candidate-list-table)">Candidate List (Annex XV of the REACH regulation)</a>, which compiles chemicals that within REACH have been identified as Substances of Very High Concern (SVHC).</li>
 </ul>
 </div>
-<div id="biodiversity-habitats" class="section level2">
-<h2>Biodiversity: Habitats</h2>
-<p>Existence values people hold for biodiversity measured through the status of key habitats</p>
-<p><span class="math display">\[
-x_{HAB} =  \sum_{i=1}^{k} \frac{C_{c,k}}{C_{r,k}} * \frac{A_{c,k}}{A_{T}}
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(C\)</span> = condition of habitat k, current [<span class="math inline">\(c\)</span>] or reference[<span class="math inline">\(r\)</span>]</p></li>
-<li><p><span class="math inline">\(A\)</span> = area of habitat k, current [<span class="math inline">\(c\)</span>] or total of all habitats [T]</p></li>
-</ul>
-<p>habitats: seagrass beds, salt marshes, subtidal soft-bottom habitats, mangroves, coral reefs, sea ice edge</p>
+<div id="reference-points-10" class="section level3">
+<h3>Reference points</h3>
+<p><strong>ICES-6 PCB</strong>: The target for non-dioxin contaminents like PCBs is set at the threshold of 75 μg/kg ww (wet weight) fish muscle, which is the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU threshold for fish muscle. See Section 5 Annex, 5.3</a>. This threshold was also agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016.</p>
+<p><strong>TEQ value for PCBs and Dioxins</strong>: The target for dioxin and dioxin-like compounds is set at 0.0065 TEQ ug /kg ww fish, crustaceans or molluscs (source of target: EQS biota human health). Secondary GES boundary: CB-118 24 μg/kg lw fish liver or muscle (source: EAC). This threshold was agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016. This is consistent with the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU human health thresholds for dioxin and dioxin-like compounds - 6.5 pg/g</a>; TEQ values from the <a href="http://www.who.int/ipcs/assessment/tef_values.pdf">World Health Organization 2005</a></p>
+<p><strong>PFOS indicator</strong>: The target for PFOS indicators was set from the GES boundary: “9.1 μg/kg wet weight (or 9.1 ng/g ww) with the protection goal of human health”&quot; according to <a href="http://www.helcom.fi/Core%20Indicators/PFOS_HELCOM%20core%20indicator%202016_web%20version.pdf">HELCOM PFOS core indicator document, p.3</a>.</p>
+<p>The status score was penalized requesting that 10% of the “Substances of Very High Concern” should be regularly monitored.</p>
 </div>
-<div id="biodiversity-species" class="section level2">
-<h2>Biodiversity: Species</h2>
-<p>Existence values people hold for biodiversity measured through the status of native species</p>
-<p><span class="math display">\[
-x_{SPP} = \frac{\sum_{k=1}^{M} (\frac{\sum_{i=1}^{N} w_{i}}{N}) * A_{C}}{A_{T}} 
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(M\)</span> = number of grid cells in the assessment region</p></li>
-<li><p><span class="math inline">\(N\)</span> = number species in a grid cell <span class="math inline">\(c\)</span></p></li>
-<li><p><span class="math inline">\(A\)</span> = total area of a grid cell [<span class="math inline">\(c\)</span>] the assessment region [T]</p></li>
-<li><p><span class="math inline">\(w_{i}\)</span> = status weight assigned per threat</p></li>
-</ul>
-<p>assessed species list and maps: IUCN</p>
+<div id="considerations-for-bhi-2.0-10" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-10" class="section level3">
+<h3>Other information</h3>
+<p><em>external advisors/goalkeepers: Anna Sobek</em></p>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/contaminants/contaminants_prep.Rmd"><strong>Full data preparation information and code</strong></a></p>
+<hr />
+</div>
+</div>
+<div id="biodiversity" class="section level2">
+<h2>Biodiversity</h2>
+<div id="goal-description-11" class="section level3">
+<h3>Goal Description</h3>
+<p>People value biodiversity in particular for its existence value. The risk of species extinction generates great emotional and moral concern for many people.</p>
+</div>
+<div id="model-data-10" class="section level3">
+<h3>Model &amp; Data</h3>
+<p>HELCOM provides species checklists for the Baltic that include distribution and a complete list of all species assessed with IUCN criteria. Species were assigned a <em>threat category</em> (ranging from “extinct” to “least concern”) and assigned a weight. The goal score is the average weight of all species assessed.</p>
+</div>
+<div id="reference-points-11" class="section level3">
+<h3>Reference points</h3>
+<p>The target is for all species are in the “least concern” category; this will produce a score of 100. The lower cut-off point when 75% of species are extinct and score is 0.</p>
+</div>
+<div id="considerations-for-bhi-2.0-11" class="section level3">
+<h3>Considerations for <em>BHI 2.0</em></h3>
+</div>
+<div id="other-information-11" class="section level3">
+<h3>Other information</h3>
+<p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/SPP/spp_prep.md"><strong>Full data preparation information and code</strong></a></p>
 </div>
 </div>
 
