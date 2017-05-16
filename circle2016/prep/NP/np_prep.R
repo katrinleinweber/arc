@@ -2,12 +2,13 @@
 ## WAL = Walrus, PWA = Pacific Walrus, HAR = Harp Seal, NAR= Narwhal, HOO = Hooded Sea, SPO=Spotted Seal.
 ###Prepping NP for entry in to layers.csv based on Antarctic Krill code
 
-catch <- read.csv('~/github/arc/circle2016/prep/NP/np_harvest_individuals_arc2016.csv')
-limit <- read.csv('~/github/arc/circle2016/prep/NP/np_harvest_reference_arc2016.csv')
+catch <- read.csv('circle2016/prep/NP/np_harvest_individuals_arc2016.csv')
+limit <- read.csv('circle2016/prep/NP/np_harvest_reference_arc2016.csv') #Norway 108 reference for hooded seal based on average catches over 0 quota time (small take allowed for scientific purposes)
+#Russia quota changed from 0 to 1 for 2010/2011 as otherwise it was not being counted. Catch also changed to 1 from 0 for 2011 (2010 catch=10)
 # STEP 1. Calculate proportion of catch relative to reference
 cmsy <- catch %>%
   left_join(limit, by=c("rgn_id", "species_code", "year")) %>%
-  filter(catch>0, reference>0) %>%
+  #filter(catch>0, reference>0) %>%
   mutate(c_cmsy = catch/reference) %>%
   dplyr::distinct() #PWA for Russia wasn't working for some reason. This gets rid of the duplicate that was being produced
 
