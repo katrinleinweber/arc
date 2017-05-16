@@ -388,7 +388,7 @@ scores<- rbind(scores, trend)
  # return(scores)
 #}
 
-NP <- function(scores, layers, status_year, debug = FALSE){
+NP <- function(scores, layers, debug = FALSE){
 
   np_harvest = SelectLayersData(layers, layer ='np_harvest') %>%
     dplyr::select(rgn_id = id_num, year, species_code = category, score = val_num) %>%
