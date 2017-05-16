@@ -4,8 +4,8 @@ navbar:
   left:
     - text: "About"
       href: about.html
-    - text: "Frequently Asked Questions"
-      href: faq.html
+    #- text: "Frequently Asked Questions"
+      #href: faq.html
     - text: "Goals"
       href: goals.html
     - text: "Who we are"

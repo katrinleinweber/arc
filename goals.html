@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -14,19 +14,20 @@
 <title>Goals</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/textmate.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -69,7 +70,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="_sass/main.css" type="text/css" />
+<link rel="stylesheet" href="_sass\main.css" type="text/css" />
 
 </head>
 
@@ -96,7 +97,6 @@ button.code-folding-btn:focus {
   outline: none;
 }
 </style>
-
 
 <style type="text/css">
 /* padding for bootstrap navbar */
@@ -154,6 +154,7 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -179,7 +180,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
@@ -238,9 +239,8 @@ div.tocify {
 }
 
 .tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
+  font-size: 0.9em;
+  padding-left: 5px;
 }
 
 .tocify .list-group-item {
@@ -278,9 +278,6 @@ div.tocify {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="faq.html">Frequently Asked Questions</a>
-</li>
-<li>
   <a href="goals.html">Goals</a>
 </li>
 <li>
@@ -315,7 +312,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="model-data" class="section level3">
 <h3>Model &amp; Data</h3>
-<p>The data used for this goal are composed of cod and herring spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated as a function of the ratio (B’) between the single species current biomass at sea (B) and the reference biomass at maximum sustainable yield (BMSY), as well as the ratio (F’) between the single species current fishing mortality (F) and the fishing mortality at maximum sustainable yield (FMSY). B/Bmsy and F/Fmsy data are converted to scores between 0 and 1 using this <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/FIS/ffms%3By_bbmsy_2_score.png">general relationship</a>.</p>
+<p>The data used for this goal are composed of cod and herring spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated as a function of the ratio (Bâ€™) between the single species current biomass at sea (B) and the reference biomass at maximum sustainable yield (BMSY), as well as the ratio (Fâ€™) between the single species current fishing mortality (F) and the fishing mortality at maximum sustainable yield (FMSY). B/Bmsy and F/Fmsy data are converted to scores between 0 and 1 using this <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/FIS/ffms%3By_bbmsy_2_score.png">general relationship</a>.</p>
 <ul>
 <li><a href="http://www.ices.dk/marine-data/tools/Pages/stock-assessment-graphs.aspx">Cod and herring data accessed from the ICES homepage</a> &gt; search for ‘cod’ or ‘herring’ &gt; specify the ecoregion as Baltic Sea &gt; search for the 2013 assessment.</li>
 </ul>
@@ -329,7 +326,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="other-information" class="section level3">
 <h3>Other information</h3>
-<p><em>external advisors/goalkeepers are Christian Möllmann &amp; Stefan Neuenfeldt</em></p>
+<p><em>external advisors/goalkeepers are Christian MÃ¶llmann &amp; Stefan Neuenfeldt</em></p>
 <p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/FIS/fis_np_prep.md"><strong>Full data preparation information and code</strong></a>.<br />
 <!--- For goal model code, click [here](link to functions.r in specific commit/release). ---></p>
 <hr />
@@ -404,7 +401,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="model-data-overview" class="section level3">
 <h3>Model &amp; Data Overview</h3>
-<p>The data used for this goal are composed of total sprat spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated exactly as described in the Fisheries goal. The spawning biomass data have been accessed from the <a href="http://www.ices.dk/marine-data/tools/Pages/stock-assessment-graphs.aspx">ICES homepage</a> by searching for ‘sprat’ &gt; specify the ecoregion as Baltic Sea &gt; search for the 2013 assessment.</p>
+<p>The data used for this goal are composed of total sprat spawning biomass (SSB) and fishing mortality (F) data. The current status is calculated exactly as described in the Fisheries goal. The spawning biomass data have been accessed from the <a href="http://www.ices.dk/marine-data/tools/Pages/stock-assessment-graphs.aspx">ICES homepage</a> by searching for â€˜spratâ€™ &gt; specify the ecoregion as Baltic Sea &gt; search for the 2013 assessment.</p>
 </div>
 <div id="reference-points-3" class="section level3">
 <h3>Reference points</h3>
@@ -415,7 +412,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="other-information-3" class="section level3">
 <h3>Other information</h3>
-<p><em>External advisors/goalkeepers are Christian Möllmann &amp; Stefan Neuenfeldt</em></p>
+<p><em>External advisors/goalkeepers are Christian MÃ¶llmann &amp; Stefan Neuenfeldt</em></p>
 <p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/NP/np_prep.md"><strong>Full data preparation information and code</strong></a>.<br />
 <!--- For goal model code, click [here](link to functions.r in specific commit/release). ---></p>
 <hr />
@@ -438,7 +435,7 @@ Here you will find information about how goals were represented and how data wer
 <li>2 = present after year 1995,</li>
 <li>3 = present before and after year 1995.</li>
 </ul>
-<p>Expert opinion (Christoffer Boström) suggested that no growth of Zostera sp naturally occurs in these BHI ID regions: 12, 15, 17, 19, 21, 22, 23, 24, 37, 38, 39, 40, 41, 42, and were left as NA in this analysis.</p>
+<p>Expert opinion (Christoffer BostrÃ¶m) suggested that no growth of Zostera sp naturally occurs in these BHI ID regions: 12, 15, 17, 19, 21, 22, 23, 24, 37, 38, 39, 40, 41, 42, and were left as NA in this analysis.</p>
 </div>
 <div id="reference-points-4" class="section level3">
 <h3>Reference points</h3>
@@ -450,7 +447,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="other-information-4" class="section level3">
 <h3>Other information</h3>
-<p><em>external advisors/goalkeepers: Christoffer Boström and Markku Viitasalo.</em></p>
+<p><em>external advisors/goalkeepers: Christoffer BostrÃ¶m and Markku Viitasalo.</em></p>
 <p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CS/cs_prep.md"><strong>Full data preparation information and code</strong></a></p>
 <hr />
 </div>
@@ -464,7 +461,7 @@ Here you will find information about how goals were represented and how data wer
 </div>
 <div id="model-data-4" class="section level3">
 <h3>Model &amp; Data</h3>
-<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">EU-Study on Blue Growth</a>, Maritime Policy and the EU Strategy for the Baltic Sea Region” identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) and at sea basin level.</p>
+<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">EU-Study on Blue Growth</a>, Maritime Policy and the EU Strategy for the Baltic Sea Regionâ€ identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) and at sea basin level.</p>
 <!---
 The tourism model incorporates the nights of stay in accommodations and compare that to the reference point. 
 
@@ -527,7 +524,7 @@ Regions with no coast line have no status because not joined to a NUTS region (3
 </div>
 <div id="model-data-6" class="section level3">
 <h3>Model &amp; Data</h3>
-<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">“EU-Study on Blue Growth, Maritime Policy and the EU Strategy for the Baltic Sea Region”</a>, which provided 2010 sector-specific revenue data, or Gross Value Added (GVA), in the country-specific Appendix. The report also identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) as well as at sea-basin level.</p>
+<p>Data for each country were downloaded from the <a href="https://webgate.ec.europa.eu/maritimeforum/node/3550">â€œEU-Study on Blue Growth, Maritime Policy and the EU Strategy for the Baltic Sea Regionâ€</a>, which provided 2010 sector-specific revenue data, or Gross Value Added (GVA), in the country-specific Appendix. The report also identified the potential for Blue Growth in each of the EU Member States (MS) of the Baltic Sea Region (BSR) as well as at sea-basin level.</p>
 <p>The goal model compares the combined total revenue per country and the reference revenue of that country. Each country receives the same score because the reference point (see below) is a fixed percentage growth of that country’s revenue in 2010. Country-level data is then distributed to BHI regions. (Due to a lack of data, Russian regions (19, 22, 33) have NA scores.)</p>
 </div>
 <div id="reference-points-7" class="section level3">
@@ -626,7 +623,7 @@ Population data was not extracted for the entire NUTS3 area, only for the buffer
 </div>
 <div id="other-information-9" class="section level3">
 <h3>Other information</h3>
-<p><em>external advisors/goalkeepers: Sofia Wikström</em></p>
+<p><em>external advisors/goalkeepers: Sofia WikstrÃ¶m</em></p>
 <p><a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/LSP/lsp_prep.md"><strong>Full data preparation information and code</strong></a></p>
 <hr />
 </div>
@@ -655,10 +652,10 @@ Population data was not extracted for the entire NUTS3 area, only for the buffer
 </div>
 <div id="reference-points-10" class="section level3">
 <h3>Reference points</h3>
-<p><strong>ICES-6 PCB</strong>: The target for non-dioxin contaminents like PCBs is set at the threshold of 75 μg/kg ww (wet weight) fish muscle, which is the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU threshold for fish muscle. See Section 5 Annex, 5.3</a>. This threshold was also agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016.</p>
-<p><strong>TEQ value for PCBs and Dioxins</strong>: The target for dioxin and dioxin-like compounds is set at 0.0065 TEQ ug /kg ww fish, crustaceans or molluscs (source of target: EQS biota human health). Secondary GES boundary: CB-118 24 μg/kg lw fish liver or muscle (source: EAC). This threshold was agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016. This is consistent with the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU human health thresholds for dioxin and dioxin-like compounds - 6.5 pg/g</a>; TEQ values from the <a href="http://www.who.int/ipcs/assessment/tef_values.pdf">World Health Organization 2005</a></p>
-<p><strong>PFOS indicator</strong>: The target for PFOS indicators was set from the GES boundary: “9.1 μg/kg wet weight (or 9.1 ng/g ww) with the protection goal of human health”&quot; according to <a href="http://www.helcom.fi/Core%20Indicators/PFOS_HELCOM%20core%20indicator%202016_web%20version.pdf">HELCOM PFOS core indicator document, p.3</a>.</p>
-<p>The status score was penalized requesting that 10% of the “Substances of Very High Concern” should be regularly monitored.</p>
+<p><strong>ICES-6 PCB</strong>: The target for non-dioxin contaminents like PCBs is set at the threshold of 75 Î¼g/kg ww (wet weight) fish muscle, which is the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU threshold for fish muscle. See Section 5 Annex, 5.3</a>. This threshold was also agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016.</p>
+<p><strong>TEQ value for PCBs and Dioxins</strong>: The target for dioxin and dioxin-like compounds is set at 0.0065 TEQ ug /kg ww fish, crustaceans or molluscs (source of target: EQS biota human health). Secondary GES boundary: CB-118 24 Î¼g/kg lw fish liver or muscle (source: EAC). This threshold was agreed upon as GES indicator at the most recent meeting of the <a href="http://helcom.fi/helcom-at-work/groups/state-and-conservation">Working Group on the State of the Environment and Nature Conservation</a> April 11-15, 2016. This is consistent with the <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:320:0018:0023:EN:PDF">EU human health thresholds for dioxin and dioxin-like compounds - 6.5 pg/g</a>; TEQ values from the <a href="http://www.who.int/ipcs/assessment/tef_values.pdf">World Health Organization 2005</a></p>
+<p><strong>PFOS indicator</strong>: The target for PFOS indicators was set from the GES boundary: “9.1 Î¼g/kg wet weight (or 9.1 ng/g ww) with the protection goal of human health”&quot; according to <a href="http://www.helcom.fi/Core%20Indicators/PFOS_HELCOM%20core%20indicator%202016_web%20version.pdf">HELCOM PFOS core indicator document, p.3</a>.</p>
+<p>The status score was penalized requesting that 10% of the â€œSubstances of Very High Concernâ€ should be regularly monitored.</p>
 </div>
 <div id="considerations-for-bhi-2.0-10" class="section level3">
 <h3>Considerations for <em>BHI 2.0</em></h3>
@@ -703,13 +700,9 @@ Population data was not extracted for the entire NUTS3 area, only for the buffer
 <script>
 
 // add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-}
 $(document).ready(function () {
-  bootstrapStylePandocTables();
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
-
 
 </script>
 
@@ -718,7 +711,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
