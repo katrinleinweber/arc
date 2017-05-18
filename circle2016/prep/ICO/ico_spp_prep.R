@@ -98,7 +98,7 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
 ####Read in species cell summary in######
 
 summary_by_loiczid<- read_csv('~/github/ohiprep/globalprep/spp_ico/v2016/summary/cell_spp_summary_by_loiczid.csv')
-region_prop_df<- read_csv('prep/ICO/rgn_prop_file.csv')
+region_prop_df<- read_csv('circle2016/prep/ICO/rgn_prop_file.csv')
 
 region_summary<- summary_by_loiczid %>%
   inner_join(region_prop_df, by= 'loiczid')%>%
@@ -214,3 +214,36 @@ region_sums <- region_summary %>%
             rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))%>%
   mutate(status = ((1 - rgn_mean_cat) - 0.25) / 0.75)
 write_csv(region_sums, 'prep/SPP/spp_summary_3nm.csv')
+
+
+#####Working out what species are in each regions#############
+iucn_cells_spp<- read_csv('/home/shares/ohi/git-annex/globalprep/spp_ico/v2016/int/iucn_cells_spp.csv')
+am_cells_spp<- read_csv('/home/shares/ohi/git-annex/globalprep/spp_ico/v2016/int/am_cells_spp_prob0.csv')
+region_prop_df<- read_csv('circle2016/prep/ICO/rgn_prop_file.csv')
+sp_summary<- iucn_cells_spp %>%
+  left_join(region_prop_df, by = 'loiczid')
+sp_summary2<-filter(sp_summary, rgn_id<10)
+sp_summary2<- sp_summary2 %>%
+  group_by(rgn_id) %>%
+  dplyr::select(sciname, iucn_sid, rgn_id, rgn_name) %>%
+  ungroup()
+sp_summary3<- sp_summary2 %>% distinct()
+sp_summary3<- arrange(sp_summary3, rgn_id)
+
+
+am_sp_summary<- am_cells_spp %>%
+  left_join(region_prop_df, by = 'loiczid')
+am_summary<-filter(am_sp_summary, rgn_id<10)
+am_summary2<- am_summary %>%
+  group_by(rgn_id) %>%
+  dplyr::select(am_sid, rgn_id, rgn_name) %>%
+  ungroup()
+am_summary3<- am_summary2 %>% distinct()
+am_summary3<- arrange(am_summary3, rgn_id)
+am_summary4<- am_summary3 %>%
+  left_join(am_namecheck, by='am_sid')
+am_summary5<- am_summary4 %>%
+  dplyr::select(am_sid, rgn_id, rgn_name, sciname)
+
+write_csv(am_summary5, 'circle2016/prep/SPP/am_rgn_summary.csv')
+write_csv(sp_summary3, 'circle2016/prep/SPP/iucn_rgn_summary.csv')

@@ -1,0 +1,838 @@
+sciname,iucn_sid,rgn_id,rgn_name
+Actitis macularius,22693277,1,Alaska
+Anas acuta,22680301,1,Alaska
+Anser albifrons,22679881,1,Alaska
+Anser caerulescens,22679896,1,Alaska
+Anthus cervinus,22718560,1,Alaska
+Anthus rubescens,22718575,1,Alaska
+Ardenna tenuirostris,22698216,1,Alaska
+Arenaria interpres,22693336,1,Alaska
+Arenaria melanocephala,22693341,1,Alaska
+Aythya fuligula,22680391,1,Alaska
+Aythya marila,22680398,1,Alaska
+Aythya valisineria,22680364,1,Alaska
+Brachyramphus brevirostris,22694875,1,Alaska
+Branta bernicla,22679946,1,Alaska
+Calcarius lapponicus,22721033,1,Alaska
+Calidris acuminata,22693414,1,Alaska
+Calidris alba,22693369,1,Alaska
+Calidris alpina,22693427,1,Alaska
+Calidris bairdii,22693404,1,Alaska
+Calidris canutus,22693363,1,Alaska
+Calidris ferruginea,22693431,1,Alaska
+Calidris fuscicollis,22693399,1,Alaska
+Calidris mauri,22693376,1,Alaska
+Calidris melanotos,22693408,1,Alaska
+Calidris minutilla,22693396,1,Alaska
+Calidris ptilocnemis,22693424,1,Alaska
+Calidris pugnax,22693468,1,Alaska
+Calidris pusilla,22693373,1,Alaska
+Calidris ruficollis,22693383,1,Alaska
+Calidris virgata,22693356,1,Alaska
+Cepphus columba,22694864,1,Alaska
+Cepphus grylle,22694861,1,Alaska
+Charadrius semipalmatus,22693764,1,Alaska
+Clangula hyemalis,22680427,1,Alaska
+Eremophila alpestris,22717434,1,Alaska
+Falco columbarius,22696453,1,Alaska
+Falco peregrinus,45354964,1,Alaska
+Fratercula cirrhata,22694934,1,Alaska
+Fratercula corniculata,22694931,1,Alaska
+Fulmarus glacialis,22697866,1,Alaska
+Gavia adamsii,22697847,1,Alaska
+Gavia arctica,22697834,1,Alaska
+Gavia immer,22697842,1,Alaska
+Gavia pacifica,22697839,1,Alaska
+Gavia stellata,22697829,1,Alaska
+Haliaeetus leucocephalus,22695144,1,Alaska
+Histrionicus histrionicus,22680423,1,Alaska
+Larus canus,22694308,1,Alaska
+Larus hyperboreus,22694343,1,Alaska
+Larus schistisagus,22694362,1,Alaska
+Larus smithsonianus,62030590,1,Alaska
+Limnodromus scolopaceus,22693348,1,Alaska
+Limosa haemastica,22693154,1,Alaska
+Limosa lapponica,22693158,1,Alaska
+Luscinia svecica,22709707,1,Alaska
+Mareca americana,22680163,1,Alaska
+Melanitta americana,22732425,1,Alaska
+Melanitta deglandi,22734194,1,Alaska
+Melanitta perspicillata,22680441,1,Alaska
+Mergus serrator,22680485,1,Alaska
+Numenius phaeopus,22693178,1,Alaska
+Oenanthe oenanthe,22710272,1,Alaska
+Pagophila eburnea,22694473,1,Alaska
+Pandion haliaetus,22694938,1,Alaska
+Phalaropus fulicarius,22693494,1,Alaska
+Phalaropus lobatus,22693490,1,Alaska
+Plectrophenax hyperboreus,22721046,1,Alaska
+Plectrophenax nivalis,22721043,1,Alaska
+Pluvialis dominica,22693740,1,Alaska
+Pluvialis fulva,22693735,1,Alaska
+Pluvialis squatarola,22693749,1,Alaska
+Polysticta stelleri,22680415,1,Alaska
+Rhodostethia rosea,22694476,1,Alaska
+Rissa tridactyla,22694497,1,Alaska
+Somateria fischeri,22680412,1,Alaska
+Somateria mollissima,22680405,1,Alaska
+Somateria spectabilis,22680409,1,Alaska
+Spatula clypeata,22680247,1,Alaska
+Stercorarius longicaudus,22694251,1,Alaska
+Stercorarius parasiticus,22694245,1,Alaska
+Stercorarius pomarinus,22694240,1,Alaska
+Sterna paradisaea,22694629,1,Alaska
+Tringa flavipes,22693235,1,Alaska
+Tringa incana,22693305,1,Alaska
+Uria aalge,22694841,1,Alaska
+Uria lomvia,22694847,1,Alaska
+Phocoena phocoena,17027,1,Alaska
+Histriophoca fasciata,41670,1,Alaska
+Balaenoptera acutorostrata,2474,1,Alaska
+Delphinapterus leucas,6335,1,Alaska
+Odobenus rosmarus,15106,1,Alaska
+Erignathus barbatus,8010,1,Alaska
+Megaptera novaeangliae,13006,1,Alaska
+Balaenoptera physalus,2478,1,Alaska
+Eschrichtius robustus,8097,1,Alaska
+Pusa hispida,41672,1,Alaska
+Balaena mysticetus,2468,1,Alaska
+Zostera marina,153538,1,Alaska
+Ursus maritimus,22823,1,Alaska
+Lontra canadensis,12302,1,Alaska
+Vulpes lagopus,899,1,Alaska
+Actitis macularius,22693277,2,Nunavut
+Alle alle,22694837,2,Nunavut
+Anas acuta,22680301,2,Nunavut
+Anser albifrons,22679881,2,Nunavut
+Anser caerulescens,22679896,2,Nunavut
+Anthus rubescens,22718575,2,Nunavut
+Ardenna tenuirostris,22698216,2,Nunavut
+Arenaria interpres,22693336,2,Nunavut
+Aythya affinis,22680402,2,Nunavut
+Aythya marila,22680398,2,Nunavut
+Aythya valisineria,22680364,2,Nunavut
+Branta bernicla,22679946,2,Nunavut
+Bucephala clangula,22680455,2,Nunavut
+Calcarius lapponicus,22721033,2,Nunavut
+Calidris alba,22693369,2,Nunavut
+Calidris alpina,22693427,2,Nunavut
+Calidris bairdii,22693404,2,Nunavut
+Calidris canutus,22693363,2,Nunavut
+Calidris fuscicollis,22693399,2,Nunavut
+Calidris maritima,22693420,2,Nunavut
+Calidris melanotos,22693408,2,Nunavut
+Calidris minutilla,22693396,2,Nunavut
+Calidris pusilla,22693373,2,Nunavut
+Cepphus grylle,22694861,2,Nunavut
+Charadrius hiaticula,22693759,2,Nunavut
+Charadrius semipalmatus,22693764,2,Nunavut
+Clangula hyemalis,22680427,2,Nunavut
+Eremophila alpestris,22717434,2,Nunavut
+Falco columbarius,22696453,2,Nunavut
+Falco peregrinus,45354964,2,Nunavut
+Falco rusticolus,22696500,2,Nunavut
+Fratercula arctica,22694927,2,Nunavut
+Fulmarus glacialis,22697866,2,Nunavut
+Gavia adamsii,22697847,2,Nunavut
+Gavia immer,22697842,2,Nunavut
+Gavia pacifica,22697839,2,Nunavut
+Gavia stellata,22697829,2,Nunavut
+Haliaeetus leucocephalus,22695144,2,Nunavut
+Larus canus,22694308,2,Nunavut
+Larus glaucoides,22694346,2,Nunavut
+Larus hyperboreus,22694343,2,Nunavut
+Larus marinus,22694324,2,Nunavut
+Larus smithsonianus,62030590,2,Nunavut
+Larus thayeri,22728995,2,Nunavut
+Limnodromus scolopaceus,22693348,2,Nunavut
+Limosa haemastica,22693154,2,Nunavut
+Mareca americana,22680163,2,Nunavut
+Melanitta americana,22732425,2,Nunavut
+Melanitta deglandi,22734194,2,Nunavut
+Melanitta perspicillata,22680441,2,Nunavut
+Mergus serrator,22680485,2,Nunavut
+Numenius phaeopus,22693178,2,Nunavut
+Oenanthe oenanthe,22710272,2,Nunavut
+Pagophila eburnea,22694473,2,Nunavut
+Phalaropus fulicarius,22693494,2,Nunavut
+Phalaropus lobatus,22693490,2,Nunavut
+Plectrophenax nivalis,22721043,2,Nunavut
+Pluvialis dominica,22693740,2,Nunavut
+Pluvialis squatarola,22693749,2,Nunavut
+Rhodostethia rosea,22694476,2,Nunavut
+Rissa tridactyla,22694497,2,Nunavut
+Somateria mollissima,22680405,2,Nunavut
+Somateria spectabilis,22680409,2,Nunavut
+Spatula clypeata,22680247,2,Nunavut
+Stercorarius longicaudus,22694251,2,Nunavut
+Stercorarius parasiticus,22694245,2,Nunavut
+Stercorarius pomarinus,22694240,2,Nunavut
+Sterna paradisaea,22694629,2,Nunavut
+Tringa flavipes,22693235,2,Nunavut
+Tringa incana,22693305,2,Nunavut
+Uria lomvia,22694847,2,Nunavut
+Xema sabini,22694479,2,Nunavut
+Stereomastis nana,185000,2,Nunavut
+Phocoena phocoena,17027,2,Nunavut
+Balaenoptera acutorostrata,2474,2,Nunavut
+Phoca vitulina,17013,2,Nunavut
+Cystophora cristata,6204,2,Nunavut
+Physeter macrocephalus,41755,2,Nunavut
+Delphinapterus leucas,6335,2,Nunavut
+Odobenus rosmarus,15106,2,Nunavut
+Erignathus barbatus,8010,2,Nunavut
+Balaenoptera musculus,2477,2,Nunavut
+Megaptera novaeangliae,13006,2,Nunavut
+Balaenoptera physalus,2478,2,Nunavut
+Pagophilus groenlandicus,41671,2,Nunavut
+Eschrichtius robustus,8097,2,Nunavut
+Lagenorhynchus albirostris,11142,2,Nunavut
+Pusa hispida,41672,2,Nunavut
+Monodon monoceros,13704,2,Nunavut
+Balaena mysticetus,2467,2,Nunavut
+Balaena mysticetus,2468,2,Nunavut
+Ursus maritimus,22823,2,Nunavut
+Lontra canadensis,12302,2,Nunavut
+Vulpes lagopus,899,2,Nunavut
+Actitis macularius,22693277,3,Beaufort Sea
+Anas acuta,22680301,3,Beaufort Sea
+Anser albifrons,22679881,3,Beaufort Sea
+Anser caerulescens,22679896,3,Beaufort Sea
+Anthus rubescens,22718575,3,Beaufort Sea
+Ardenna tenuirostris,22698216,3,Beaufort Sea
+Arenaria interpres,22693336,3,Beaufort Sea
+Aythya affinis,22680402,3,Beaufort Sea
+Aythya marila,22680398,3,Beaufort Sea
+Aythya valisineria,22680364,3,Beaufort Sea
+Branta bernicla,22679946,3,Beaufort Sea
+Bucephala clangula,22680455,3,Beaufort Sea
+Calcarius lapponicus,22721033,3,Beaufort Sea
+Calidris alba,22693369,3,Beaufort Sea
+Calidris alpina,22693427,3,Beaufort Sea
+Calidris bairdii,22693404,3,Beaufort Sea
+Calidris canutus,22693363,3,Beaufort Sea
+Calidris fuscicollis,22693399,3,Beaufort Sea
+Calidris maritima,22693420,3,Beaufort Sea
+Calidris melanotos,22693408,3,Beaufort Sea
+Calidris minutilla,22693396,3,Beaufort Sea
+Calidris pusilla,22693373,3,Beaufort Sea
+Cepphus grylle,22694861,3,Beaufort Sea
+Charadrius semipalmatus,22693764,3,Beaufort Sea
+Clangula hyemalis,22680427,3,Beaufort Sea
+Eremophila alpestris,22717434,3,Beaufort Sea
+Falco columbarius,22696453,3,Beaufort Sea
+Falco peregrinus,45354964,3,Beaufort Sea
+Gavia adamsii,22697847,3,Beaufort Sea
+Gavia immer,22697842,3,Beaufort Sea
+Gavia pacifica,22697839,3,Beaufort Sea
+Gavia stellata,22697829,3,Beaufort Sea
+Haliaeetus leucocephalus,22695144,3,Beaufort Sea
+Larus canus,22694308,3,Beaufort Sea
+Larus glaucoides,22694346,3,Beaufort Sea
+Larus hyperboreus,22694343,3,Beaufort Sea
+Larus smithsonianus,62030590,3,Beaufort Sea
+Larus thayeri,22728995,3,Beaufort Sea
+Limnodromus scolopaceus,22693348,3,Beaufort Sea
+Limosa haemastica,22693154,3,Beaufort Sea
+Mareca americana,22680163,3,Beaufort Sea
+Melanitta americana,22732425,3,Beaufort Sea
+Melanitta deglandi,22734194,3,Beaufort Sea
+Melanitta perspicillata,22680441,3,Beaufort Sea
+Mergus serrator,22680485,3,Beaufort Sea
+Numenius phaeopus,22693178,3,Beaufort Sea
+Oenanthe oenanthe,22710272,3,Beaufort Sea
+Pagophila eburnea,22694473,3,Beaufort Sea
+Phalaropus fulicarius,22693494,3,Beaufort Sea
+Phalaropus lobatus,22693490,3,Beaufort Sea
+Plectrophenax nivalis,22721043,3,Beaufort Sea
+Pluvialis dominica,22693740,3,Beaufort Sea
+Pluvialis squatarola,22693749,3,Beaufort Sea
+Somateria mollissima,22680405,3,Beaufort Sea
+Somateria spectabilis,22680409,3,Beaufort Sea
+Spatula clypeata,22680247,3,Beaufort Sea
+Stercorarius longicaudus,22694251,3,Beaufort Sea
+Stercorarius parasiticus,22694245,3,Beaufort Sea
+Stercorarius pomarinus,22694240,3,Beaufort Sea
+Sterna paradisaea,22694629,3,Beaufort Sea
+Tringa flavipes,22693235,3,Beaufort Sea
+Uria lomvia,22694847,3,Beaufort Sea
+Phocoena phocoena,17027,3,Beaufort Sea
+Delphinapterus leucas,6335,3,Beaufort Sea
+Erignathus barbatus,8010,3,Beaufort Sea
+Eschrichtius robustus,8097,3,Beaufort Sea
+Pusa hispida,41672,3,Beaufort Sea
+Balaena mysticetus,2468,3,Beaufort Sea
+Ursus maritimus,22823,3,Beaufort Sea
+Lontra canadensis,12302,3,Beaufort Sea
+Vulpes lagopus,899,3,Beaufort Sea
+Actitis hypoleucos,22693264,4,Russia
+Aethia psittacula,22694906,4,Russia
+Alauda arvensis,22717415,4,Russia
+Alca torda,22694852,4,Russia
+Alle alle,22694837,4,Russia
+Anas acuta,22680301,4,Russia
+Anser albifrons,22679881,4,Russia
+Anser brachyrhynchus,22679872,4,Russia
+Anser caerulescens,22679896,4,Russia
+Anser canagicus,22679919,4,Russia
+Anthus cervinus,22718560,4,Russia
+Anthus petrosus,22718567,4,Russia
+Anthus pratensis,22718556,4,Russia
+Anthus rubescens,22718575,4,Russia
+Ardenna tenuirostris,22698216,4,Russia
+Arenaria interpres,22693336,4,Russia
+Aythya fuligula,22680391,4,Russia
+Aythya marila,22680398,4,Russia
+Brachyramphus brevirostris,22694875,4,Russia
+Branta bernicla,22679946,4,Russia
+Branta leucopsis,22679943,4,Russia
+Branta ruficollis,22679954,4,Russia
+Bucephala clangula,22680455,4,Russia
+Calcarius lapponicus,22721033,4,Russia
+Calidris acuminata,22693414,4,Russia
+Calidris alba,22693369,4,Russia
+Calidris alpina,22693427,4,Russia
+Calidris bairdii,22693404,4,Russia
+Calidris canutus,22693363,4,Russia
+Calidris falcinellus,22693464,4,Russia
+Calidris ferruginea,22693431,4,Russia
+Calidris fuscicollis,22693399,4,Russia
+Calidris maritima,22693420,4,Russia
+Calidris melanotos,22693408,4,Russia
+Calidris minuta,22693379,4,Russia
+Calidris minutilla,22693396,4,Russia
+Calidris ptilocnemis,22693424,4,Russia
+Calidris pugnax,22693468,4,Russia
+Calidris pusilla,22693373,4,Russia
+Calidris pygmaea,22693452,4,Russia
+Calidris ruficollis,22693383,4,Russia
+Calidris temminckii,22693388,4,Russia
+Calidris tenuirostris,22693359,4,Russia
+Catharacta skua,22694160,4,Russia
+Cepphus grylle,22694861,4,Russia
+Charadrius dubius,22693770,4,Russia
+Charadrius hiaticula,22693759,4,Russia
+Charadrius semipalmatus,22693764,4,Russia
+Clangula hyemalis,22680427,4,Russia
+Corvus corone,22706016,4,Russia
+Eremophila alpestris,22717434,4,Russia
+Falco columbarius,22696453,4,Russia
+Falco peregrinus,45354964,4,Russia
+Falco rusticolus,22696500,4,Russia
+Fratercula arctica,22694927,4,Russia
+Fratercula cirrhata,22694934,4,Russia
+Fratercula corniculata,22694931,4,Russia
+Fulmarus glacialis,22697866,4,Russia
+Gavia adamsii,22697847,4,Russia
+Gavia arctica,22697834,4,Russia
+Gavia immer,22697842,4,Russia
+Gavia pacifica,22697839,4,Russia
+Gavia stellata,22697829,4,Russia
+Grus grus,22692146,4,Russia
+Haematopus ostralegus,22733462,4,Russia
+Haliaeetus albicilla,22695137,4,Russia
+Histrionicus histrionicus,22680423,4,Russia
+Hydrocoloeus minutus,22694469,4,Russia
+Jynx torquilla,22680683,4,Russia
+Larus argentatus,62030608,4,Russia
+Larus canus,22694308,4,Russia
+Larus fuscus,22694373,4,Russia
+Larus glaucoides,22694346,4,Russia
+Larus hyperboreus,22694343,4,Russia
+Larus marinus,22694324,4,Russia
+Larus ridibundus,22694420,4,Russia
+Larus smithsonianus,62030590,4,Russia
+Larus thayeri,22728995,4,Russia
+Limnodromus scolopaceus,22693348,4,Russia
+Limosa lapponica,22693158,4,Russia
+Limosa limosa,22693150,4,Russia
+Luscinia svecica,22709707,4,Russia
+Lymnocryptes minimus,22693133,4,Russia
+Mareca penelope,22680157,4,Russia
+Melanitta americana,22732425,4,Russia
+Melanitta fusca,22724836,4,Russia
+Melanitta nigra,22724879,4,Russia
+Melanitta stejnegeri,22724845,4,Russia
+Mergellus albellus,22680465,4,Russia
+Mergus merganser,22680492,4,Russia
+Mergus serrator,22680485,4,Russia
+Milvus migrans,22734972,4,Russia
+Morus bassanus,22696657,4,Russia
+Motacilla citreola,22718379,4,Russia
+Numenius arquata,22693190,4,Russia
+Numenius phaeopus,22693178,4,Russia
+Oenanthe oenanthe,22710272,4,Russia
+Pagophila eburnea,22694473,4,Russia
+Pandion haliaetus,22694938,4,Russia
+Phalacrocorax aristotelis,22696894,4,Russia
+Phalacrocorax carbo,22696792,4,Russia
+Phalacrocorax pelagicus,22728950,4,Russia
+Phalaropus fulicarius,22693494,4,Russia
+Phalaropus lobatus,22693490,4,Russia
+Pinguinus impennis,22694856,4,Russia
+Plectrophenax nivalis,22721043,4,Russia
+Pluvialis apricaria,22693727,4,Russia
+Pluvialis dominica,22693740,4,Russia
+Pluvialis fulva,22693735,4,Russia
+Pluvialis squatarola,22693749,4,Russia
+Podiceps auritus,22696606,4,Russia
+Podiceps grisegena,22696599,4,Russia
+Polysticta stelleri,22680415,4,Russia
+Puffinus puffinus,22698226,4,Russia
+Rhodostethia rosea,22694476,4,Russia
+Rissa tridactyla,22694497,4,Russia
+Somateria fischeri,22680412,4,Russia
+Somateria mollissima,22680405,4,Russia
+Somateria spectabilis,22680409,4,Russia
+Spatula clypeata,22680247,4,Russia
+Stercorarius longicaudus,22694251,4,Russia
+Stercorarius parasiticus,22694245,4,Russia
+Stercorarius pomarinus,22694240,4,Russia
+Sterna hirundo,22694623,4,Russia
+Sterna paradisaea,22694629,4,Russia
+Sturnus vulgaris,22710886,4,Russia
+Tringa brevipes,22693289,4,Russia
+Tringa erythropus,22693207,4,Russia
+Tringa incana,22693305,4,Russia
+Tringa nebularia,22693220,4,Russia
+Tringa totanus,22693211,4,Russia
+Uria aalge,22694841,4,Russia
+Uria lomvia,22694847,4,Russia
+Vanellus vanellus,22693949,4,Russia
+Xema sabini,22694479,4,Russia
+Xenus cinereus,22693251,4,Russia
+Stereomastis nana,185000,4,Russia
+Phocoena phocoena,17027,4,Russia
+Histriophoca fasciata,41670,4,Russia
+Balaenoptera acutorostrata,2474,4,Russia
+Phoca vitulina,17013,4,Russia
+Globicephala melas,9250,4,Russia
+Lagenorhynchus acutus,11141,4,Russia
+Cystophora cristata,6204,4,Russia
+Physeter macrocephalus,41755,4,Russia
+Delphinapterus leucas,6335,4,Russia
+Odobenus rosmarus,15106,4,Russia
+Halichoerus grypus,9660,4,Russia
+Erignathus barbatus,8010,4,Russia
+Balaenoptera musculus,2477,4,Russia
+Megaptera novaeangliae,13006,4,Russia
+Balaenoptera physalus,2478,4,Russia
+Balaenoptera borealis,2475,4,Russia
+Pagophilus groenlandicus,41671,4,Russia
+Eschrichtius robustus,8097,4,Russia
+Lagenorhynchus albirostris,11142,4,Russia
+Eubalaena glacialis,41712,4,Russia
+Pusa hispida,41672,4,Russia
+Mesoplodon bidens,13241,4,Russia
+Monodon monoceros,13704,4,Russia
+Balaena mysticetus,2467,4,Russia
+Balaena mysticetus,2472,4,Russia
+Balaena mysticetus,2468,4,Russia
+Mesothuria intestinalis,180540,4,Russia
+Bathyplotes natans,180452,4,Russia
+Zostera marina,153538,4,Russia
+Ursus maritimus,22823,4,Russia
+Lutra lutra,12419,4,Russia
+Lontra canadensis,12302,4,Russia
+Vulpes lagopus,899,4,Russia
+Xiphias gladius,23148,4,Russia
+Alca torda,22694852,5,svalbard
+Alle alle,22694837,5,svalbard
+Anser brachyrhynchus,22679872,5,svalbard
+Arenaria interpres,22693336,5,svalbard
+Branta bernicla,22679946,5,svalbard
+Branta leucopsis,22679943,5,svalbard
+Calidris alba,22693369,5,svalbard
+Calidris alpina,22693427,5,svalbard
+Calidris maritima,22693420,5,svalbard
+Catharacta skua,22694160,5,svalbard
+Cepphus grylle,22694861,5,svalbard
+Charadrius hiaticula,22693759,5,svalbard
+Clangula hyemalis,22680427,5,svalbard
+Fratercula arctica,22694927,5,svalbard
+Fulmarus glacialis,22697866,5,svalbard
+Gavia immer,22697842,5,svalbard
+Gavia stellata,22697829,5,svalbard
+Larus hyperboreus,22694343,5,svalbard
+Larus marinus,22694324,5,svalbard
+Morus bassanus,22696657,5,svalbard
+Pagophila eburnea,22694473,5,svalbard
+Phalaropus fulicarius,22693494,5,svalbard
+Pinguinus impennis,22694856,5,svalbard
+Plectrophenax nivalis,22721043,5,svalbard
+Puffinus puffinus,22698226,5,svalbard
+Rissa tridactyla,22694497,5,svalbard
+Somateria mollissima,22680405,5,svalbard
+Stercorarius parasiticus,22694245,5,svalbard
+Sterna paradisaea,22694629,5,svalbard
+Uria aalge,22694841,5,svalbard
+Uria lomvia,22694847,5,svalbard
+Xema sabini,22694479,5,svalbard
+Phocoena phocoena,17027,5,svalbard
+Balaenoptera acutorostrata,2474,5,svalbard
+Phoca vitulina,17013,5,svalbard
+Globicephala melas,9250,5,svalbard
+Lagenorhynchus acutus,11141,5,svalbard
+Cystophora cristata,6204,5,svalbard
+Physeter macrocephalus,41755,5,svalbard
+Delphinapterus leucas,6335,5,svalbard
+Odobenus rosmarus,15106,5,svalbard
+Erignathus barbatus,8010,5,svalbard
+Balaenoptera musculus,2477,5,svalbard
+Megaptera novaeangliae,13006,5,svalbard
+Balaenoptera physalus,2478,5,svalbard
+Balaenoptera borealis,2475,5,svalbard
+Pagophilus groenlandicus,41671,5,svalbard
+Lagenorhynchus albirostris,11142,5,svalbard
+Pusa hispida,41672,5,svalbard
+Monodon monoceros,13704,5,svalbard
+Balaena mysticetus,2472,5,svalbard
+Mesothuria intestinalis,180540,5,svalbard
+Bathyplotes natans,180452,5,svalbard
+Zostera marina,153538,5,svalbard
+Ursus maritimus,22823,5,svalbard
+Vulpes lagopus,899,5,svalbard
+Actitis hypoleucos,22693264,6,norway
+Alauda arvensis,22717415,6,norway
+Alca torda,22694852,6,norway
+Alle alle,22694837,6,norway
+Anas acuta,22680301,6,norway
+Anser brachyrhynchus,22679872,6,norway
+Anthus cervinus,22718560,6,norway
+Anthus petrosus,22718567,6,norway
+Anthus pratensis,22718556,6,norway
+Ardea cinerea,22696993,6,norway
+Ardenna gravis,22698201,6,norway
+Arenaria interpres,22693336,6,norway
+Aythya fuligula,22680391,6,norway
+Aythya marila,22680398,6,norway
+Branta bernicla,22679946,6,norway
+Branta leucopsis,22679943,6,norway
+Bucephala clangula,22680455,6,norway
+Calcarius lapponicus,22721033,6,norway
+Calidris alba,22693369,6,norway
+Calidris alpina,22693427,6,norway
+Calidris falcinellus,22693464,6,norway
+Calidris maritima,22693420,6,norway
+Calidris minuta,22693379,6,norway
+Calidris minutilla,22693396,6,norway
+Calidris pugnax,22693468,6,norway
+Calidris temminckii,22693388,6,norway
+Catharacta skua,22694160,6,norway
+Cepphus grylle,22694861,6,norway
+Charadrius hiaticula,22693759,6,norway
+Clangula hyemalis,22680427,6,norway
+Corvus corone,22706016,6,norway
+Corvus monedula,22705929,6,norway
+Eremophila alpestris,22717434,6,norway
+Falco columbarius,22696453,6,norway
+Falco peregrinus,45354964,6,norway
+Falco rusticolus,22696500,6,norway
+Fratercula arctica,22694927,6,norway
+Fulmarus glacialis,22697866,6,norway
+Gavia adamsii,22697847,6,norway
+Gavia arctica,22697834,6,norway
+Gavia immer,22697842,6,norway
+Gavia stellata,22697829,6,norway
+Grus grus,22692146,6,norway
+Haematopus ostralegus,22733462,6,norway
+Haliaeetus albicilla,22695137,6,norway
+Hydrobates leucorhous,22698511,6,norway
+Hydrobates pelagicus,22698477,6,norway
+Jynx torquilla,22680683,6,norway
+Larus argentatus,62030608,6,norway
+Larus canus,22694308,6,norway
+Larus fuscus,22694373,6,norway
+Larus hyperboreus,22694343,6,norway
+Larus marinus,22694324,6,norway
+Larus ridibundus,22694420,6,norway
+Limosa lapponica,22693158,6,norway
+Limosa limosa,22693150,6,norway
+Luscinia svecica,22709707,6,norway
+Lymnocryptes minimus,22693133,6,norway
+Mareca penelope,22680157,6,norway
+Melanitta fusca,22724836,6,norway
+Melanitta nigra,22724879,6,norway
+Mergellus albellus,22680465,6,norway
+Mergus merganser,22680492,6,norway
+Mergus serrator,22680485,6,norway
+Morus bassanus,22696657,6,norway
+Numenius arquata,22693190,6,norway
+Numenius phaeopus,22693178,6,norway
+Oenanthe oenanthe,22710272,6,norway
+Pagophila eburnea,22694473,6,norway
+Pandion haliaetus,22694938,6,norway
+Phalacrocorax aristotelis,22696894,6,norway
+Phalacrocorax carbo,22696792,6,norway
+Phalaropus fulicarius,22693494,6,norway
+Phalaropus lobatus,22693490,6,norway
+Pinguinus impennis,22694856,6,norway
+Plectrophenax nivalis,22721043,6,norway
+Pluvialis apricaria,22693727,6,norway
+Podiceps auritus,22696606,6,norway
+Polysticta stelleri,22680415,6,norway
+Puffinus puffinus,22698226,6,norway
+Rissa tridactyla,22694497,6,norway
+Somateria mollissima,22680405,6,norway
+Somateria spectabilis,22680409,6,norway
+Spatula clypeata,22680247,6,norway
+Spatula querquedula,22680313,6,norway
+Stercorarius longicaudus,22694251,6,norway
+Stercorarius parasiticus,22694245,6,norway
+Sterna hirundo,22694623,6,norway
+Sterna paradisaea,22694629,6,norway
+Sturnus vulgaris,22710886,6,norway
+Tadorna tadorna,22680024,6,norway
+Tringa erythropus,22693207,6,norway
+Tringa nebularia,22693220,6,norway
+Tringa totanus,22693211,6,norway
+Uria aalge,22694841,6,norway
+Uria lomvia,22694847,6,norway
+Vanellus vanellus,22693949,6,norway
+Xema sabini,22694479,6,norway
+Homarus gammarus,169955,6,norway
+Nephrops norvegicus,169967,6,norway
+Phocoena phocoena,17027,6,norway
+Balaenoptera acutorostrata,2474,6,norway
+Phoca vitulina,17013,6,norway
+Globicephala melas,9250,6,norway
+Lagenorhynchus acutus,11141,6,norway
+Cystophora cristata,6204,6,norway
+Physeter macrocephalus,41755,6,norway
+Delphinapterus leucas,6335,6,norway
+Odobenus rosmarus,15106,6,norway
+Halichoerus grypus,9660,6,norway
+Erignathus barbatus,8010,6,norway
+Balaenoptera musculus,2477,6,norway
+Megaptera novaeangliae,13006,6,norway
+Balaenoptera physalus,2478,6,norway
+Balaenoptera borealis,2475,6,norway
+Pagophilus groenlandicus,41671,6,norway
+Lagenorhynchus albirostris,11142,6,norway
+Eubalaena glacialis,41712,6,norway
+Pusa hispida,41672,6,norway
+Mesoplodon bidens,13241,6,norway
+Monodon monoceros,13704,6,norway
+Balaena mysticetus,2472,6,norway
+Spondyliosoma cantharus,170258,6,norway
+Mesothuria intestinalis,180540,6,norway
+Bathyplotes natans,180452,6,norway
+Zostera marina,153538,6,norway
+Ursus maritimus,22823,6,norway
+Lutra lutra,12419,6,norway
+Vulpes lagopus,899,6,norway
+Xiphias gladius,23148,6,norway
+Thunnus thynnus,21860,6,norway
+Acantholabrus palloni,186106,6,norway
+Ctenolabrus rupestris,187751,6,norway
+Alca torda,22694852,7,Jan Mayen
+Alle alle,22694837,7,Jan Mayen
+Calidris maritima,22693420,7,Jan Mayen
+Catharacta skua,22694160,7,Jan Mayen
+Fratercula arctica,22694927,7,Jan Mayen
+Fulmarus glacialis,22697866,7,Jan Mayen
+Hydrobates leucorhous,22698511,7,Jan Mayen
+Larus marinus,22694324,7,Jan Mayen
+Larus ridibundus,22694420,7,Jan Mayen
+Morus bassanus,22696657,7,Jan Mayen
+Pagophila eburnea,22694473,7,Jan Mayen
+Pinguinus impennis,22694856,7,Jan Mayen
+Puffinus puffinus,22698226,7,Jan Mayen
+Rissa tridactyla,22694497,7,Jan Mayen
+Sterna paradisaea,22694629,7,Jan Mayen
+Tringa totanus,22693211,7,Jan Mayen
+Uria aalge,22694841,7,Jan Mayen
+Uria lomvia,22694847,7,Jan Mayen
+Xema sabini,22694479,7,Jan Mayen
+Phocoena phocoena,17027,7,Jan Mayen
+Balaenoptera acutorostrata,2474,7,Jan Mayen
+Globicephala melas,9250,7,Jan Mayen
+Lagenorhynchus acutus,11141,7,Jan Mayen
+Cystophora cristata,6204,7,Jan Mayen
+Physeter macrocephalus,41755,7,Jan Mayen
+Erignathus barbatus,8010,7,Jan Mayen
+Balaenoptera musculus,2477,7,Jan Mayen
+Megaptera novaeangliae,13006,7,Jan Mayen
+Balaenoptera physalus,2478,7,Jan Mayen
+Balaenoptera borealis,2475,7,Jan Mayen
+Pagophilus groenlandicus,41671,7,Jan Mayen
+Lagenorhynchus albirostris,11142,7,Jan Mayen
+Eubalaena glacialis,41712,7,Jan Mayen
+Pusa hispida,41672,7,Jan Mayen
+Mesoplodon bidens,13241,7,Jan Mayen
+Monodon monoceros,13704,7,Jan Mayen
+Balaena mysticetus,2472,7,Jan Mayen
+Mesothuria intestinalis,180540,7,Jan Mayen
+Ursus maritimus,22823,7,Jan Mayen
+Vulpes lagopus,899,7,Jan Mayen
+Xiphias gladius,23148,7,Jan Mayen
+Alca torda,22694852,8,west
+Alle alle,22694837,8,west
+Anser albifrons,22679881,8,west
+Anser caerulescens,22679896,8,west
+Anthus rubescens,22718575,8,west
+Ardenna gravis,22698201,8,west
+Ardenna grisea,22698209,8,west
+Arenaria interpres,22693336,8,west
+Branta bernicla,22679946,8,west
+Calcarius lapponicus,22721033,8,west
+Calidris alba,22693369,8,west
+Calidris alpina,22693427,8,west
+Calidris bairdii,22693404,8,west
+Calidris canutus,22693363,8,west
+Calidris maritima,22693420,8,west
+Calidris minutilla,22693396,8,west
+Catharacta maccormicki,22694218,8,west
+Catharacta skua,22694160,8,west
+Cepphus grylle,22694861,8,west
+Charadrius hiaticula,22693759,8,west
+Clangula hyemalis,22680427,8,west
+Falco peregrinus,45354964,8,west
+Falco rusticolus,22696500,8,west
+Fratercula arctica,22694927,8,west
+Fulmarus glacialis,22697866,8,west
+Gavia immer,22697842,8,west
+Gavia stellata,22697829,8,west
+Haliaeetus albicilla,22695137,8,west
+Histrionicus histrionicus,22680423,8,west
+Hydrobates leucorhous,22698511,8,west
+Larus glaucoides,22694346,8,west
+Larus hyperboreus,22694343,8,west
+Larus marinus,22694324,8,west
+Larus ridibundus,22694420,8,west
+Larus thayeri,22728995,8,west
+Mergus serrator,22680485,8,west
+Morus bassanus,22696657,8,west
+Oenanthe oenanthe,22710272,8,west
+Pagophila eburnea,22694473,8,west
+Phalacrocorax carbo,22696792,8,west
+Phalaropus fulicarius,22693494,8,west
+Phalaropus lobatus,22693490,8,west
+Pinguinus impennis,22694856,8,west
+Plectrophenax nivalis,22721043,8,west
+Puffinus puffinus,22698226,8,west
+Rhodostethia rosea,22694476,8,west
+Rissa tridactyla,22694497,8,west
+Somateria mollissima,22680405,8,west
+Somateria spectabilis,22680409,8,west
+Stercorarius longicaudus,22694251,8,west
+Stercorarius parasiticus,22694245,8,west
+Stercorarius pomarinus,22694240,8,west
+Sterna paradisaea,22694629,8,west
+Uria aalge,22694841,8,west
+Uria lomvia,22694847,8,west
+Xema sabini,22694479,8,west
+Stereomastis nana,185000,8,west
+Phocoena phocoena,17027,8,west
+Balaenoptera acutorostrata,2474,8,west
+Phoca vitulina,17013,8,west
+Globicephala melas,9250,8,west
+Lagenorhynchus acutus,11141,8,west
+Delphinus delphis,6336,8,west
+Cystophora cristata,6204,8,west
+Physeter macrocephalus,41755,8,west
+Delphinapterus leucas,6335,8,west
+Odobenus rosmarus,15106,8,west
+Grampus griseus,9461,8,west
+Erignathus barbatus,8010,8,west
+Balaenoptera musculus,2477,8,west
+Megaptera novaeangliae,13006,8,west
+Balaenoptera physalus,2478,8,west
+Balaenoptera borealis,2475,8,west
+Pagophilus groenlandicus,41671,8,west
+Lagenorhynchus albirostris,11142,8,west
+Eubalaena glacialis,41712,8,west
+Pusa hispida,41672,8,west
+Monodon monoceros,13704,8,west
+Balaena mysticetus,2467,8,west
+Zostera marina,153538,8,west
+Ursus maritimus,22823,8,west
+Vulpes lagopus,899,8,west
+Thunnus thynnus,21860,8,west
+Alca torda,22694852,9,east
+Alle alle,22694837,9,east
+Anser brachyrhynchus,22679872,9,east
+Anthus rubescens,22718575,9,east
+Ardenna gravis,22698201,9,east
+Ardenna grisea,22698209,9,east
+Arenaria interpres,22693336,9,east
+Branta bernicla,22679946,9,east
+Branta leucopsis,22679943,9,east
+Calcarius lapponicus,22721033,9,east
+Calidris alba,22693369,9,east
+Calidris alpina,22693427,9,east
+Calidris canutus,22693363,9,east
+Calidris maritima,22693420,9,east
+Calidris minutilla,22693396,9,east
+Calonectris borealis,22732244,9,east
+Catharacta maccormicki,22694218,9,east
+Catharacta skua,22694160,9,east
+Cepphus grylle,22694861,9,east
+Charadrius hiaticula,22693759,9,east
+Clangula hyemalis,22680427,9,east
+Falco peregrinus,45354964,9,east
+Falco rusticolus,22696500,9,east
+Fratercula arctica,22694927,9,east
+Fulmarus glacialis,22697866,9,east
+Gavia immer,22697842,9,east
+Gavia stellata,22697829,9,east
+Haliaeetus albicilla,22695137,9,east
+Histrionicus histrionicus,22680423,9,east
+Hydrobates leucorhous,22698511,9,east
+Larus canus,22694308,9,east
+Larus glaucoides,22694346,9,east
+Larus hyperboreus,22694343,9,east
+Larus marinus,22694324,9,east
+Larus ridibundus,22694420,9,east
+Melanitta nigra,22724879,9,east
+Mergus serrator,22680485,9,east
+Morus bassanus,22696657,9,east
+Numenius phaeopus,22693178,9,east
+Oenanthe oenanthe,22710272,9,east
+Pagophila eburnea,22694473,9,east
+Phalaropus lobatus,22693490,9,east
+Pinguinus impennis,22694856,9,east
+Plectrophenax nivalis,22721043,9,east
+Pluvialis apricaria,22693727,9,east
+Puffinus puffinus,22698226,9,east
+Rhodostethia rosea,22694476,9,east
+Rissa tridactyla,22694497,9,east
+Somateria mollissima,22680405,9,east
+Somateria spectabilis,22680409,9,east
+Stercorarius longicaudus,22694251,9,east
+Stercorarius parasiticus,22694245,9,east
+Sterna paradisaea,22694629,9,east
+Uria aalge,22694841,9,east
+Uria lomvia,22694847,9,east
+Xema sabini,22694479,9,east
+Nephrops norvegicus,169967,9,east
+Stereomastis nana,185000,9,east
+Phocoena phocoena,17027,9,east
+Balaenoptera acutorostrata,2474,9,east
+Phoca vitulina,17013,9,east
+Globicephala melas,9250,9,east
+Lagenorhynchus acutus,11141,9,east
+Delphinus delphis,6336,9,east
+Cystophora cristata,6204,9,east
+Physeter macrocephalus,41755,9,east
+Odobenus rosmarus,15106,9,east
+Grampus griseus,9461,9,east
+Erignathus barbatus,8010,9,east
+Balaenoptera musculus,2477,9,east
+Megaptera novaeangliae,13006,9,east
+Balaenoptera physalus,2478,9,east
+Balaenoptera borealis,2475,9,east
+Pagophilus groenlandicus,41671,9,east
+Lagenorhynchus albirostris,11142,9,east
+Eubalaena glacialis,41712,9,east
+Pusa hispida,41672,9,east
+Monodon monoceros,13704,9,east
+Balaena mysticetus,2472,9,east
+Mesothuria lactea,180468,9,east
+Mesothuria intestinalis,180540,9,east
+Bathyplotes natans,180452,9,east
+Zostera marina,153538,9,east
+Ursus maritimus,22823,9,east
+Vulpes lagopus,899,9,east
+Xiphias gladius,23148,9,east
+Scomber scombrus,170354,9,east
