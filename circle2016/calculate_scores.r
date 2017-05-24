@@ -37,7 +37,9 @@ source('PlotFlowerMulti.R')
 rgns_complete <- read.csv('spatial/regions_lookup.csv')
 rgn_names <- rgns_complete
 
-rgns_to_plot <- rgns_complete$rgn_id
+rgns_to_plot <- rgns_complete %>%
+  bind_rows(data_frame(rgn_id = 0, type='global', label='Arctic'))
+rgns_to_plot <- rgns_to_plot$rgn_id
 
 PlotFlowerMulti(scores          = readr::read_csv('scores.csv'),# %>% filter(region_id %in% rgns_to_plot),
                 rgns_to_plot    = rgns_to_plot,
