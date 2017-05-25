@@ -809,8 +809,7 @@ LIV_ECO = function(layers, subgoal){
     #left_join(multipliers_jobs, by = 'sector') %>%
     #mutate(jobs_mult = jobs * multiplier) %>%  # adjust jobs by multipliers # drop out multipliers
     left_join(le_employed, by= c('rgn_id', 'year')) %>%
-    mutate(jobs_adj = jobs) %>% # adjust jobs by proportion employed - not sure why this is done?
-    #remove * proportion unemployed as not accounting for multipliers
+    mutate(jobs_adj = jobs * proportion_employed) %>% #
     left_join(le_wages, by=c('rgn_id','year','sector')) %>%
     arrange(year, sector, rgn_id)
 
