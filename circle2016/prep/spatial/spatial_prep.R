@@ -59,6 +59,8 @@ crop_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
 
 ##Apply positive buffer to land shapefile
 crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5500, capStyle = "round", joinStyle = "round")
+#going to try using raster::buffer
+crop_arc<- raster::buffer(crop_arc_land, width=5500, dissolve=TRUE)
 arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3nm buffer separated into regions
 
 ## create raster of arc_3km_buffer
@@ -79,6 +81,7 @@ rast_base ### inspect it: resolution and extents are nice and clean
 rast_arc_3km<- rasterize(rast_arc_3km, rast_base) #rasterize EEZs with the rasterbase
 writeRaster(rast_arc_3km, filename="rast_arc_3km.tif", overwrite=TRUE)
 
+rast_3nm<-
 
 ##Need to create land shape file which is divided into regions
 #poly_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
@@ -214,6 +217,7 @@ rast_wdpa <- raster::raster(rast_wdpa_file)
 
 rast_3nm_arc<- file.path('prep/spatial/rast_arc_3km.tif')
 rast_3nm_arc<- raster::raster(rast_3nm_arc)
+raster::plot(rast_3nm_arc)
 
 #rast_wdpa_proj<- projectRaster(rast_wdpa, rast_3nm_arc, method= 'ngb') #reproject wdpa into arc CRS
 #writeRaster(rast_wdpa_proj, filename="rast_wdpa_laea.tif")
