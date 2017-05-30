@@ -13,7 +13,7 @@ poly_arc_rgn<- loma
 spatial_dir2<- '/home/shares/ohi/git-annex/globalprep/spatial/d2014/data'
 eez<- 'regions_gcs'
 global_eez<- readOGR(dsn=spatial_dir2, layer=eez, stringsAsFactors = FALSE)
-world.map <- global_buffer[global_eez$rgn_name %in% c("Jan Mayen", "Norway", "Canada", "United States", "Russia", "Greenland"),]
+world.map <- global_eez[global_eez$rgn_name %in% c("Jan Mayen", "Norway", "Canada", "United States", "Russia", "Greenland"),]
 p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
 world.map<- spTransform(world.map, p4s_arc)
 loma_shp<- raster::intersect(world.map, loma)
