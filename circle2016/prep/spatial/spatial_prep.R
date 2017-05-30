@@ -33,7 +33,7 @@ library('tiff')
 ##laeaCRS <- CRS("+init=epsg:3572") #Arctic Projection
 
 
-spatial_dir<- 'circle2016/prep/spatial'
+spatial_dir<- 'prep/spatial'
 spatial_dir3<- 'circle2016/prep/spatial/shapes/Beaufort LOMA'
 layer_arc<- 'artic_eezs'
 layer_arc2<- 'LOMA_CDA_DFO_2007'
@@ -129,6 +129,7 @@ writeRaster(rast_loma, filename="rast_loma_3nm.tif", overwrite=TRUE)
 
 
 rast_3nm_file <- file.path(dir_M, 'git-annex/globalprep/spatial/d2014/data/rgn_mol_raster_500m/rgn_offshore3nm_mol_500mcell.tif')
+
 rast_1nm_buffer <- raster::raster(rast_3nm_file)
 
 raster::plot(rast_3nm_buffer)
