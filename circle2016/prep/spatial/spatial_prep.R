@@ -34,8 +34,13 @@ library('tiff')
 
 
 spatial_dir<- 'circle2016/prep/spatial'
-layer_arc<- 'arctic_eezs'
+spatial_dir3<- 'circle2016/prep/spatial/shapes/Beaufort LOMA'
+layer_arc<- 'artic_eezs'
+layer_arc2<- 'LOMA_CDA_DFO_2007'
 poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
+loma<- readOGR(dsn= spatial_dir3, layer = layer_arc2, stringsAsFactors = FALSE)
+loma<- spTransform(loma, p4s_arc)
+loma_buff<- raster::intersect(world.map4, loma)
 
 
 ##Try and add buffer
@@ -44,23 +49,44 @@ poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = F
 ##Read in Arctic Land file
 land_arc<- 'arctic_land'
 arc_land<- readOGR(dsn= spatial_dir, layer = land_arc, stringsAsFactors = FALSE)
+spatial_dir2<- '/home/shares/ohi/git-annex/globalprep/spatial/d2014/data'
+offshore3nm<- 'regions_offshore3nm_gcs'
+global_buffer<- readOGR(dsn=spatial_dir2, layer=offshore3nm, stringsAsFactors = FALSE)
+world.map <- global_buffer[global_buffer$rgn_name %in% c("Jan Mayen", "Norway", "Canada", "United States", "Russia", "Greenland"),]
+p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
+world.map2<- spTransform(world.map, p4s_arc)
+world.map3<- gSimplify(world.map2, tol = 0.00001)
+#world.map2.coords<- coordinates(world.map2)
+#world.map2.id <- cut(world.map2.coords[,1], quantile(world.map2.coords[,1]), include.lowest=TRUE)
+#world.union <- unionSpatialPolygons(world.map2, world.map2.id)
+world.map4 <- gBuffer(world.map3, byid=FALSE, width=0) # unite polygons
+world.map5<- spTransform(world.map4, p4s_3nm)
+poly_arc_rgn2<- spTransform(poly_arc_rgn, p4s_3nm)
+
+arc_3km_buff<- raster::intersect(world.map3, poly_arc_rgn) ##intersect to get 3nm buffer separated into regions
+
+global_buffer_crop<- raster::crop(world.map4, poly_arc_rgn)
 
 ### Had some trouble with croping arc land so Simplify Polygons in order to intersect (well known hack)# simplify the polgons a tad (tweak 0.00001 to your liking)
 poly_arc_rgn <- gSimplify(poly_arc_rgn, tol = 0.00001)
+poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0) # solve topology problems
 arc_land <- gSimplify(arc_land, tol = 0.00001)
 arc_land <- gBuffer(arc_land, byid=TRUE, width=0) # these go in to solve topology problems
-poly_arc_rgn <- gBuffer(poly_arc_rgn, byid=TRUE, width=0) # solve topology problems
+
 
 #crop arc_land to scale of poly_arc_rgn
+
 crop_arc_land<- raster::crop(arc_land, extent(-2104837, 3571809, -2556503, 2595893))
 rm(arc_land)
-crop_arc_land <- gBuffer(crop_arc_land, byid=TRUE, width=0) # try solve issue of crashing
+crop_arc_land<- spTransform(crop_arc_land, p4s_3nm)
 crop_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
+crop_arc_land <- gBuffer(crop_arc_land, byid=TRUE, width=0) # try solve issue of crashing
+crop_arc<- raster::buffer(crop_arc_land, width=5500, dissolve=TRUE)
+
 
 ##Apply positive buffer to land shapefile
 crop_arc_land_buff <- gBuffer(crop_arc_land, byid=FALSE, width=5500, capStyle = "round", joinStyle = "round")
 #going to try using raster::buffer
-crop_arc<- raster::buffer(crop_arc_land, width=5500, dissolve=TRUE)
 arc_3km_buffer<- raster::intersect(crop_arc_land_buffer, poly_arc_rgn) ##intersect to get 3nm buffer separated into regions
 
 ## create raster of arc_3km_buffer
@@ -81,8 +107,21 @@ rast_base ### inspect it: resolution and extents are nice and clean
 rast_arc_3km<- rasterize(rast_arc_3km, rast_base) #rasterize EEZs with the rasterbase
 writeRaster(rast_arc_3km, filename="rast_arc_3km.tif", overwrite=TRUE)
 
-rast_3nm<-
+####RASTERIZE LOMA#########
+ext <- extent(loma_buff); ext
+ext1 <- loma_buff@bbox; ext1
+ext@xmin <- round(ext@xmin - 5000, -4); ext@ymin <- round(ext@ymin - 5000, -4) #what does the -4 mean?
+### expand the extents out to round 10 km edges
+ext@xmax <- round(ext@xmax + 5000, -4); ext@ymax <- round(ext@ymax + 5000, -4)
 
+reso <- 500 ### BC Albers uses meters as units, set resolution to a 0.5-km grid
+xcol <- (ext@xmax - ext@xmin)/reso ### determine # of columns from extents and resolution
+yrow <- (ext@ymax - ext@ymin)/reso ### determine # of rows
+rast_base <- raster(ext, yrow, xcol, crs = p4s_arc)
+
+rast_base ### inspect it: resolution and extents are nice and clean
+rast_loma<- rasterize(loma_buff, rast_base)
+writeRaster(rast_loma, filename="rast_loma_3nm.tif", overwrite=TRUE)
 ##Need to create land shape file which is divided into regions
 #poly_arc_land <- gSimplify(crop_arc_land, tol = 0.00001)
 #poly_arc_land<- raster::intersect(poly_arc_land, poly_arc_rgn)
