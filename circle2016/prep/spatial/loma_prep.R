@@ -8,26 +8,33 @@ dir_goal_anx  <- file.path(dir_anx, goal, scenario)
 dir_data_wdpa <- file.path(dir_anx, '_raw_data/wdpa_mpa', 'd2016')
 rast_wdpa_file <- file.path(dir_goal_anx, 'int/wdpa_designated_mol.tif')
 rast_wdpa <- raster::raster(rast_wdpa_file)
-poly_arc_rgn<- loma
+spatial_dir<- 'prep/spatial'
+spatial_dir3<- 'circle2016/prep/spatial/shapes/Beaufort LOMA'
+layer_arc<- 'artic_eezs'
+layer_arc2<- 'LOMA_CDA_DFO_2007'
+poly_arc_rgn<- readOGR(dsn= spatial_dir, layer = layer_arc, stringsAsFactors = FALSE)
+loma<- readOGR(dsn= spatial_dir3, layer = layer_arc2, stringsAsFactors = FALSE)
+loma<- spTransform(loma, p4s_arc)
 
 spatial_dir2<- '/home/shares/ohi/git-annex/globalprep/spatial/d2014/data'
 eez<- 'regions_gcs'
 global_eez<- readOGR(dsn=spatial_dir2, layer=eez, stringsAsFactors = FALSE)
-world.map <- global_eez[global_eez$rgn_name %in% c("Jan Mayen", "Norway", "Canada", "United States", "Russia", "Greenland"),]
+world.map <- global_eez[global_eez$rgn_nam %in% c("Canada", "United States"),]
 p4s_arc<- CRS('+proj=laea +lat_0=90 +lon_0=-150 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0') #create p4s of arc map
 world.map<- spTransform(world.map, p4s_arc)
+loma <- gBuffer(loma, byid=FALSE, width=0)
 loma_shp<- raster::intersect(world.map, loma)
 #need to gbuffer width 0 to make one shape - rerun to get global_eez - this was breaking everything.
 rast_loma<- rasterize(loma_shp, rast_base2)
+writeRaster(rast_loma, filename="rast_loma_eez.tif", overwrite=TRUE)
 
 rast_3nm_arc<- file.path('circle2016/prep/spatial/rast_loma_3nm.tif')
 rast_3nm_arc<- raster::raster(rast_3nm_arc)
 raster::plot(rast_3nm_arc)
 
-rast_wdpa_proj<- projectRaster(rast_wdpa, crs = p4s_arc)
 
-ext2 <- extent(poly_arc_rgn); ext2
-ext3 <- poly_arc_rgn@bbox; ext3
+ext2 <- extent(loma_shp); ext2
+ext3 <- loma_shp@bbox; ext3
 ext2@xmin <- round(ext2@xmin - 5000, -4); ext2@ymin <- round(ext2@ymin - 5000, -4) #what does the -4 mean?
 ### expand the extents out to round 10 km edges
 ext2@xmax <- round(ext2@xmax + 5000, -4); ext2@ymax <- round(ext2@ymax + 5000, -4)
@@ -44,10 +51,8 @@ rast_base2 ### inspect it: resolution and extents are nice and clean
 
 #
 rast_wdpa_proj<- projectRaster(rast_wdpa, rast_loma, method='ngb') #reproject wdpa into arc CRS
-#loma_shp<- gBuffer(loma_shp, byid=FALSE, width=0)
 wdpa_by_rgn <- raster::extract(rast_wdpa_proj, loma_shp, weights = FALSE, progress='text')
-loma@data$rgn_id<- 1
-names(wdpa_by_rgn) <- loma@data$rgn_id
+names(wdpa_by_rgn) <- loma_shp@data$rgn_id
 
 
 ### For the dataframe without cell weights, each list is just a
@@ -71,7 +76,6 @@ prot_area_df <- wdpa_rgn_df %>%
 
 knitr::kable(prot_area_df)
 ### Cross tabulate OHI/EEZ rasters. This givees number of protected cells with year of protection within each region. NA = unprotected cells
-rast_wdpa_proj<- crop(rast_wdpa_proj, loma)
 rast_df <- raster::crosstab(rast_wdpa_proj, rast_loma, useNA = TRUE, progress = 'text') %>%
   as.data.frame() %>%
   setNames(c('year', 'rgn_id', 'n_cells')) %>%
@@ -93,7 +97,7 @@ prot_eez <- rast_df %>%
   mutate(pct_prot   = round(n_cells_cum / n_cells_tot, 4),
          lsp_status = round(ifelse(pct_prot > lsp_thresh, 100, (pct_prot / lsp_thresh) * 100), 2)) %>%
   distinct() #still have NA in rgn_id?
-write_csv(prot_eez, file.path('~/github/arc/circle2016/prep/spatial/area_protected_eez.csv'))
+write_csv(prot_eez, file.path('~/github/arc/circle2016/prep/LSP/loma_protected_eez.csv'))
 
 
 #####3nm###

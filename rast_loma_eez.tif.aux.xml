@@ -1,0 +1,10 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <CategoryNames>
+      <Category></Category>
+      <Category>eez</Category>
+      <Category>eez</Category>
+      <Category>land</Category>
+    </CategoryNames>
+  </PAMRasterBand>
+</PAMDataset>
