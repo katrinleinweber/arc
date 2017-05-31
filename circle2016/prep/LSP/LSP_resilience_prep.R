@@ -5,7 +5,7 @@
 ## MRF June 22 2016
 #######################################################
 
-lsp_status2<- read.csv('prep/LSP/area_protected_total.csv')
+lsp_status2<- read.csv('circle2016/prep/LSP/area_protected_total.csv')
 lsp_status2<- dplyr::select(lsp_status2,  rgn_id, year, lsp_status=lsp_st_3nm) %>%
   filter(year >= 2000, rgn_id!=10)%>%
   distinct()
@@ -22,7 +22,7 @@ for(year in 2011:2015){ #year=2011
     dplyr::select(rgn_id, resilience.score = lsp_status) %>%
     mutate(resilience.score = resilience.score/100) %>%
     filter(rgn_id <= 250)
-  write.csv(tmp, sprintf("prep/resilience/mpa_3nm_%s.csv", year), row.names=FALSE)
+  write.csv(tmp, sprintf("circle2016/prep/resilience/mpa_3nm_%s.csv", year), row.names=FALSE)
 }
 
 
@@ -34,13 +34,13 @@ for(year in 2011:2015){ #year=2011
 ## first need to calculate status
 
 # select data ----
-r = read.csv("prep/LSP/lsp_a_total_eez.csv") %>% #total eez area
+r = read.csv("circle2016/prep/LSP/lsp_a_total_eez.csv") %>% #total eez area
   dplyr::select(rgn_id, a_tot_eez) %>%
   unique() %>%
   filter(rgn_id < 10)
 
 
-ry = read.csv("prep/LSP/lsp_protected_eez.csv") %>% #total cumulative protected areas
+ry = read.csv("circle2016/prep/LSP/lsp_protected_eez.csv") %>% #total cumulative protected areas
   dplyr::select(rgn_id, year, mpa=a_prot_eez) %>%
   filter(rgn_id <= 10)
 
@@ -61,5 +61,5 @@ r.yrs = r.yrs %>%
 for(year in 2011:2015){ #year=2011
   tmp <- r.yrs[r.yrs$year == year, ] %>%
     dplyr::select(rgn_id, resilience.score = prop_protected)
-  write.csv(tmp, sprintf("prep/resilience/mpa_eez_%s_resilience.csv", year), row.names=FALSE)
+  write.csv(tmp, sprintf("circle2016/prep/resilience/mpa_eez_%s_resilience.csv", year), row.names=FALSE)
 }
