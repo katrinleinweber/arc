@@ -68,6 +68,8 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 17031,1996,VU,Vulnerable,Phocoena phocoena,0.4
 17031,2008,CR,Critically Endangered,Phocoena phocoena,0.8
 19855,1996,LC,Lower Risk/least concern,Salmo salar,0
+19877,1996,LC,Lower Risk/least concern,Salvelinus alpinus,0
+19877,2008,LC,Least Concern,Salvelinus alpinus,0
 22563,2008,LC,Least Concern,Tursiops truncatus,0
 22563,2012,LC,Least Concern,Tursiops truncatus,0
 22823,1965,T,"""Less rare but believed to be threatened-requires watching""",Ursus maritimus,0.6
@@ -127,6 +129,15 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22680412,2009,LC,Least Concern,Somateria fischeri,0
 22680412,2012,LC,Least Concern,Somateria fischeri,0
 22680412,2016,LC,Least Concern,Somateria fischeri,0
+22693363,1988,LC,Lower Risk/least concern,Calidris canutus,0
+22693363,1994,LC,Lower Risk/least concern,Calidris canutus,0
+22693363,2000,LC,Lower Risk/least concern,Calidris canutus,0
+22693363,2004,LC,Least Concern,Calidris canutus,0
+22693363,2008,LC,Least Concern,Calidris canutus,0
+22693363,2009,LC,Least Concern,Calidris canutus,0
+22693363,2012,LC,Least Concern,Calidris canutus,0
+22693363,2015,NT,Near Threatened,Calidris canutus,0.2
+22693363,2017,NT,Near Threatened,Calidris canutus,0.2
 22693369,1988,LC,Lower Risk/least concern,Calidris alba,0
 22693369,1994,LC,Lower Risk/least concern,Calidris alba,0
 22693369,2000,LC,Lower Risk/least concern,Calidris alba,0
@@ -184,7 +195,7 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22694473,2008,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2010,NT,Near Threatened,Pagophila eburnea,0.2
 22694473,2012,NT,Near Threatened,Pagophila eburnea,0.2
-22694473,2016,NT,Near Threatened,Pagophila eburnea,0.2
+22694473,2017,NT,Near Threatened,Pagophila eburnea,0.2
 22694629,1988,LC,Lower Risk/least concern,Sterna paradisaea,0
 22694629,1994,LC,Lower Risk/least concern,Sterna paradisaea,0
 22694629,2000,LC,Lower Risk/least concern,Sterna paradisaea,0
@@ -201,7 +212,7 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22694837,2008,LC,Least Concern,Alle alle,0
 22694837,2009,LC,Least Concern,Alle alle,0
 22694837,2012,LC,Least Concern,Alle alle,0
-22694837,2016,LC,Least Concern,Alle alle,0
+22694837,2017,LC,Least Concern,Alle alle,0
 22694841,1988,LC,Lower Risk/least concern,Uria aalge,0
 22694841,1994,LC,Lower Risk/least concern,Uria aalge,0
 22694841,2000,LC,Lower Risk/least concern,Uria aalge,0
@@ -210,6 +221,14 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22694841,2009,LC,Least Concern,Uria aalge,0
 22694841,2012,LC,Least Concern,Uria aalge,0
 22694841,2016,LC,Least Concern,Uria aalge,0
+22694847,1988,LC,Lower Risk/least concern,Uria lomvia,0
+22694847,1994,LC,Lower Risk/least concern,Uria lomvia,0
+22694847,2000,LC,Lower Risk/least concern,Uria lomvia,0
+22694847,2004,LC,Least Concern,Uria lomvia,0
+22694847,2008,LC,Least Concern,Uria lomvia,0
+22694847,2009,LC,Least Concern,Uria lomvia,0
+22694847,2012,LC,Least Concern,Uria lomvia,0
+22694847,2016,LC,Least Concern,Uria lomvia,0
 22694861,1988,LC,Lower Risk/least concern,Cepphus grylle,0
 22694861,1994,LC,Lower Risk/least concern,Cepphus grylle,0
 22694861,2000,LC,Lower Risk/least concern,Cepphus grylle,0
@@ -225,4 +244,4 @@ iucn_sid,year,cat,cat_txt,sciname,cat_score
 22697866,2008,LC,Least Concern,Fulmarus glacialis,0
 22697866,2009,LC,Least Concern,Fulmarus glacialis,0
 22697866,2012,LC,Least Concern,Fulmarus glacialis,0
-22697866,2016,LC,Least Concern,Fulmarus glacialis,0
+22697866,2017,LC,Least Concern,Fulmarus glacialis,0

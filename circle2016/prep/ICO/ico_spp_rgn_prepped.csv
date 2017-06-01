@@ -1,175 +1,1305 @@
-iucn_sid,presence,origin,distribution_code,rgn_id,rgn_name,comname,sciname,ico_gl,ico_rgn_id,subpop,cat
-22694245,Extant,Native,Native,8,West Greenland,Arctic skua,Stercorarius parasiticus,FALSE,8,NA,LC
-22694245,Extant,Native,Native,9,East Greenland,Arctic skua,Stercorarius parasiticus,FALSE,9,NA,LC
-22694245,Extant,Native,Native,6,Norway,Arctic skua,Stercorarius parasiticus,FALSE,6,NA,LC
-22694245,Extant,Native,Native,5,Svalbard,Arctic skua,Stercorarius parasiticus,FALSE,5,NA,LC
-22694629,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
-22694629,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
-22694629,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
-22694629,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
-22694629,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
-8010,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
-8010,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
-8010,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
-8010,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
-8010,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
-8010,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
-6335,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
-6335,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
-6335,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
-6335,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
-6335,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
-61442,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
-22694861,Extant,Native,Native,8,West Greenland,Black guillemot,Cepphus grylle,FALSE,8,NA,LC
-22694861,Extant,Native,Native,9,East Greenland,Black guillemot,Cepphus grylle,FALSE,9,NA,LC
-22694861,Extant,Native,Native,6,Norway,Black guillemot,Cepphus grylle,FALSE,6,NA,LC
-22694861,Extant,Native,Native,5,Svalbard,Black guillemot,Cepphus grylle,FALSE,5,NA,LC
-2477,Extant,Native,Native,2,Nunavut,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,3,Beaufort,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,8,West Greenland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,9,East Greenland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,6,Norway,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,4,Russia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-2477,Extant,Native,Native,1,Alaska,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
-22563,Extant,Native,Native,4,Russia,Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,NA,LC
-2469,Extant,Native,Native,4,Russia,Bowhead whale,Balaena mysticetus,TRUE,NA,Okhotsk Sea subpopulation,EN
-2468,Extant,Native,Native,2,Nunavut,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
-2468,Extant,Native,Native,3,Beaufort,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
-2468,Extant,Native,Native,4,Russia,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
-2468,Extant,Native,Native,1,Alaska,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
-2472,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
-2472,Extant,Native,Native,9,East Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
-2472,Extant,Native,Native,5,Svalbard,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
-2472,Extant,Native,Native,7,Jan Mayen,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
-2467,Extant,Native,Native,2,Nunavut,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
-2467,Extant,Native,Native,3,Beaufort,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
-2467,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
-2467,Extant,Native,Native,9,East Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
-2467,Extant,Native,Native,1,Alaska,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
-22694841,Extant,Native,Native,8,West Greenland,Common guillemot,Uria aalge,FALSE,8,NA,LC
-22694841,Extant,Native,Native,9,East Greenland,Common guillemot,Uria aalge,FALSE,9,NA,LC
-22694841,Extant,Native,Native,7,Jan Mayen,Common guillemot,Uria aalge,FALSE,7,NA,LC
-22680405,Extant,Native,Native,8,West Greenland,Eider,Somateria mollissima,FALSE,8,NA,NT
-22680405,Extant,Native,Native,9,East Greenland,Eider,Somateria mollissima,FALSE,9,NA,NT
-22680405,Extant,Native,Native,5,Svalbard,Eider,Somateria mollissima,FALSE,5,NA,NT
-2478,Extant,Native,Native,2,Nunavut,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,3,Beaufort,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,8,West Greenland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,9,East Greenland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,6,Norway,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,4,Russia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,5,Svalbard,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,7,Jan Mayen,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-2478,Extant,Native,Native,1,Alaska,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
-22697866,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
-22697866,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
-22697866,Extant,Native,Native,5,Svalbard,Fulmar,Fulmarus glacialis,FALSE,5,NA,LC
-22694343,Extant,Native,Native,8,West Greenland,Glaucous gull,Larus hyperboreus,FALSE,8,NA,LC
-22694343,Extant,Native,Native,9,East Greenland,Glaucous gull,Larus hyperboreus,FALSE,9,NA,LC
-22694343,Extant,Native,Native,5,Svalbard,Glaucous gull,Larus hyperboreus,FALSE,5,NA,LC
-17027,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
-17027,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
-17027,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
-17027,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
-17027,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
-17031,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
-17013,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
-17013,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
-17013,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
-17013,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
-17013,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
-17013,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
-6204,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
-6204,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
-6204,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
-6204,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
-6204,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
-13006,Extant,Native,Native,2,Nunavut,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,3,Beaufort,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,8,West Greenland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,9,East Greenland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,6,Norway,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,4,Russia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-13006,Extant,Native,Native,1,Alaska,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
-22694473,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
-22694473,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
-22694473,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
-22694473,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
-22694473,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
-15421,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
-15421,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
-15421,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
-15421,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
-22680409,Extant,Native,Native,8,West Greenland,King Eider,Somateria spectabilis,FALSE,8,NA,LC
-22680409,Extant,Native,Native,9,East Greenland,King Eider,Somateria spectabilis,FALSE,9,NA,LC
-22680409,Extant,Native,Native,5,Svalbard,King eider,Somateria spectabilis,FALSE,5,NA,LC
-22694837,Extant,Native,Native,8,West Greenland,Little auk,Alle alle,FALSE,8,NA,LC
-22694837,Extant,Native,Native,9,East Greenland,Little auk,Alle alle,FALSE,9,NA,LC
-22694837,Extant,Native,Native,5,Svalbard,Little auk,Alle alle,FALSE,5,NA,LC
-2474,Extant,Native,Native,2,Nunavut,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,3,Beaufort,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,8,West Greenland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,9,East Greenland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,6,Norway,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,4,Russia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,5,Svalbard,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,7,Jan Mayen,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-2474,Extant,Native,Native,1,Alaska,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
-13704,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
-13704,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
-13704,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
-13704,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
-13704,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
-13704,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
-41712,Extant,Native,Native,8,West Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,8,NA,EN
-41712,Extant,Native,Native,9,East Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,9,NA,EN
-22679872,Extant,Native,Native,8,West Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,8,NA,LC
-22679872,Extant,Native,Native,9,East Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,9,NA,LC
-22679872,Extant,Native,Native,5,Svalbard,Pink-footed Goose,Anser brachyrhynchus,FALSE,5,NA,LC
-22823,Extant,Native,Native,2,Nunavut,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,3,Beaufort,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,8,West Greenland,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,9,East Greenland,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,6,Norway,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,4,Russia,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,5,Svalbard,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,7,Jan Mayen,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22823,Extant,Native,Native,1,Alaska,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
-22694240,Extant,Native,Native,8,West Greenland,Pomarine,Stercorarius pomarinus,FALSE,8,NA,LC
-22694240,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
-22693420,Extant,Native,Native,8,West Greenland,Purple sandpiper,Calidris maritima,FALSE,8,NA,LC
-22693420,Extant,Native,Native,9,East Greenland,Purple sandpiper,Calidris maritima,FALSE,9,NA,LC
-22693420,Extant,Native,Native,5,Svalbard,Purple sandpipers,Calidris maritima,FALSE,5,NA,LC
-22693759,Extant,Native,Native,8,West Greenland,Ringed Plover,Charadrius hiaticula,FALSE,8,NA,LC
-22693759,Extant,Native,Native,9,East Greenland,Ringed Plover,Charadrius hiaticula,FALSE,9,NA,LC
-22693759,Extant,Native,Native,5,Svalbard,Ringed plover,Charadrius hiaticula,FALSE,5,NA,LC
-41672,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
-41672,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
-41672,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
-41672,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
-41672,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
-41672,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
-19855,Extant,Native,Native,8,West Greenland,Salmon,Salmo salar,FALSE,8,NA,LR/lc
-19855,Extant,Native,Native,9,East Greenland,Salmon,Salmo salar,FALSE,9,NA,LR/lc
-19855,Extant,Native,Native,6,Norway,Salmon,Salmo salar,FALSE,6,NA,LR/lc
-22693369,Extant,Native,Native,8,West Greenland,Sanderling,Calidris alba,FALSE,8,NA,LC
-22693369,Extant,Native,Native,9,East Greenland,Sanderling,Calidris alba,FALSE,9,NA,LC
-22693369,Extant,Native,Native,5,Svalbard,Sanderling,Calidris alba,FALSE,5,NA,LC
-2475,Extant,Native,Native,2,Nunavut,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,3,Beaufort,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,8,West Greenland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,9,East Greenland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,6,Norway,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,4,Russia,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-2475,Extant,Native,Native,1,Alaska,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
-22680412,Extant,Native,Native,1,Alaska,Spectacled Eider,Somateria fischeri,FALSE,1,NA,LC
-17023,Extant,Native,Native,1,Alaska,Spotted seal,Phoca largha,FALSE,1,NA,DD
-15106,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
-15106,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
-15106,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
-15106,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
-15106,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
-11142,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
-11142,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
-11142,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC
-11142,Extant,Native,Native,5,Svalbard,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,NA,LC
+iucn_sid,iucn_rgn_name,presence,origin,distribution_code,rgn_id,ohi_rgn_name,comname,sciname,ico_gl,ico_rgn_id,subpop,cat
+19877,Canada,Extant,Native,Native,2,Nunavut,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Canada,Extant,Native,Native,3,Beaufort,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Finland,Extant,Native,Native,NA,Finland,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Greenland,Extant,Native,Native,8,West Greenland,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Greenland,Extant,Native,Native,9,East Greenland,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Iceland,Extant,Native,Native,NA,Iceland,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Norway,Extant,Native,Native,6,Norway,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Russian Federation,Extant,Native,Native,4,Russia,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Sweden,Extant,Native,Native,NA,Sweden,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+19877,United States,Extant,Native,Native,1,Alaska,Arctic char,Salvelinus alpinus,TRUE,NA,NA,LC
+22694245,Greenland,Extant,Native,Native,8,West Greenland,Arctic skua,Stercorarius parasiticus,FALSE,8,NA,LC
+22694245,Greenland,Extant,Native,Native,9,East Greenland,Arctic skua,Stercorarius parasiticus,FALSE,9,NA,LC
+22694245,Norway,Extant,Native,Native,6,Norway,Arctic skua,Stercorarius parasiticus,FALSE,6,NA,LC
+22694245,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic skua,Stercorarius parasiticus,FALSE,5,NA,LC
+22694245,Greenland,Extant,Native,Native,8,West Greenland,Arctic skua,Stercorarius parasiticus,FALSE,8,NA,LC
+22694245,Greenland,Extant,Native,Native,9,East Greenland,Arctic skua,Stercorarius parasiticus,FALSE,9,NA,LC
+22694245,Norway,Extant,Native,Native,6,Norway,Arctic skua,Stercorarius parasiticus,FALSE,6,NA,LC
+22694245,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic skua,Stercorarius parasiticus,FALSE,5,NA,LC
+22694245,Greenland,Extant,Native,Native,8,West Greenland,Arctic skua,Stercorarius parasiticus,FALSE,8,NA,LC
+22694245,Greenland,Extant,Native,Native,9,East Greenland,Arctic skua,Stercorarius parasiticus,FALSE,9,NA,LC
+22694245,Norway,Extant,Native,Native,6,Norway,Arctic skua,Stercorarius parasiticus,FALSE,6,NA,LC
+22694245,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic skua,Stercorarius parasiticus,FALSE,5,NA,LC
+22694245,Greenland,Extant,Native,Native,8,West Greenland,Arctic skua,Stercorarius parasiticus,FALSE,8,NA,LC
+22694245,Greenland,Extant,Native,Native,9,East Greenland,Arctic skua,Stercorarius parasiticus,FALSE,9,NA,LC
+22694245,Norway,Extant,Native,Native,6,Norway,Arctic skua,Stercorarius parasiticus,FALSE,6,NA,LC
+22694245,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic skua,Stercorarius parasiticus,FALSE,5,NA,LC
+22694629,Greenland,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
+22694629,Greenland,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
+22694629,Norway,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
+22694629,Greenland,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
+22694629,Greenland,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
+22694629,Norway,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
+22694629,Greenland,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
+22694629,Greenland,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
+22694629,Norway,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
+22694629,Greenland,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
+22694629,Greenland,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
+22694629,Norway,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
+22694629,Greenland,Extant,Native,Native,8,West Greenland,Arctic tern,Sterna paradisaea,FALSE,8,NA,LC
+22694629,Greenland,Extant,Native,Native,9,East Greenland,Arctic tern,Sterna paradisaea,FALSE,9,NA,LC
+22694629,Norway,Extant,Native,Native,6,Norway,Arctic tern,Sterna paradisaea,FALSE,6,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Arctic tern,Sterna paradisaea,FALSE,5,NA,LC
+22694629,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Arctic tern,Sterna paradisaea,FALSE,7,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+8010,Greenland,Extant,Native,Native,8,West Greenland,Bearded seal,Erignathus barbatus,FALSE,8,NA,LC
+8010,Greenland,Extant,Native,Native,9,East Greenland,Bearded seal,Erignathus barbatus,FALSE,9,NA,LC
+8010,Norway,Extant,Native,Native,6,Norway,Bearded seal,Erignathus barbatus,FALSE,6,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bearded seal,Erignathus barbatus,FALSE,5,NA,LC
+8010,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bearded seal,Erignathus barbatus,FALSE,7,NA,LC
+8010,United States,Extant,Native,Native,1,Alaska,Bearded seal,Erignathus barbatus,FALSE,1,NA,LC
+6335,Canada,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
+6335,Canada,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
+6335,Greenland,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
+6335,Greenland,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
+6335,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
+61442,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
+6335,Canada,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
+6335,Canada,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
+6335,Greenland,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
+6335,Greenland,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
+6335,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
+61442,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
+6335,Canada,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
+6335,Canada,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
+6335,Greenland,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
+6335,Greenland,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
+6335,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
+61442,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
+6335,Canada,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
+6335,Canada,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
+6335,Greenland,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
+6335,Greenland,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
+6335,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
+61442,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
+6335,Canada,Extant,Native,Native,2,Nunavut,Beluga Whale,Delphinapterus leucas,FALSE,2,NA,NT
+6335,Canada,Extant,Native,Native,3,Beaufort,Beluga Whale,Delphinapterus leucas,FALSE,3,NA,NT
+6335,Greenland,Extant,Native,Native,8,West Greenland,Beluga whale,Delphinapterus leucas,FALSE,8,NA,NT
+6335,Greenland,Extant,Native,Native,9,East Greenland,Beluga whale,Delphinapterus leucas,FALSE,9,NA,NT
+6335,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,NA,NT
+61442,United States,Extant,Native,Native,1,Alaska,Beluga Whale,Delphinapterus leucas,FALSE,1,Cook Inlet subpopulation,CR
+22694861,Greenland,Extant,Native,Native,8,West Greenland,Black guillemot,Cepphus grylle,FALSE,8,NA,LC
+22694861,Greenland,Extant,Native,Native,9,East Greenland,Black guillemot,Cepphus grylle,FALSE,9,NA,LC
+22694861,Norway,Extant,Native,Native,6,Norway,Black guillemot,Cepphus grylle,FALSE,6,NA,LC
+22694861,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Black guillemot,Cepphus grylle,FALSE,5,NA,LC
+22694861,Greenland,Extant,Native,Native,8,West Greenland,Black guillemot,Cepphus grylle,FALSE,8,NA,LC
+22694861,Greenland,Extant,Native,Native,9,East Greenland,Black guillemot,Cepphus grylle,FALSE,9,NA,LC
+22694861,Norway,Extant,Native,Native,6,Norway,Black guillemot,Cepphus grylle,FALSE,6,NA,LC
+22694861,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Black guillemot,Cepphus grylle,FALSE,5,NA,LC
+22694861,Greenland,Extant,Native,Native,8,West Greenland,Black guillemot,Cepphus grylle,FALSE,8,NA,LC
+22694861,Greenland,Extant,Native,Native,9,East Greenland,Black guillemot,Cepphus grylle,FALSE,9,NA,LC
+22694861,Norway,Extant,Native,Native,6,Norway,Black guillemot,Cepphus grylle,FALSE,6,NA,LC
+22694861,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Black guillemot,Cepphus grylle,FALSE,5,NA,LC
+22694861,Greenland,Extant,Native,Native,8,West Greenland,Black guillemot,Cepphus grylle,FALSE,8,NA,LC
+22694861,Greenland,Extant,Native,Native,9,East Greenland,Black guillemot,Cepphus grylle,FALSE,9,NA,LC
+22694861,Norway,Extant,Native,Native,6,Norway,Black guillemot,Cepphus grylle,FALSE,6,NA,LC
+22694861,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Black guillemot,Cepphus grylle,FALSE,5,NA,LC
+2477,Angola,Extant,Native,Native,NA,Angola,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Argentina,Extant,Native,Native,NA,Argentina,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Australia,Extant,Native,Native,NA,Australia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Bangladesh,Extant,Native,Native,NA,Bangladesh,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Benin,Extant,Native,Native,NA,Benin,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Bermuda,Extant,Native,Native,NA,Bermuda,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Brazil,Extant,Native,Native,NA,Brazil,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Bahamas,Extant,Native,Native,NA,Bahamas,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Canada,Extant,Native,Native,2,Nunavut,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Canada,Extant,Native,Native,3,Beaufort,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Cocos (Keeling) Islands,Extant,Native,Native,NA,Cocos Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Côte d'Ivoire,Extant,Native,Native,NA,Ivory Coast,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Cook Islands,Extant,Native,Native,NA,Cook Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Chile,Extant,Native,Native,NA,Chile,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Cameroon,Extant,Native,Native,NA,Cameroon,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,China,Extant,Native,Native,NA,China,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Colombia,Extant,Native,Native,NA,Colombia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Costa Rica,Extant,Native,Native,NA,Costa Rica,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Cape Verde,Extant,Native,Native,NA,Cape Verde,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Djibouti,Extant,Native,Native,NA,Djibouti,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Ecuador,Extant,Native,Native,NA,Ecuador,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Western Sahara,Extant,Native,Native,NA,Western Sahara,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Eritrea,Extant,Native,Native,NA,Eritrea,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Spain,Extant,Native,Native,NA,Spain,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Falkland Islands (Malvinas),Extant,Native,Native,NA,Falkland Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,France,Extant,Native,Native,NA,France,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Gabon,Extant,Native,Native,NA,Gabon,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,United Kingdom,Extant,Native,Native,NA,United Kingdom,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Grenada,Extant,Native,Native,NA,Grenada,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Ghana,Extant,Native,Native,NA,Ghana,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Gibraltar,Extant,Native,Native,NA,Gibraltar,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Greenland,Extant,Native,Native,8,West Greenland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Greenland,Extant,Native,Native,9,East Greenland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Equatorial Guinea,Extant,Native,Native,NA,Equatorial Guinea,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Greece,Extant,Native,Native,NA,Greece,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,South Georgia and the South Sandwich Islands,Extant,Native,Native,NA,South Georgia and the South Sandwich Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Guatemala,Extant,Native,Native,NA,Guatemala,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Indonesia,Extant,Native,Native,NA,Indonesia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Ireland,Extant,Native,Native,NA,Ireland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,India,Extant,Native,Native,NA,India,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Iraq,Extant,Native,Native,NA,Iraq,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Iran, Islamic Republic of",Extant,Native,Native,NA,Iran,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Iceland,Extant,Native,Native,NA,Iceland,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Japan,Extant,Native,Native,NA,Japan,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Kenya,Extant,Native,Native,NA,Kenya,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Comoros,Extant,Native,Native,NA,Comoro Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Sri Lanka,Extant,Native,Native,NA,Sri Lanka,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Morocco,Extant,Native,Native,NA,Morocco,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Madagascar,Extant,Native,Native,NA,Madagascar,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Marshall Islands,Extant,Native,Native,NA,Marshall Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Myanmar,Extant,Native,Native,NA,Myanmar,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Northern Mariana Islands,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Mauritania,Extant,Native,Native,NA,Mauritania,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Mauritius,Extant,Native,Native,NA,Mauritius,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Maldives,Extant,Native,Native,NA,Maldives,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Mexico,Extant,Native,Native,NA,Mexico,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Malaysia,Extant,Native,Native,NA,Malaysia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Mozambique,Extant,Native,Native,NA,Mozambique,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Namibia,Extant,Native,Native,NA,Namibia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,New Caledonia,Extant,Native,Native,NA,New Caledonia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Nigeria,Extant,Native,Native,NA,Nigeria,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Nicaragua,Extant,Native,Native,NA,Nicaragua,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Norway,Extant,Native,Native,6,Norway,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,New Zealand,Extant,Native,Native,NA,New Zealand,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Oman,Extant,Native,Native,NA,Oman,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Panama,Extant,Native,Native,NA,Panama,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Peru,Extant,Native,Native,NA,Peru,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Philippines,Extant,Native,Native,NA,Philippines,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Pakistan,Extant,Native,Native,NA,Pakistan,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Pitcairn,Extant,Native,Native,NA,Pitcairn,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Portugal,Extant,Native,Native,NA,Portugal,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Palau,Extant,Native,Native,NA,Palau,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Réunion,Extant,Native,Native,NA,Reunion,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Russian Federation,Extant,Native,Native,4,Russia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Seychelles,Extant,Native,Native,NA,Seychelles,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Ascension,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Saint Helena,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Tristan da Cunha,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Senegal,Extant,Native,Native,NA,Senegal,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Somalia,Extant,Native,Native,NA,Somalia,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Sao Tomé and Principe,Extant,Native,Native,NA,Sao Tome and Principe,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,El Salvador,Extant,Native,Native,NA,El Salvador,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,French Southern Territories,Extant,Native,Native,NA,Amsterdam Island and Saint Paul Island,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,French Southern Territories,Extant,Native,Native,NA,Crozet Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,French Southern Territories,Extant,Native,Native,NA,Kerguelen Islands,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Togo,Extant,Native,Native,NA,Togo,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Thailand,Extant,Native,Native,NA,Thailand,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Timor-Leste,Extant,Native,Native,NA,East Timor,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Taiwan, Province of China",Extant,Native,Native,NA,Taiwan,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,"Tanzania, United Republic of",Extant,Native,Native,NA,Tanzania,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,United States,Extant,Native,Native,1,Alaska,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Uruguay,Extant,Native,Native,NA,Uruguay,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,Yemen,Extant,Native,Native,NA,Yemen,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2477,South Africa,Extant,Native,Native,NA,South Africa,Blue whale,Balaenoptera musculus,TRUE,NA,NA,EN
+2469,Russian Federation,Extant,Native,Native,4,Russia,Bowhead whale,Balaena mysticetus,TRUE,NA,Okhotsk Sea subpopulation,EN
+2468,Canada,Extant,Native,Native,2,Nunavut,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,Canada,Extant,Native,Native,3,Beaufort,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,Russian Federation,Extant,Native,Native,4,Russia,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2468,United States,Extant,Native,Native,1,Alaska,Bowhead whale,Balaena mysticetus,TRUE,NA,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
+2472,Greenland,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2472,Greenland,Extant,Native,Native,9,East Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2472,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2472,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Bowhead whale,Balaena mysticetus,TRUE,NA,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
+2467,Canada,Extant,Native,Native,2,Nunavut,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
+2467,Canada,Extant,Native,Native,3,Beaufort,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
+2467,Greenland,Extant,Native,Native,8,West Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
+2467,Greenland,Extant,Native,Native,9,East Greenland,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
+2467,United States,Extant,Native,Native,1,Alaska,Bowhead whale,Balaena mysticetus,TRUE,NA,NA,LC
+22694841,Belgium,Extant,Native,Native,NA,Belgium,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Bulgaria,Extant,Vagrant,Vagrant,NA,Bulgaria,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Canada,Extant,Native,Native,2,Nunavut,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Canada,Extant,Native,Native,3,Beaufort,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Switzerland,Extant,Vagrant,Vagrant,NA,NA,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Cape Verde,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Cape Verde,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Czech Republic,Extant,Vagrant,Vagrant,NA,NA,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Germany,Extant,Native,Native,NA,Germany,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Denmark,Extant,Native,Native,NA,Denmark,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Algeria,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Algeria,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Estonia,Extant,Native,Native,NA,Estonia,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Western Sahara,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Western Sahara,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Spain,Extant,Native,Native,NA,Spain,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Finland,Extant,Native,Native,NA,Finland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,France,Extant,Native,Native,NA,France,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,United Kingdom,Extant,Native,Native,NA,United Kingdom,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Gibraltar,Extant,Vagrant,Vagrant,NA,Gibraltar,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Greenland,Extant,Native,Native,8,West Greenland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Greenland,Extant,Native,Native,9,East Greenland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Gambia,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Gambia,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Ireland,Extant,Native,Native,NA,Ireland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Iceland,Extant,Native,Native,NA,Iceland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Italy,Extant,Native,Native,NA,Italy,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Japan,Extant,Native,Native,NA,Japan,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Lithuania,Extant,Native,Native,NA,Lithuania,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Latvia,Extant,Native,Native,NA,Latvia,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Morocco,Extant,Vagrant,Vagrant,NA,Morocco,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Monaco,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Monaco,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Mauritania,Extant,Vagrant,Vagrant,NA,Mauritania,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Malta,Extant,Vagrant,Vagrant,NA,Malta,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Mexico,Extant,Native,Native,NA,Mexico,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Netherlands,Extant,Native,Native,NA,Netherlands,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Norway,Extant,Native,Native,6,Norway,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Poland,Extant,Native,Native,NA,Poland,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Portugal,Extant,Native,Native,NA,Portugal,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Romania,Extant,Vagrant,Vagrant,NA,Romania,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Russian Federation,Extant,Native,Native,4,Russia,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Sweden,Extant,Native,Native,NA,Sweden,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Senegal,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Senegal,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,Tunisia,Extant,Origin Uncertain,Present - Origin Uncertain,NA,Tunisia,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22694841,United States,Extant,Native,Native,1,Alaska,Common guillemot,Uria aalge,TRUE,NA,NA,LC
+22680405,Austria,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Bosnia and Herzegovina,Extant,Vagrant,Vagrant,NA,Bosnia and Herzegovina,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Belgium,Extant,Native,Native,NA,Belgium,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Bulgaria,Extant,Native,Native,NA,Bulgaria,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Belarus,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Canada,Extant,Native,Native,2,Nunavut,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Canada,Extant,Native,Native,3,Beaufort,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Switzerland,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Czech Republic,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Germany,Extant,Native,Native,NA,Germany,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Denmark,Extant,Native,Native,NA,Denmark,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Estonia,Extant,Native,Native,NA,Estonia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Spain,Extant,Native,Native,NA,Spain,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Finland,Extant,Native,Native,NA,Finland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,France,Extant,Native,Native,NA,France,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,United Kingdom,Extant,Native,Native,NA,United Kingdom,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Georgia,Extant,Vagrant,Vagrant,NA,Georgia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Greenland,Extant,Native,Native,8,West Greenland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Greenland,Extant,Native,Native,9,East Greenland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Greece,Extant,Vagrant,Vagrant,NA,Greece,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Croatia,Extant,Vagrant,Vagrant,NA,Croatia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Hungary,Extant,Vagrant,Vagrant,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Ireland,Extant,Native,Native,NA,Ireland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Israel,Extant,Vagrant,Vagrant,NA,Israel,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Iceland,Extant,Native,Native,NA,Iceland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Italy,Extant,Native,Native,NA,Italy,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Japan,Extant,Vagrant,Vagrant,NA,Japan,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Liechtenstein,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Lithuania,Extant,Native,Native,NA,Lithuania,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Luxembourg,Extant,Vagrant,Vagrant,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Latvia,Extant,Native,Native,NA,Latvia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Montenegro,Extant,Vagrant,Vagrant,NA,Montenegro,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,"Macedonia, the former Yugoslav Republic of",Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Netherlands,Extant,Native,Native,NA,Netherlands,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Norway,Extant,Native,Native,6,Norway,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Poland,Extant,Native,Native,NA,Poland,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Portugal,Extant,Vagrant,Vagrant,NA,Portugal,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Romania,Extant,Native,Native,NA,Romania,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Serbia,Extant,Vagrant,Vagrant,NA,landlocked,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Russian Federation,Extant,Native,Native,4,Russia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Sweden,Extant,Native,Native,NA,Sweden,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Slovenia,Extant,Native,Native,NA,Slovenia,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Slovakia,Extant,Native,Native,NA,NA,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Turkey,Extant,Vagrant,Vagrant,NA,Turkey,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,Ukraine,Extant,Native,Native,NA,Ukraine,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+22680405,United States,Extant,Native,Native,1,Alaska,Common Eider,Somateria mollissima,TRUE,NA,NA,NT
+16208224,Cyprus,Extant,Native,Native,NA,Cyprus,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Algeria,Extant,Native,Native,NA,Algeria,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Egypt,Extant,Native,Native,NA,Egypt,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Spain,Extant,Native,Native,NA,Spain,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,France,Extant,Native,Native,NA,France,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Gibraltar,Extant,Native,Native,NA,Gibraltar,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Greece,Extant,Native,Native,NA,Greece,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Israel,Extant,Native,Native,NA,Israel,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Italy,Extant,Native,Native,NA,Italy,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Lebanon,Extant,Native,Native,NA,Lebanon,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Libya,Extant,Native,Native,NA,Libya,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Morocco,Extant,Native,Native,NA,Morocco,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Monaco,Extant,Native,Native,NA,Monaco,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Malta,Extant,Native,Native,NA,Malta,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Syrian Arab Republic,Extant,Native,Native,NA,Syria,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Tunisia,Extant,Native,Native,NA,Tunisia,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+16208224,Turkey,Extant,Native,Native,NA,Turkey,Fin whale,Balaenoptera physalus,TRUE,NA,Mediterranean subpopulation,VU
+2478,United Arab Emirates,Extant,Native,Native,NA,United Arab Emirates,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Angola,Extant,Native,Native,NA,Angola,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Antarctica,Extant,Native,Native,NA,Antarctica,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Argentina,Extant,Native,Native,NA,Argentina,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Australia,Extant,Native,Native,NA,Australia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Belgium,Extant,Native,Native,NA,Belgium,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Bermuda,Extant,Native,Native,NA,Bermuda,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Brazil,Extant,Native,Native,NA,Brazil,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Bouvet Island,Extant,Native,Native,NA,Bouvet Island,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Canada,Extant,Native,Native,2,Nunavut,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Canada,Extant,Native,Native,3,Beaufort,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Congo, The Democratic Republic of the",Extant,Native,Native,NA,Democratic Republic of the Congo,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Congo,Extant,Native,Native,NA,Republique du Congo,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Chile,Extant,Native,Native,NA,Chile,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,China,Extant,Native,Native,NA,China,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Cape Verde,Extant,Native,Native,NA,Cape Verde,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Cyprus,Extant,Native,Native,NA,Cyprus,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Germany,Extant,Native,Native,NA,Germany,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Denmark,Extant,Native,Native,NA,Denmark,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Algeria,Extant,Native,Native,NA,Algeria,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Ecuador,Extant,Native,Native,NA,Ecuador,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Egypt,Extant,Native,Native,NA,Egypt,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Spain,Extant,Native,Native,NA,Spain,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Fiji,Extant,Native,Native,NA,Fiji,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Falkland Islands (Malvinas),Extant,Native,Native,NA,Falkland Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,France,Extant,Native,Native,NA,France,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Gabon,Extant,Native,Native,NA,Gabon,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,United Kingdom,Extant,Native,Native,NA,United Kingdom,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Gibraltar,Extant,Native,Native,NA,Gibraltar,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Greenland,Extant,Native,Native,8,West Greenland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Greenland,Extant,Native,Native,9,East Greenland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Greece,Extant,Native,Native,NA,Greece,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,South Georgia and the South Sandwich Islands,Extant,Native,Native,NA,South Georgia and the South Sandwich Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Heard Island and McDonald Islands,Extant,Native,Native,NA,Heard and McDonald Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Croatia,Extant,Native,Native,NA,Croatia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Indonesia,Extant,Native,Native,NA,Indonesia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Ireland,Extant,Native,Native,NA,Ireland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Israel,Extant,Native,Native,NA,Israel,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Isle of Man,Extant,Native,Native,NA,United Kingdom,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,India,Extant,Native,Native,NA,India,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Iraq,Extant,Native,Native,NA,Iraq,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Iran, Islamic Republic of",Extant,Native,Native,NA,Iran,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Iceland,Extant,Native,Native,NA,Iceland,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Italy,Extant,Native,Native,NA,Italy,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Japan,Extant,Native,Native,NA,Japan,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Lebanon,Extant,Native,Native,NA,Lebanon,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Sri Lanka,Extant,Native,Native,NA,Sri Lanka,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Libya,Extant,Native,Native,NA,Libya,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Morocco,Extant,Native,Native,NA,Morocco,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Monaco,Extant,Native,Native,NA,Monaco,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Madagascar,Extant,Native,Native,NA,Madagascar,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Malta,Extant,Native,Native,NA,Malta,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Mauritius,Extant,Native,Native,NA,Mauritius,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Mexico,Extant,Native,Native,NA,Mexico,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Malaysia,Extant,Native,Native,NA,Malaysia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Mozambique,Extant,Native,Native,NA,Mozambique,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Namibia,Extant,Native,Native,NA,Namibia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,New Caledonia,Extant,Native,Native,NA,New Caledonia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Netherlands,Extant,Native,Native,NA,Netherlands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Norway,Extant,Native,Native,6,Norway,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,New Zealand,Extant,Native,Native,NA,New Zealand,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Oman,Extant,Native,Native,NA,Oman,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Peru,Extant,Native,Native,NA,Peru,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Philippines,Extant,Native,Native,NA,Philippines,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Pakistan,Extant,Native,Native,NA,Pakistan,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Portugal,Extant,Native,Native,NA,Portugal,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Réunion,Extant,Native,Native,NA,Reunion,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Russian Federation,Extant,Native,Native,4,Russia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Saudi Arabia,Extant,Native,Native,NA,Saudi Arabia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Seychelles,Extant,Native,Native,NA,Seychelles,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Sweden,Extant,Native,Native,NA,Sweden,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Ascension,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Saint Helena,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Tristan da Cunha,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Slovenia,Extant,Native,Native,NA,Slovenia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Syrian Arab Republic,Extant,Native,Native,NA,Syria,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,French Southern Territories,Extant,Native,Native,NA,Amsterdam Island and Saint Paul Island,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,French Southern Territories,Extant,Native,Native,NA,Crozet Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,French Southern Territories,Extant,Native,Native,NA,Kerguelen Islands,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Tunisia,Extant,Native,Native,NA,Tunisia,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,Turkey,Extant,Native,Native,NA,Turkey,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,United States,Extant,Native,Native,1,Alaska,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,"Venezuela, Bolivarian Republic of",Extant,Native,Native,NA,Venezuela,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+2478,South Africa,Extant,Native,Native,NA,South Africa,Fin whale,Balaenoptera physalus,TRUE,NA,NA,EN
+22697866,Greenland,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
+22697866,Greenland,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
+22697866,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Fulmar,Fulmarus glacialis,FALSE,5,NA,LC
+22697866,Greenland,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
+22697866,Greenland,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
+22697866,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Fulmar,Fulmarus glacialis,FALSE,5,NA,LC
+22697866,Greenland,Extant,Native,Native,8,West Greenland,Fulmar,Fulmarus glacialis,FALSE,8,NA,LC
+22697866,Greenland,Extant,Native,Native,9,East Greenland,Fulmar,Fulmarus glacialis,FALSE,9,NA,LC
+22697866,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Fulmar,Fulmarus glacialis,FALSE,5,NA,LC
+22694343,Greenland,Extant,Native,Native,8,West Greenland,Glaucous gull,Larus hyperboreus,FALSE,8,NA,LC
+22694343,Greenland,Extant,Native,Native,9,East Greenland,Glaucous gull,Larus hyperboreus,FALSE,9,NA,LC
+22694343,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Glaucous gull,Larus hyperboreus,FALSE,5,NA,LC
+22694343,Greenland,Extant,Native,Native,8,West Greenland,Glaucous gull,Larus hyperboreus,FALSE,8,NA,LC
+22694343,Greenland,Extant,Native,Native,9,East Greenland,Glaucous gull,Larus hyperboreus,FALSE,9,NA,LC
+22694343,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Glaucous gull,Larus hyperboreus,FALSE,5,NA,LC
+22694343,Greenland,Extant,Native,Native,8,West Greenland,Glaucous gull,Larus hyperboreus,FALSE,8,NA,LC
+22694343,Greenland,Extant,Native,Native,9,East Greenland,Glaucous gull,Larus hyperboreus,FALSE,9,NA,LC
+22694343,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Glaucous gull,Larus hyperboreus,FALSE,5,NA,LC
+17027,Canada,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
+17027,Canada,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
+17027,Greenland,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
+17027,Greenland,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
+17027,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
+17031,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
+17027,Canada,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
+17027,Canada,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
+17027,Greenland,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
+17027,Greenland,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
+17027,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
+17031,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
+17027,Canada,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
+17027,Canada,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
+17027,Greenland,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
+17027,Greenland,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
+17027,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
+17031,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
+17027,Canada,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
+17027,Canada,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
+17027,Greenland,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
+17027,Greenland,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
+17027,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
+17031,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
+17027,Canada,Extant,Native,Native,2,Nunavut,Harbour Porpoise,Phocoena phocoena,FALSE,2,NA,LC
+17027,Canada,Extant,Native,Native,3,Beaufort,Harbour Porpoise,Phocoena phocoena,FALSE,3,NA,LC
+17027,Greenland,Extant,Native,Native,8,West Greenland,Harbour porpoise,Phocoena phocoena,FALSE,8,NA,LC
+17027,Greenland,Extant,Native,Native,9,East Greenland,Harbour porpoise,Phocoena phocoena,FALSE,9,NA,LC
+17027,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,NA,LC
+17031,Russian Federation,Extant,Native,Native,4,Russia,Harbour porpoise,Phocoena phocoena,FALSE,4,Baltic Sea subpopulation,CR
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+17013,Canada,Extant,Native,Native,2,Nunavut,Harbour seal,Phoca vitulina,FALSE,2,NA,LC
+17013,Canada,Extant,Native,Native,3,Beaufort,Harbour seal,Phoca vitulina,FALSE,3,NA,LC
+17013,Greenland,Extant,Native,Native,8,West Greenland,Harbour seal,Phoca vitulina,FALSE,8,NA,LC
+17013,Greenland,Extant,Native,Native,9,East Greenland,Harbour seal,Phoca vitulina,FALSE,9,NA,LC
+17013,Russian Federation,Extant,Native,Native,4,Russia,Harbour seal,Phoca vitulina,FALSE,4,NA,LC
+17013,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Harbour seal,Phoca vitulina,FALSE,5,NA,LC
+6204,Canada,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
+6204,Canada,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
+6204,Greenland,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
+6204,Greenland,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
+6204,Svalbard and Jan Mayen,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
+6204,Canada,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
+6204,Canada,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
+6204,Greenland,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
+6204,Greenland,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
+6204,Svalbard and Jan Mayen,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
+6204,Canada,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
+6204,Canada,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
+6204,Greenland,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
+6204,Greenland,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
+6204,Svalbard and Jan Mayen,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
+6204,Canada,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
+6204,Canada,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
+6204,Greenland,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
+6204,Greenland,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
+6204,Svalbard and Jan Mayen,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
+6204,Canada,Extant,Native,Native,2,Nunavut,Hooded Seal,Cystophora cristata,FALSE,2,NA,VU
+6204,Canada,Extant,Native,Native,3,Beaufort,Hooded Seal,Cystophora cristata,FALSE,3,NA,VU
+6204,Greenland,Extant,Native,Native,8,West Greenland,Hooded seal,Cystophora cristata,FALSE,8,NA,VU
+6204,Greenland,Extant,Native,Native,9,East Greenland,Hooded seal,Cystophora cristata,FALSE,9,NA,VU
+6204,Svalbard and Jan Mayen,Extant,Vagrant,Vagrant,5,Svalbard,Hooded seal,Cystophora cristata,FALSE,5,NA,VU
+132835,United Arab Emirates,Extant,Native,Native,NA,United Arab Emirates,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,India,Extant,Native,Native,NA,India,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Iraq,Extant,Native,Native,NA,Iraq,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,"Iran, Islamic Republic of",Extant,Native,Native,NA,Iran,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Kuwait,Extant,Native,Native,NA,Kuwait,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Sri Lanka,Extant,Native,Native,NA,Sri Lanka,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Oman,Extant,Native,Native,NA,Oman,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Pakistan,Extant,Native,Native,NA,Pakistan,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+132835,Yemen,Extant,Native,Native,NA,Yemen,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Arabian Sea subpopulation,EN
+13006,United Arab Emirates,Extant,Native,Native,NA,United Arab Emirates,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Antigua and Barbuda,Extant,Native,Native,NA,Antigua and Barbuda,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Anguilla,Extant,Native,Native,NA,Anguilla,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Angola,Extant,Native,Native,NA,Angola,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Argentina,Extant,Native,Native,NA,Argentina,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,American Samoa,Extant,Native,Native,NA,American Samoa,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Australia,Extant,Native,Native,NA,Australia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Aruba,Extant,Native,Native,NA,Aruba,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Barbados,Extant,Native,Native,NA,Barbados,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Bangladesh,Extant,Native,Native,NA,Bangladesh,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Benin,Extant,Native,Native,NA,Benin,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Bermuda,Extant,Native,Native,NA,Bermuda,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Bonaire,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Saba,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Sint Eustatius,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Brazil,Extant,Native,Native,NA,Brazil,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Bahamas,Extant,Native,Native,NA,Bahamas,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Canada,Extant,Native,Native,2,Nunavut,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Canada,Extant,Native,Native,3,Beaufort,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cocos (Keeling) Islands,Extant,Native,Native,NA,Cocos Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Congo, The Democratic Republic of the",Extant,Native,Native,NA,Democratic Republic of the Congo,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Congo,Extant,Native,Native,NA,Republique du Congo,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Côte d'Ivoire,Extant,Native,Native,NA,Ivory Coast,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cook Islands,Extant,Native,Native,NA,Cook Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Chile,Extant,Native,Native,NA,Chile,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cameroon,Extant,Native,Native,NA,Cameroon,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Colombia,Extant,Native,Native,NA,Colombia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Costa Rica,Extant,Native,Native,NA,Costa Rica,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cuba,Extant,Native,Native,NA,Cuba,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cape Verde,Extant,Native,Native,NA,Cape Verde,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Curaçao,Extant,Native,Native,NA,Curacao,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Djibouti,Extant,Native,Native,NA,Djibouti,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Denmark,Extant,Native,Native,NA,Denmark,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Dominica,Extant,Native,Native,NA,Dominica,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Dominican Republic,Extant,Native,Native,NA,Dominican Republic,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Ecuador,Extant,Native,Native,NA,Ecuador,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Western Sahara,Extant,Native,Native,NA,Western Sahara,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Spain,Extant,Native,Native,NA,Spain,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Fiji,Extant,Native,Native,NA,Fiji,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Falkland Islands (Malvinas),Extant,Native,Native,NA,Falkland Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,France,Extant,Native,Native,NA,France,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Gabon,Extant,Native,Native,NA,Gabon,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,United Kingdom,Extant,Native,Native,NA,United Kingdom,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Grenada,Extant,Native,Native,NA,Grenada,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Ghana,Extant,Native,Native,NA,Ghana,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Greenland,Extant,Native,Native,8,West Greenland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Greenland,Extant,Native,Native,9,East Greenland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Gambia,Extant,Native,Native,NA,Gambia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Guadeloupe,Extant,Native,Native,NA,Guadeloupe and Martinique,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Equatorial Guinea,Extant,Native,Native,NA,Equatorial Guinea,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,South Georgia and the South Sandwich Islands,Extant,Native,Native,NA,South Georgia and the South Sandwich Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Guatemala,Extant,Native,Native,NA,Guatemala,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Guam,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Honduras,Extant,Native,Native,NA,Honduras,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Haiti,Extant,Native,Native,NA,Haiti,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Indonesia,Extant,Native,Native,NA,Indonesia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Ireland,Extant,Native,Native,NA,Ireland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,India,Extant,Native,Native,NA,India,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Iran, Islamic Republic of",Extant,Native,Native,NA,Iran,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Iceland,Extant,Native,Native,NA,Iceland,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Jamaica,Extant,Native,Native,NA,Jamaica,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Japan,Extant,Native,Native,NA,Japan,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Kenya,Extant,Native,Native,NA,Kenya,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Kiribati,Extant,Native,Native,NA,Kiribati,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Comoros,Extant,Native,Native,NA,Comoro Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Saint Kitts and Nevis,Extant,Native,Native,NA,Saint Kitts and Nevis,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Cayman Islands,Extant,Native,Native,NA,Cayman Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Saint Lucia,Extant,Native,Native,NA,Saint Lucia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Sri Lanka,Extant,Native,Native,NA,Sri Lanka,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Morocco,Extant,Native,Native,NA,Morocco,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Saint Martin (French part),Extant,Native,Native,NA,Northern Saint-Martin,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Madagascar,Extant,Native,Native,NA,Madagascar,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Marshall Islands,Extant,Native,Native,NA,Marshall Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Myanmar,Extant,Native,Native,NA,Myanmar,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Northern Mariana Islands,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Martinique,Extant,Native,Native,NA,Guadeloupe and Martinique,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Mauritania,Extant,Native,Native,NA,Mauritania,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Mauritius,Extant,Native,Native,NA,Mauritius,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Maldives,Extant,Native,Native,NA,Maldives,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Mexico,Extant,Native,Native,NA,Mexico,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Malaysia,Extant,Native,Native,NA,Malaysia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Mozambique,Extant,Native,Native,NA,Mozambique,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Namibia,Extant,Native,Native,NA,Namibia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,New Caledonia,Extant,Native,Native,NA,New Caledonia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Nigeria,Extant,Native,Native,NA,Nigeria,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Nicaragua,Extant,Native,Native,NA,Nicaragua,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Norway,Extant,Native,Native,6,Norway,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Nauru,Extant,Native,Native,NA,Nauru,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Niue,Extant,Native,Native,NA,Niue,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,New Zealand,Extant,Native,Native,NA,New Zealand,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Oman,Extant,Native,Native,NA,Oman,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Panama,Extant,Native,Native,NA,Panama,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Peru,Extant,Native,Native,NA,Peru,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,French Polynesia,Extant,Native,Native,NA,French Polynesia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Papua New Guinea,Extant,Native,Native,NA,Papua New Guinea,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Philippines,Extant,Native,Native,NA,Philippines,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Pakistan,Extant,Native,Native,NA,Pakistan,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Pitcairn,Extant,Native,Native,NA,Pitcairn,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Puerto Rico,Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Portugal,Extant,Native,Native,NA,Portugal,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Palau,Extant,Native,Native,NA,Palau,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Réunion,Extant,Native,Native,NA,Reunion,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Russian Federation,Extant,Native,Native,4,Russia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Solomon Islands,Extant,Native,Native,NA,Solomon Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Seychelles,Extant,Native,Native,NA,Seychelles,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Ascension,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Saint Helena,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Tristan da Cunha,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Senegal,Extant,Native,Native,NA,Senegal,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Somalia,Extant,Native,Native,NA,Somalia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Sao Tomé and Principe,Extant,Native,Native,NA,Sao Tome and Principe,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,El Salvador,Extant,Native,Native,NA,El Salvador,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Sint Maarten (Dutch part),Extant,Native,Native,NA,Sint Maarten,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Turks and Caicos Islands,Extant,Native,Native,NA,Turks and Caicos Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,French Southern Territories,Extant,Native,Native,NA,Amsterdam Island and Saint Paul Island,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,French Southern Territories,Extant,Native,Native,NA,Crozet Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,French Southern Territories,Extant,Native,Native,NA,Kerguelen Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Togo,Extant,Native,Native,NA,Togo,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Timor-Leste,Extant,Native,Native,NA,East Timor,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Tunisia,Extant,Native,Native,NA,Tunisia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Tonga,Extant,Native,Native,NA,Tonga,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Trinidad and Tobago,Extant,Native,Native,NA,Trinidad and Tobago,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Tuvalu,Extant,Native,Native,NA,Tuvalu,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Taiwan, Province of China",Extant,Native,Native,NA,Taiwan,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Tanzania, United Republic of",Extant,Native,Native,NA,Tanzania,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,United States,Extant,Native,Native,1,Alaska,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Uruguay,Extant,Native,Native,NA,Uruguay,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Saint Vincent and the Grenadines,Extant,Native,Native,NA,Saint Vincent and the Grenadines,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Venezuela, Bolivarian Republic of",Extant,Native,Native,NA,Venezuela,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Virgin Islands, British",Extant,Native,Native,NA,British Virgin Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,"Virgin Islands, U.S.",Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Viet Nam,Extant,Native,Native,NA,Vietnam,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Vanuatu,Extant,Native,Native,NA,Vanuatu,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Wallis and Futuna,Extant,Native,Native,NA,Wallis and Futuna,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Samoa,Extant,Native,Native,NA,Samoa,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,Yemen,Extant,Native,Native,NA,Yemen,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+13006,South Africa,Extant,Native,Native,NA,South Africa,Humpback Whale,Megaptera novaeangliae,TRUE,NA,NA,LC
+132832,American Samoa,Extant,Native,Native,NA,American Samoa,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Australia,Extant,Native,Native,NA,Australia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Cook Islands,Extant,Native,Native,NA,Cook Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Fiji,Extant,Native,Native,NA,Fiji,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,"Micronesia, Federated States of",Extant,Native,Native,NA,Micronesia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Guam,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Kiribati,Extant,Native,Native,NA,Kiribati,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Marshall Islands,Extant,Native,Native,NA,Marshall Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Northern Mariana Islands,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,New Caledonia,Extant,Native,Native,NA,New Caledonia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Nauru,Extant,Native,Native,NA,Nauru,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Niue,Extant,Native,Native,NA,Niue,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,New Zealand,Extant,Native,Native,NA,New Zealand,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,French Polynesia,Extant,Native,Native,NA,French Polynesia,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Papua New Guinea,Extant,Native,Native,NA,Papua New Guinea,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Palau,Extant,Native,Native,NA,Palau,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Solomon Islands,Extant,Native,Native,NA,Solomon Islands,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Tokelau,Extant,Native,Native,NA,Tokelau,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Tonga,Extant,Native,Native,NA,Tonga,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Tuvalu,Extant,Native,Native,NA,Tuvalu,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Vanuatu,Extant,Native,Native,NA,Vanuatu,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+132832,Wallis and Futuna,Extant,Native,Native,NA,Wallis and Futuna,Humpback Whale,Megaptera novaeangliae,TRUE,NA,Oceania subpopulation,EN
+22694473,Canada,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
+22694473,Canada,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
+22694473,Greenland,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
+22694473,Greenland,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
+22694473,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
+22694473,Canada,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
+22694473,Canada,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
+22694473,Greenland,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
+22694473,Greenland,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
+22694473,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
+22694473,Canada,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
+22694473,Canada,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
+22694473,Greenland,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
+22694473,Greenland,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
+22694473,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
+22694473,Canada,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
+22694473,Canada,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
+22694473,Greenland,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
+22694473,Greenland,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
+22694473,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
+22694473,Canada,Extant,Native,Native,2,Nunavut,Ivory Gull,Pagophila eburnea,FALSE,2,NA,NT
+22694473,Canada,Extant,Native,Native,3,Beaufort,Ivory Gull,Pagophila eburnea,FALSE,3,NA,NT
+22694473,Greenland,Extant,Native,Native,8,West Greenland,Ivory gull,Pagophila eburnea,FALSE,8,NA,NT
+22694473,Greenland,Extant,Native,Native,9,East Greenland,Ivory gull,Pagophila eburnea,FALSE,9,NA,NT
+22694473,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ivory gull,Pagophila eburnea,FALSE,5,NA,NT
+15421,Canada,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
+15421,Canada,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
+15421,Greenland,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
+15421,Greenland,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
+15421,Canada,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
+15421,Canada,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
+15421,Greenland,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
+15421,Greenland,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
+15421,Canada,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
+15421,Canada,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
+15421,Greenland,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
+15421,Greenland,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
+15421,Canada,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
+15421,Canada,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
+15421,Greenland,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
+15421,Greenland,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
+15421,Canada,Extant,Native,Native,2,Nunavut,Killer Whale,Orcinus orca,FALSE,2,NA,DD
+15421,Canada,Extant,Native,Native,3,Beaufort,Killer Whale,Orcinus orca,FALSE,3,NA,DD
+15421,Greenland,Extant,Native,Native,8,West Greenland,Killer whale,Orcinus orca,FALSE,8,NA,DD
+15421,Greenland,Extant,Native,Native,9,East Greenland,Killer whale,Orcinus orca,FALSE,9,NA,DD
+22680409,Greenland,Extant,Native,Native,8,West Greenland,King Eider,Somateria spectabilis,FALSE,8,NA,LC
+22680409,Greenland,Extant,Native,Native,9,East Greenland,King Eider,Somateria spectabilis,FALSE,9,NA,LC
+22680409,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,King eider,Somateria spectabilis,FALSE,5,NA,LC
+22680409,Greenland,Extant,Native,Native,8,West Greenland,King Eider,Somateria spectabilis,FALSE,8,NA,LC
+22680409,Greenland,Extant,Native,Native,9,East Greenland,King Eider,Somateria spectabilis,FALSE,9,NA,LC
+22680409,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,King eider,Somateria spectabilis,FALSE,5,NA,LC
+22680409,Greenland,Extant,Native,Native,8,West Greenland,King Eider,Somateria spectabilis,FALSE,8,NA,LC
+22680409,Greenland,Extant,Native,Native,9,East Greenland,King Eider,Somateria spectabilis,FALSE,9,NA,LC
+22680409,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,King eider,Somateria spectabilis,FALSE,5,NA,LC
+22694837,Greenland,Extant,Native,Native,8,West Greenland,Little auk,Alle alle,FALSE,8,NA,LC
+22694837,Greenland,Extant,Native,Native,9,East Greenland,Little auk,Alle alle,FALSE,9,NA,LC
+22694837,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Little auk,Alle alle,FALSE,5,NA,LC
+22694837,Greenland,Extant,Native,Native,8,West Greenland,Little auk,Alle alle,FALSE,8,NA,LC
+22694837,Greenland,Extant,Native,Native,9,East Greenland,Little auk,Alle alle,FALSE,9,NA,LC
+22694837,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Little auk,Alle alle,FALSE,5,NA,LC
+22694837,Greenland,Extant,Native,Native,8,West Greenland,Little auk,Alle alle,FALSE,8,NA,LC
+22694837,Greenland,Extant,Native,Native,9,East Greenland,Little auk,Alle alle,FALSE,9,NA,LC
+22694837,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Little auk,Alle alle,FALSE,5,NA,LC
+2474,Antigua and Barbuda,Extant,Native,Native,NA,Antigua and Barbuda,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Anguilla,Extant,Native,Native,NA,Anguilla,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Antarctica,Extant,Native,Native,NA,Antarctica,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Argentina,Extant,Native,Native,NA,Argentina,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Australia,Extant,Native,Native,NA,Australia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Bangladesh,Extant,Native,Native,NA,Bangladesh,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Belgium,Extant,Native,Native,NA,Belgium,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Bermuda,Extant,Native,Native,NA,Bermuda,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Bonaire,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Saba,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Sint Eustatius,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Brazil,Extant,Native,Native,NA,Brazil,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Bahamas,Extant,Native,Native,NA,Bahamas,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Canada,Extant,Native,Native,2,Nunavut,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Canada,Extant,Native,Native,3,Beaufort,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Chile,Extant,Native,Native,NA,Chile,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,China,Extant,Native,Native,NA,China,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Cuba,Extant,Native,Native,NA,Cuba,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Cape Verde,Extant,Native,Native,NA,Cape Verde,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Curaçao,Extant,Native,Native,NA,Curacao,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Denmark,Extant,Native,Native,NA,Denmark,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Dominica,Extant,Native,Native,NA,Dominica,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Dominican Republic,Extant,Native,Native,NA,Dominican Republic,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Ecuador,Extant,Native,Native,NA,Ecuador,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Western Sahara,Extant,Native,Native,NA,Western Sahara,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Spain,Extant,Native,Native,NA,Spain,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,France,Extant,Native,Native,NA,France,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,United Kingdom,Extant,Native,Native,NA,United Kingdom,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,French Guiana,Extant,Native,Native,NA,French Guiana,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Greenland,Extant,Native,Native,8,West Greenland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Greenland,Extant,Native,Native,9,East Greenland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Gambia,Extant,Native,Native,NA,Gambia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Guadeloupe,Extant,Native,Native,NA,Guadeloupe and Martinique,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Greece,Extant,Native,Native,NA,Greece,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Indonesia,Extant,Native,Native,NA,Indonesia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Ireland,Extant,Native,Native,NA,Ireland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Israel,Extant,Native,Native,NA,Israel,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Iceland,Extant,Native,Native,NA,Iceland,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Italy,Extant,Native,Native,NA,Italy,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Japan,Extant,Native,Native,NA,Japan,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Morocco,Extant,Native,Native,NA,Morocco,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Saint Martin (French part),Extant,Native,Native,NA,Northern Saint-Martin,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Mauritania,Extant,Native,Native,NA,Mauritania,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Mexico,Extant,Native,Native,NA,Mexico,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Mozambique,Extant,Native,Native,NA,Mozambique,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,New Caledonia,Extant,Native,Native,NA,New Caledonia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Netherlands,Extant,Native,Native,NA,Netherlands,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Norway,Extant,Native,Native,6,Norway,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,New Zealand,Extant,Native,Native,NA,New Zealand,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Papua New Guinea,Extant,Native,Native,NA,Papua New Guinea,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Puerto Rico,Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Portugal,Extant,Native,Native,NA,Portugal,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Russian Federation,Extant,Native,Native,4,Russia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Sweden,Extant,Native,Native,NA,Sweden,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Senegal,Extant,Native,Native,NA,Senegal,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Sint Maarten (Dutch part),Extant,Native,Native,NA,Sint Maarten,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Turks and Caicos Islands,Extant,Native,Native,NA,Turks and Caicos Islands,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Thailand,Extant,Native,Native,NA,Thailand,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Tunisia,Extant,Native,Native,NA,Tunisia,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Taiwan, Province of China",Extant,Native,Native,NA,Taiwan,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,United States,Extant,Native,Native,1,Alaska,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,Uruguay,Extant,Native,Native,NA,Uruguay,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Virgin Islands, British",Extant,Native,Native,NA,British Virgin Islands,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,"Virgin Islands, U.S.",Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+2474,South Africa,Extant,Native,Native,NA,South Africa,Minke whale,Balaenoptera acutorostrata,TRUE,NA,NA,LC
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+13704,Canada,Extant,Native,Native,2,Nunavut,Narwhal,Monodon monoceros,FALSE,2,NA,NT
+13704,Canada,Extant,Native,Native,3,Beaufort,Narwhal,Monodon monoceros,FALSE,3,NA,NT
+13704,Greenland,Extant,Native,Native,8,West Greenland,Narhwal,Monodon monoceros,FALSE,8,NA,NT
+13704,Greenland,Extant,Native,Native,9,East Greenland,Narhwal,Monodon monoceros,FALSE,9,NA,NT
+13704,Russian Federation,Extant,Native,Native,4,Russia,Narwhale,Monodon monoceros,FALSE,4,NA,NT
+13704,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Narwhal,Monodon monoceros,FALSE,5,NA,NT
+41712,Greenland,Extant,Native,Native,8,West Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,8,NA,EN
+41712,Greenland,Extant,Native,Native,9,East Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,9,NA,EN
+41712,Greenland,Extant,Native,Native,8,West Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,8,NA,EN
+41712,Greenland,Extant,Native,Native,9,East Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,9,NA,EN
+41712,Greenland,Extant,Native,Native,8,West Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,8,NA,EN
+41712,Greenland,Extant,Native,Native,9,East Greenland,North Atlantic right whale,Eubalaena glacialis,FALSE,9,NA,EN
+22679872,Greenland,Extant,Native,Native,8,West Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,8,NA,LC
+22679872,Greenland,Extant,Native,Native,9,East Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,9,NA,LC
+22679872,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Pink-footed Goose,Anser brachyrhynchus,FALSE,5,NA,LC
+22679872,Greenland,Extant,Native,Native,8,West Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,8,NA,LC
+22679872,Greenland,Extant,Native,Native,9,East Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,9,NA,LC
+22679872,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Pink-footed Goose,Anser brachyrhynchus,FALSE,5,NA,LC
+22679872,Greenland,Extant,Native,Native,8,West Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,8,NA,LC
+22679872,Greenland,Extant,Native,Native,9,East Greenland,Pink-footed Goose,Anser brachyrhynchus,FALSE,9,NA,LC
+22679872,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Pink-footed Goose,Anser brachyrhynchus,FALSE,5,NA,LC
+22823,Canada,Extant,Native,Native,2,Nunavut,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Canada,Extant,Native,Native,3,Beaufort,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Greenland,Extant,Native,Native,8,West Greenland,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Greenland,Extant,Native,Native,9,East Greenland,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Norway,Extant,Native,Native,6,Norway,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Russian Federation,Extant,Native,Native,4,Russia,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22823,United States,Extant,Native,Native,1,Alaska,Polar bear,Ursus maritimus,TRUE,NA,NA,VU
+22694240,Greenland,Extant,Native,Native,8,West Greenland,Pomarine,Stercorarius pomarinus,FALSE,8,NA,LC
+22694240,Greenland,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
+22694240,Greenland,Extant,Native,Native,8,West Greenland,Pomarine,Stercorarius pomarinus,FALSE,8,NA,LC
+22694240,Greenland,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
+22694240,Greenland,Extant,Native,Native,8,West Greenland,Pomarine,Stercorarius pomarinus,FALSE,8,NA,LC
+22694240,Greenland,Extant,Native,Native,9,East Greenland,Pomarine,Stercorarius pomarinus,FALSE,9,NA,LC
+22693420,Greenland,Extant,Native,Native,8,West Greenland,Purple sandpiper,Calidris maritima,FALSE,8,NA,LC
+22693420,Greenland,Extant,Native,Native,9,East Greenland,Purple sandpiper,Calidris maritima,FALSE,9,NA,LC
+22693420,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Purple sandpipers,Calidris maritima,FALSE,5,NA,LC
+22693420,Greenland,Extant,Native,Native,8,West Greenland,Purple sandpiper,Calidris maritima,FALSE,8,NA,LC
+22693420,Greenland,Extant,Native,Native,9,East Greenland,Purple sandpiper,Calidris maritima,FALSE,9,NA,LC
+22693420,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Purple sandpipers,Calidris maritima,FALSE,5,NA,LC
+22693420,Greenland,Extant,Native,Native,8,West Greenland,Purple sandpiper,Calidris maritima,FALSE,8,NA,LC
+22693420,Greenland,Extant,Native,Native,9,East Greenland,Purple sandpiper,Calidris maritima,FALSE,9,NA,LC
+22693420,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Purple sandpipers,Calidris maritima,FALSE,5,NA,LC
+22693363,United Arab Emirates,Extant,Vagrant,Vagrant,NA,United Arab Emirates,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Antigua and Barbuda,Extant,Native,Native,NA,Antigua and Barbuda,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Anguilla,Extant,Native,Native,NA,Anguilla,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Albania,Extant,Vagrant,Vagrant,NA,Albania,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Angola,Extant,Native,Native,NA,Angola,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Argentina,Extant,Native,Native,NA,Argentina,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Austria,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Australia,Extant,Native,Native,NA,Australia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Aruba,Extant,Native,Native,NA,Aruba,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Azerbaijan,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Barbados,Extant,Native,Native,NA,Barbados,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Bangladesh,Extant,Native,Native,NA,Bangladesh,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Belgium,Extant,Native,Native,NA,Belgium,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Bulgaria,Extant,Native,Native,NA,Bulgaria,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Benin,Extant,Native,Native,NA,Benin,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saint Barthélemy,Extant,Native,Native,NA,Guadeloupe and Martinique,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Bermuda,Extant,Native,Native,NA,Bermuda,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Brunei Darussalam,Extant,Native,Native,NA,Brunei,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Bolivia, Plurinational States of",Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Bonaire,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Saba,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Bonaire, Sint Eustatius and Saba",Extant,Native,Native,NA,Sint Eustatius,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Brazil,Extant,Native,Native,NA,Brazil,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Bahamas,Extant,Native,Native,NA,Bahamas,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Botswana,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Belarus,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Belize,Extant,Native,Native,NA,Belize,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Canada,Extant,Native,Native,2,Nunavut,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Canada,Extant,Native,Native,3,Beaufort,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Congo,Extant,Native,Native,NA,Republique du Congo,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Switzerland,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Côte d'Ivoire,Extant,Native,Native,NA,Ivory Coast,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Chile,Extant,Native,Native,NA,Chile,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Cameroon,Extant,Native,Native,NA,Cameroon,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,China,Extant,Native,Native,NA,China,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Colombia,Extant,Native,Native,NA,Colombia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Costa Rica,Extant,Native,Native,NA,Costa Rica,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Cuba,Extant,Native,Native,NA,Cuba,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Cape Verde,Extant,Vagrant,Vagrant,NA,Cape Verde,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Curaçao,Extant,Native,Native,NA,Curacao,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Cyprus,Extant,Vagrant,Vagrant,NA,Cyprus,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Czech Republic,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Germany,Extant,Native,Native,NA,Germany,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Denmark,Extant,Native,Native,NA,Denmark,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Dominica,Extant,Native,Native,NA,Dominica,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Dominican Republic,Extant,Native,Native,NA,Dominican Republic,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Algeria,Extant,Native,Native,NA,Algeria,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Ecuador,Extant,Native,Native,NA,Ecuador,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Estonia,Extant,Native,Native,NA,Estonia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Egypt,Extant,Native,Native,NA,Egypt,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Western Sahara,Extant,Native,Native,NA,Western Sahara,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Spain,Extant,Native,Native,NA,Spain,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Finland,Extant,Native,Native,NA,Finland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Fiji,Extant,Vagrant,Vagrant,NA,Fiji,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Falkland Islands (Malvinas),Extant,Vagrant,Vagrant,NA,Falkland Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,France,Extant,Native,Native,NA,France,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Gabon,Extant,Native,Native,NA,Gabon,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,United Kingdom,Extant,Native,Native,NA,United Kingdom,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Grenada,Extant,Native,Native,NA,Grenada,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Georgia,Extant,Vagrant,Vagrant,NA,Georgia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,French Guiana,Extant,Native,Native,NA,French Guiana,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Ghana,Extant,Native,Native,NA,Ghana,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Gibraltar,Extant,Vagrant,Vagrant,NA,Gibraltar,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Greenland,Extant,Native,Native,8,West Greenland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Greenland,Extant,Native,Native,9,East Greenland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Gambia,Extant,Native,Native,NA,Gambia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guinea,Extant,Native,Native,NA,Guinea,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guadeloupe,Extant,Vagrant,Vagrant,NA,Guadeloupe and Martinique,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Equatorial Guinea,Extant,Native,Native,NA,Equatorial Guinea,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Greece,Extant,Native,Native,NA,Greece,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,South Georgia and the South Sandwich Islands,Extant,Native,Native,NA,South Georgia and the South Sandwich Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guatemala,Extant,Native,Native,NA,Guatemala,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guam,Extant,Vagrant,Vagrant,NA,Northern Mariana Islands and Guam,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guinea-Bissau,Extant,Native,Native,NA,Guinea Bissau,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Guyana,Extant,Native,Native,NA,Guyana,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Hong Kong,Extant,Native,Native,NA,China,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Honduras,Extant,Native,Native,NA,Honduras,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Croatia,Extant,Vagrant,Vagrant,NA,Croatia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Haiti,Extant,Native,Native,NA,Haiti,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Hungary,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Indonesia,Extant,Native,Native,NA,Indonesia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Ireland,Extant,Native,Native,NA,Ireland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Israel,Extant,Native,Native,NA,Israel,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,India,Extant,Native,Native,NA,India,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Iraq,Extant,Vagrant,Vagrant,NA,Iraq,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Iran, Islamic Republic of",Extant,Native,Native,NA,Iran,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Iceland,Extant,Native,Native,NA,Iceland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Italy,Extant,Native,Native,NA,Italy,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Jamaica,Extant,Vagrant,Vagrant,NA,Jamaica,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Jordan,Extant,Vagrant,Vagrant,NA,Jordan,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Japan,Extant,Native,Native,NA,Japan,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Kenya,Extant,Vagrant,Vagrant,NA,Kenya,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saint Kitts and Nevis,Extant,Native,Native,NA,Saint Kitts and Nevis,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Kuwait,Extant,Vagrant,Vagrant,NA,Kuwait,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Cayman Islands,Extant,Native,Native,NA,Cayman Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Kazakhstan,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Lebanon,Extant,Vagrant,Vagrant,NA,Lebanon,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saint Lucia,Extant,Native,Native,NA,Saint Lucia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Sri Lanka,Extant,Native,Native,NA,Sri Lanka,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Liberia,Extant,Native,Native,NA,Liberia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Luxembourg,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Latvia,Extant,Native,Native,NA,Latvia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Libya,Extant,Native,Native,NA,Libya,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Morocco,Extant,Native,Native,NA,Morocco,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Montenegro,Extant,Vagrant,Vagrant,NA,Montenegro,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Macedonia, the former Yugoslav Republic of",Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Mali,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Myanmar,Extant,Native,Native,NA,Myanmar,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Mongolia,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Martinique,Extant,Native,Native,NA,Guadeloupe and Martinique,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Mauritania,Extant,Native,Native,NA,Mauritania,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Montserrat,Extant,Native,Native,NA,Montserrat,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Malta,Extant,Vagrant,Vagrant,NA,Malta,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Mexico,Extant,Native,Native,NA,Mexico,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Malaysia,Extant,Native,Native,NA,Malaysia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Mozambique,Extant,Vagrant,Vagrant,NA,Mozambique,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Namibia,Extant,Native,Native,NA,Namibia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Nigeria,Extant,Native,Native,NA,Nigeria,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Netherlands,Extant,Native,Native,NA,Netherlands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Norway,Extant,Native,Native,6,Norway,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Nepal,Extant,Vagrant,Vagrant,NA,landlocked,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,New Zealand,Extant,Native,Native,NA,New Zealand,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Oman,Extant,Vagrant,Vagrant,NA,Oman,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Panama,Extant,Native,Native,NA,Panama,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Peru,Extant,Native,Native,NA,Peru,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Papua New Guinea,Extant,Native,Native,NA,Papua New Guinea,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Philippines,Extant,Native,Native,NA,Philippines,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Pakistan,Extant,Native,Native,NA,Pakistan,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Poland,Extant,Native,Native,NA,Poland,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Puerto Rico,Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Portugal,Extant,Native,Native,NA,Portugal,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Palau,Extant,Vagrant,Vagrant,NA,Palau,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Paraguay,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Romania,Extant,Vagrant,Vagrant,NA,Romania,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Serbia,Extant,Vagrant,Vagrant,NA,landlocked,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Russian Federation,Extant,Native,Native,4,Russia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saudi Arabia,Extant,Vagrant,Vagrant,NA,Saudi Arabia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Seychelles,Extant,Native,Native,NA,Seychelles,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Sudan,Extant,Vagrant,Vagrant,NA,Sudan,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Sweden,Extant,Native,Native,NA,Sweden,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Singapore,Extant,Native,Native,NA,Singapore,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Slovenia,Extant,Vagrant,Vagrant,NA,Slovenia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Slovakia,Extant,Native,Native,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Sierra Leone,Extant,Native,Native,NA,Sierra Leone,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Senegal,Extant,Native,Native,NA,Senegal,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Somalia,Extant,Vagrant,Vagrant,NA,Somalia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Suriname,Extant,Native,Native,NA,Suriname,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,El Salvador,Extant,Native,Native,NA,El Salvador,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Turks and Caicos Islands,Extant,Native,Native,NA,Turks and Caicos Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,French Southern Territories,Extant,Vagrant,Vagrant,NA,Amsterdam Island and Saint Paul Island,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,French Southern Territories,Extant,Vagrant,Vagrant,NA,Crozet Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,French Southern Territories,Extant,Vagrant,Vagrant,NA,Kerguelen Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Togo,Extant,Native,Native,NA,Togo,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Thailand,Extant,Native,Native,NA,Thailand,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Timor-Leste,Extant,Vagrant,Vagrant,NA,East Timor,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Tunisia,Extant,Native,Native,NA,Tunisia,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Turkey,Extant,Native,Native,NA,Turkey,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Trinidad and Tobago,Extant,Native,Native,NA,Trinidad and Tobago,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Taiwan, Province of China",Extant,Native,Native,NA,Taiwan,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Tanzania, United Republic of",Extant,Native,Native,NA,Tanzania,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Ukraine,Extant,Native,Native,NA,Ukraine,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,United States,Extant,Native,Native,1,Alaska,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Uruguay,Extant,Native,Native,NA,Uruguay,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Saint Vincent and the Grenadines,Extant,Native,Native,NA,Saint Vincent and the Grenadines,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Venezuela, Bolivarian Republic of",Extant,Native,Native,NA,Venezuela,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Virgin Islands, British",Extant,Native,Native,NA,British Virgin Islands,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,"Virgin Islands, U.S.",Extant,Native,Native,NA,Puerto Rico and Virgin Islands of the United States,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Viet Nam,Extant,Native,Native,NA,Vietnam,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Yemen,Extant,Vagrant,Vagrant,NA,Yemen,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,South Africa,Extant,Native,Native,NA,South Africa,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693363,Zambia,Extant,Vagrant,Vagrant,NA,NA,Red knot,Calidris canutus,TRUE,NA,NA,NT
+22693759,Greenland,Extant,Native,Native,8,West Greenland,Ringed Plover,Charadrius hiaticula,FALSE,8,NA,LC
+22693759,Greenland,Extant,Native,Native,9,East Greenland,Ringed Plover,Charadrius hiaticula,FALSE,9,NA,LC
+22693759,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed plover,Charadrius hiaticula,FALSE,5,NA,LC
+22693759,Greenland,Extant,Native,Native,8,West Greenland,Ringed Plover,Charadrius hiaticula,FALSE,8,NA,LC
+22693759,Greenland,Extant,Native,Native,9,East Greenland,Ringed Plover,Charadrius hiaticula,FALSE,9,NA,LC
+22693759,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed plover,Charadrius hiaticula,FALSE,5,NA,LC
+22693759,Greenland,Extant,Native,Native,8,West Greenland,Ringed Plover,Charadrius hiaticula,FALSE,8,NA,LC
+22693759,Greenland,Extant,Native,Native,9,East Greenland,Ringed Plover,Charadrius hiaticula,FALSE,9,NA,LC
+22693759,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed plover,Charadrius hiaticula,FALSE,5,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+41672,Canada,Extant,Native,Native,2,Nunavut,Ringed seal,Pusa hispida,FALSE,2,NA,LC
+41672,Canada,Extant,Native,Native,3,Beaufort,Ringed seal,Pusa hispida,FALSE,3,NA,LC
+41672,Greenland,Extant,Native,Native,8,West Greenland,Ringed seal,Pusa hispida,FALSE,8,NA,LC
+41672,Greenland,Extant,Native,Native,9,East Greenland,Ringed seal,Pusa hispida,FALSE,9,NA,LC
+41672,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Ringed seal,Pusa hispida,FALSE,5,NA,LC
+41672,United States,Extant,Native,Native,1,Alaska,Ringed seal,Pusa hispida,FALSE,1,NA,LC
+19855,Greenland,Extant,Native,Native,8,West Greenland,Salmon,Salmo salar,FALSE,8,NA,LR/lc
+19855,Greenland,Extant,Native,Native,9,East Greenland,Salmon,Salmo salar,FALSE,9,NA,LR/lc
+19855,Norway,Extant,Native,Native,6,Norway,Salmon,Salmo salar,FALSE,6,NA,LR/lc
+19855,Greenland,Extant,Native,Native,8,West Greenland,Salmon,Salmo salar,FALSE,8,NA,LR/lc
+19855,Greenland,Extant,Native,Native,9,East Greenland,Salmon,Salmo salar,FALSE,9,NA,LR/lc
+19855,Norway,Extant,Native,Native,6,Norway,Salmon,Salmo salar,FALSE,6,NA,LR/lc
+19855,Greenland,Extant,Native,Native,8,West Greenland,Salmon,Salmo salar,FALSE,8,NA,LR/lc
+19855,Greenland,Extant,Native,Native,9,East Greenland,Salmon,Salmo salar,FALSE,9,NA,LR/lc
+19855,Norway,Extant,Native,Native,6,Norway,Salmon,Salmo salar,FALSE,6,NA,LR/lc
+22693369,Greenland,Extant,Native,Native,8,West Greenland,Sanderling,Calidris alba,FALSE,8,NA,LC
+22693369,Greenland,Extant,Native,Native,9,East Greenland,Sanderling,Calidris alba,FALSE,9,NA,LC
+22693369,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Sanderling,Calidris alba,FALSE,5,NA,LC
+22693369,Greenland,Extant,Native,Native,8,West Greenland,Sanderling,Calidris alba,FALSE,8,NA,LC
+22693369,Greenland,Extant,Native,Native,9,East Greenland,Sanderling,Calidris alba,FALSE,9,NA,LC
+22693369,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Sanderling,Calidris alba,FALSE,5,NA,LC
+22693369,Greenland,Extant,Native,Native,8,West Greenland,Sanderling,Calidris alba,FALSE,8,NA,LC
+22693369,Greenland,Extant,Native,Native,9,East Greenland,Sanderling,Calidris alba,FALSE,9,NA,LC
+22693369,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Sanderling,Calidris alba,FALSE,5,NA,LC
+2475,Angola,Extant,Native,Native,NA,Angola,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Argentina,Extant,Native,Native,NA,Argentina,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Australia,Extant,Native,Native,NA,Australia,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Bermuda,Extant,Native,Native,NA,Bermuda,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Brazil,Extant,Native,Native,NA,Brazil,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Bahamas,Extant,Native,Native,NA,Bahamas,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Canada,Extant,Native,Native,2,Nunavut,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Canada,Extant,Native,Native,3,Beaufort,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Congo, The Democratic Republic of the",Extant,Native,Native,NA,Democratic Republic of the Congo,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Congo,Extant,Native,Native,NA,Republique du Congo,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Chile,Extant,Native,Native,NA,Chile,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Cuba,Extant,Native,Native,NA,Cuba,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Cape Verde,Extant,Native,Native,NA,Cape Verde,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Dominican Republic,Extant,Native,Native,NA,Dominican Republic,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Western Sahara,Extant,Native,Native,NA,Western Sahara,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Spain,Extant,Native,Native,NA,Spain,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Falkland Islands (Malvinas),Extant,Native,Native,NA,Falkland Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,United Kingdom,Extant,Native,Native,NA,United Kingdom,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Gibraltar,Extant,Native,Native,NA,Gibraltar,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Greenland,Extant,Native,Native,8,West Greenland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Greenland,Extant,Native,Native,9,East Greenland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,South Georgia and the South Sandwich Islands,Extant,Native,Native,NA,South Georgia and the South Sandwich Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Haiti,Extant,Native,Native,NA,Haiti,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Ireland,Extant,Native,Native,NA,Ireland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Iceland,Extant,Native,Native,NA,Iceland,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Japan,Extant,Native,Native,NA,Japan,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Kenya,Extant,Native,Native,NA,Kenya,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Korea, Democratic People's Republic of",Extant,Native,Native,NA,North Korea,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Korea, Republic of",Extant,Native,Native,NA,South Korea,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Morocco,Extant,Native,Native,NA,Morocco,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Madagascar,Extant,Native,Native,NA,Madagascar,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Northern Mariana Islands,Extant,Native,Native,NA,Northern Mariana Islands and Guam,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Mauritania,Extant,Native,Native,NA,Mauritania,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Mexico,Extant,Native,Native,NA,Mexico,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Namibia,Extant,Native,Native,NA,Namibia,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Norway,Extant,Native,Native,6,Norway,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,New Zealand,Extant,Native,Native,NA,New Zealand,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Peru,Extant,Native,Native,NA,Peru,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Portugal,Extant,Native,Native,NA,Portugal,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Réunion,Extant,Native,Native,NA,Reunion,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Russian Federation,Extant,Native,Native,4,Russia,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Ascension,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Saint Helena,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,"Saint Helena, Ascension and Tristan da Cunha",Extant,Native,Native,NA,Tristan da Cunha,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Turks and Caicos Islands,Extant,Native,Native,NA,Turks and Caicos Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,French Southern Territories,Extant,Native,Native,NA,Amsterdam Island and Saint Paul Island,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,French Southern Territories,Extant,Native,Native,NA,Crozet Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,French Southern Territories,Extant,Native,Native,NA,Kerguelen Islands,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,United States,Extant,Native,Native,1,Alaska,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,Uruguay,Extant,Native,Native,NA,Uruguay,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+2475,South Africa,Extant,Native,Native,NA,South Africa,Sei whale,Balaenoptera borealis,TRUE,NA,NA,EN
+22680412,United States,Extant,Native,Native,1,Alaska,Spectacled Eider,Somateria fischeri,FALSE,1,NA,LC
+17023,United States,Extant,Native,Native,1,Alaska,Spotted seal,Phoca largha,FALSE,1,NA,DD
+22694847,Austria,Extant,Vagrant,Vagrant,NA,NA,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Belgium,Extant,Vagrant,Vagrant,NA,Belgium,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Canada,Extant,Native,Native,2,Nunavut,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Canada,Extant,Native,Native,3,Beaufort,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Germany,Extant,Vagrant,Vagrant,NA,Germany,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Denmark,Extant,Vagrant,Vagrant,NA,Denmark,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Spain,Extant,Vagrant,Vagrant,NA,Spain,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Finland,Extant,Vagrant,Vagrant,NA,Finland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Faroe Islands,Extant,Native,Native,NA,Faeroe Islands,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,France,Extant,Vagrant,Vagrant,NA,France,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,United Kingdom,Extant,Vagrant,Vagrant,NA,United Kingdom,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Greenland,Extant,Native,Native,8,West Greenland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Greenland,Extant,Native,Native,9,East Greenland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Ireland,Extant,Vagrant,Vagrant,NA,Ireland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Iceland,Extant,Native,Native,NA,Iceland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Japan,Extant,Native,Native,NA,Japan,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Latvia,Extant,Vagrant,Vagrant,NA,Latvia,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Netherlands,Extant,Vagrant,Vagrant,NA,Netherlands,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Norway,Extant,Native,Native,6,Norway,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Poland,Extant,Vagrant,Vagrant,NA,Poland,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Saint Pierre and Miquelon,Extant,Native,Native,NA,Saint Pierre and Miquelon,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Portugal,Extant,Vagrant,Vagrant,NA,Portugal,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Romania,Extant,Vagrant,Vagrant,NA,Romania,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Russian Federation,Extant,Native,Native,4,Russia,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Sweden,Extant,Vagrant,Vagrant,NA,Sweden,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,Svalbard and Jan Mayen,Extant,Native,Native,7,Jan Mayen,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+22694847,United States,Extant,Native,Native,1,Alaska,Thick-billed guillemot,Uria lomvia,TRUE,NA,NA,LC
+15106,Canada,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
+15106,Canada,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
+15106,Russian Federation,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
+15106,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,United States,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
+15106,Canada,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
+15106,Canada,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
+15106,Russian Federation,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
+15106,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,United States,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
+15106,Canada,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
+15106,Canada,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
+15106,Russian Federation,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
+15106,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,United States,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
+15106,Canada,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
+15106,Canada,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
+15106,Russian Federation,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
+15106,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,United States,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
+15106,Canada,Extant,Native,Native,2,Nunavut,Walrus,Odobenus rosmarus,FALSE,2,NA,DD
+15106,Canada,Extant,Native,Native,3,Beaufort,Walrus,Odobenus rosmarus,FALSE,3,NA,DD
+15106,Russian Federation,Extant,Native,Native,4,Russia,Walrus,Odobenus rosmarus,FALSE,4,NA,DD
+15106,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,Walrus,Odobenus rosmarus,FALSE,5,NA,DD
+15106,United States,Extant,Native,Native,1,Alaska,Walrus,Odobenus rosmarus,FALSE,1,NA,DD
+11142,Greenland,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
+11142,Greenland,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
+11142,Russian Federation,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC
+11142,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,NA,LC
+11142,Greenland,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
+11142,Greenland,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
+11142,Russian Federation,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC
+11142,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,NA,LC
+11142,Greenland,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
+11142,Greenland,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
+11142,Russian Federation,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC
+11142,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,NA,LC
+11142,Greenland,Extant,Native,Native,8,West Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,8,NA,LC
+11142,Greenland,Extant,Native,Native,9,East Greenland,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,9,NA,LC
+11142,Russian Federation,Extant,Native,Native,4,Russia,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,4,NA,LC
+11142,Svalbard and Jan Mayen,Extant,Native,Native,5,Svalbard,White-beaked dolphin,Lagenorhynchus albirostris,FALSE,5,NA,LC

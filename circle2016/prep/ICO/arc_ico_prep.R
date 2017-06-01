@@ -47,7 +47,7 @@ api_key <- scan(file.path(dir_anx, 'api_key.csv'), what = 'character')
 
 
 spp_df_all <- read_csv(file.path(dir_goal, 'int/spp_list_from_api.csv'))
-ico_list_raw <- read_csv(file.path('circle2016/prep/ICO/ico_list_raw.csv'))
+ico_list_raw <- read_csv(file.path('prep/ICO/ico_list_raw.csv'))
 
 spp_ico <- spp_df_all %>%
   filter(sciname %in% ico_list_raw$sciname)
@@ -58,18 +58,18 @@ spp_missing <- ico_list_raw %>%
 
 ico_list <- ico_list_raw %>%
   left_join(spp_ico %>%
-              select(iucn_sid, sciname, subpop = population, cat = category),
+              dplyr::select(iucn_sid, sciname, subpop = population, cat = category),
             by = 'sciname') %>%
   filter(!is.na(iucn_sid))
 
-write_csv(ico_list, file.path('circle2016/prep/ICO/ico_list_prepped.csv'))
+write_csv(ico_list, file.path('prep/ICO/ico_list_prepped.csv'))
 
 ### for each species ID, get country list
 ico_country_url <- 'http://apiv3.iucnredlist.org/api/v3/species/countries/id/%s?token=%s'
 
 ico_spp_countries <- mc_get_from_api(ico_country_url, ico_list$iucn_sid)
 
-rgn_iucn2ohi <- read_csv(file.path('circle2016/prep/ICO/rgns_iucn2arc.csv'))
+rgn_iucn2ohi <- read_csv(file.path('prep/ICO/rgns_iucn2arc.csv'))
 
 ico_spp_rgn_raw <- ico_spp_countries %>%
   dplyr::select(-code, -count, iucn_sid = name, iucn_rgn_name = country) %>%
@@ -119,7 +119,7 @@ ico_assess_raw <- ico_assess_raw %>%
   mutate(iucn_sid = as.integer(iucn_sid),
          year     = as.integer(year)) %>%
   left_join(ico_list %>%
-              select(iucn_sid, sciname) %>%
+              dplyr::select(iucn_sid, sciname) %>%
               distinct(),
             by = 'iucn_sid')
 
@@ -174,7 +174,7 @@ ico_assess <- read_csv(file.path('prep/ICO/ico_assess_clean.csv'))
 ico_list <- read_csv(file.path('prep/ICO/ico_list_prepped.csv'))
 
 ico_assess_full <- ico_assess %>%
-  select(-sciname) %>%
+  dplyr::select(-sciname) %>%
   arrange(iucn_sid, year) %>%
   complete(year = full_seq(year, 1), nesting(iucn_sid)) %>%
   group_by(iucn_sid) %>%
@@ -212,11 +212,11 @@ ico_spp_cat <- ico_spp_cat %>%
 write_csv(ico_spp_cat, file.path('prep/ICO/ico_spp_cat.csv'))
 
 ico_cat_ts_abbr <- read_csv(file.path('prep/ICO/ico_spp_cat.csv')) %>%
-  select(iucn_sid, sciname, year, cat, cat_score) %>%
+  dplyr::select(iucn_sid, sciname, year, cat, cat_score) %>%
   filter(year >= 2000)
 
 ico_spp_rgn <- read_csv(file.path('prep/ICO/ico_spp_rgn_prepped.csv')) %>%
-  select(rgn_id, rgn_name, iucn_sid, comname, sciname, ico_gl, ico_rgn_id, presence)
+  dplyr::select(rgn_id, ohi_rgn_name, iucn_sid, comname, sciname, ico_gl, ico_rgn_id, presence)
 
 ico_spp_rgn_cat <- ico_cat_ts_abbr %>%
   full_join(ico_spp_rgn, by = c('iucn_sid', 'sciname'))
@@ -253,19 +253,20 @@ ico_spp_rgn_cat <- read_csv(file.path('prep/ICO/ico_spp_rgn_cat.csv'))
 #   average any parent/subpop species listings before aggregating to overall average per region.
 
 ico_status_raw <- ico_spp_rgn_cat %>%
-  select(rgn_id, rgn_name, sciname, iucn_sid, cat, cat_score, year) %>%
+ dplyr::select(rgn_id, ohi_rgn_name, sciname, iucn_sid, cat, cat_score, year) %>%
   arrange(rgn_id, desc(year), sciname) %>%
   ungroup()
 
 ico_status_calc <- ico_status_raw %>%
-  group_by(rgn_id, rgn_name, sciname, year) %>%
+  group_by(rgn_id, ohi_rgn_name, sciname, year) %>%
   filter(!is.na(cat_score)) %>% ### remove any DDs
   summarize(cat_score = mean(cat_score)) %>%
-  group_by(rgn_id, rgn_name, year) %>%
+  group_by(rgn_id, ohi_rgn_name, year) %>%
   summarize(mean_cat = round(mean(cat_score), 5),
             ico_status = (1 - mean_cat) * 100,
             n_spp = n()) %>%
-  ungroup()
+  ungroup()%>%
+  filter(!is.na(rgn_id))
 
 
 ico_trend <- data.frame()
@@ -284,14 +285,18 @@ for (i in 2010:max(ico_status_calc$year, na.rm = TRUE)) { # i <- 2013
 }
 
 ico_sum <- ico_status_raw %>%
-  left_join(ico_status_calc, by = c('rgn_id', 'rgn_name', 'year')) %>%
+  left_join(ico_status_calc, by = c('rgn_id', 'ohi_rgn_name', 'year')) %>%
   left_join(ico_trend, by = c('rgn_id', 'year'))
 
 write_csv(ico_sum, file.path('prep/ICO/ico_summary.csv'))
 # Report out for finalized status and trend values per region.
 
 ico_status_raw1 <- ico_status_raw %>%
-  dplyr::select(rgn_id, sciname, iucn_sid, year, category = cat)
+  dplyr::select(rgn_id, sciname, iucn_sid, year, category = cat) %>%
+  filter(!is.na(rgn_id))
+
+ico_trend<- ico_trend%>%
+  filter(!is.na(rgn_id))
 
 write_csv(ico_status_raw1, file.path('prep/ICO/output/ico_spp_iucn_status.csv'))
 write_csv(ico_status_calc, file.path('prep/ICO/output/ico_status_calc.csv'))

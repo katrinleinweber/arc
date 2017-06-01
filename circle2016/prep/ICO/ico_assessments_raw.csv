@@ -1,4 +1,6 @@
 iucn_sid,year,code,category,sciname
+19877,2008,LC,Least Concern,Salvelinus alpinus
+19877,1996,LR/lc,Lower Risk/least concern,Salvelinus alpinus
 22694245,2016,LC,Least Concern,Stercorarius parasiticus
 22694245,2012,LC,Least Concern,Stercorarius parasiticus
 22694245,2009,LC,Least Concern,Stercorarius parasiticus
@@ -185,12 +187,6 @@ iucn_sid,year,code,category,sciname
 22563,1994,K,Insufficiently Known,Tursiops truncatus
 194300,2011,CR,Critically Endangered,Tursiops truncatus
 16369383,2012,VU,Vulnerable,Tursiops truncatus
-22563,2012,LC,Least Concern,Tursiops truncatus
-22563,2008,LC,Least Concern,Tursiops truncatus
-22563,1996,DD,Data Deficient,Tursiops truncatus
-22563,1994,K,Insufficiently Known,Tursiops truncatus
-194300,2011,CR,Critically Endangered,Tursiops truncatus
-16369383,2012,VU,Vulnerable,Tursiops truncatus
 2469,2012,EN,Endangered,Balaena mysticetus
 2469,1996,EN,Endangered,Balaena mysticetus
 2468,1996,LR/cd,Lower Risk/conservation dependent,Balaena mysticetus
@@ -214,40 +210,6 @@ iucn_sid,year,code,category,sciname
 22694841,2000,LR/lc,Lower Risk/least concern,Uria aalge
 22694841,1994,LR/lc,Lower Risk/least concern,Uria aalge
 22694841,1988,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,2016,LC,Least Concern,Uria aalge
-22694841,2012,LC,Least Concern,Uria aalge
-22694841,2009,LC,Least Concern,Uria aalge
-22694841,2008,LC,Least Concern,Uria aalge
-22694841,2004,LC,Least Concern,Uria aalge
-22694841,2000,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,1994,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,1988,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,2016,LC,Least Concern,Uria aalge
-22694841,2012,LC,Least Concern,Uria aalge
-22694841,2009,LC,Least Concern,Uria aalge
-22694841,2008,LC,Least Concern,Uria aalge
-22694841,2004,LC,Least Concern,Uria aalge
-22694841,2000,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,1994,LR/lc,Lower Risk/least concern,Uria aalge
-22694841,1988,LR/lc,Lower Risk/least concern,Uria aalge
-22680405,2016,NT,Near Threatened,Somateria mollissima
-22680405,2015,NT,Near Threatened,Somateria mollissima
-22680405,2012,LC,Least Concern,Somateria mollissima
-22680405,2009,LC,Least Concern,Somateria mollissima
-22680405,2008,LC,Least Concern,Somateria mollissima
-22680405,2004,LC,Least Concern,Somateria mollissima
-22680405,2000,LR/lc,Lower Risk/least concern,Somateria mollissima
-22680405,1994,LR/lc,Lower Risk/least concern,Somateria mollissima
-22680405,1988,LR/lc,Lower Risk/least concern,Somateria mollissima
-22680405,2016,NT,Near Threatened,Somateria mollissima
-22680405,2015,NT,Near Threatened,Somateria mollissima
-22680405,2012,LC,Least Concern,Somateria mollissima
-22680405,2009,LC,Least Concern,Somateria mollissima
-22680405,2008,LC,Least Concern,Somateria mollissima
-22680405,2004,LC,Least Concern,Somateria mollissima
-22680405,2000,LR/lc,Lower Risk/least concern,Somateria mollissima
-22680405,1994,LR/lc,Lower Risk/least concern,Somateria mollissima
-22680405,1988,LR/lc,Lower Risk/least concern,Somateria mollissima
 22680405,2016,NT,Near Threatened,Somateria mollissima
 22680405,2015,NT,Near Threatened,Somateria mollissima
 22680405,2012,LC,Least Concern,Somateria mollissima
@@ -266,7 +228,7 @@ iucn_sid,year,code,category,sciname
 2478,1988,V,Vulnerable,Balaenoptera physalus
 2478,1986,V,Vulnerable,Balaenoptera physalus
 2478,1965,NA,"""Less rare but believed to be threatened-requires watching""",Balaenoptera physalus
-22697866,2016,LC,Least Concern,Fulmarus glacialis
+22697866,2017,LC,Least Concern,Fulmarus glacialis
 22697866,2012,LC,Least Concern,Fulmarus glacialis
 22697866,2009,LC,Least Concern,Fulmarus glacialis
 22697866,2008,LC,Least Concern,Fulmarus glacialis
@@ -274,7 +236,7 @@ iucn_sid,year,code,category,sciname
 22697866,2000,LR/lc,Lower Risk/least concern,Fulmarus glacialis
 22697866,1994,LR/lc,Lower Risk/least concern,Fulmarus glacialis
 22697866,1988,LR/lc,Lower Risk/least concern,Fulmarus glacialis
-22697866,2016,LC,Least Concern,Fulmarus glacialis
+22697866,2017,LC,Least Concern,Fulmarus glacialis
 22697866,2012,LC,Least Concern,Fulmarus glacialis
 22697866,2009,LC,Least Concern,Fulmarus glacialis
 22697866,2008,LC,Least Concern,Fulmarus glacialis
@@ -282,7 +244,7 @@ iucn_sid,year,code,category,sciname
 22697866,2000,LR/lc,Lower Risk/least concern,Fulmarus glacialis
 22697866,1994,LR/lc,Lower Risk/least concern,Fulmarus glacialis
 22697866,1988,LR/lc,Lower Risk/least concern,Fulmarus glacialis
-22697866,2016,LC,Least Concern,Fulmarus glacialis
+22697866,2017,LC,Least Concern,Fulmarus glacialis
 22697866,2012,LC,Least Concern,Fulmarus glacialis
 22697866,2009,LC,Least Concern,Fulmarus glacialis
 22697866,2008,LC,Least Concern,Fulmarus glacialis
@@ -391,7 +353,7 @@ iucn_sid,year,code,category,sciname
 13006,1986,E,Endangered,Megaptera novaeangliae
 13006,1965,NA,"""Less rare but believed to be threatened-requires watching""",Megaptera novaeangliae
 132832,2008,EN,Endangered,Megaptera novaeangliae
-22694473,2016,NT,Near Threatened,Pagophila eburnea
+22694473,2017,NT,Near Threatened,Pagophila eburnea
 22694473,2012,NT,Near Threatened,Pagophila eburnea
 22694473,2010,NT,Near Threatened,Pagophila eburnea
 22694473,2008,NT,Near Threatened,Pagophila eburnea
@@ -401,7 +363,7 @@ iucn_sid,year,code,category,sciname
 22694473,2000,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1994,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1988,LR/lc,Lower Risk/least concern,Pagophila eburnea
-22694473,2016,NT,Near Threatened,Pagophila eburnea
+22694473,2017,NT,Near Threatened,Pagophila eburnea
 22694473,2012,NT,Near Threatened,Pagophila eburnea
 22694473,2010,NT,Near Threatened,Pagophila eburnea
 22694473,2008,NT,Near Threatened,Pagophila eburnea
@@ -411,7 +373,7 @@ iucn_sid,year,code,category,sciname
 22694473,2000,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1994,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1988,LR/lc,Lower Risk/least concern,Pagophila eburnea
-22694473,2016,NT,Near Threatened,Pagophila eburnea
+22694473,2017,NT,Near Threatened,Pagophila eburnea
 22694473,2012,NT,Near Threatened,Pagophila eburnea
 22694473,2010,NT,Near Threatened,Pagophila eburnea
 22694473,2008,NT,Near Threatened,Pagophila eburnea
@@ -421,7 +383,7 @@ iucn_sid,year,code,category,sciname
 22694473,2000,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1994,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1988,LR/lc,Lower Risk/least concern,Pagophila eburnea
-22694473,2016,NT,Near Threatened,Pagophila eburnea
+22694473,2017,NT,Near Threatened,Pagophila eburnea
 22694473,2012,NT,Near Threatened,Pagophila eburnea
 22694473,2010,NT,Near Threatened,Pagophila eburnea
 22694473,2008,NT,Near Threatened,Pagophila eburnea
@@ -431,7 +393,7 @@ iucn_sid,year,code,category,sciname
 22694473,2000,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1994,LR/lc,Lower Risk/least concern,Pagophila eburnea
 22694473,1988,LR/lc,Lower Risk/least concern,Pagophila eburnea
-22694473,2016,NT,Near Threatened,Pagophila eburnea
+22694473,2017,NT,Near Threatened,Pagophila eburnea
 22694473,2012,NT,Near Threatened,Pagophila eburnea
 22694473,2010,NT,Near Threatened,Pagophila eburnea
 22694473,2008,NT,Near Threatened,Pagophila eburnea
@@ -485,7 +447,7 @@ iucn_sid,year,code,category,sciname
 22680409,2000,LR/lc,Lower Risk/least concern,Somateria spectabilis
 22680409,1994,LR/lc,Lower Risk/least concern,Somateria spectabilis
 22680409,1988,LR/lc,Lower Risk/least concern,Somateria spectabilis
-22694837,2016,LC,Least Concern,Alle alle
+22694837,2017,LC,Least Concern,Alle alle
 22694837,2012,LC,Least Concern,Alle alle
 22694837,2009,LC,Least Concern,Alle alle
 22694837,2008,LC,Least Concern,Alle alle
@@ -493,7 +455,7 @@ iucn_sid,year,code,category,sciname
 22694837,2000,LR/lc,Lower Risk/least concern,Alle alle
 22694837,1994,LR/lc,Lower Risk/least concern,Alle alle
 22694837,1988,LR/lc,Lower Risk/least concern,Alle alle
-22694837,2016,LC,Least Concern,Alle alle
+22694837,2017,LC,Least Concern,Alle alle
 22694837,2012,LC,Least Concern,Alle alle
 22694837,2009,LC,Least Concern,Alle alle
 22694837,2008,LC,Least Concern,Alle alle
@@ -501,7 +463,7 @@ iucn_sid,year,code,category,sciname
 22694837,2000,LR/lc,Lower Risk/least concern,Alle alle
 22694837,1994,LR/lc,Lower Risk/least concern,Alle alle
 22694837,1988,LR/lc,Lower Risk/least concern,Alle alle
-22694837,2016,LC,Least Concern,Alle alle
+22694837,2017,LC,Least Concern,Alle alle
 22694837,2012,LC,Least Concern,Alle alle
 22694837,2009,LC,Least Concern,Alle alle
 22694837,2008,LC,Least Concern,Alle alle
@@ -639,6 +601,15 @@ iucn_sid,year,code,category,sciname
 22693420,2000,LR/lc,Lower Risk/least concern,Calidris maritima
 22693420,1994,LR/lc,Lower Risk/least concern,Calidris maritima
 22693420,1988,LR/lc,Lower Risk/least concern,Calidris maritima
+22693363,2017,NT,Near Threatened,Calidris canutus
+22693363,2015,NT,Near Threatened,Calidris canutus
+22693363,2012,LC,Least Concern,Calidris canutus
+22693363,2009,LC,Least Concern,Calidris canutus
+22693363,2008,LC,Least Concern,Calidris canutus
+22693363,2004,LC,Least Concern,Calidris canutus
+22693363,2000,LR/lc,Lower Risk/least concern,Calidris canutus
+22693363,1994,LR/lc,Lower Risk/least concern,Calidris canutus
+22693363,1988,LR/lc,Lower Risk/least concern,Calidris canutus
 22693759,2016,LC,Least Concern,Charadrius hiaticula
 22693759,2012,LC,Least Concern,Charadrius hiaticula
 22693759,2009,LC,Least Concern,Charadrius hiaticula
@@ -723,6 +694,14 @@ iucn_sid,year,code,category,sciname
 17023,2016,LC,Least Concern,Phoca largha
 17023,2008,DD,Data Deficient,Phoca largha
 17023,1996,LR/lc,Lower Risk/least concern,Phoca largha
+22694847,2016,LC,Least Concern,Uria lomvia
+22694847,2012,LC,Least Concern,Uria lomvia
+22694847,2009,LC,Least Concern,Uria lomvia
+22694847,2008,LC,Least Concern,Uria lomvia
+22694847,2004,LC,Least Concern,Uria lomvia
+22694847,2000,LR/lc,Lower Risk/least concern,Uria lomvia
+22694847,1994,LR/lc,Lower Risk/least concern,Uria lomvia
+22694847,1988,LR/lc,Lower Risk/least concern,Uria lomvia
 15106,2016,VU,Vulnerable,Odobenus rosmarus
 15106,2008,DD,Data Deficient,Odobenus rosmarus
 15106,1996,LR/lc,Lower Risk/least concern,Odobenus rosmarus

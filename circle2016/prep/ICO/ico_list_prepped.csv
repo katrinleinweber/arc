@@ -1,4 +1,5 @@
 comname,sciname,ico_gl,ico_rgn_id,iucn_sid,subpop,cat
+Arctic char,Salvelinus alpinus,TRUE,NA,19877,NA,LC
 Arctic skua,Stercorarius parasiticus,FALSE,8,22694245,NA,LC
 Arctic skua,Stercorarius parasiticus,FALSE,9,22694245,NA,LC
 Arctic skua,Stercorarius parasiticus,FALSE,5,22694245,NA,LC
@@ -35,19 +36,12 @@ Bottlenosed dolphin,Tursiops truncatus,FALSE,8,16369383,Mediterranean subpopulat
 Bottlenosed dolphin,Tursiops truncatus,FALSE,9,22563,NA,LC
 Bottlenosed dolphin,Tursiops truncatus,FALSE,9,194300,Fiordland subpopulation,CR
 Bottlenosed dolphin,Tursiops truncatus,FALSE,9,16369383,Mediterranean subpopulation,VU
-Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,22563,NA,LC
-Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,194300,Fiordland subpopulation,CR
-Bottle-nosed dolphin,Tursiops truncatus,FALSE,4,16369383,Mediterranean subpopulation,VU
 Bowhead whale,Balaena mysticetus,TRUE,NA,2469,Okhotsk Sea subpopulation,EN
 Bowhead whale,Balaena mysticetus,TRUE,NA,2468,Bering-Chukchi-Beaufort Sea subpopulation,LR/cd
 Bowhead whale,Balaena mysticetus,TRUE,NA,2472,Svalbard-Barents Sea (Spitsbergen) subpopulation,CR
 Bowhead whale,Balaena mysticetus,TRUE,NA,2467,NA,LC
-Common guillemot,Uria aalge,FALSE,8,22694841,NA,LC
-Common guillemot,Uria aalge,FALSE,9,22694841,NA,LC
-Common guillemot,Uria aalge,FALSE,7,22694841,NA,LC
-Eider,Somateria mollissima,FALSE,5,22680405,NA,NT
-Eider,Somateria mollissima,FALSE,8,22680405,NA,NT
-Eider,Somateria mollissima,FALSE,9,22680405,NA,NT
+Common guillemot,Uria aalge,TRUE,NA,22694841,NA,LC
+Common Eider,Somateria mollissima,TRUE,NA,22680405,NA,NT
 Fin whale,Balaenoptera physalus,TRUE,NA,16208224,Mediterranean subpopulation,VU
 Fin whale,Balaenoptera physalus,TRUE,NA,2478,NA,EN
 Fulmar,Fulmarus glacialis,FALSE,5,22697866,NA,LC
@@ -116,6 +110,7 @@ Pomarine skua,Stercorarius pomarinus,FALSE,5,22694240,NA,LC
 Purple sandpiper,Calidris maritima,FALSE,8,22693420,NA,LC
 Purple sandpiper,Calidris maritima,FALSE,9,22693420,NA,LC
 Purple sandpipers,Calidris maritima,FALSE,5,22693420,NA,LC
+Red knot,Calidris canutus,TRUE,NA,22693363,NA,NT
 Ringed plover,Charadrius hiaticula,FALSE,5,22693759,NA,LC
 Ringed Plover,Charadrius hiaticula,FALSE,8,22693759,NA,LC
 Ringed Plover,Charadrius hiaticula,FALSE,9,22693759,NA,LC
@@ -134,6 +129,7 @@ Sanderling,Calidris alba,FALSE,9,22693369,NA,LC
 Sei whale,Balaenoptera borealis,TRUE,NA,2475,NA,EN
 Spectacled Eider,Somateria fischeri,FALSE,1,22680412,NA,LC
 Spotted seal,Phoca largha,FALSE,1,17023,NA,DD
+Thick-billed guillemot,Uria lomvia,TRUE,NA,22694847,NA,LC
 Walrus,Odobenus rosmarus,FALSE,1,15106,NA,DD
 Walrus,Odobenus rosmarus,FALSE,2,15106,NA,DD
 Walrus,Odobenus rosmarus,FALSE,3,15106,NA,DD
