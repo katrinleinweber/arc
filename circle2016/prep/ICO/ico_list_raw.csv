@@ -1,4 +1,5 @@
 comname,sciname,ico_gl,ico_rgn_id
+Arctic char,Salvelinus alpinus,TRUE,NA
 Arctic skua,Stercorarius parasiticus,FALSE,8
 Arctic skua,Stercorarius parasiticus,FALSE,9
 Arctic skua,Stercorarius parasiticus,FALSE,5
@@ -27,12 +28,8 @@ Blue whale,Balaenoptera musculus,TRUE,NA
 Bottlenosed dolphin,Tursiops truncatus,FALSE,8
 Bottlenosed dolphin,Tursiops truncatus,FALSE,9
 Bowhead whale,Balaena mysticetus,TRUE,NA
-Common guillemot,Uria aalge,FALSE,8
-Common guillemot,Uria aalge,FALSE,9
-Common guillemot ,Uria aalge,FALSE,7
-Eider,Somateria mollissima,FALSE,5
-Eider,Somateria mollissima,FALSE,8
-Eider,Somateria mollissima,FALSE,9
+Common guillemot,Uria aalge,TRUE,NA
+Common Eider,Somateria mollissima,TRUE,NA
 Fin whale,Balaenoptera physalus,TRUE,NA
 Fulmar,Fulmarus glacialis,FALSE,5
 Fulmar,Fulmarus glacialis,FALSE,8
@@ -93,6 +90,7 @@ Pomarine skua ,Stercorarius pomarinus,FALSE,5
 Purple sandpiper,Calidris maritima,FALSE,8
 Purple sandpiper,Calidris maritima,FALSE,9
 Purple sandpipers,Calidris maritima,FALSE,5
+Red knot,Calidris canutus,TRUE,NA
 Ringed plover,Charadrius hiaticula,FALSE,5
 Ringed Plover,Charadrius hiaticula,FALSE,8
 Ringed Plover,Charadrius hiaticula,FALSE,9
@@ -112,6 +110,7 @@ Sei whale,Balaenoptera borealis,TRUE,NA
 Spectacled Eider,Somateria fischeri,FALSE,1
 Spotted seal,Phoca largha,FALSE,1
 Steller's Eider,Polysticta steller,FALSE,1
+Thick-billed guillemot,Uria lomvia,TRUE,NA
 Walrus,Odobenus rosmarus,FALSE,1
 Walrus,Odobenus rosmarus,FALSE,2
 Walrus,Odobenus rosmarus,FALSE,3
