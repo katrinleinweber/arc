@@ -101,12 +101,12 @@ FIS = function(layers, status_year){
     ungroup()
 
   ## this takes the median score across all regions (when no stocks have scores within a region)
-  data_fis_gf <- data_fis_gf %>%
-    group_by(year) %>%
-    mutate(Median_score_global = quantile(score, probs=c(0.5), na.rm=TRUE)) %>%
-    ungroup() %>%
-    mutate(Median_score = ifelse(is.na(Median_score), Median_score_global, Median_score)) %>%
-    dplyr::select(-Median_score_global)
+  #data_fis_gf <- data_fis_gf %>%
+    #group_by(year) %>%
+    #mutate(Median_score_global = quantile(score, probs=c(0.5), na.rm=TRUE)) %>%
+    #ungroup() %>%
+    #mutate(Median_score = ifelse(is.na(Median_score), Median_score_global, Median_score)) %>%
+    #dplyr::select(-Median_score_global)
 
   #  *************NOTE *****************************
   #  In some cases, it may make sense to alter the
@@ -126,7 +126,7 @@ FIS = function(layers, status_year){
 
 
   gap_fill_data <- data_fis_gf %>%
-    mutate(gap_fill = ifelse(is.na(penalty), "none", "median")) %>%
+    mutate(gap_fill = ifelse(is.na(bmsy), "median", "none")) %>%
     dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
   write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
