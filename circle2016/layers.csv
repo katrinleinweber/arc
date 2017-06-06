@@ -1,6 +1,6 @@
 "targets","layer","filename","fld_value","units","name","description","clip_n_ship_disag","clip_n_ship_disag_description","layer_gl","path_in","fld_id_num","fld_id_chr","fld_category","fld_year","fld_val_num","fld_val_chr","file_exists","year_min","year_max","val_min","val_max","val_0to1","flds_unused","flds_missing","rows_duplicated","num_ids_unique","data_na"
-"AO","ao_trend","ao_trend_arc2016.csv","trend","trend score","Trends in AO","","","","ao_trend_arc2016","~/github/arc/circle2016/layers/ao_scores_arc2016.csv","rgn_id",,,,"trend",,TRUE,,,-0.16545,0.076172652,FALSE,,,,9,FALSE
-"AO","ao_status","ao_status_arc2016.csv","status","status score","AO status","","","","ao_status_arc2016","","rgn_id",,,,"status",,TRUE,,,63.43625437,84.43452217,FALSE,,,,9,FALSE
+"AO","ao_trend","ao_trend_arc2016.csv","trend","trend score","Trends in AO","","","","ao_trend_arc2016","~/github/arc/circle2016/layers/ao_scores_arc2016.csv","rgn_id",,,,"trend",,TRUE,,,-0.129727353,0.076172652,FALSE,,,,9,FALSE
+"AO","ao_status","ao_status_arc2016.csv","status","status score","AO status","","","","ao_status_arc2016","","rgn_id",,,,"status",,TRUE,,,63.43625437,90.6,FALSE,,,,9,FALSE
 "CW","cw_chemical_trend","cw_chemical_trend_arc2016.csv","trend","trend score","Trends in chemical pollution","Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
