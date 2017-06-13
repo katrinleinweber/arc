@@ -61,7 +61,7 @@ detach_package <- function(pkg, character.only = FALSE)
 }
 source("prep/CP/ObtainingData.R")
 
-ref.years <- 1979:2000
+ref.years <- 1979:1990
 source("prep/CP/Status_Trend.R")
 
 edge <- read.csv("prep/CP/int/n_IceEdgeHabitat_ref1979to2000.csv")
