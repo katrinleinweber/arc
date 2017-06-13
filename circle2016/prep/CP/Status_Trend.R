@@ -104,7 +104,7 @@ for (p in poles){
   # (output is a raster with the average of 3 years of data)
   ################################################################
 
-  range.years <- (final.year-10):(final.year)
+  range.years <- (final.year-20):(final.year)
   #   sih.avg3yr <- stack()
   #   sip.avg3yr <- stack()
 
