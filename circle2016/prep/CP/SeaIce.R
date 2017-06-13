@@ -103,7 +103,7 @@ iceHealth(year='2011') # 2013 analysis
 
 ## ice trend data subset/format/save
 iceTrend <- function(type ="eez", year=final.year){
-  dataYear <- sprintf("Trend_%sto%s_pctdevRperyr", year-4, year)
+  dataYear <- sprintf("Trend_%sto%s_pctdevRperyr", year-9, year)
   filterdata <- data
 
   filterdata <- subset(filterdata, select=c(rgn_id, habitat, get(dataYear)))

@@ -38,9 +38,9 @@ for (p in poles){
   png(sprintf('prep/CP/%s_IceEdgeHabitat_overview.png',p), width=w, height=h)
   par(mfcol=c(2,2))
   plot(r.typ, col=rev(topo.colors(length(unique(r.typ)))), main='Pixel Type\n(0=land,1=coast,2=shore,3=water,4=hole)')
-  plot(r.ice, col=tim.colors(64), main=sprintf('Ice Concentration (%s)',l))
-  plot(r.rgn, col=tim.colors(length(unique(r.rgn))), main='OHI Region')
-  plot(r.ice.edge, col=tim.colors(64), main='Ice Edge Habitat\n 10% to 50% Concentration')
+  #plot(r.ice, col=tim.colors(64), main=sprintf('Ice Concentration (%s)',l))
+  #plot(r.rgn, col=tim.colors(length(unique(r.rgn))), main='OHI Region')
+  #plot(r.ice.edge, col=tim.colors(64), main='Ice Edge Habitat\n 10% to 50% Concentration')
   dev.off()
 
   ###########################################################
@@ -153,9 +153,10 @@ for (p in poles){
   ### Calculate trend
   ################################################################
   ### Regression model for each region for the selected years and save the slope and R2 to the z.h.T dataframe
-  for (j in (final.year-4):final.year){
+  #j=2015
+  for (j in (final.year-9):final.year){
     # j=2012 #testing
-    trend.years = (j-4):j
+    trend.years = (j-9):j
     early_year <- min(trend.years)
 
     for (i in 1:nrow(z.h.T)){
@@ -170,8 +171,8 @@ for (p in poles){
   }
 
   ### Regression model for each region for the selected years and save the slope and R2 to the z.p.T dataframe
-  for (j in (final.year-4):final.year){  # j = 2015
-    trend.years = (j-4):j
+  for (j in (final.year-9):final.year){  # j = 2015
+    trend.years = (j-9):j
     early_year <- min(trend.years)
 
     for (i in 1:nrow(z.p.T)){ # i = 3
