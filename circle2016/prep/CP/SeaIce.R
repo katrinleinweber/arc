@@ -61,22 +61,22 @@ detach_package <- function(pkg, character.only = FALSE)
 }
 source("prep/CP/ObtainingData.R")
 
-ref.years <- 1979:1990
+ref.years <- 1979:2000
 source("prep/CP/Status_Trend.R")
 
-edge <- read.csv("prep/CP/int/n_IceEdgeHabitat_ref1979to1990.csv")
+edge <- read.csv("prep/CP/int/n_IceEdgeHabitat_ref1979to2000.csv")
 edge  <- edge %>%
-  filter(Reference_avg1979to1990monthlypixels != 0) %>%
+  filter(Reference_avg1979to2000monthlypixels != 0) %>%
   mutate(habitat="seaice_edge")
 
-shore <- read.csv("prep/CP/int/n_IceShoreProtection_ref1979to1990.csv")
+shore <- read.csv("prep/CP/int/n_IceShoreProtection_ref1979to2000.csv")
 shore <- shore %>%
-  filter(Reference_avg1979to1990monthlypixels != 0) %>%
+  filter(Reference_avg1979to2000monthlypixels != 0) %>%
   mutate(habitat="seaice_shoreline")
 
 data <- rbind(edge, shore)
 data  <- data %>%
-  mutate(km2 = Reference_avg1979to1990monthlypixels/12 * (pixel/1000)^2)%>%
+  mutate(km2 = Reference_avg1979to2000monthlypixels/12 * (pixel/1000)^2)%>%
   dplyr::filter(zone!=10)%>%
   rename(rgn_id=zone)
 
