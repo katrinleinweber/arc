@@ -76,7 +76,7 @@ shore <- shore %>%
 
 data <- rbind(edge, shore)
 data  <- data %>%
-  mutate(km2 = Reference_avg1979to2000monthlypixels/12 * (pixel/1000)^2)%>%
+  mutate(km2 = Reference_avg1979to2000monthlypixels/12 * (pixel/1000)^2)##%>%
   dplyr::filter(zone!=10)%>%
   rename(rgn_id=zone)
 
