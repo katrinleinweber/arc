@@ -151,7 +151,7 @@ FIS = function(layers, status_year){
 
   status_data <- status_data %>%
     group_by(rgn_id, year) %>%
-    summarize(status = prod(score^wprop)) %>%
+    summarize(status = weighted.mean(score, wprop)) %>%
     ungroup()
 
   # ------------------------------------------------------------------------
