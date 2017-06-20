@@ -78,6 +78,7 @@ FIS = function(layers, status_year){
                    ifelse(1 - alpha*(b$bmsy - upperBuffer) > beta,
                           1 - alpha*(b$bmsy - upperBuffer),
                           beta))
+  b$score = ifelse(b$rgn_id == "1" & b$bmsy >1, 1, b$score)
 
 
   # ------------------------------------------------------------------------

@@ -6,12 +6,12 @@ AO = function(layers,
 
   ##Same model for artisinal fish as FP - do this first
   #catch data
-  c = SelectLayersData(layers, layers='ao_meancatch_arc2016', narrow = TRUE) %>%
+  c<- read.csv('prep/AO/fish/ao_meancatch_arc2016.csv') %>%
     dplyr::select(
-      rgn_id    = id_num,
-      stock_id_taxonkey = category,
+      rgn_id,
+      stock_id_taxonkey,
       year,
-      catch          = val_num)
+      catch          = mean_catch)
   # b_bmsy data
   b = SelectLayersData(layers, layer='fis_b_bmsy_arc2016', narrow = TRUE) %>%
     dplyr::select(
@@ -75,6 +75,7 @@ AO = function(layers,
                    ifelse(1 - alpha*(b$bmsy - upperBuffer) > beta,
                           1 - alpha*(b$bmsy - upperBuffer),
                           beta))
+  b$score = ifelse(b$rgn_id >= 1 & b$bmsy >1, 1, b$score)
 
 
   # ------------------------------------------------------------------------
@@ -123,10 +124,10 @@ AO = function(layers,
 
 
   gap_fill_data <- data_fis_gf %>%
-    mutate(gap_fill = ifelse(is.na(penalty), "none", "median")) %>%
+    mutate(gap_fill = ifelse(is.na(penalty), "none", "Median gapfilled")) %>%
     dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
-  write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
+  write.csv(gap_fill_data, 'temp/AO_summary_gf.csv', row.names=FALSE)
 
   status_data <- data_fis_gf %>%
     dplyr::select(rgn_id, stock_id, year, catch, score)
@@ -148,7 +149,7 @@ AO = function(layers,
 
   status_data <- status_data %>%
     group_by(rgn_id, year) %>%
-    summarize(status = prod(score^wprop)) %>%
+    summarize(status = weighted.mean(score, wprop)) %>%
     ungroup()
 
   # ------------------------------------------------------------------------
