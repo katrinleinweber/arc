@@ -4,7 +4,7 @@ region_id,score,dimension,goal
 3,74.90912595,status,AO
 4,63.43625437,status,AO
 5,80.314696,status,AO
-6,64.49191919,status,AO
+6,90.6,status,AO
 8,84.43452217,status,AO
 9,65.52819696,status,AO
 1,-0.000292526,trend,AO
@@ -12,6 +12,6 @@ region_id,score,dimension,goal
 3,0.030082663,trend,AO
 4,-0.024159336,trend,AO
 5,-0.129727353,trend,AO
-6,-0.16545,trend,AO
+6,0.0691,trend,AO
 8,0.076172652,trend,AO
 9,-0.000179792,trend,AO
