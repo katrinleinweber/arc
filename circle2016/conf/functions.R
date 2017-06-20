@@ -130,6 +130,7 @@ FIS = function(layers, status_year){
     dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
   write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
+  write.csv(data_fis_gf, 'temp/FIS_summary_gf2.csv', row.names=FALSE)
 
   status_data <- data_fis_gf %>%
     dplyr::select(rgn_id, stock_id, year, catch, score)
