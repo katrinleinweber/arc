@@ -98,7 +98,7 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
 ####Read in species cell summary in######
 
 summary_by_loiczid<- read_csv('~/github/ohiprep/globalprep/spp_ico/v2016/summary/cell_spp_summary_by_loiczid.csv')
-region_prop_df<- read_csv('circle2016/prep/ICO/rgn_prop_file.csv')
+region_prop_df<- read_csv('prep/ICO/rgn_prop_file.csv')
 
 region_summary<- summary_by_loiczid %>%
   inner_join(region_prop_df, by= 'loiczid')%>%

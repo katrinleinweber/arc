@@ -91,14 +91,14 @@ FIS = function(layers, status_year){
 
   # ------------------------------------------------------------------------
   # STEP 2. Estimate scores for taxa without b/bmsy values
-  # Median score of other fish in the region is the starting point
+  # Mean score of other fish in the region is the starting point
   # Then a penalty is applied based on the level the taxa are reported at
   # -----------------------------------------------------------------------
 
-  ## this takes the median score within each region
+  ## this takes the mean score within each region
   data_fis_gf <- data_fis %>%
     group_by(rgn_id, year) %>%
-    mutate(Median_score = quantile(score, probs=c(0.5), na.rm=TRUE)) %>%
+    mutate(Mean_score = mean(score, na.rm=TRUE)) %>%
     ungroup()
 
   ## this takes the median score across all regions (when no stocks have scores within a region)
@@ -121,13 +121,13 @@ FIS = function(layers, status_year){
   data_fis_gf <- data_fis_gf %>%
     mutate(TaxonPenaltyCode = as.numeric(substring(taxon_key, 1, 1))) %>%
     left_join(penaltyTable, by='TaxonPenaltyCode') %>%
-    mutate(score_gf = Median_score * penalty) %>%
-    mutate(score_gapfilled = ifelse(is.na(score), "Median gapfilled", "none")) %>%
+    mutate(score_gf = Mean_score * penalty) %>%
+    mutate(score_gapfilled = ifelse(is.na(score), "Mean gapfilled", "none")) %>%
     mutate(score = ifelse(is.na(score), score_gf, score))
 
 
   gap_fill_data <- data_fis_gf %>%
-    mutate(gap_fill = ifelse(is.na(bmsy), "median", "none")) %>%
+    mutate(gap_fill = ifelse(is.na(bmsy), "mean", "none")) %>%
     dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
   write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
