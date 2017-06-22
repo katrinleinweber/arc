@@ -1261,7 +1261,7 @@ HAB = function(layers){
     dplyr::select(rgn_id, habitat, trend) %>%
     mutate(habitat = as.character(habitat))
 
-  extent <- layers$data[['hab_extent']] %>%
+  extent <- layers$data[['hab_weight']] %>%
     dplyr::select(rgn_id, habitat, extent=km2) %>%
     mutate(habitat = as.character(habitat))
 
@@ -1289,14 +1289,23 @@ HAB = function(layers){
 
   status <- d %>%
     filter(!is.na(health)) %>%
-    summarize(
-      score = pmin(1, sum(health) / sum(w)) * 100,
-      dimension = 'status')
+    group_by(rgn_id) %>%
+    summarize(score = pmin(1, sum(health * extent, na.rm=TRUE) / (sum(extent * w, na.rm=TRUE)) ) * 100, dimension = 'status')%>%
+    ungroup()
+
+    #summarize(
+      #score = pmin(1, sum(health) / sum(w)) * 100,
+      #dimension = 'status')
+
+
+
+
+
 
   trend <- d %>%
     filter(!is.na(trend)) %>%
     summarize(
-      score =  sum(trend) / sum(w),
+      score = sum(trend * extent, na.rm=TRUE) / (sum(extent*w, na.rm=TRUE)),
       dimension = 'trend')
 
   scores_HAB <- rbind(status, trend) %>%
