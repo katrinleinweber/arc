@@ -5,7 +5,7 @@
 library(dplyr)
 library(tidyr)
 source('~/github/ohiprep/src/R/common.R')
-catch <- catch <- read.csv('circle2016/prep/FIS/SAUP_rgns/spatial_catch_saup.csv') %>%
+catch <- catch <- read.csv('prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv') %>%
   rename(common = Common_Name, fao_id = fao_rgn, species=Scientific_Name)
 summary(catch)
 
@@ -30,7 +30,7 @@ catch <- catch %>%
 catch_zeros <- catch %>%
   spread(year, catch) %>%
   data.frame() %>%
-  gather("year", "catch", num_range("X", 1950:2010)) %>%
+  gather("year", "catch", num_range("X", 1950:2014)) %>%
   mutate(year = as.numeric(gsub("X", "", year))) %>%
   mutate(catch = ifelse(is.na(catch), 0, catch))
 
@@ -65,7 +65,7 @@ mean_catch_toolbox <- mean_catch %>%
   data.frame()
 
 
-write.csv(mean_catch_toolbox, "circle2016/prep/FIS/meancatch/mean_catch.csv", row.names=FALSE)
+write.csv(mean_catch_toolbox, "prep/FIS/meancatch/mean_catch_new.csv", row.names=FALSE)
 
 total_catch_FP <- mean_catch %>%
   group_by(rgn_id, year) %>%
@@ -73,4 +73,4 @@ total_catch_FP <- mean_catch %>%
   dplyr::select(rgn_id, year, fis_catch) %>%
   filter(year >= 2005) # filter to include only the relevant analysis years
 
-write.csv(total_catch_FP, "circle2016/prep/FIS/FP_fis_catch.csv", row.names=FALSE)
+write.csv(total_catch_FP, "prep/FIS/FP_fis_catch_new.csv", row.names=FALSE)

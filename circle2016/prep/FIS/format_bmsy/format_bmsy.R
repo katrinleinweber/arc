@@ -4,13 +4,13 @@ library(tidyr)
 library(zoo)
 library(stringr)
 
-cmsy <- read.csv('prep/FIS/catch_model_bmsy/cmsy_bbmsy.csv') %>%
+cmsy <- read.csv('prep/FIS/catch_model_bmsy/cmsy_bbmsy_new.csv') %>%
   mutate(prior = 'constrained') %>%
   filter(!is.na(bbmsy_mean))
 
-comsir <- read.csv('prep/FIS/catch_model_bmsy/comsir_bbmsy.csv') %>%
-  mutate(prior = 'NA') %>%
-  filter(!is.na(bbmsy_mean))
+#comsir <- read.csv('prep/FIS/catch_model_bmsy/comsir_bbmsy.csv') %>%
+  #mutate(prior = 'NA') %>%
+  #filter(!is.na(bbmsy_mean))
 
 new_b_bmsy <- function(b_bmsy=constrained, method = "comsir"){
   b_bmsy <- b_bmsy %>%
@@ -18,11 +18,11 @@ new_b_bmsy <- function(b_bmsy=constrained, method = "comsir"){
     arrange(stock_id, year) %>%
     group_by(stock_id) %>%
     mutate(mean_5year = rollmean(bbmsy_mean, 5, align="right", fill=NA))
-  write.csv(b_bmsy, sprintf('prep/FIS/meanbmsy/%s_b_bmsy_%s_mean5yrs.csv', method, unique(b_bmsy$prior)), row.names=FALSE)
+  write.csv(b_bmsy, sprintf('prep/FIS/meanbmsy/%s_b_bmsy_%s_mean5yrs_new.csv', method, unique(b_bmsy$prior)), row.names=FALSE)
 }
 
 new_b_bmsy(cmsy, method="cmsy")
-new_b_bmsy(comsir, method="comsir")
+#new_b_bmsy(comsir, method="comsir")
 
 ###### Final formatting
 
