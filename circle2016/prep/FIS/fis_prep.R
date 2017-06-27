@@ -22,9 +22,10 @@ file_allocation_data    = "SeaAroundUs/AllocationData.dat"
 file_allocation_results = "SeaAroundUs/AllocationResult.dat"
 file_taxon              = "SeaAroundUs/taxon.dat"
 file_entity             = "FishingEntity.dat"
+path_data2               = "/home/shares/ohi/git-annex/globalprep/_raw_data/SAUP/d2017/annual_data/"
 
 spatial_dir<- 'circle2016/prep/spatial'
-fis_dir<- 'circle2016/prep/FIS'
+fis_dir<- 'prep/FIS'
 ohi_rgns <- raster(file.path(spatial_dir, "sp_mol_raster.tif"))
 
 ###LOAD DATA#####
@@ -33,11 +34,14 @@ dt_data           <- fread(file.path(path_data,file_allocation_data), sep=";", h
 colnames(dt_data) <- c("UniversalDataID","DataLayerID","FishingEntityID", "Year", "TaxonKey",
                        "InputTypeID", "sector_type_name", "catch_type_name",
                        "reporting_status_name")
-
-
+for(yr in 1950:2013){
+dt_data_new2<- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))
+}
+dt_data_new3<- rbind(dt_data_new, dt_data_new2)
 #load the Results data (largest file, usually takes up to 10 minutes to read!)
 dt_results           <- fread(file.path(path_data,file_allocation_results), sep=";", header = FALSE)
 colnames(dt_results) <- c("UniversalDataID","CellID","AllocatedCatch")
+dt_results2<- select(dt_data_new3, cell_id, catch_sum)
 # setkey(dt_results,UniversalDataID) # not necessary the data seems to be already ordered with the keys (univ and Cell IDs)
 
 
@@ -45,12 +49,18 @@ colnames(dt_results) <- c("UniversalDataID","CellID","AllocatedCatch")
 dt_taxon           <- fread(file.path(path_data,file_taxon), sep=";", header = FALSE)
 colnames(dt_taxon) <- c("TaxonKey","Scientific_Name","Common_Name","FunctionalGroupDescription")
 setkey(dt_taxon,TaxonKey)
+dt_taxon2<- select(dt_data_new3, taxon_key, taxon_scientific_name, taxon_common_name, functional_group_name)
+colnames(dt_taxon2) <- c("TaxonKey","Scientific_Name","Common_Name","FunctionalGroupDescription")
+
 
 
 #load the fishing entity data
 dt_entity           <- fread(file.path(path_data,file_entity), sep = ";", header=FALSE)
 colnames(dt_entity) <- c("FishingEntityID","Name")
 setkey(dt_entity,FishingEntityID)
+dt_entity2<- select(dt_data_new3, fishing_entity_name, fishing_entity_id)
+colnames(dt_entity2) <- c("FishingEntityID","Name")
+
 
 ##There are a lot of cells that slighlty overlap the OHI regions shapefile, leaving them with a proportional area less than 1.
 #This would cause us to lose catch when assigning catch to cells.
@@ -103,61 +113,62 @@ cells_df <- cells %>%
   left_join(fao_cells)
 
 write.csv(cells_df, "final_saup_ohi_fao.csv", row.names=FALSE)
+cells_df<- read.csv("prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv")
+test<- inner_join(dt_data_new3, cells_df, by = "cell_id") # this joins by cell id for Arctic regions and then drops the rest.
 
 ########### Aggregate Catch################
 df <- data.frame()
 
 
-for (i in 1950:2010){
+for (i in 1950:2014){
 
   print(i)
 
   #1. subset the allocation data to year i
-  data_yearly <- dt_data[Year==i,]
+  #data_yearly <- test[year==i,]
 
   #2. Now we want it ordered by UniversalDataID
-  setkey(data_yearly,UniversalDataID)
+  #setkey(data_yearly,UniversalDataID)
 
   #3. Get unique UniversalDataID
 
-  udi <- unique(data_yearly$UniversalDataID)
+  #udi <- unique(data_yearly$UniversalDataID)
 
   #4. Subset results
 
-  results_sub <- dt_results[UniversalDataID %in% udi]
+  #results_sub <- dt_results[UniversalDataID %in% udi]
 
-  setkey(results_sub,UniversalDataID) #sort by UDI
+  #setkey(results_sub,UniversalDataID) #sort by UDI
 
 
   #5. Join allocation, taxon, entity, resilience data to results to create final catch dataset and removing all catch reported at non-species level
 
 
-  all_data <- results_sub%>%
-    left_join(data_yearly)%>%
-    left_join(dt_taxon)%>%
-    left_join(dt_entity)%>%
-    left_join(cells_df)%>%
-    mutate(catch_prop = AllocatedCatch * area,
+  all_data <- test%>%
+    mutate(catch_prop = catch_sum * area,
            year = i)%>%
-    group_by(rgn_id,fao_id, Scientific_Name, Common_Name, TaxonKey)%>%
+    group_by(rgn_id,fao_id, taxon_scientific_name, taxon_common_name, taxon_key)%>%
     summarise(catch = sum(catch_prop))%>%
     ungroup()%>%
     mutate(year     = i,
-           stock_id = gsub(" ", "_", paste(Scientific_Name, fao_id, sep='-'), fixed=TRUE))%>%
+           stock_id = gsub(" ", "_", paste(taxon_scientific_name, fao_id, sep='-'), fixed=TRUE))%>%
     rename(fao_rgn  = fao_id,
-           tons     = catch)
+           tons     = catch,
+           TaxonKey = taxon_key,
+           Scientific_Name = taxon_scientific_name,
+           Common_Name = taxon_common_name)
 
 
 
   df = rbind(df,all_data)
 
 }
-write.csv(df, "spatial_catch_saup.csv", row.names=FALSE)
+write.csv(df, "prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv", row.names=FALSE)
 
 ##############Prep for BBMSY##################
 
 # add the taxon_resilence data to catch for b/bmsy calculations
-taxon_res = read.csv("circle2016/prep/FIS/SAUP_rgns/taxon_resilience_lookup2.csv", stringsAsFactors = FALSE) %>%
+taxon_res = read.csv("prep/FIS/SAUP_rgns/taxon_resilience_lookup2.csv", stringsAsFactors = FALSE) %>%
   mutate(common = ifelse(common %in% "Silver croaker", paste(common, sciname, sep=" "), common)) %>%
   dplyr::select(Common_Name=common, Resilience)
 
@@ -170,7 +181,7 @@ min_yrs = 20
 min_tons = 1000
 
 #read in catch data created above
-df <- read.csv("circle2016/prep/FIS/SAUP_rgns/spatial_catch_saup.csv",stringsAsFactors=F)
+df <- read.csv("prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv",stringsAsFactors=F)
 
 #create dataset ready to run through catch only models
 
@@ -189,18 +200,18 @@ stks <- df%>%
          nyrs >= min_yrs)%>%
   left_join(taxon_res)%>%                  #add resilience information
   dplyr::select(year,Scientific_Name,Common_Name,fao_rgn,stock_id,TaxonKey,Resilience,tons)
-write.csv(stks, "spatial_catch_pre_bbmsy.csv", row.names=FALSE)
+write.csv(stks, "prep/FIS/SAUP_rgns/spatial_catch_pre_bbmsy_new.csv", row.names=FALSE)
 
 ################# Load Catch Data###########
 
-catch<- read.csv('circle2016/prep/FIS/SAUP_rgns/spatial_catch_pre_bbmsy.csv')%>%
+catch<- read.csv('prep/FIS/SAUP_rgns/spatial_catch_pre_bbmsy_new.csv')%>%
   rename(common = Common_Name)
 
 ####Catch MSY#####
 
 cmsy_fits <- plyr::dlply(catch, c("stock_id", "common"), function(x) {
 
-  #make sure the data is ordered from 1950 to 2010
+  #make sure the data is ordered from 1950 to 2014
   x <- arrange(x,year)
   out <- cmsy(ct = x$tons, yr = x$year,  start_r = resilience(x$Resilience[1]),
               reps = 2e4)
@@ -219,7 +230,7 @@ cmsy_bbmsy <- plyr::ldply(cmsy_fits, function(x) {
     bbmsy_out}, error = function(e) fake_data)
 })
 cmsy_bbmsy$model <- "CMSY"
-write.csv(cmsy_bbmsy, "cmsy_bbmsy.csv", row.names=FALSE)
+write.csv(cmsy_bbmsy, "prep/FIS/catch_model_bmsy/cmsy_bbmsy_new.csv", row.names=FALSE)
 
 nas <- cmsy_bbmsy%>%
   group_by(stock_id)%>%
@@ -252,102 +263,5 @@ cmsy_bbmsy_uni <- plyr::ldply(cmsy_fits_uni, function(x) {
 })
 cmsy_bbmsy_uni$model <- "CMSY_uniform"
 
-write.csv(cmsy_bbmsy_uni, "cmsy_bbmsy_uni_prior.csv", row.names=FALSE)
+write.csv(cmsy_bbmsy_uni, "prep/FIS/catch_model_bmsy/cmsy_bbmsy_uni_prior_new.csv", row.names=FALSE)
 
-####COMSIR########
-#The output of running COMSIR created 57 individual dataframes.
-#This is a result of debugging.
-#I kept getting a “missing value where TRUE/FALSE needed” error but wasn’t able to identify what species was causing this
-#so I split the stocks into batches to run. After getting the error, often just rerunning the model would produce results without any changes.
-
-all.stocks<-unique(catch$stock_id)
-#for loop
-batches <- seq(1,36,8) ##creates a sequence of 1-36, by 8 each time.
-
-for (i in 1:length(batches)){
-
-  print(i)
-
-  start <- batches[i]
-  end <- start+7 #related to sequence above
-
-  batchn <- all.stocks[start:end]
-
-  #subset the catch to match stocks in each of the 5 batches
-  #input<-subset(catch, stock_id%in%get(paste("batch",i,".stocks",sep="")))
-  input<-subset(catch, stock_id%in%batchn)
-
-  #run the comsir model function on each stock_id within input
-
-  comsir_fits <- plyr::dlply(input, c("stock_id", "common"), function(x) {
-    out <- comsir(ct = x$tons, yr = x$year,  start_r = resilience(x$Resilience[1]),
-                  nsim = 1e5, n_posterior = 5e3)
-  }, .parallel = TRUE)
-
-
-  fake_data <- data.frame(bbmsy_q2.5 = NA, bbmsy_q25 = NA, bbmsy_q50 = NA,
-                          bbmsy_q75 = NA, bbmsy_q97.5 = NA)
-
-  #take the fits and create a dataframe with the bbmsy
-
-  comsir_bbmsy <- plyr::ldply(comsir_fits, function(x) {
-    tryCatch({
-      out <- reshape2::dcast(x$quantities, sample_id ~ yr, value.var = "bbmsy")[,-1]
-      out <- summarize_bbmsy(out)
-      out$year <- unique(x$quantities$yr)
-      out},
-      error = function(e) fake_data)
-  })
-
-  #add model column defining COM-SIR
-  comsir_bbmsy$model <- "COM-SIR"
-
-  #save as csv
-  write.csv(comsir_bbmsy,file=paste0("circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy/bbmsy_",i,".csv"))
-
-}
-
-###combine in to one table####
-
-files <- list.files('circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy',full.names=T)
-
-tables <- lapply(files, read.csv)
-comsir_all <- do.call(rbind, tables)
-
-write.csv(comsir_all,file='circle2016/prep/FIS/catch_model_bmsy/comsir/bbmsy/comsir_bbmsy.csv')
-
-####SSCOM######
-
-test_stks <- sample(unique(catch$stock_id),5,replace=F)
-
-dat <- catch%>%filter(stock_id %in% test_stks)
-
-system.time(
-  plyr::d_ply(catch,"stock_id", function(x) {
-
-    filename <- paste0('circle2016/prep/FIS/catch_model_bmsy/sscom-',unique(x$stock_id)[1], ".rds")
-
-    if (!exists(filename)) {
-      out <- tryCatch({
-        sscom(
-          ct            = x$tons,
-          yr            = x$year,
-          start_r       = resilience(catch$Resilience[1]),
-          NburninPrelim = 1000,  #1000
-          NiterPrelim   = 2000,  #2000
-          NthinPrelim   = 1,     # 1
-          NchainsPrelim = 20,   #100
-          NburninJags   = 1e3,   #1e6
-          NiterJags     = 3e3,   #3e6
-          NthinJags     = 2,  #1000
-          Nchains       = 3,
-          return_jags   = TRUE)
-      }, error = function(e) NA)
-
-      out$output$species <- x$stock_id
-      out$bbmsy$species <- x$ctock_id
-      saveRDS(out, file = filename)
-
-    }
-
-  }, .parallel = TRUE))
