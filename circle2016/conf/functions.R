@@ -168,7 +168,7 @@ FIS = function(layers, status_year){
       dimension = 'status') %>%
     dplyr::select(region_id=rgn_id, score, dimension)
 
-  status_year<- 2010
+  status_year<- 2014
   trend_years <- status_year:(status_year-4)
   first_trend_year <- min(trend_years)
 
