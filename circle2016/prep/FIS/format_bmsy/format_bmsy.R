@@ -26,14 +26,14 @@ new_b_bmsy(cmsy, method="cmsy")
 
 ###### Final formatting
 
-cmsy <- read.csv('circle2016/prep/FIS/meanbmsy/cmsy_b_bmsy_constrained_mean5yrs.csv') %>%
+cmsy <- read.csv('prep/FIS/meanbmsy/cmsy_b_bmsy_constrained_mean5yrs_new.csv') %>%
   dplyr::select(stock_id, year, cmsy_bbmsy=mean_5year)
 
 comsir <- read.csv('prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv') %>%
   dplyr::select(stock_id, year, comsir_bbmsy=mean_5year)
 
 ## Mean catch data created in "meanCatch.R"
-mean_catch <- read.csv("prep/FIS/meancatch/fis_mean_catch_arc2016.csv") %>%
+mean_catch <- read.csv("prep/FIS/meancatch/mean_catch_new.csv") %>%
   mutate(stock_id_taxonkey = as.character(stock_id_taxonkey)) %>%
   mutate(taxon_key = str_sub(stock_id_taxonkey, -6, -1)) %>%
   mutate(stock_id = substr(stock_id_taxonkey, 1, nchar(stock_id_taxonkey)-7))
@@ -56,22 +56,9 @@ data <- mean_catch %>%
   filter(!is.na(bbmsy)) %>%
   unique()
 
-write.csv(data, file='circle2016/prep/FIS/fis_cmsy_bbmsy_noRAM.csv', row.names=FALSE)
+write.csv(data, file='prep/FIS/fis_cmsy_bbmsy_noRAM_new.csv', row.names=FALSE)
 
-###COMSIR join with mean catch
-comsir_mc <- mean_catch %>%
-  group_by(rgn_id, taxon_key, stock_id, year, mean_catch) %>%    ### some regions have more than one stock...these will be averaged
-  left_join(comsir, by=c("stock_id", "year")) %>%
-  ungroup()%>%
-  mutate(bbmsy = comsir_bbmsy) %>%
-  dplyr::select(rgn_id, stock_id, taxon_key, year, bbmsy, mean_catch) %>%
-  filter(year >= 2001) %>%
-  unique()%>%
-  dplyr::select(rgn_id, stock_id, year, bbmsy) %>%
-  filter(!is.na(bbmsy)) %>%
-  unique()
 
-write.csv(comsir_mc, file='prep/FIS/fis_comsir_bbmsy_noRAM.csv', row.names=FALSE)
 
 ###Explore for high BBMSY###
 
