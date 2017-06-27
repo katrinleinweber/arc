@@ -12,7 +12,7 @@ cmsy <- read.csv('prep/FIS/catch_model_bmsy/cmsy_bbmsy_new.csv') %>%
   #mutate(prior = 'NA') %>%
   #filter(!is.na(bbmsy_mean))
 
-new_b_bmsy <- function(b_bmsy=constrained, method = "comsir"){
+new_b_bmsy <- function(b_bmsy=constrained, method = "cmsy"){
   b_bmsy <- b_bmsy %>%
     dplyr::select(stock_id, year, bbmsy_mean, prior, model) %>%
     arrange(stock_id, year) %>%

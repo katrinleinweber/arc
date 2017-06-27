@@ -34,10 +34,10 @@ dt_data           <- fread(file.path(path_data,file_allocation_data), sep=";", h
 colnames(dt_data) <- c("UniversalDataID","DataLayerID","FishingEntityID", "Year", "TaxonKey",
                        "InputTypeID", "sector_type_name", "catch_type_name",
                        "reporting_status_name")
-for(yr in 1950:2013){
-dt_data_new2<- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))
+for(yr in 1950:2014){
+dt_data_new3<- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))
 }
-dt_data_new3<- rbind(dt_data_new, dt_data_new2)
+
 #load the Results data (largest file, usually takes up to 10 minutes to read!)
 dt_results           <- fread(file.path(path_data,file_allocation_results), sep=";", header = FALSE)
 colnames(dt_results) <- c("UniversalDataID","CellID","AllocatedCatch")
@@ -114,6 +114,8 @@ cells_df <- cells %>%
 
 write.csv(cells_df, "final_saup_ohi_fao.csv", row.names=FALSE)
 cells_df<- read.csv("prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv")
+
+
 test<- inner_join(dt_data_new3, cells_df, by = "cell_id") # this joins by cell id for Arctic regions and then drops the rest.
 
 ########### Aggregate Catch################
