@@ -1,5 +1,5 @@
 ## map configuration
-map_lat <- 71.5553; map_lon <- -2.42031e-09; map_zoom <- 0
+map_lat <- 71.7036; map_lon <- -2.42032e-09; map_zoom <- 0
 
 ## dimension descriptions for communication
 index_description = 'The overall Index represents the weighted average of all goal scores.'
