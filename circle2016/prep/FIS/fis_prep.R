@@ -39,6 +39,7 @@ df <- data.frame()  #create an empty dataframe to start then you will add data f
 
 for(yr in 1950:2014){
 
+  print(yr)
   new_catch_data <- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))%>%
     filter(cell_id %in% cells_df$CellID)            #this removes all cells not in your region, a significant space saver
 
@@ -120,18 +121,20 @@ cells_df <- cells %>%
   mutate(area = ifelse(CellID %in% dup, area, 1))  # if the cell doesn't cover >1 region, then change cell areas to one to capture entire cell's catch (these are <1 area due to edge effects)
 
 cells_df<- fao_cells%>%
-  left_join(cells_df, by= "CellID")%>%
+  left_join(cells_df, by= "CellID")
+
+write.csv(cells_df, "prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv", row.names=FALSE)
+
+
+cells_df<- read.csv("prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv")%>%
   rename(cell_id=CellID)
-
-write.csv(cells_df, "final_saup_ohi_fao.csv", row.names=FALSE)
-
-
-
 test<- left_join(df, cells_df, by = "cell_id") # this joins by cell id for Arctic regions and then drops the rest.
-
-
+#saveRDS(test, 'prep/FIS/SAUP_rgns/data.rds')
+test<- readRDS('prep/FIS/SAUP_rgns/data.rds')
+test[c("rgn_id")][is.na(test[c("rgn_id")])] <- 11#converts rgn_id that are NA to 11 to ensure that catches don't end up as NA
+test[c("area")][is.na(test[c("area")])] <- 1 #converts areas from NA to 1 so catches are complete
 ########### Aggregate Catch################
-df <- data.frame()
+df2 <- data.frame()
 
 
 for (i in 1950:2014){
@@ -139,7 +142,8 @@ for (i in 1950:2014){
   print(i)
 
   #1. subset the allocation data to year i
-  #data_yearly <- test[year==i,]
+  data_yearly <- subset(test, year==i)
+
 
   #2. Now we want it ordered by UniversalDataID
   #setkey(data_yearly,UniversalDataID)
@@ -158,7 +162,7 @@ for (i in 1950:2014){
   #5. Join allocation, taxon, entity, resilience data to results to create final catch dataset and removing all catch reported at non-species level
 
 
-  all_data <- test%>%
+  all_data <- data_yearly%>%
     mutate(catch_prop = catch_sum * area,
            year = i)%>%
     group_by(rgn_id,fao_id, taxon_scientific_name, taxon_common_name, taxon_key)%>%
@@ -174,10 +178,10 @@ for (i in 1950:2014){
 
 
 
-  df2 = rbind(df,all_data)
+  df2 = rbind(df2, all_data)
 
 }
-write.csv(df, "prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv", row.names=FALSE)
+write.csv(df2, "prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv", row.names=FALSE)
 
 ##############Prep for BBMSY##################
 

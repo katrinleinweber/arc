@@ -37,7 +37,8 @@ write.csv(region_prop_df, "saup_rasters_to_ohi_rgns.csv", row.names=FALSE)
 ##add fao
 
 fao_rgns <- read.csv(file.path(dir_M,
-                               "git-annex/globalprep/fis/v2015/raw/saup_rasters_to_fao_rgns.csv"))
+                               "git-annex/globalprep/fis/v2015/raw/saup_rasters_to_fao_rgns.csv"))%>%
+  filter(fao_id %in% c("18", "21", "27"))
 final <- fao_rgns %>%
   left_join(region_prop_df, by="saup_cell_id")%>%
   filter(fao_id %in% c("18", "21", "27"))
