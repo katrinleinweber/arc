@@ -13,7 +13,7 @@ summary(catch)
 catch <- catch %>%
   filter(!is.na(rgn_id)) %>%
   filter(!is.na(fao_id)) %>%
-  filter(rgn_id<9)
+  filter(rgn_id<10)
 
 
 catch <- catch %>%
