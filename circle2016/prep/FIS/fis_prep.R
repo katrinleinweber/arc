@@ -24,7 +24,7 @@ file_taxon              = "SeaAroundUs/taxon.dat"
 file_entity             = "FishingEntity.dat"
 path_data2               = "/home/shares/ohi/git-annex/globalprep/_raw_data/SAUP/d2017/annual_data/"
 
-spatial_dir<- 'circle2016/prep/spatial'
+spatial_dir<- 'prep/spatial'
 fis_dir<- 'prep/FIS'
 ohi_rgns <- raster(file.path(spatial_dir, "sp_mol_raster.tif"))
 
@@ -34,8 +34,15 @@ dt_data           <- fread(file.path(path_data,file_allocation_data), sep=";", h
 colnames(dt_data) <- c("UniversalDataID","DataLayerID","FishingEntityID", "Year", "TaxonKey",
                        "InputTypeID", "sector_type_name", "catch_type_name",
                        "reporting_status_name")
+cells_df<- read.csv("prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv")
+df <- data.frame()  #create an empty dataframe to start then you will add data from each year
+
 for(yr in 1950:2014){
-dt_data_new3<- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))
+
+  new_catch_data <- readRDS(paste0(file.path(path_data2), "saup_data_",yr,".rds"))%>%
+    filter(cell_id %in% cells_df$CellID)            #this removes all cells not in your region, a significant space saver
+
+  df <- rbind(new_catch_data,df)
 }
 
 #load the Results data (largest file, usually takes up to 10 minutes to read!)
@@ -67,7 +74,7 @@ colnames(dt_entity2) <- c("FishingEntityID","Name")
 #To fix this, we define a vector of cellids that have a proportionArea <1 and are NOT duplicated
 #(i.e. the other portion of the area missing is not accounted for) and assign a proportionArea of 1 to these cells.
 
-fis_dir<- save_loc<- 'circle2016/prep/FIS'
+fis_dir<- save_loc<- 'prep/FIS'
 cells_raw <- read.csv(file.path(fis_dir, "SAUP_rgns/saup_rasters_to_ohi_rgns.csv"))%>%
   rename(CellID=saup_cell_id) %>%
   group_by(CellID) %>%
@@ -106,17 +113,22 @@ head(tmp)
 
 #read in the dataset matching each cell to an FAO region (need both OHI and FAO region for analysis)
 fao_cells <- read.csv(file.path(fis_dir, "SAUP_rgns/saup_rasters_to_ohi_fao_rgns.csv")) %>%
-  rename(CellID=saup_cell_id)
+  rename(CellID=saup_cell_id)%>%
+  dplyr::select(-rgn_id)
 
 cells_df <- cells %>%
-  mutate(area = ifelse(CellID %in% dup, area, 1))%>%  # if the cell doesn't cover >1 region, then change cell areas to one to capture entire cell's catch (these are <1 area due to edge effects)
-  left_join(fao_cells)
+  mutate(area = ifelse(CellID %in% dup, area, 1))  # if the cell doesn't cover >1 region, then change cell areas to one to capture entire cell's catch (these are <1 area due to edge effects)
+
+cells_df<- fao_cells%>%
+  left_join(cells_df, by= "CellID")%>%
+  rename(cell_id=CellID)
 
 write.csv(cells_df, "final_saup_ohi_fao.csv", row.names=FALSE)
-cells_df<- read.csv("prep/FIS/SAUP_rgns/final_saup_ohi_fao.csv")
 
 
-test<- inner_join(dt_data_new3, cells_df, by = "cell_id") # this joins by cell id for Arctic regions and then drops the rest.
+
+test<- left_join(df, cells_df, by = "cell_id") # this joins by cell id for Arctic regions and then drops the rest.
+
 
 ########### Aggregate Catch################
 df <- data.frame()
@@ -162,7 +174,7 @@ for (i in 1950:2014){
 
 
 
-  df = rbind(df,all_data)
+  df2 = rbind(df,all_data)
 
 }
 write.csv(df, "prep/FIS/SAUP_rgns/spatial_catch_saup_new.csv", row.names=FALSE)
