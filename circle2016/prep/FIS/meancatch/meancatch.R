@@ -13,7 +13,8 @@ summary(catch)
 catch <- catch %>%
   filter(!is.na(rgn_id)) %>%
   filter(!is.na(fao_id)) %>%
-  filter(rgn_id!=10)
+  filter(rgn_id>9)
+
 
 catch <- catch %>%
   dplyr::select(year, rgn_id, fao_id, stock_id, TaxonKey, tons) %>%

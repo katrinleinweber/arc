@@ -236,7 +236,7 @@ cmsy_fits <- plyr::dlply(catch, c("stock_id", "common"), function(x) {
   out$year <- x$year
   out
 }, .parallel = TRUE)
-
+saveRDS(cmsy_fits, file = file.path(fis_dir,"catch_model_bmsy/cmsy-fits.rds"))
 fake_data <- data.frame(bbmsy_q2.5 = NA, bbmsy_q25 = NA, bbmsy_q50 = NA,
                         bbmsy_q75 = NA, bbmsy_q97.5 = NA)
 
