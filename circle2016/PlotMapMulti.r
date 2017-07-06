@@ -2,13 +2,13 @@
 #' Creates multiple static maps by calling PlotMap() by looping through listed goals in the input dataframe
 #'
 #' @param scores dataframe with regions, goals, dimensions, scores
-#' @param spatial_poly dataframe of spatial boundaries; prepared by PrepSpatial()
+#' @param poly_sf sf dataframe of spatial boundaries; prepared sf::st_read(dsn = 'spatial/regions_gcs.geojson', "OGRGeoJSON")
 #' @param fld_value_id usually rgn_id or region_id; default 'region_id'
 #' @param fld_value_score column name of value to plot; default 'score'
 #' @param dim_choice dimension to plot; default 'score'
 #' @param print_fig default FALSE
 #' @param save_fig default TRUE
-#' @param path_figures # default 'reports/figures'
+#' @param path_fig # default 'reports/figures'
 #' @param scale_label # default 'score' TODO: necessary?
 #' @param scale_limits # default c(0, 100)
 #'
@@ -16,20 +16,18 @@
 #' @export
 #'
 #' # example call after clone BHI repo and setwd('~/github/bhi/baltic2015')
-#' @examples PlotMapMulti(scores = readr::read_csv('scores.csv') %>% filter(region_id < 300), spatial_poly = PrepSpatial('spatial/regions_gcs.geojson'), path_figures = 'reports/figures/BHI_regions')
+#' @examples PlotMapMulti(scores = readr::read_csv('scores.csv') %>% filter(region_id < 300), spatial_poly = PrepSpatial('spatial/regions_gcs.geojson'), path_fig = 'reports/figures/BHI_regions')
 
 PlotMapMulti <- function(scores          = read.csv('scores.csv'),
-                         spatial_poly    = PrepSpatial('spatial/regions_gcs.geojson'),
+                         poly_sf         = sf::st_read(dsn = 'spatial/regions_gcs.geojson', "OGRGeoJSON"),
                          fld_value_id    = 'region_id',
                          fld_value_score = 'score',
                          dim_choice      = 'score',
                          print_fig       = FALSE,
                          save_fig        = TRUE,
-                         # active_plotly   = FALSE, ## takes too long, causes RStudio to crash
-                         path_figures    = 'reports/figures',
+                         path_fig        = 'reports/figures',
                          scale_label     = 'score',
                          scale_limits    = c(0, 100)) {
-                         # TODO: interactive = FALSE
 
   ## setup ----
 
@@ -64,15 +62,15 @@ PlotMapMulti <- function(scores          = read.csv('scores.csv'),
 
     ## plot map!
     PlotMap(scores       = scores_g,
-            rgn_poly     = spatial_poly,
+            poly_sf      = poly_sf,
             fld_rgn      = fld_value_id,
             fld_score    = fld_value_score,
             print_fig    = print_fig,
-            fig_path     = sprintf('%s/map_%s.png', path_figures, g),
+            path_fig     = sprintf('%s/map_%s.png', path_fig, g),
             map_title    = sprintf('Ocean Health Index: %s', g),
             scale_label  = scale_label,
             scale_limits = scale_limits)
-    #DEBUG scores = scores_g; rgn_poly = spatial_poly; fld_rgn= fld_value_id;fld_score = fld_value_score;print_fig = print_fig; fig_path = sprintf('%s/map_%s.png', path_figures, g); map_title = map_title;scale_label = scale_label;scale_limits = scale_limits
+    #DEBUG scores = scores_g; poly_sf = poly_sf; fld_rgn= fld_value_id;fld_score = fld_value_score;print_fig = print_fig; fig_path = sprintf('%s/map_%s.png', path_fig, g); map_title = map_title;scale_label = scale_label;scale_limits = scale_limits
 
   }
 
