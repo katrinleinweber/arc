@@ -54,10 +54,30 @@ PlotMap <- function(scores,
                 dplyr::select(rgn_id, score),
               by = 'rgn_id')
 
-
   ## plot with ggplot's sf branch
+  # could also do source('https://raw.githubusercontent.com/OHI-Science/ohibc/master/src/R/common.R')
+  # ggtheme_plot() +
+
   df_plot <- ggplot() +
-    geom_sf(data = poly_sf, aes(fill = score))
+    geom_sf(data = poly_sf, aes(fill = score)) +
+    theme(axis.ticks = element_blank(),
+          axis.text  = element_blank(),
+          axis.title = element_blank(),
+          text       = element_text(family = 'Helvetica', color = 'gray30', size = 12),
+          plot.title = element_text(size = rel(1.5), hjust = 0, face = 'bold'),
+          legend.position = 'right') +
+    theme(
+      # panel.grid.major = element_line(color='gray90', size = 0.25),
+      # panel.grid.minor = element_blank(),
+          panel.background = element_blank()) +
+    scale_fill_gradientn(colours = brewer.pal(10, 'RdYlBu'),
+                         na.value = 'gray80',
+                         limits = scale_limits,
+                         name = scale_label) +
+    geom_polygon(color = 'gray80', size = 0.1) +
+    labs(title = map_title)
+
+
 
 
  ## if(include_land) {

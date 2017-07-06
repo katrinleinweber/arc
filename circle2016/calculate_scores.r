@@ -60,7 +60,7 @@ poly_sf <- sf::st_read(dsn = mapfile_path, "OGRGeoJSON") %>%
   sf::st_transform(.,"+init=epsg:3572") #laea crs
 
 ## map!
-PlotMap(scores  = readr::read_csv('scores.csv'),
+PlotMap(scores  = readr::read_csv('scores.csv') %>% filter(goal == 'Index', dimension == 'score'),
         poly_sf = poly_sf,
         path_fig = 'reports/figures/maps_test.png')
 
