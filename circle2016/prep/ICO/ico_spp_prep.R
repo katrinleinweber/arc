@@ -245,5 +245,11 @@ am_summary4<- am_summary3 %>%
 am_summary5<- am_summary4 %>%
   dplyr::select(am_sid, rgn_id, rgn_name, sciname)
 
-write_csv(am_summary5, 'circle2016/prep/SPP/am_rgn_summary.csv')
+am_spp<-read_csv('circle2016/prep/SPP/am_rgn_summary.csv')
+iucn_spp<- read_csv('circle2016/prep/SPP/iucn_rgn_summary.csv')
 write_csv(sp_summary3, 'circle2016/prep/SPP/iucn_rgn_summary.csv')
+all_spp<- read_csv('/home/shares/ohi/git-annex/globalprep/spp_ico/v2016/int/spp_all_cleaned.csv')
+all_spp_rgn<- left_join(all_spp, am_spp, by=c('am_sid', 'sciname'))
+all_spp2<- left_join(all_spp_rgn, iucn_spp, by=c('iucn_sid', 'sciname', 'rgn_id', 'rgn_name'))
+all_spp3<- all_spp2 %>% drop_na(rgn_id)
+write_csv(all_spp3, file.path('circle2016/prep/ICO/spp_summary_final.csv'))
