@@ -23,24 +23,48 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 
 ##### Visualize ----
 
-## Make Flower Plots of all goals for a region ----
-source('PlotFlowerMulti.R')
+## Flower plots for each region ----
 
-rgns_complete <- read.csv('spatial/regions_lookup.csv')
-rgn_names <- rgns_complete
+## source from ohibc until added to ohicore, see https://github.com/OHI-Science/ohibc/blob/master/regionHoweSound/ohibc_howesound_2016.Rmd
+source('https://raw.githubusercontent.com/OHI-Science/ohibc/master/src/R/common.R')
+source('plot_flower_local.R')
 
-rgns_to_plot <- rgns_complete %>%
-  bind_rows(data_frame(rgn_id = 0, type='global', label='Arctic'))
-rgns_to_plot <- rgns_to_plot$rgn_id
+## regions info
+regions <- bind_rows(
+  data_frame(                # order regions to start with whole study_area
+    region_id   = 0,
+    region_name = 'Arctic'),
+  read_csv('spatial/regions_list.csv') %>%
+    select(region_id   = rgn_id,
+           region_name = rgn_name))
 
-PlotFlowerMulti(scores          = readr::read_csv('scores.csv'),# %>% filter(region_id %in% rgns_to_plot),
-                rgns_to_plot    = rgns_to_plot,
-                rgn_names       = rgn_names,
-                name_fig        = 'reports/figures/flowers',
-                assessment_name = 'The Arctic')
+## set figure name
+regions <- regions %>%
+  mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+                              str_replace_all(region_name, ' ', '_')))
+readr::write_csv(regions, 'reports/figures/regions_figs.csv')
+
+## save flower plot for each region
+for (i in regions$region_id) { # i = 0
+
+  ## fig_name to save
+  fig_name <- regions$flower_png[regions$region_id == i]
+
+  ## scores info
+  score_df <- scores %>%
+    filter(dimension == 'score') %>%
+    filter(region_id == i)
+
+  ## Casey's modified flower plot
+  plot_obj <- plot_flower(score_df,
+                          filename    = fig_name,
+                          goals_csv   = 'conf/goals.csv',
+                          incl_legend = TRUE)
+
+}
 
 
-## Make Maps of all regions for a goal ----
+## Maps for each goal ----
 source('PlotMap.r')
 source('PlotMapMulti.r')
 
