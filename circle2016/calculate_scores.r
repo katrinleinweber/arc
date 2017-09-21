@@ -24,8 +24,10 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 ##### Visualize ----
 
 ## Flower plots for each region ----
+## Will plot MAR/FIS as unequal weights based on the `fp_wildcaught_weight` layer
 
-## source from ohibc until added to ohicore, see https://github.com/OHI-Science/ohibc/blob/master/regionHoweSound/ohibc_howesound_2016.Rmd
+
+## source from ohibc until added to ohicore
 source('https://raw.githubusercontent.com/OHI-Science/ohibc/master/src/R/common.R')
 source('plot_flower_local.R')
 
