@@ -1,11 +1,27 @@
+#' Flower plots for OHI scores
+#'
+#' @param score_df data frame of scores for each goal for one region
+#' @param score_ref scale (default is 0-100, could also be 0-1) ## TODO I don't think we need this as a variable. Could have a check/message to tell you so much.
+#' @param outline show the outer borders? (default is TRUE)
+#' @param filename provide a file name to save the plot (default is no save)
+#' @param center_text provide a number or label (default is blank)
+#' @param center_score overridden if center_text != NULL
+#' @param goals_csv filepath for config info from goals.csv  # goals_csv = 'conf/goals.csv'
+#' @param incl_legend show the legend? (default is FALSE)
+#' @param show_plot show the plot? (default is TRUE)
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_flower <- function(score_df,
-                        score_ref   = 100,    ### scale default is 0-100
-                        outline     = TRUE,   ### show the outer borders?
-                        filename    = NULL,   ### give it a file name to save the plot; default is no save
-                        center_text = NULL,   ### pass it a number or label; default is blank
-                        center_score = TRUE,  ### overridden if center_text != NULL
-                        goals_csv    = NULL,   ### filepath for configuration info: goals.csv  # goals_csv = 'conf/goals.csv'
-                        incl_legend = FALSE,  ### show the legend? FALSE hides the legend
+                        score_ref   = 100,
+                        outline     = TRUE,
+                        filename    = NULL,
+                        center_text = NULL,
+                        center_score = TRUE,
+                        goals_csv    = NULL,
+                        incl_legend = FALSE,
                         show_plot   = TRUE) {
 
   ### set up goals.csv configuration information, if available
@@ -13,20 +29,26 @@ plot_flower <- function(score_df,
 
     ## read in conf/goals.csv
     conf <-  readr::read_csv(goals_csv)
-    goals_supra = na.omit(unique(conf$parent)) # goals comprised of subgoals, not included in plot
+    goals_supra <- na.omit(unique(conf$parent)) # goals comprised of subgoals, not included in plot
+    supra_lookup <- conf %>%
+      filter(goal %in% goals_supra) %>%
+      select(parent = goal, name_supra = name)
 
     ## extract conf info for labeling
     conf <- conf %>%
+      left_join(supra_lookup, by = 'parent') %>%
       filter(!(goal %in% goals_supra)) %>%
-      select(goal, order_color, order_hierarchy, weight, name_flower) %>%
+      select(goal, order_color, order_hierarchy, weight, name_supra, name_flower) %>%
       mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
+      mutate(name_supra  = gsub("& ", "&\n", name_supra, fixed = TRUE),
+             name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
 
     ## weights for FIS vs. MAR
     ## read in file
     w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight")
     if (length(file.exists(w_fn) > 0)) {
-      w    <- rbind(
+      w <- rbind(
         read_csv(sprintf("layers/%s", w_fn)),
         data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
         arrange(rgn_id)
@@ -54,13 +76,12 @@ plot_flower <- function(score_df,
   ### set up positions for the bar centers:
   ### cumulative sum of weights (incl current) minus half the current weight
   score_df <- score_df %>%
-    mutate(score   = score * 100/score_ref,   ### if 0-1, turn into 0-100; otherwise leave as is
+    mutate(score   = score * 100/score_ref,  # if 0-1, change to 0-100
            pos     = sum(weight) - (cumsum(weight) - 0.5 * weight),
            pos_end = sum(weight)) %>%
-    # supra_weight = just less than 2 subgoal weights added, (weight is the angular width)
-    # supra_pos = average of the pos of the 2 subgoals
-    # supra_pos_end =
-    # supra_scores = 150)) %>% since scores are from 0-100, play with this to position it outside the circle and text
+    group_by(name_supra) %>%
+    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>% # if there's a way to 'round' the mean so that FP is 8.5 it will line up
+    ungroup() %>%
     arrange(pos) %>%
     filter(weight != 0)
 
@@ -82,6 +103,7 @@ plot_flower <- function(score_df,
 
   ### some parameters for the plot:
   blank_circle_rad <- 42
+  supra_rad  <- 140
   light_line <- 'grey90'
   white_fill <- 'white'
   light_fill <- 'grey80'
@@ -115,9 +137,9 @@ plot_flower <- function(score_df,
     ### emphasize edge of petal
     geom_errorbar(aes(x = pos, ymin = score, ymax = score),
                   size = 0.5, color = dark_line, show.legend = NA) +
-    # ### add supragoal line TODO JSL
-    # geom_errorbar(aes(x = pos, ymin = score, ymax = score),
-    #               size = 0.5, color = dark_line, show.legend = NA) +
+    # ### add supragoal arcs
+    geom_errorbar(aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
+                  size = 0.25, show.legend = NA) +
     ### plot zero as a baseline:
     geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
                   size = 0.5, color = dark_line, show.legend = NA) +
@@ -169,17 +191,15 @@ plot_flower <- function(score_df,
   ### include or exclude goal flower names; dynamic if no border
   ### if no outline, labels go near bars; otherwise place near outer edge
   plot_obj <- plot_obj +
-    geom_text(aes(label = name_flower, x = pos, y = 130),
+    geom_text(aes(label = name_flower, x = pos, y = 120),
               hjust = .5, vjust = .5,
-              size = 4.5,
-              fontface = 'italic',
-              color = dark_line)
-  ### TODO JSL:add supra_text and position it outside of the arc
-  # geom_text(aes(label = supra_text, x = supra_pos, y = supra_text_score), # x is the angle, y is distance from the center
-  #           hjust = .5, vjust = .5,
-  #           size = 4.5,
-  #           fontface = 'italic',
-  #           color = dark_line)
+              size = 3,
+              color = dark_line) +
+  ### position supra names outside the arc. x is angle, y is distance from center
+  geom_text(aes(label = name_supra, x = pos_supra, y = supra_rad+10), # ideally make y bigger but names disappear because of some constraint I don't know of
+            hjust = .5, vjust = .5,
+            size = 3.5,
+            color = dark_line)
 
 
   ### include or exclude the legend
