@@ -1,5 +1,5 @@
 "targets","layer","filename","fld_value","units","name","description","clip_n_ship_disag","clip_n_ship_disag_description","layer_gl","path_in","fld_id_num","fld_id_chr","fld_category","fld_year","fld_val_num","fld_val_chr","file_exists","year_min","year_max","val_min","val_max","val_0to1","flds_unused","flds_missing","rows_duplicated","num_ids_unique","data_na"
-"AO","ao_trend","ao_trend_arc2016.csv","trend","trend score","Trends in AO","","","","ao_trend_arc2016","~/github/arc/circle2016/layers/ao_scores_arc2016.csv","rgn_id",,,,"trend",,TRUE,,,-0.129727353,0.0691,FALSE,,,,9,FALSE
+"AO","ao_trend","ao_trend_arc2016.csv","trend","trend score","Trends in AO","","","","ao_trend_arc2016","~/github/arc/circle2016/layers/ao_scores_arc2016.csv","rgn_id",,,,"trend",,TRUE,,,-0.029646459,0.0691,FALSE,,,,9,FALSE
 "AO","ao_status","ao_status_arc2016.csv","status","status score","AO status","","","","ao_status_arc2016","","rgn_id",,,,"status",,TRUE,,,68.80292103,99.6,FALSE,,,,9,FALSE
 "CW","cw_chemical_trend","cw_chemical_trend_arc2016.csv","trend","trend score","Trends in chemical pollution","Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
@@ -36,7 +36,7 @@ Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,2.46141623875173e-12,287613.495552297,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,0.00000000000246141623875173,287613.495552297,FALSE,,,,9,FALSE
 "FIS","fis_comsir_bmsy_arc2016","fis_comsir_bmsy_arc2016.csv","bbmsy","B / B_msy","B/Bmsy estimates obtained using the comsir method","The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
@@ -209,7 +209,7 @@ Data sources:
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 <<<<<<< HEAD
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/arc/circle2016/layers/po_nutrients_arc2016.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,9.22e-05,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/arc/circle2016/layers/po_nutrients_arc2016.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,0.0000922,TRUE,,,,9,FALSE
 "pressures","sp_alien","sp_alien_gl2016.csv","pressures.score","pressure score","Alien species","The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 =======
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/ohi-global/eez2016/layers/po_nutrients.csv","rgn_id",,,,"pressures.score",,TRUE,,,0.007275226,1,TRUE,,,,9,FALSE
