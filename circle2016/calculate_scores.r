@@ -37,7 +37,7 @@ regions <- bind_rows(
     region_id   = 0,
     region_name = 'Arctic'),
   read_csv('spatial/regions_list.csv') %>%
-    select(region_id   = rgn_id,
+    dplyr::select(region_id   = rgn_id,
            region_name = rgn_name))
 
 ## set figure name
