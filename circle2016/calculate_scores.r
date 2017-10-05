@@ -28,7 +28,6 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 
 
 ## source from ohibc until added to ohicore
-source('https://raw.githubusercontent.com/OHI-Science/ohibc/master/src/R/common.R')
 source('plot_flower_local.R')
 
 ## regions info
@@ -60,8 +59,7 @@ for (i in regions$region_id) { # i = 0
   ## Casey's modified flower plot
   plot_obj <- plot_flower(score_df,
                           filename    = fig_name,
-                          goals_csv   = 'conf/goals.csv',
-                          incl_legend = TRUE)
+                          goals_csv   = 'conf/goals.csv')
 
 }
 
