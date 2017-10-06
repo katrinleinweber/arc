@@ -17,11 +17,11 @@
 library(RColorBrewer)
 #'
 PlotFlower <- function(score_df,
-                        goals_csv   = 'conf/goals.csv',
-                        score_ref   = 100,
-                        fig_save    = NULL,
-                        incl_legend = TRUE,
-                        show_plot   = TRUE) {
+                       goals_csv   = 'conf/goals.csv',
+                       score_ref   = 100,
+                       fig_save    = NULL,
+                       incl_legend = TRUE,
+                       show_plot   = TRUE) {
 
   ### set up goals.csv configuration information, if available
   if ( !is.null(goals_csv) ) {
@@ -124,17 +124,17 @@ PlotFlower <- function(score_df,
   plot_obj <- ggplot(data = score_df,
                      aes(x = pos, y = score, fill = score, width = weight))
 
+  plot_obj <- plot_obj +
+    ## sets up the background/borders to the external boundary (100%) of plot:
+    geom_bar(aes(y = 100),
+             stat = 'identity', color = light_line, fill = white_fill, size = .2) +
+    geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
+                  size = 0.5, color = light_line, show.legend = NA)
+  ## lays any NA bars on top of background, with darker grey:
+  if(any(!is.na(score_df_na$score)))
     plot_obj <- plot_obj +
-      ## sets up the background/borders to the external boundary (100%) of plot:
-      geom_bar(aes(y = 100),
-               stat = 'identity', color = light_line, fill = white_fill, size = .2) +
-      geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
-                    size = 0.5, color = light_line, show.legend = NA)
-    ## lays any NA bars on top of background, with darker grey:
-    if(any(!is.na(score_df_na$score)))
-      plot_obj <- plot_obj +
-        geom_bar(data = score_df_na, aes(x = pos, y = score),
-                 stat = 'identity', color = light_line, fill = light_fill, size = .2)
+    geom_bar(data = score_df_na, aes(x = pos, y = score),
+             stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
   ## establish the basics of the flower plot...
   plot_obj <- plot_obj +
