@@ -1,9 +1,10 @@
 #' Flower plots for OHI scores
+#' By Casey O'Hara, Julia Lowndes, Melanie Frazier @ohi-science
 #'
 #' @param score_df data frame of scores for each goal for one region
-#' @param score_ref scale (default is 0-100, could also be 0-1) ## TODO I don't think we need this as a variable. Could have a check/message to tell you so much.
-#' @param filename provide a file name to save the plot (default is no save)
 #' @param goals_csv filepath for config info, default is `conf/goals.csv`
+#' @param score_ref scale (default is 0-100, could also be 0-1) ## TODO I don't think we need this as a variable. Could have a check/message to tell you so much.
+#' @param fig_save provide a file name to save the plot (default is no save)
 #' @param incl_legend show the legend? (default is TRUE)
 #' @param show_plot show the plot? (default is TRUE)
 #'
@@ -15,10 +16,10 @@
 #' ## NOTE::::: ggtheme plot is a function at the bottom of this file
 library(RColorBrewer)
 #'
-plot_flower <- function(score_df,
-                        score_ref   = 100,
-                        filename    = NULL,
+PlotFlower <- function(score_df,
                         goals_csv   = 'conf/goals.csv',
+                        score_ref   = 100,
+                        fig_save    = NULL,
                         incl_legend = TRUE,
                         show_plot   = TRUE) {
 
@@ -43,28 +44,6 @@ plot_flower <- function(score_df,
              name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
 
-    ## weights for FIS vs. MAR
-    w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight",
-                       full.names = TRUE)
-
-    if ( file.exists(w_fn) ) {
-      w <- read_csv(w_fn)
-      w <- rbind(w,
-        data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
-        arrange(rgn_id)
-
-      ## inject FIS/MAR weights
-      region_id <- unique(score_df$region_id)
-      conf$weight[conf$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
-      conf$weight[conf$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
-
-    } else {
-      message('Cannot find `layers/fp_wildcaught_weight*.csv` file...plotting with equal weight for FIS and MAR \n')
-    }
-
-    ## extract Index score for center labeling
-    score_index  <- round(score_df$score[score_df$goal == 'Index'])
-
     # region scores
     score_df <- score_df %>%
       inner_join(conf, by="goal") %>%
@@ -72,52 +51,65 @@ plot_flower <- function(score_df,
 
   }
 
-
-  ### set up positions for the bar centers:
-  ### cumulative sum of weights (incl current) minus half the current weight
+  ## set up positions for the bar centers:
+  ## cumulative sum of weights (incl current) minus half the current weight
   score_df <- score_df %>%
-    mutate(score   = score * 100/score_ref,  # if 0-1, change to 0-100
-           pos     = sum(weight) - (cumsum(weight) - 0.5 * weight),
-           pos_end = sum(weight)) %>%
+    mutate(score = score * 100/score_ref,  # if 0-1, change to 0-100
+           pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+    mutate(pos_end = sum(weight)) %>%
     group_by(name_supra) %>%
-    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>% # if there's a way to 'round' the mean so that FP is 8.5 it will line up
+    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
     ungroup() %>%
     arrange(pos) %>%
     filter(weight != 0)
 
+  ## weights for FIS vs. MAR
+  w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight",
+                     full.names = TRUE)
+
+  if ( file.exists(w_fn) ) {
+    w <- read_csv(w_fn)
+    w <- rbind(w,
+               data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
+      arrange(rgn_id)
+
+    ## inject FIS/MAR weights
+    region_id <- unique(score_df$region_id)
+    score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
+    score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
+
+    ## recalculate pos with these injected weights
+    score_df <- score_df %>%
+      mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight))
+
+  } else {
+    message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
+  }
+
+
+  ## some labeling
+  ## extract Index score for center labeling
+  score_index  <- round(score_df$score[score_df$goal == 'Index'])
 
   goal_labels <- score_df %>%
     select(goal, name_flower)
 
-
-  ### set up for displaying NAs
+  ## set up for displaying NAs
   score_df_na <- score_df %>%
     mutate(score = ifelse(is.na(score), 100, NA))
 
+
   ## Mel's color palette
   reds <-  grDevices::colorRampPalette(
-    c("#A50026 ", "#D73027 ", "#F46D43 ", "#FDAE61 ", "#FEE090 "),
+    c("#A50026", "#D73027", "#F46D43", "#FDAE61", "#FEE090"),
     space="Lab")(65)
   blues <-  grDevices::colorRampPalette(
-    c("#E0F3F8 ", "#ABD9E9 ", "#74ADD1 ", "#4575B4 ", "#313695 "))(35)
+    c("#E0F3F8", "#ABD9E9", "#74ADD1", "#4575B4", "#313695"))(35)
   myPalette <-   c(reds, blues)
 
-
-  ggplot(data, aes(y=country, x=scenario, fill=value)) +
-    geom_tile() +
-    facet_grid(~goal) +
-    scale_fill_gradientn(colours=myPalette, na.value="black") +
-    theme(axis.text.x  = element_text(angle=90, vjust=0.5), axis.text.y=element_text(size=15)) +
-    ylab("") +
-    xlab("")
-
-
-  p_labels <- score_df$goal
-  p_breaks <- score_df$pos
+  ## some parameters for the plot
   p_limits <- c(0, score_df$pos_end[1])
   p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
-
-  ### some parameters for the plot:
   blank_circle_rad <- 42
   supra_rad  <- 145
   light_line <- 'grey90'
@@ -128,46 +120,45 @@ plot_flower <- function(score_df,
   dark_line  <- 'grey20'
   dark_fill  <- 'grey22'
 
-  ### set up basic plot parameters
+  ## set up basic plot parameters
   plot_obj <- ggplot(data = score_df,
                      aes(x = pos, y = score, fill = score, width = weight))
 
     plot_obj <- plot_obj +
-      ### sets up the background/borders to the external boundary (100%) of plot:
+      ## sets up the background/borders to the external boundary (100%) of plot:
       geom_bar(aes(y = 100),
                stat = 'identity', color = light_line, fill = white_fill, size = .2) +
       geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
                     size = 0.5, color = light_line, show.legend = NA)
-    ### lays any NA bars on top of background, with darker grey:
+    ## lays any NA bars on top of background, with darker grey:
     if(any(!is.na(score_df_na$score)))
       plot_obj <- plot_obj +
         geom_bar(data = score_df_na, aes(x = pos, y = score),
                  stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
-  ### establish the basics of the flower plot...
+  ## establish the basics of the flower plot...
   plot_obj <- plot_obj +
-    ### plots the actual scores on top of background/borders:
+    ## plot the actual scores on top of background/borders:
     geom_bar(stat = 'identity', color = dark_line, size = .2) +
-    ### emphasize edge of petal
+    ## emphasize edge of petal
     geom_errorbar(aes(x = pos, ymin = score, ymax = score),
                   size = 0.5, color = dark_line, show.legend = NA) +
-    # ### add supragoal arcs
+    ## add supragoal arcs
     geom_errorbar(aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
                   size = 0.25, show.legend = NA) +
-    ### plot zero as a baseline:
+    ## plot zero as a baseline:
     geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
                   size = 0.5, color = dark_line, show.legend = NA) +
-    ### turns linear bar chart into polar coordinates:
+    ## turn linear bar chart into polar coordinates:
     coord_polar(start = pi * 0.5) +
-    ### sets petal colors to the red-yellow-blue color scale:
-    scale_fill_gradientn(colors = brewer.pal(n = 11, name = 'RdYlBu'),
-                         limits = c(0, 100),
-                         breaks = seq(0, 100, 20),
-                         labels = seq(0, 100, 20)) +
-    ### uses weights to assign widths to petals:
-    scale_x_continuous(labels = p_labels, breaks = p_breaks, limits = p_limits) +
+    ## set petal colors to the red-yellow-blue color scale:
+    scale_fill_gradientn(colours=myPalette, na.value="black",
+                         limits = c(0, 100)) +
+    ### use weights to assign widths to petals:
+    scale_x_continuous(labels = score_df$goal, breaks = score_df$pos, limits = p_limits) +
     scale_y_continuous(limits = c(-blank_circle_rad,
-                                  ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels), 150, 100)))
+                                  ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
+                                         150, 100)))
 
   plot_obj <- plot_obj +
     geom_text(aes(label = score_index),
@@ -196,37 +187,23 @@ plot_flower <- function(score_df,
               color = dark_line)
 
   ### position supra names outside the arc. x is angle, y is distance from center
-  myAng <-
-    seq(-20+270,-340+270,length.out = 9)# of goals that you have, fill in others with NAs)
 
   st2 <- score_df %>%
     mutate(name_supra2 = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     select(name_supra0 = name_supra, name_supra2, pos_supra0 = pos_supra) %>%
     unique() %>%
     as.data.frame() %>%
-    mutate(myAng = myAng) %>%
+    mutate(myAng = seq(-20+270,-340+270,length.out = 9)) %>% # of goals that you have, fill in others with NAs)) %>%
     mutate(supra_rad = supra_rad) %>%
     filter(!is.na(name_supra0))
 
   plot_obj +
-  geom_text(aes(label = name_supra0, x = pos_supra0, y = supra_rad+9, angle = myAng),
-            st2,
-            inherit.aes = FALSE,
+    geom_text(data = st2,
+              inherit.aes = FALSE,
+              aes(label = st2$name_supra0, x = st2$pos_supra0, y = supra_rad+9, angle = st2$myAng),
               hjust = .5, vjust = .5,
               size = 3,
               color = dark_line)
-    # theme(plot.margin=margin(-.75, -.75, -.75, -.75, "cm")) +
-  # cxc + coord_polar() +
-    # theme_linedraw() +
-    # theme(axis.ticks =element_blank(),
-    #       axis.text.y =element_blank(),
-    #       axis.title=element_blank(),
-    #       axis.text.x=element_text(size = 12, angle = c(-10, -20, -40, -80)))
-    #                                  # score_df$pos_supra))
-
-
-
-
 
   ### include or exclude the legend
   if(!incl_legend) {
@@ -240,8 +217,8 @@ plot_flower <- function(score_df,
     print(plot_obj)
   }
 
-  if(!is.null(filename)) {
-    ggsave(filename = filename,
+  if(!is.null(fig_save)) {
+    ggsave(filename = fig_save,
            height = 6, width = 8, units = 'in', dpi = 300,
            plot = plot_obj)
   }

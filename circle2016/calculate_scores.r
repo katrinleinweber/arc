@@ -49,17 +49,15 @@ readr::write_csv(regions, 'reports/figures/regions_figs.csv')
 for (i in regions$region_id) { # i = 0
 
   ## fig_name to save
-  fig_name <- regions$flower_png[regions$region_id == i]
+  fig_save <- regions$flower_png[regions$region_id == i]
 
   ## scores info
-  score_df <- scores %>%
+  score_dfX <- scores %>%
     filter(dimension == 'score') %>%
     filter(region_id == i)
 
-  ## Casey's modified flower plot
-  plot_obj <- plot_flower(score_df,
-                          filename    = fig_name,
-                          goals_csv   = 'conf/goals.csv')
+  ## create flower plot
+  plot_obj <- PlotFlower(score_df = score_dfX, fig_save = fig_save)
 
 }
 
