@@ -43,7 +43,10 @@ PlotFlower <- function(score_df,
              weight, name_supra, name_flower) %>%
       mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
       mutate(name_supra  = gsub("& ", "&\n", name_supra, fixed = TRUE), #TODO Julie check this
-             name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
+             name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
+             name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
+             name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
+             name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
 
     ## extract Index score for center labeling before join with conf
@@ -57,6 +60,7 @@ PlotFlower <- function(score_df,
   } else {
     message('Please provide a `goals_csv` dataframe with weights for each goal\n')
   }
+
 
   ## set up positions for the bar centers:
   ## cumulative sum of weights (incl current) minus half the current weight
@@ -201,10 +205,10 @@ PlotFlower <- function(score_df,
     mutate(supra_rad = supra_rad) %>%
     filter(!is.na(name_supra0))
 
-  plot_obj +
+  plot_obj <- plot_obj +
     geom_text(data = st2,
               inherit.aes = FALSE,
-              aes(label = st2$name_supra0, x = st2$pos_supra0, y = supra_rad, angle = st2$myAng),
+              aes(label = name_supra0, x = pos_supra0, y = supra_rad, angle = myAng),
               hjust = .5, vjust = .5,
               size = 3,
               color = dark_line)
