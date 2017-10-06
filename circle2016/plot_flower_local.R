@@ -1,5 +1,5 @@
 #' Flower plots for OHI scores
-#' By Casey O'Hara, Julia Lowndes, Melanie Frazier @ohi-science
+#' By Casey O'Hara, Julia Lowndes, Melanie Frazier github.com/ohi-science
 #'
 #' @param score_df data frame of scores for each goal for one region
 #' @param goals_csv filepath for config info, default is `conf/goals.csv`
@@ -18,6 +18,8 @@ library(RColorBrewer)
 #'
 PlotFlower <- function(score_df,
                        goals_csv   = 'conf/goals.csv',
+                       ## Oct 5 JSL was getting this error for hours before passing as an argument in calculate_scores.R;
+# Error in make.names(x) : invalid multibyte string at '<89>PNG'
                        score_ref   = 100,
                        fig_save    = NULL,
                        incl_legend = TRUE,
@@ -40,15 +42,20 @@ PlotFlower <- function(score_df,
       select(goal, order_color, order_hierarchy,
              weight, name_supra, name_flower) %>%
       mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
-      mutate(name_supra  = gsub("& ", "&\n", name_supra, fixed = TRUE),
+      mutate(name_supra  = gsub("& ", "&\n", name_supra, fixed = TRUE), #TODO Julie check this
              name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
+
+    ## extract Index score for center labeling before join with conf
+    score_index  <- round(score_df$score[score_df$goal == 'Index'])
 
     # region scores
     score_df <- score_df %>%
       inner_join(conf, by="goal") %>%
       arrange(order_color)
 
+  } else {
+    message('Please provide a `goals_csv` dataframe with weights for each goal\n')
   }
 
   ## set up positions for the bar centers:
@@ -58,9 +65,9 @@ PlotFlower <- function(score_df,
            pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
     mutate(pos_end = sum(weight)) %>%
     group_by(name_supra) %>%
+    ## calculate position of supra goals before any unequal weighting (ie for FP)
     mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
     ungroup() %>%
-    arrange(pos) %>%
     filter(weight != 0)
 
   ## weights for FIS vs. MAR
@@ -80,17 +87,16 @@ PlotFlower <- function(score_df,
 
     ## recalculate pos with these injected weights
     score_df <- score_df %>%
-      mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight))
+      mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+      ## arrange by pos for proper ordering
+      arrange(pos)
 
   } else {
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
   }
 
 
-  ## some labeling
-  ## extract Index score for center labeling
-  score_index  <- round(score_df$score[score_df$goal == 'Index'])
-
+  ## more labeling
   goal_labels <- score_df %>%
     select(goal, name_flower)
 
@@ -119,6 +125,7 @@ PlotFlower <- function(score_df,
   med_fill   <- 'grey52'
   dark_line  <- 'grey20'
   dark_fill  <- 'grey22'
+
 
   ## set up basic plot parameters
   plot_obj <- ggplot(data = score_df,
@@ -154,12 +161,13 @@ PlotFlower <- function(score_df,
     ## set petal colors to the red-yellow-blue color scale:
     scale_fill_gradientn(colours=myPalette, na.value="black",
                          limits = c(0, 100)) +
-    ### use weights to assign widths to petals:
+    ## use weights to assign widths to petals:
     scale_x_continuous(labels = score_df$goal, breaks = score_df$pos, limits = p_limits) +
     scale_y_continuous(limits = c(-blank_circle_rad,
                                   ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
                                          150, 100)))
 
+  ## add center number
   plot_obj <- plot_obj +
     geom_text(aes(label = score_index),
               x = 0, y = -blank_circle_rad,
@@ -175,19 +183,15 @@ PlotFlower <- function(score_df,
           axis.text  = element_blank(),
           axis.title = element_blank())
 
-  ### include or exclude goal flower names; dynamic if no border
-  ### if no outline, labels go near bars; otherwise place near outer edge
-  # myAng0 <-
-  #   seq(-20+270,-340+270,length.out = 13)
-
+  ## add flower names
   plot_obj <- plot_obj +
-    geom_text(aes(label = name_flower, x = pos, y = 120), #, angle = myAng0),
+    geom_text(aes(label = name_flower, x = pos, y = 120),
               hjust = .5, vjust = .5,
               size = 3,
               color = dark_line)
 
-  ### position supra names outside the arc. x is angle, y is distance from center
-
+  ## position supra names outside the arc. x is angle, y is distance from center
+  ## https://stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
   st2 <- score_df %>%
     mutate(name_supra2 = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     select(name_supra0 = name_supra, name_supra2, pos_supra0 = pos_supra) %>%
@@ -200,7 +204,7 @@ PlotFlower <- function(score_df,
   plot_obj +
     geom_text(data = st2,
               inherit.aes = FALSE,
-              aes(label = st2$name_supra0, x = st2$pos_supra0, y = supra_rad+9, angle = st2$myAng),
+              aes(label = st2$name_supra0, x = st2$pos_supra0, y = supra_rad, angle = st2$myAng),
               hjust = .5, vjust = .5,
               size = 3,
               color = dark_line)

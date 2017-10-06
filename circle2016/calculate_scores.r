@@ -24,10 +24,6 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 ##### Visualize ----
 
 ## Flower plots for each region ----
-## Will plot MAR/FIS as unequal weights based on the `fp_wildcaught_weight` layer
-
-
-## source from ohibc until added to ohicore
 source('plot_flower_local.R')
 
 ## regions info
@@ -52,12 +48,14 @@ for (i in regions$region_id) { # i = 0
   fig_save <- regions$flower_png[regions$region_id == i]
 
   ## scores info
-  score_dfX <- scores %>%
+  score_df <- scores %>%
     filter(dimension == 'score') %>%
     filter(region_id == i)
 
   ## create flower plot
-  plot_obj <- PlotFlower(score_df = score_dfX, fig_save = fig_save)
+  plot_obj <- PlotFlower(score_df  = score_df,
+                         goals_csv = 'conf/goals.csv',
+                         fig_save  = fig_save)
 
 }
 
