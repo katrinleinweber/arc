@@ -26,20 +26,20 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 ## Flower plots for each region ----
 source('plot_flower_local.R')
 
-## regions info
+## regions info ## TODO JULIE this can be deleted once incorporated into function
 regions <- bind_rows(
-  data_frame(                # order regions to start with whole study_area
-    region_id   = 0,
-    region_name = 'Arctic'),
-  read_csv('spatial/regions_list.csv') %>%
-    dplyr::select(region_id   = rgn_id,
-           region_name = rgn_name))
+   data_frame(                # order regions to start with whole study_area
+     region_id   = 0,
+     region_name = 'Arctic'),
+   read_csv('spatial/regions_list.csv') %>%
+     dplyr::select(region_id   = rgn_id,
+            region_name = rgn_name))
 
-## set figure name
-regions <- regions %>%
-  mutate(flower_png = sprintf('reports/figures/flower_%s.png',
-                              str_replace_all(region_name, ' ', '_')))
-readr::write_csv(regions, 'reports/figures/regions_figs.csv')
+ ## set figure name
+ regions <- regions %>%
+   mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+                               str_replace_all(region_name, ' ', '_')))
+ readr::write_csv(regions, 'reports/figures/regions_figs.csv')
 
 ## save flower plot for each region
 for (i in regions$region_id) { # i = 0
@@ -55,7 +55,8 @@ for (i in regions$region_id) { # i = 0
   ## create flower plot
   plot_obj <- PlotFlower(score_df  = score_df,
                          goals_csv = 'conf/goals.csv',
-                         fig_save  = fig_save)
+                         fig_save  = fig_save) #,
+                         #assessment_name = "Arctic") TODO julie
 
 }
 

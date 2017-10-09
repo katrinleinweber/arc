@@ -14,12 +14,14 @@
 #' @examples
 #'
 #' ## NOTE::::: ggtheme plot is a function at the bottom of this file
+#' ## will save 'reports/figures/regions_figs.csv' along with flower plots
 library(RColorBrewer)
 #'
 PlotFlower <- function(score_df,
                        goals_csv   = 'conf/goals.csv',
                        ## Oct 5 JSL was getting this error for hours before passing as an argument in calculate_scores.R;
-# Error in make.names(x) : invalid multibyte string at '<89>PNG'
+                       # Error in make.names(x) : invalid multibyte string at '<89>PNG'
+                       assessment_name = NULL,
                        score_ref   = 100,
                        fig_save    = NULL,
                        incl_legend = TRUE,
@@ -94,21 +96,21 @@ PlotFlower <- function(score_df,
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
   }
 
-  ## create supra goal dataframe for position and labeling
-  ## https://stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
-  ## supra goal (radius from center)
-  supra_rad  <- 145
 
+  ## create supra goal dataframe for position and labeling
   supra_df <- score_df %>%
     mutate(name_supra = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     mutate(name_supra = paste0(name_supra, "\n"),
            name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
     select(name_supra, pos_supra) %>%
     unique() %>%
-    as.data.frame() %>%
-    mutate(myAng = seq(-20+270,-340+270,length.out = 9)) %>% # of goals that you have, fill in others with NAs)) %>%
-    mutate(supra_rad = supra_rad) %>%
+    as.data.frame()
+
+  ## calculate arc: stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
+  supra_df <- supra_df %>%
+    mutate(myAng = seq(250,-70, length.out = dim(supra_df)[1])) %>%
     filter(!is.na(pos_supra))
+
 
   ## more labeling
   goal_labels <- score_df %>%
@@ -140,102 +142,130 @@ PlotFlower <- function(score_df,
   myPalette <-   c(reds, blues)
 
 
-  ## set up basic plot parameters
-  plot_obj <- ggplot(data = score_df,
-                     aes(x = pos, y = score, fill = score, width = weight))
+  # ## regions info
+  # regions <- bind_rows(
+  #   data_frame(                # order regions to start with whole study_area
+  #     region_id   = 0,
+  #     region_name = assessment_name),
+  #   read_csv('spatial/regions_list.csv') %>%
+  #     dplyr::select(region_id   = rgn_id,
+  #                   region_name = rgn_name))
+  #
+  # ## set figure name
+  # regions <- regions %>%
+  #   mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+  #                               str_replace_all(region_name, ' ', '_')))
+  # readr::write_csv(regions, 'reports/figures/regions_figs.csv') ## TODO discuss with Mel
+  #
+  # ## loop through to save flower plot for each region
+  # for (i in regions$region_id) { # i = 0
+  #
+  #   ## fig_name to save
+  #   fig_save <- regions$flower_png[regions$region_id == i]
+  #
+  #   ## scores info
+  #   score_df <- scores %>%
+  #     filter(dimension == 'score') %>%
+  #     filter(region_id == i)
 
-  plot_obj <- plot_obj +
-    ## sets up the background/borders to the external boundary (100%) of plot:
-    geom_bar(aes(y = 100),
-             stat = 'identity', color = light_line, fill = white_fill, size = .2) +
-    geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
-                  size = 0.5, color = light_line, show.legend = NA)
-  ## lays any NA bars on top of background, with darker grey:
-  if(any(!is.na(score_df_na$score)))
+
+    ## set up basic plot parameters
+    plot_obj <- ggplot(data = score_df,
+                       aes(x = pos, y = score, fill = score, width = weight))
+
     plot_obj <- plot_obj +
-    geom_bar(data = score_df_na, aes(x = pos, y = score),
-             stat = 'identity', color = light_line, fill = light_fill, size = .2)
+      ## sets up the background/borders to the external boundary (100%) of plot:
+      geom_bar(aes(y = 100),
+               stat = 'identity', color = light_line, fill = white_fill, size = .2) +
+      geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
+                    size = 0.5, color = light_line, show.legend = NA)
+    ## lays any NA bars on top of background, with darker grey:
+    if(any(!is.na(score_df_na$score)))
+      plot_obj <- plot_obj +
+      geom_bar(data = score_df_na, aes(x = pos, y = score),
+               stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
-  ## establish the basics of the flower plot...
-  plot_obj <- plot_obj +
-    ## plot the actual scores on top of background/borders:
-    geom_bar(stat = 'identity', color = dark_line, size = .2) +
-    ## emphasize edge of petal
-    geom_errorbar(aes(x = pos, ymin = score, ymax = score),
-                  size = 0.5, color = dark_line, show.legend = NA) +
-    ## plot zero as a baseline:
-    geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
-                  size = 0.5, color = dark_line, show.legend = NA) +
-    ## turn linear bar chart into polar coordinates:
-    coord_polar(start = pi * 0.5) +
-    ## set petal colors to the red-yellow-blue color scale:
-    scale_fill_gradientn(colours=myPalette, na.value="black",
-                         limits = c(0, 100)) +
-    ## use weights to assign widths to petals:
-    scale_x_continuous(labels = score_df$goal, breaks = score_df$pos, limits = p_limits) +
-    scale_y_continuous(limits = c(-blank_circle_rad,
-                                  ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
-                                         150, 100)))
+    ## establish the basics of the flower plot...
+    plot_obj <- plot_obj +
+      ## plot the actual scores on top of background/borders:
+      geom_bar(stat = 'identity', color = dark_line, size = .2) +
+      ## emphasize edge of petal
+      geom_errorbar(aes(x = pos, ymin = score, ymax = score),
+                    size = 0.5, color = dark_line, show.legend = NA) +
+      ## plot zero as a baseline:
+      geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
+                    size = 0.5, color = dark_line, show.legend = NA) +
+      ## turn linear bar chart into polar coordinates:
+      coord_polar(start = pi * 0.5) +
+      ## set petal colors to the red-yellow-blue color scale:
+      scale_fill_gradientn(colours=myPalette, na.value="black",
+                           limits = c(0, 100)) +
+      ## use weights to assign widths to petals:
+      scale_x_continuous(labels = score_df$goal, breaks = score_df$pos, limits = p_limits) +
+      scale_y_continuous(limits = c(-blank_circle_rad,
+                                    ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
+                                           150, 100)))
 
-  ## add center number and title
-  plot_obj <- plot_obj +
-    geom_text(aes(label = score_index),
-              x = 0, y = -blank_circle_rad,
-              hjust = .5, vjust = .5,
-              size = 12,
-              color = dark_line) # +
+    ## add center number and title
+    plot_obj <- plot_obj +
+      geom_text(aes(label = score_index),
+                x = 0, y = -blank_circle_rad,
+                hjust = .5, vjust = .5,
+                size = 12,
+                color = dark_line) # +
     # ggtitle(region_name) TODO make this work when inner loop
 
-  ### clean up the theme
-  plot_obj <- plot_obj +
-    ggtheme_plot() +
-    theme(panel.grid.major = element_blank(),
-          axis.line  = element_blank(),
-          axis.text  = element_blank(),
-          axis.title = element_blank())
-
-  ## add flower names
-  plot_obj <- plot_obj +
-    geom_text(aes(label = name_flower, x = pos, y = 120),
-              hjust = .5, vjust = .5,
-              size = 3,
-              color = dark_line)
-
-  ## position supra names outside the arc. x is angle, y is distance from center
-  plot_obj <- plot_obj +
-    ## add supragoal arcs
-    geom_errorbar(data = supra_df,
-                  inherit.aes = FALSE,
-                  aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
-                  size = 0.25, show.legend = NA) +
-    geom_text(data = supra_df,
-              inherit.aes = FALSE,
-              aes(label = name_supra, x = pos_supra, y = supra_rad, angle = myAng),
-              hjust = .5, vjust = .5,
-              size = 3,
-              color = dark_line)
-
-  ### include or exclude the legend
-  if(!incl_legend) {
+    ### clean up the theme
     plot_obj <- plot_obj +
-      theme(legend.position = 'none')
+      ggtheme_plot() +
+      theme(panel.grid.major = element_blank(),
+            axis.line  = element_blank(),
+            axis.text  = element_blank(),
+            axis.title = element_blank())
+
+    ## add flower names
+    plot_obj <- plot_obj +
+      geom_text(aes(label = name_flower, x = pos, y = 120),
+                hjust = .5, vjust = .5,
+                size = 3,
+                color = dark_line)
+
+    ## position supra arc and names. x is angle, y is distance from center
+    supra_rad  <- 145  ## supra goal radius from center
+
+    plot_obj <- plot_obj +
+      ## add supragoal arcs
+      geom_errorbar(data = supra_df, inherit.aes = FALSE,
+                    aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
+                    size = 0.25, show.legend = NA) +
+      geom_text(data = supra_df, inherit.aes = FALSE,
+                aes(label = name_supra, x = pos_supra, y = supra_rad, angle = myAng),
+                hjust = .5, vjust = .5,
+                size = 3,
+                color = dark_line)
+
+    ### include or exclude the legend
+    if(!incl_legend) {
+      plot_obj <- plot_obj +
+        theme(legend.position = 'none')
+    }
+
+
+    ### display/save options: print to graphics, save to file
+    if(show_plot) {
+      print(plot_obj)
+    }
+
+    if(!is.null(fig_save)) {
+      ggsave(filename = fig_save,
+             height = 6, width = 8, units = 'in', dpi = 300,
+             plot = plot_obj)
+    }
+
+    ### ...then return the plot object for further use
+    return(invisible(plot_obj))
   }
-
-
-  ### display/save options: print to graphics, save to file
-  if(show_plot) {
-    print(plot_obj)
-  }
-
-  if(!is.null(fig_save)) {
-    ggsave(filename = fig_save,
-           height = 6, width = 8, units = 'in', dpi = 300,
-           plot = plot_obj)
-  }
-
-  ### ...then return the plot object for further use
-  return(invisible(plot_obj))
-}
+# }
 
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
