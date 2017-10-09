@@ -42,11 +42,6 @@ PlotFlower <- function(score_df,
       select(goal, order_color, order_hierarchy,
              weight, name_supra, name_flower) %>%
       mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
-      # mutate(name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
-      #        name_supra  = gsub("Economies", "Economies\n", name_supra, fixed = TRUE),
-      #        name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
-      #        name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
-      #        name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
 
     ## extract Index score for center labeling before join with conf
@@ -68,6 +63,10 @@ PlotFlower <- function(score_df,
     mutate(score = score * 100/score_ref,  # if 0-1, change to 0-100
            pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
     mutate(pos_end = sum(weight)) %>%
+    group_by(name_supra) %>%
+    ## calculate position of supra goals before any unequal weighting (ie for FP)
+    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
+    ungroup() %>%
     filter(weight != 0)
 
   ## weights for FIS vs. MAR
@@ -97,26 +96,19 @@ PlotFlower <- function(score_df,
 
   ## create supra goal dataframe for position and labeling
   ## https://stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
-  ## supra goal radius from center)
+  ## supra goal (radius from center)
   supra_rad  <- 145
 
-  st2 <- score_df %>%
-    group_by(name_supra) %>%
-    ## calculate position of supra goals before any unequal weighting (ie for FP)
-    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
-    ungroup() %>%
-    mutate(name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
-           name_supra  = gsub("Economies", "Economies\n", name_supra, fixed = TRUE),
-           name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
-           name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
-           name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
-    mutate(name_supra2 = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
-    select(name_supra0 = name_supra, name_supra2, pos_supra0 = pos_supra) %>%
+  supra_df <- score_df %>%
+    mutate(name_supra = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
+    mutate(name_supra = paste0(name_supra, "\n"),
+           name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
+    select(name_supra, pos_supra) %>%
     unique() %>%
     as.data.frame() %>%
     mutate(myAng = seq(-20+270,-340+270,length.out = 9)) %>% # of goals that you have, fill in others with NAs)) %>%
     mutate(supra_rad = supra_rad) %>%
-    filter(!is.na(name_supra0))
+    filter(!is.na(pos_supra))
 
   ## more labeling
   goal_labels <- score_df %>%
@@ -212,13 +204,13 @@ PlotFlower <- function(score_df,
   ## position supra names outside the arc. x is angle, y is distance from center
   plot_obj <- plot_obj +
     ## add supragoal arcs
-    geom_errorbar(data = st2,
+    geom_errorbar(data = supra_df,
                   inherit.aes = FALSE,
-                  aes(x = pos_supra0, ymin = supra_rad, ymax = supra_rad),
+                  aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
                   size = 0.25, show.legend = NA) +
-    geom_text(data = st2,
+    geom_text(data = supra_df,
               inherit.aes = FALSE,
-              aes(label = name_supra0, x = pos_supra0, y = supra_rad, angle = myAng),
+              aes(label = name_supra, x = pos_supra, y = supra_rad, angle = myAng),
               hjust = .5, vjust = .5,
               size = 3,
               color = dark_line)
