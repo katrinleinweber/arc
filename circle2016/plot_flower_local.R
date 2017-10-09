@@ -28,7 +28,7 @@ PlotFlower <- function(score_df,
   ### set up goals.csv configuration information, if available
   if ( !is.null(goals_csv) ) {
 
-    ## read in conf/goals.csv, deal with supra goals
+    ## read in conf/goals.csv, start dealing with supra goals
     conf <-  readr::read_csv(goals_csv)
     goals_supra <- na.omit(unique(conf$parent))
     supra_lookup <- conf %>%
@@ -42,11 +42,11 @@ PlotFlower <- function(score_df,
       select(goal, order_color, order_hierarchy,
              weight, name_supra, name_flower) %>%
       mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
-      mutate(name_supra  = gsub("& ", "&\n", name_supra, fixed = TRUE), #TODO Julie check this
-             name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
-             name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
-             name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
-             name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
+      # mutate(name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
+      #        name_supra  = gsub("Economies", "Economies\n", name_supra, fixed = TRUE),
+      #        name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
+      #        name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
+      #        name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
       arrange(order_hierarchy)
 
     ## extract Index score for center labeling before join with conf
@@ -68,10 +68,6 @@ PlotFlower <- function(score_df,
     mutate(score = score * 100/score_ref,  # if 0-1, change to 0-100
            pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
     mutate(pos_end = sum(weight)) %>%
-    group_by(name_supra) %>%
-    ## calculate position of supra goals before any unequal weighting (ie for FP)
-    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
-    ungroup() %>%
     filter(weight != 0)
 
   ## weights for FIS vs. MAR
@@ -99,6 +95,28 @@ PlotFlower <- function(score_df,
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
   }
 
+  ## create supra goal dataframe for position and labeling
+  ## https://stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
+  ## supra goal radius from center)
+  supra_rad  <- 145
+
+  st2 <- score_df %>%
+    group_by(name_supra) %>%
+    ## calculate position of supra goals before any unequal weighting (ie for FP)
+    mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
+    ungroup() %>%
+    mutate(name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE),
+           name_supra  = gsub("Economies", "Economies\n", name_supra, fixed = TRUE),
+           name_supra  = gsub("Provision", "Provision\n", name_supra, fixed = TRUE),
+           name_supra  = gsub("Place", "Place\n", name_supra, fixed = TRUE),
+           name_supra  = gsub("Biodiversity", "Biodiversity\n", name_supra, fixed = TRUE)) %>%
+    mutate(name_supra2 = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
+    select(name_supra0 = name_supra, name_supra2, pos_supra0 = pos_supra) %>%
+    unique() %>%
+    as.data.frame() %>%
+    mutate(myAng = seq(-20+270,-340+270,length.out = 9)) %>% # of goals that you have, fill in others with NAs)) %>%
+    mutate(supra_rad = supra_rad) %>%
+    filter(!is.na(name_supra0))
 
   ## more labeling
   goal_labels <- score_df %>%
@@ -108,6 +126,18 @@ PlotFlower <- function(score_df,
   score_df_na <- score_df %>%
     mutate(score = ifelse(is.na(score), 100, NA))
 
+  ## some parameters for the plot
+  p_limits <- c(0, score_df$pos_end[1])
+  p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
+  blank_circle_rad <- 42
+  light_line <- 'grey90'
+  white_fill <- 'white'
+  light_fill <- 'grey80'
+  med_line   <- 'grey50'
+  med_fill   <- 'grey52'
+  dark_line  <- 'grey20'
+  dark_fill  <- 'grey22'
+
 
   ## Mel's color palette
   reds <-  grDevices::colorRampPalette(
@@ -116,19 +146,6 @@ PlotFlower <- function(score_df,
   blues <-  grDevices::colorRampPalette(
     c("#E0F3F8", "#ABD9E9", "#74ADD1", "#4575B4", "#313695"))(35)
   myPalette <-   c(reds, blues)
-
-  ## some parameters for the plot
-  p_limits <- c(0, score_df$pos_end[1])
-  p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
-  blank_circle_rad <- 42
-  supra_rad  <- 145
-  light_line <- 'grey90'
-  white_fill <- 'white'
-  light_fill <- 'grey80'
-  med_line   <- 'grey50'
-  med_fill   <- 'grey52'
-  dark_line  <- 'grey20'
-  dark_fill  <- 'grey22'
 
 
   ## set up basic plot parameters
@@ -154,9 +171,6 @@ PlotFlower <- function(score_df,
     ## emphasize edge of petal
     geom_errorbar(aes(x = pos, ymin = score, ymax = score),
                   size = 0.5, color = dark_line, show.legend = NA) +
-    ## add supragoal arcs
-    geom_errorbar(aes(x = pos_supra, ymin = supra_rad, ymax = supra_rad),
-                  size = 0.25, show.legend = NA) +
     ## plot zero as a baseline:
     geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
                   size = 0.5, color = dark_line, show.legend = NA) +
@@ -171,13 +185,14 @@ PlotFlower <- function(score_df,
                                   ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
                                          150, 100)))
 
-  ## add center number
+  ## add center number and title
   plot_obj <- plot_obj +
     geom_text(aes(label = score_index),
               x = 0, y = -blank_circle_rad,
               hjust = .5, vjust = .5,
               size = 12,
-              color = dark_line)
+              color = dark_line) # +
+    # ggtitle(region_name) TODO make this work when inner loop
 
   ### clean up the theme
   plot_obj <- plot_obj +
@@ -195,17 +210,12 @@ PlotFlower <- function(score_df,
               color = dark_line)
 
   ## position supra names outside the arc. x is angle, y is distance from center
-  ## https://stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
-  st2 <- score_df %>%
-    mutate(name_supra2 = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
-    select(name_supra0 = name_supra, name_supra2, pos_supra0 = pos_supra) %>%
-    unique() %>%
-    as.data.frame() %>%
-    mutate(myAng = seq(-20+270,-340+270,length.out = 9)) %>% # of goals that you have, fill in others with NAs)) %>%
-    mutate(supra_rad = supra_rad) %>%
-    filter(!is.na(name_supra0))
-
   plot_obj <- plot_obj +
+    ## add supragoal arcs
+    geom_errorbar(data = st2,
+                  inherit.aes = FALSE,
+                  aes(x = pos_supra0, ymin = supra_rad, ymax = supra_rad),
+                  size = 0.25, show.legend = NA) +
     geom_text(data = st2,
               inherit.aes = FALSE,
               aes(label = name_supra0, x = pos_supra0, y = supra_rad, angle = myAng),
