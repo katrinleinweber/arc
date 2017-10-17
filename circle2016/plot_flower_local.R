@@ -1,9 +1,9 @@
 #' Flower plots for OHI scores
 #' By Casey O'Hara, Julia Lowndes, Melanie Frazier github.com/ohi-science
 #'
-#' @param score_df data frame of scores for each goal for one region
-#' @param goals_csv filepath for config info, default is `conf/goals.csv`
-#' @param score_ref scale (default is 0-100, could also be 0-1) ## TODO I don't think we need this as a variable. Could have a check/message to tell you so much.
+#' @param region_plot provide region_id, defaults to all regions+overall (region_id = 0)
+#' @param year_plot
+#' @param goals_csv filepath for config info, defaults to 'conf/goals.csv'
 #' @param fig_save provide a file name to save the plot (default is no save)
 #' @param incl_legend show the legend? (default is TRUE)
 #' @param show_plot show the plot? (default is TRUE)
@@ -13,57 +13,106 @@
 #'
 #' @examples
 #'
-#' ## NOTE::::: ggtheme plot is a function at the bottom of this file
+#'
+#' ## TODISCUSS WITH MEL::::: ggtheme plot is a function at the bottom of this file
 #' ## will save 'reports/figures/regions_figs.csv' along with flower plots
+library(tidyverse)
+library(stringr)
 library(RColorBrewer)
 #'
-PlotFlower <- function(score_df,
-                       goals_csv   = 'conf/goals.csv',
-                       ## Oct 5 JSL was getting this error for hours before passing as an argument in calculate_scores.R;
-                       # Error in make.names(x) : invalid multibyte string at '<89>PNG'
-                       assessment_name = NULL,
-                       score_ref   = 100,
+PlotFlower <- function(region_plot = NA,
+                       year_plot   = NA,
+                       assessment_name = NA,
                        fig_save    = NULL,
                        incl_legend = TRUE,
                        show_plot   = TRUE) {
 
-  ### set up goals.csv configuration information, if available
-  if ( !is.null(goals_csv) ) {
+  ## scores data ----
+  scores <- read.csv("scores.csv") %>%
+    mutate(goal = as.character(goal))
 
-    ## read in conf/goals.csv, start dealing with supra goals
-    conf <-  readr::read_csv(goals_csv)
-    goals_supra <- na.omit(unique(conf$parent))
-    supra_lookup <- conf %>%
-      filter(goal %in% goals_supra) %>%
-      select(parent = goal, name_supra = name)
+  ## if there is no year variable in the data, the current year is assigned
+    if(sum(names(scores) == "year") == 0){
+      scores$year <- substring(date(), 21, 24)
+    }
 
-    ## extract conf info for labeling
-    conf <- conf %>%
-      left_join(supra_lookup, by = 'parent') %>%
-      filter(!(goal %in% goals_supra)) %>%
-      select(goal, order_color, order_hierarchy,
-             weight, name_supra, name_flower) %>%
-      mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
-      arrange(order_hierarchy)
-
-    ## extract Index score for center labeling before join with conf
-    score_index  <- round(score_df$score[score_df$goal == 'Index'])
-
-    # region scores
-    score_df <- score_df %>%
-      inner_join(conf, by="goal") %>%
-      arrange(order_color)
-
-  } else {
-    message('Please provide a `goals_csv` dataframe with weights for each goal\n')
+  ## if there are multiple years in the dataset and no year_plot argument,
+  ## the most recent year of data is selected
+  if(is.na(year_plot)){
+    scores <- scores %>%
+      filter(year == max(year))
   }
+
+  ## filters the region of interest, otherwise all goals are printed
+  if(!is.na(region_plot)){
+    scores <- scores %>%
+      filter(region_id %in% region_plot)
+  }
+
+  ## filter only score dimension
+  scores <- scores %>%
+    filter(dimension == 'score')
+
+  ## extract Index score for center labeling before join with conf
+  score_index  <- round(scores$score[scores$goal == 'Index'])
+  ## rethink:: [1] 77 76 79 79 76 86 64 63 82 80
+
+  ## set up for displaying NAs
+  score_df_na <- scores %>%
+    mutate(score = ifelse(is.na(score), 100, NA))
+
+
+
+  ## unique regions to plot
+  region_plots <- unique(scores$region_id)
+  region_plots <- paste0("region_", region_plots)
+
+  ## regions info
+  regions <- bind_rows(
+    data_frame(                # order regions to start with whole study_area
+      region_id   = 0,
+      region_name = assessment_name),
+    read_csv('spatial/regions_list.csv') %>%
+      dplyr::select(region_id   = rgn_id,
+                    region_name = rgn_name))
+
+  ## set figure name
+  regions <- regions %>%
+    mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+                                stringr::str_replace_all(region_name, ' ', '_')))
+  readr::write_csv(regions, 'reports/figures/regions_figs.csv') ## TODO discuss with Mel
+
+
+  ## goals.csv configuration info----
+
+  ## read in conf/goals.csv, start dealing with supra goals
+  conf <-  readr::read_csv('conf/goals.csv')
+  goals_supra <- na.omit(unique(conf$parent))
+  supra_lookup <- conf %>%
+    filter(goal %in% goals_supra) %>%
+    select(parent = goal, name_supra = name)
+
+  ## extract conf info for labeling
+  conf <- conf %>%
+    left_join(supra_lookup, by = 'parent') %>%
+    filter(!(goal %in% goals_supra)) %>%
+    select(goal, order_color, order_hierarchy,
+           weight, name_supra, name_flower) %>%
+    mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
+    arrange(order_hierarchy)
+
+  ## join scores and conf ----
+  score_df <- scores %>%
+    inner_join(conf, by="goal") %>%
+    arrange(order_color) %>%
+    mutate(region_id = paste0("region_", region_id)) %>%
+    spread(region_id, score)
 
 
   ## set up positions for the bar centers:
   ## cumulative sum of weights (incl current) minus half the current weight
   score_df <- score_df %>%
-    mutate(score = score * 100/score_ref,  # if 0-1, change to 0-100
-           pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+    mutate(pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
     mutate(pos_end = sum(weight)) %>%
     group_by(name_supra) %>%
     ## calculate position of supra goals before any unequal weighting (ie for FP)
@@ -77,25 +126,23 @@ PlotFlower <- function(score_df,
 
   if ( file.exists(w_fn) ) {
     w <- read_csv(w_fn)
-    w <- rbind(w,
-               data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
+    w <- rbind(w, data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
       arrange(rgn_id)
 
-    ## inject FIS/MAR weights
-    region_id <- unique(score_df$region_id)
-    score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
-    score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
-
-    ## recalculate pos with these injected weights
-    score_df <- score_df %>%
-      mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
-      ## arrange by pos for proper ordering
-      arrange(pos)
+    # ## inject FIS/MAR weights ---- add this below in for loop!
+    # # region_id <- unique(score_df$region_id)
+    # score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
+    # score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
+    #
+    # ## recalculate pos with these injected weights
+    # score_df <- score_df %>%
+    #   mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+    #   ## arrange by pos for proper ordering
+    #   arrange(pos)
 
   } else {
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
   }
-
 
   ## create supra goal dataframe for position and labeling
   supra_df <- score_df %>%
@@ -116,9 +163,6 @@ PlotFlower <- function(score_df,
   goal_labels <- score_df %>%
     select(goal, name_flower)
 
-  ## set up for displaying NAs
-  score_df_na <- score_df %>%
-    mutate(score = ifelse(is.na(score), 100, NA))
 
   ## some parameters for the plot
   p_limits <- c(0, score_df$pos_end[1])
@@ -142,38 +186,19 @@ PlotFlower <- function(score_df,
   myPalette <-   c(reds, blues)
 
 
-  # ## regions info
-  # regions <- bind_rows(
-  #   data_frame(                # order regions to start with whole study_area
-  #     region_id   = 0,
-  #     region_name = assessment_name),
-  #   read_csv('spatial/regions_list.csv') %>%
-  #     dplyr::select(region_id   = rgn_id,
-  #                   region_name = rgn_name))
-  #
-  # ## set figure name
-  # regions <- regions %>%
-  #   mutate(flower_png = sprintf('reports/figures/flower_%s.png',
-  #                               str_replace_all(region_name, ' ', '_')))
-  # readr::write_csv(regions, 'reports/figures/regions_figs.csv') ## TODO discuss with Mel
-  #
-  # ## loop through to save flower plot for each region
-  # for (i in regions$region_id) { # i = 0
-  #
-  #   ## fig_name to save
-  #   fig_save <- regions$flower_png[regions$region_id == i]
-  #
-  #   ## scores info
-  #   score_df <- scores %>%
-  #     filter(dimension == 'score') %>%
-  #     filter(region_id == i)
+  ## loop through to save flower plot for each region
+  for (region in region_plots) { # region = "region_0"
+
+    ## fig_name to save
+    #fig_save <- regions$flower_png[regions$region_id == i]
 
 
-    ## set up basic plot parameters
+    ## set up basic plot parameters, aes_string will plot region from for loop
     plot_obj <- ggplot(data = score_df,
-                       aes(x = pos, y = score, fill = score, width = weight))
+                       aes_string(y = region, fill = region, width = "weight", x = "pos"))
 
-    plot_obj <- plot_obj +
+
+     plot_obj <- plot_obj +
       ## sets up the background/borders to the external boundary (100%) of plot:
       geom_bar(aes(y = 100),
                stat = 'identity', color = light_line, fill = white_fill, size = .2) +
@@ -182,7 +207,7 @@ PlotFlower <- function(score_df,
     ## lays any NA bars on top of background, with darker grey:
     if(any(!is.na(score_df_na$score)))
       plot_obj <- plot_obj +
-      geom_bar(data = score_df_na, aes(x = pos, y = score),
+      geom_bar(data = score_df_na, aes_string(x = "pos", y = region),
                stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
     ## establish the basics of the flower plot...
@@ -190,7 +215,7 @@ PlotFlower <- function(score_df,
       ## plot the actual scores on top of background/borders:
       geom_bar(stat = 'identity', color = dark_line, size = .2) +
       ## emphasize edge of petal
-      geom_errorbar(aes(x = pos, ymin = score, ymax = score),
+      geom_errorbar(aes_string(x = "pos", ymin = region, ymax = region),
                     size = 0.5, color = dark_line, show.legend = NA) +
       ## plot zero as a baseline:
       geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
@@ -265,7 +290,7 @@ PlotFlower <- function(score_df,
     ### ...then return the plot object for further use
     return(invisible(plot_obj))
   }
-# }
+}
 
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
