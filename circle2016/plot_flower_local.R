@@ -8,7 +8,7 @@
 #' @param incl_legend show the legend? (default is TRUE)
 #' @param show_plot show the plot? (default is TRUE)
 #'
-#' @return
+#' @return plot object that can be further modified. Also saves figures as pngs.
 #' @export
 #'
 #' @examples
@@ -16,25 +16,26 @@
 #'
 #' ## TODISCUSS WITH MEL::::: ggtheme plot is a function at the bottom of this file
 #' ## will save 'reports/figures/regions_figs.csv' along with flower plots
+#' ## TODO:
+#' - see if region_0 is necessary now
 library(tidyverse)
 library(stringr)
 library(RColorBrewer)
 #'
-PlotFlower <- function(region_plot = NA,
-                       year_plot   = NA,
+PlotFlower <- function(region_plot     = NA,
+                       year_plot       = NA,
                        assessment_name = NA,
-                       fig_save    = NULL,
-                       incl_legend = TRUE,
-                       show_plot   = TRUE) {
+                       incl_legend     = TRUE) {
+
 
   ## scores data ----
   scores <- read.csv("scores.csv") %>%
     mutate(goal = as.character(goal))
 
   ## if there is no year variable in the data, the current year is assigned
-    if(sum(names(scores) == "year") == 0){
-      scores$year <- substring(date(), 21, 24)
-    }
+  if(sum(names(scores) == "year") == 0){
+    scores$year <- substring(date(), 21, 24)
+  }
 
   ## if there are multiple years in the dataset and no year_plot argument,
   ## the most recent year of data is selected
@@ -53,14 +54,18 @@ PlotFlower <- function(region_plot = NA,
   scores <- scores %>%
     filter(dimension == 'score')
 
-  ## extract Index score for center labeling before join with conf
-  score_index  <- round(scores$score[scores$goal == 'Index'])
-  ## rethink:: [1] 77 76 79 79 76 86 64 63 82 80
+  ## labeling:: Index score for center labeling before join with conf
+  score_index <- scores %>%
+    filter(goal == "Index") %>%
+    select(region_id, score) %>%
+    mutate(region_id = paste0("region_", region_id),
+           score     = round(score)) %>%
+    spread(region_id, score)
+
 
   ## set up for displaying NAs
-  score_df_na <- scores %>%
-    mutate(score = ifelse(is.na(score), 100, NA))
-
+  # score_df_na <- scores %>%
+  #   mutate(score = ifelse(is.na(score), 100, NA))
 
 
   ## unique regions to plot
@@ -68,7 +73,7 @@ PlotFlower <- function(region_plot = NA,
   region_plots <- paste0("region_", region_plots)
 
   ## regions info
-  regions <- bind_rows(
+  region_names <- bind_rows(
     data_frame(                # order regions to start with whole study_area
       region_id   = 0,
       region_name = assessment_name),
@@ -76,11 +81,17 @@ PlotFlower <- function(region_plot = NA,
       dplyr::select(region_id   = rgn_id,
                     region_name = rgn_name))
 
-  ## set figure name
-  regions <- regions %>%
+  ## save list of figure names, save object for naming below
+  fig_names <- region_names %>%
     mutate(flower_png = sprintf('reports/figures/flower_%s.png',
                                 stringr::str_replace_all(region_name, ' ', '_')))
-  readr::write_csv(regions, 'reports/figures/regions_figs.csv') ## TODO discuss with Mel
+  readr::write_csv(fig_names, 'reports/figures/regions_figs.csv')
+
+
+  ## labeling:: region name for plot labeling
+  region_names <- region_names %>%
+    mutate(region_id = paste0("region_", region_id)) ## %>%
+    # spread(region_id, region_name)
 
 
   ## goals.csv configuration info----
@@ -166,7 +177,7 @@ PlotFlower <- function(region_plot = NA,
 
   ## some parameters for the plot
   p_limits <- c(0, score_df$pos_end[1])
-  p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
+  # p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
   blank_circle_rad <- 42
   light_line <- 'grey90'
   white_fill <- 'white'
@@ -192,25 +203,30 @@ PlotFlower <- function(region_plot = NA,
     ## fig_name to save
     #fig_save <- regions$flower_png[regions$region_id == i]
 
+    region_name <- region_names %>%
+      filter(region_id == region) %>%
+      select(region_name)
+
 
     ## set up basic plot parameters, aes_string will plot region from for loop
     plot_obj <- ggplot(data = score_df,
                        aes_string(y = region, fill = region, width = "weight", x = "pos"))
 
-
-     plot_obj <- plot_obj +
-      ## sets up the background/borders to the external boundary (100%) of plot:
+    ## sets up the background/borders to the external boundary (100%) of plot
+    plot_obj <- plot_obj +
       geom_bar(aes(y = 100),
                stat = 'identity', color = light_line, fill = white_fill, size = .2) +
       geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
                     size = 0.5, color = light_line, show.legend = NA)
-    ## lays any NA bars on top of background, with darker grey:
-    if(any(!is.na(score_df_na$score)))
-      plot_obj <- plot_obj +
-      geom_bar(data = score_df_na, aes_string(x = "pos", y = region),
-               stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
-    ## establish the basics of the flower plot...
+     ## lays any NA bars on top of background, with darker grey:
+     ##TODO COME BACK AND FIX THIS
+    # if(any(!is.na(score_df_na$score)))
+    #   plot_obj <- plot_obj +
+    #   geom_bar(data = score_df_na, aes_string(x = "pos", y = region),
+    #            stat = 'identity', color = light_line, fill = light_fill, size = .2)
+
+    ## establish the basics of the flower plot
     plot_obj <- plot_obj +
       ## plot the actual scores on top of background/borders:
       geom_bar(stat = 'identity', color = dark_line, size = .2) +
@@ -233,12 +249,15 @@ PlotFlower <- function(region_plot = NA,
 
     ## add center number and title
     plot_obj <- plot_obj +
-      geom_text(aes(label = score_index),
+      geom_text(data = score_index,
+                inherit.aes = FALSE,
+                aes_string(label = region),
                 x = 0, y = -blank_circle_rad,
                 hjust = .5, vjust = .5,
                 size = 12,
-                color = dark_line) # +
-    # ggtitle(region_name) TODO make this work when inner loop
+                color = dark_line) +
+      labs(title = region_name$region_name)
+
 
     ### clean up the theme
     plot_obj <- plot_obj +
@@ -248,7 +267,7 @@ PlotFlower <- function(region_plot = NA,
             axis.text  = element_blank(),
             axis.title = element_blank())
 
-    ## add flower names
+    ## add goal names
     plot_obj <- plot_obj +
       geom_text(aes(label = name_flower, x = pos, y = 120),
                 hjust = .5, vjust = .5,
@@ -277,15 +296,13 @@ PlotFlower <- function(region_plot = NA,
 
 
     ### display/save options: print to graphics, save to file
-    if(show_plot) {
-      print(plot_obj)
-    }
+    print(plot_obj)
 
-    if(!is.null(fig_save)) {
-      ggsave(filename = fig_save,
-             height = 6, width = 8, units = 'in', dpi = 300,
-             plot = plot_obj)
-    }
+    ## save plot
+    # ggsave(filename = "save", ## TODO fix this back to fig_save
+    #        height = 6, width = 8, units = 'in', dpi = 300,
+    #        plot = plot_obj)
+
 
     ### ...then return the plot object for further use
     return(invisible(plot_obj))
