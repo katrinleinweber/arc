@@ -24,44 +24,39 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 ##### Visualize ----
 
 ## Flower plots for each region ----
-## Will plot MAR/FIS as unequal weights based on the `fp_wildcaught_weight` layer
-
-
-## source from ohibc until added to ohicore
-source('https://raw.githubusercontent.com/OHI-Science/ohibc/master/src/R/common.R')
 source('plot_flower_local.R')
 
-## regions info
+## regions info ## TODO JULIE this can be deleted once incorporated into function
 regions <- bind_rows(
-  data_frame(                # order regions to start with whole study_area
-    region_id   = 0,
-    region_name = 'Arctic'),
-  read_csv('spatial/regions_list.csv') %>%
-    dplyr::select(region_id   = rgn_id,
-           region_name = rgn_name))
+   data_frame(                # order regions to start with whole study_area
+     region_id   = 0,
+     region_name = 'Arctic'),
+   read_csv('spatial/regions_list.csv') %>%
+     dplyr::select(region_id   = rgn_id,
+            region_name = rgn_name))
 
-## set figure name
-regions <- regions %>%
-  mutate(flower_png = sprintf('reports/figures/flower_%s.png',
-                              str_replace_all(region_name, ' ', '_')))
-readr::write_csv(regions, 'reports/figures/regions_figs.csv')
+ ## set figure name
+ regions <- regions %>%
+   mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+                               str_replace_all(region_name, ' ', '_')))
+ readr::write_csv(regions, 'reports/figures/regions_figs.csv')
 
 ## save flower plot for each region
 for (i in regions$region_id) { # i = 0
 
   ## fig_name to save
-  fig_name <- regions$flower_png[regions$region_id == i]
+  fig_save <- regions$flower_png[regions$region_id == i]
 
   ## scores info
   score_df <- scores %>%
     filter(dimension == 'score') %>%
     filter(region_id == i)
 
-  ## Casey's modified flower plot
-  plot_obj <- plot_flower(score_df,
-                          filename    = fig_name,
-                          goals_csv   = 'conf/goals.csv',
-                          incl_legend = TRUE)
+  ## create flower plot
+  plot_obj <- PlotFlower(score_df  = score_df,
+                         goals_csv = 'conf/goals.csv',
+                         fig_save  = fig_save) #,
+                         #assessment_name = "Arctic") TODO julie
 
 }
 
