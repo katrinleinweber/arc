@@ -1,12 +1,11 @@
 #' Flower plots for OHI scores
 #' By Casey O'Hara, Julia Lowndes, Melanie Frazier github.com/ohi-science
+#' Assumes you are in the scenario folder, and will rely on scores.csv and conf/goals.csv
 #'
-#' @param region_plot provide region_id, defaults to all regions+overall (region_id = 0)
-#' @param year_plot
-#' @param goals_csv filepath for config info, defaults to 'conf/goals.csv'
-#' @param fig_save provide a file name to save the plot (default is no save)
+#' @param region_plot provide region_id to plot, defaults to all regions+overall (region_id = 0)
+#' @param year_plot provide year to plot, defaults to most recent
+#' @param assessment_name name of the overall assessment (region_id = 0)
 #' @param incl_legend show the legend? (default is TRUE)
-#' @param show_plot show the plot? (default is TRUE)
 #'
 #' @return plot object that can be further modified. Also saves figures as pngs.
 #' @export
@@ -18,13 +17,16 @@
 #' ## will save 'reports/figures/regions_figs.csv' along with flower plots
 #' ## TODO:
 #' - see if region_0 is necessary now
+#' - redo NAs
+#' -final clean through
+#' - consider purrr (jennifer thompson)
 library(tidyverse)
 library(stringr)
 library(RColorBrewer)
 #'
 PlotFlower <- function(region_plot     = NA,
                        year_plot       = NA,
-                       assessment_name = NA,
+                       assessment_name = "OHI Assessment",
                        incl_legend     = TRUE) {
 
 
@@ -64,15 +66,17 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## set up for displaying NAs
-  # score_df_na <- scores %>%
-  #   mutate(score = ifelse(is.na(score), 100, NA))
+  score_df_na <- scores %>%
+    mutate(score = ifelse(is.na(score), 100, NA),
+           region_id = paste0("region_", region_id)) %>%
+    spread(region_id, score)
 
 
   ## unique regions to plot
   region_plots <- unique(scores$region_id)
   region_plots <- paste0("region_", region_plots)
 
-  ## regions info
+  ## labeling:: regions info
   region_names <- bind_rows(
     data_frame(                # order regions to start with whole study_area
       region_id   = 0,
@@ -91,7 +95,6 @@ PlotFlower <- function(region_plot     = NA,
   ## labeling:: region name for plot labeling
   region_names <- region_names %>%
     mutate(region_id = paste0("region_", region_id)) ## %>%
-    # spread(region_id, region_name)
 
 
   ## goals.csv configuration info----
@@ -115,9 +118,9 @@ PlotFlower <- function(region_plot     = NA,
   ## join scores and conf ----
   score_df <- scores %>%
     inner_join(conf, by="goal") %>%
-    arrange(order_color) %>%
     mutate(region_id = paste0("region_", region_id)) %>%
-    spread(region_id, score)
+    spread(region_id, score) %>%
+    arrange(order_color)
 
 
   ## set up positions for the bar centers:
@@ -139,24 +142,13 @@ PlotFlower <- function(region_plot     = NA,
     w <- read_csv(w_fn)
     w <- rbind(w, data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
       arrange(rgn_id)
-
-    # ## inject FIS/MAR weights ---- add this below in for loop!
-    # # region_id <- unique(score_df$region_id)
-    # score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
-    # score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
-    #
-    # ## recalculate pos with these injected weights
-    # score_df <- score_df %>%
-    #   mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
-    #   ## arrange by pos for proper ordering
-    #   arrange(pos)
-
   } else {
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
   }
 
+
   ## create supra goal dataframe for position and labeling
-  supra_df <- score_df %>%
+  supra <- score_df %>%
     mutate(name_supra = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     mutate(name_supra = paste0(name_supra, "\n"),
            name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
@@ -165,8 +157,8 @@ PlotFlower <- function(region_plot     = NA,
     as.data.frame()
 
   ## calculate arc: stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
-  supra_df <- supra_df %>%
-    mutate(myAng = seq(250,-70, length.out = dim(supra_df)[1])) %>%
+  supra_df <- supra %>%
+    mutate(myAng = seq(-70, 250, length.out = dim(supra)[1])) %>%
     filter(!is.na(pos_supra))
 
 
@@ -198,14 +190,39 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## loop through to save flower plot for each region
-  for (region in region_plots) { # region = "region_0"
+  for (region in region_plots) { # region = "region_3"
 
     ## fig_name to save
     #fig_save <- regions$flower_png[regions$region_id == i]
 
+    ## labeling:: region name for title
     region_name <- region_names %>%
       filter(region_id == region) %>%
       select(region_name)
+
+
+    ## weights for FIS vs. MAR
+    # if ( file.exists(w_fn) ) {
+    # ## inject FIS/MAR weights ---- add this below in for loop!
+    # # region_id <- unique(score_df$region_id)
+    # score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
+    # score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
+    #
+    # ## recalculate pos with these injected weights
+    # score_df <- score_df %>%
+    #   mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+    #   ## arrange by pos for proper ordering
+    #   arrange(pos)
+    # }
+
+
+
+    ## a few other calcs:: NAs and FIS/MAR unequal weighting
+    # join pos data
+    # score_df_na <- score_df_na %>%
+    #   left_join(score_df %>%
+    #               select(goal, order_hierarchy, weight, pos), by = "goal") %>%
+    #   arrange(order_hierarchy)
 
 
     ## set up basic plot parameters, aes_string will plot region from for loop
@@ -219,12 +236,16 @@ PlotFlower <- function(region_plot     = NA,
       geom_errorbar(aes(x = pos, ymin = 100, ymax = 100, width = weight),
                     size = 0.5, color = light_line, show.legend = NA)
 
-     ## lays any NA bars on top of background, with darker grey:
-     ##TODO COME BACK AND FIX THIS
-    # if(any(!is.na(score_df_na$score)))
-    #   plot_obj <- plot_obj +
-    #   geom_bar(data = score_df_na, aes_string(x = "pos", y = region),
+    ## lays any NA bars on top of background, with darker grey:
+    # if(any(!is.na(score_df_na$score))) {
+    # plot_obj <- plot_obj +
+    #   geom_bar(data = score_df_na,
+    #            inherit.aes = FALSE,
+    #            aes_string(x = "pos", y = region),
     #            stat = 'identity', color = light_line, fill = light_fill, size = .2)
+
+    # }
+
 
     ## establish the basics of the flower plot
     plot_obj <- plot_obj +
@@ -236,7 +257,7 @@ PlotFlower <- function(region_plot     = NA,
       ## plot zero as a baseline:
       geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
                     size = 0.5, color = dark_line, show.legend = NA) +
-      ## turn linear bar chart into polar coordinates:
+      ## turn linear bar chart into polar coordinates start at 90 degrees (pi*.5)
       coord_polar(start = pi * 0.5) +
       ## set petal colors to the red-yellow-blue color scale:
       scale_fill_gradientn(colours=myPalette, na.value="black",
@@ -246,6 +267,7 @@ PlotFlower <- function(region_plot     = NA,
       scale_y_continuous(limits = c(-blank_circle_rad,
                                     ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
                                            150, 100)))
+
 
     ## add center number and title
     plot_obj <- plot_obj +
@@ -274,8 +296,14 @@ PlotFlower <- function(region_plot     = NA,
                 size = 3,
                 color = dark_line)
 
+
     ## position supra arc and names. x is angle, y is distance from center
     supra_rad  <- 145  ## supra goal radius from center
+
+    ## put this here temporarily while i figure out angles
+    # supra_df <- supra %>%
+    #   mutate(myAng = seq(-70, 250, length.out = dim(supra)[1])) %>%
+    #   filter(!is.na(pos_supra))
 
     plot_obj <- plot_obj +
       ## add supragoal arcs
@@ -308,6 +336,8 @@ PlotFlower <- function(region_plot     = NA,
     return(invisible(plot_obj))
   }
 }
+
+## ggtheme_plot ----
 
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
