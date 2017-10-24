@@ -36,7 +36,7 @@ Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,0.00000000000246141623875173,287613.495552297,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,2.46141623875173e-12,287613.495552297,FALSE,,,,9,FALSE
 "FIS","fis_comsir_bmsy_arc2016","fis_comsir_bmsy_arc2016.csv","bbmsy","B / B_msy","B/Bmsy estimates obtained using the comsir method","The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
@@ -132,7 +132,7 @@ Data sources:
 Data sources:
 
 - Trujillo P. (2008). **Using a mariculture sustainability index to rank countriesâ performances**. In: A comparative assessment of biodiversity, fisheries and aquaculture in 53 countriesâ Exclusive Economic Zones, Alder J, Pauly D, editors. _Fisheries Centre Research Report_, vol. 16(7) p. 28â56.","equal","global mariculture sustainability scores were applied equally to each region.","mar_sustainability_score","~/github/ohi-global/eez2016/layers/mar_sustainability_score.csv","rgn_id",,"species_code",,"sust_coeff",,TRUE,,,0.17,0.93,TRUE,,,,9,FALSE
-"NP","np_harvest","np_harvest_arc2016.csv","score","score","Marine mammal catches","Catches of marine mammals across Arctic - see meta data for data sources","equal","","","~/github/arc/circle2016/layers/np_harvest_arc2016.csv","rgn_id",,"species_code","year","score",,TRUE,1979,2015,0.0635658914728683,1,TRUE,,,,9,FALSE
+"NP","np_harvest","np_harvest_arc2016.csv","score","score","Marine mammal catches","Catches of marine mammals across Arctic - see meta data for data sources","equal","","","~/github/arc/circle2016/layers/np_harvest_arc2016.csv","rgn_id",,"species_code","year","score",,TRUE,1979,2015,0.0682170542635658,1,TRUE,,,,9,FALSE
 "pressures","cc_acid","cc_acid_gl2016.csv","pressure_score","pressure score","Ocean acidification","Change in current year's modeled aragonite saturation state (Feely et al. 2010) relative to historical mean (1880-1889).
 
 Data sources:
@@ -209,7 +209,7 @@ Data sources:
 - [FAOâs statistical database FAOSTAT](http://faostat3.fao.org/faostat-gateway/go/to/browse/R/*/E).
 - Halpern, B. S. et al. (2015). **Spatial and temporal changes in cumulative human impacts on the world's ocean**. _Nature
 <<<<<<< HEAD
-Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/arc/circle2016/layers/po_nutrients_arc2016.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,0.0000922,TRUE,,,,9,FALSE
+Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/arc/circle2016/layers/po_nutrients_arc2016.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,9.22e-05,TRUE,,,,9,FALSE
 "pressures","sp_alien","sp_alien_gl2016.csv","pressures.score","pressure score","Alien species","The number and type of invasive and harmful invasive species in each marine ecoregion (Molnar et al. 2008). 
 =======
 Communications_ 6(7615). [doi: 10.1038/ncomms8615](http://www.nature.com/ncomms/2015/150714/ncomms8615/full/ncomms8615.html)","raster","spatial data was extracted for each region. ","po_nutrients","~/github/ohi-global/eez2016/layers/po_nutrients.csv","rgn_id",,,,"pressures.score",,TRUE,,,0.007275226,1,TRUE,,,,9,FALSE
