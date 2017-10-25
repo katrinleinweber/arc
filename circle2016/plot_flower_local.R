@@ -74,7 +74,7 @@ PlotFlower <- function(region_plot     = NA,
 
   ## unique regions to plot
   region_plots <- unique(scores$region_id)
-  # region_plots <- paste0("region_", region_plots)
+  # region_plots <- paste0(region_plots)
 
   ## labeling:: regions info
   region_names <- bind_rows(
@@ -191,17 +191,33 @@ PlotFlower <- function(region_plot     = NA,
   myPalette <-   c(reds, blues)
 
 
+  ## regions info
+  regions <- bind_rows(
+    data_frame(                # order regions to start with whole study_area
+      region_id   = 0,
+      region_name = assessment_name),
+    read_csv('spatial/regions_list.csv') %>%
+      dplyr::select(region_id   = rgn_id,
+                    region_name = rgn_name))
+
+  ## set figure name
+  regions <- regions %>%
+    mutate(flower_png = sprintf('reports/figures/flower_%s.png',
+                                str_replace_all(region_name, ' ', '_')))
+  readr::write_csv(regions, 'reports/figures/regions_figs.csv')
+
+
   ## loop through to save flower plot for each region
   for (region in region_plots) { # region = 3
 
+    ## filter region info to plot
     plot_df <- score_df %>%
       filter(region_id == region)
-
     plot_score_index <- score_index %>%
       filter(region_id == region)
 
     ## fig_name to save
-    #fig_save <- regions$flower_png[regions$region_id == i]
+    fig_save <- regions$flower_png[regions$region_id == region]
 
     ## labeling:: region name for title
     region_name <- region_names %>%
@@ -211,15 +227,13 @@ PlotFlower <- function(region_plot     = NA,
 
     ## weights for FIS vs. MAR
     if ( file.exists(w_fn) ) {
-      ## inject FIS/MAR weights ---- add this below in for loop!
-      # region_id <- unique(score_df$region_id)
+      ## inject FIS/MAR weights
       plot_df$weight[plot_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region]
       plot_df$weight[plot_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region]
 
-      ## recalculate pos with these injected weights
+      ## recalculate pos with injected weights arrange by pos for proper ordering
       plot_df <- plot_df %>%
         mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
-        ## arrange by pos for proper ordering
         arrange(pos)
     }
 
@@ -335,13 +349,13 @@ PlotFlower <- function(region_plot     = NA,
     print(plot_obj)
 
     ## save plot
-    # ggsave(filename = "save", ## TODO fix this back to fig_save
-    #        height = 6, width = 8, units = 'in', dpi = 300,
-    #        plot = plot_obj)
+    ggsave(filename = fig_save,
+           height = 6, width = 8, units = 'in', dpi = 300,
+           plot = plot_obj)
 
 
     ### ...then return the plot object for further use
-    return(invisible(plot_obj))
+    # return(invisible(plot_obj)) ## can't return with this for loop
   }
 }
 
