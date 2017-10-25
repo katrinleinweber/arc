@@ -25,7 +25,7 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 
 ## Flower plots for each region ----
 source('plot_flower_local.R')
-plot_obj <- PlotFlower(assessment_name = "Arctic")
+PlotFlower(assessment_name = "Arctic")
 
 
 
