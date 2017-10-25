@@ -60,21 +60,21 @@ PlotFlower <- function(region_plot     = NA,
   score_index <- scores %>%
     filter(goal == "Index") %>%
     select(region_id, score) %>%
-    mutate(region_id = paste0("region_", region_id),
-           score     = round(score)) %>%
-    spread(region_id, score)
+    mutate(#region_id = paste0("region_", region_id),
+           score     = round(score))#  %>%
+    # spread(region_id, score)
 
 
   ## set up for displaying NAs
   score_df_na <- scores %>%
-    mutate(score = ifelse(is.na(score), 100, NA),
-           region_id = paste0("region_", region_id)) %>%
+    mutate(score = ifelse(is.na(score), 100, NA)) %>% #,
+           #region_id = paste0("region_", region_id)) %>%
     spread(region_id, score)
 
 
   ## unique regions to plot
   region_plots <- unique(scores$region_id)
-  region_plots <- paste0("region_", region_plots)
+  # region_plots <- paste0("region_", region_plots)
 
   ## labeling:: regions info
   region_names <- bind_rows(
@@ -93,8 +93,8 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## labeling:: region name for plot labeling
-  region_names <- region_names %>%
-    mutate(region_id = paste0("region_", region_id)) ## %>%
+  # region_names <- region_names %>%
+  #   mutate(region_id = paste0("region_", region_id)) ## %>%
 
 
   ## goals.csv configuration info----
@@ -118,16 +118,18 @@ PlotFlower <- function(region_plot     = NA,
   ## join scores and conf ----
   score_df <- scores %>%
     inner_join(conf, by="goal") %>%
-    mutate(region_id = paste0("region_", region_id)) %>%
-    spread(region_id, score) %>%
+    # mutate(region_id = paste0("region_", region_id)) %>%
+    # spread(region_id, score) %>%
     arrange(order_color)
 
 
   ## set up positions for the bar centers:
   ## cumulative sum of weights (incl current) minus half the current weight
   score_df <- score_df %>%
+    group_by(region_id) %>%
     mutate(pos   = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
     mutate(pos_end = sum(weight)) %>%
+    ungroup() %>%
     group_by(name_supra) %>%
     ## calculate position of supra goals before any unequal weighting (ie for FP)
     mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
@@ -190,7 +192,13 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## loop through to save flower plot for each region
-  for (region in region_plots) { # region = "region_3"
+  for (region in region_plots) { # region = 3
+
+    plot_df <- score_df %>%
+      filter(region_id == region)
+
+    plot_score_index <- score_index %>%
+      filter(region_id == region)
 
     ## fig_name to save
     #fig_save <- regions$flower_png[regions$region_id == i]
@@ -202,18 +210,18 @@ PlotFlower <- function(region_plot     = NA,
 
 
     ## weights for FIS vs. MAR
-    # if ( file.exists(w_fn) ) {
-    # ## inject FIS/MAR weights ---- add this below in for loop!
-    # # region_id <- unique(score_df$region_id)
-    # score_df$weight[score_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region_id]
-    # score_df$weight[score_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region_id]
-    #
-    # ## recalculate pos with these injected weights
-    # score_df <- score_df %>%
-    #   mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
-    #   ## arrange by pos for proper ordering
-    #   arrange(pos)
-    # }
+    if ( file.exists(w_fn) ) {
+      ## inject FIS/MAR weights ---- add this below in for loop!
+      # region_id <- unique(score_df$region_id)
+      plot_df$weight[plot_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region]
+      plot_df$weight[plot_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region]
+
+      ## recalculate pos with these injected weights
+      plot_df <- plot_df %>%
+        mutate(pos = sum(weight) - (cumsum(weight) - 0.5 * weight)) %>%
+        ## arrange by pos for proper ordering
+        arrange(pos)
+    }
 
 
 
@@ -226,8 +234,8 @@ PlotFlower <- function(region_plot     = NA,
 
 
     ## set up basic plot parameters, aes_string will plot region from for loop
-    plot_obj <- ggplot(data = score_df,
-                       aes_string(y = region, fill = region, width = "weight", x = "pos"))
+    plot_obj <- ggplot(data = plot_df,
+                       aes(x = pos, y = score, fill = score, width = weight))
 
     ## sets up the background/borders to the external boundary (100%) of plot
     plot_obj <- plot_obj +
@@ -252,7 +260,7 @@ PlotFlower <- function(region_plot     = NA,
       ## plot the actual scores on top of background/borders:
       geom_bar(stat = 'identity', color = dark_line, size = .2) +
       ## emphasize edge of petal
-      geom_errorbar(aes_string(x = "pos", ymin = region, ymax = region),
+      geom_errorbar(aes(x = pos, ymin = score, ymax = score),
                     size = 0.5, color = dark_line, show.legend = NA) +
       ## plot zero as a baseline:
       geom_errorbar(aes(x = pos, ymin = 0, ymax = 0),
@@ -263,7 +271,7 @@ PlotFlower <- function(region_plot     = NA,
       scale_fill_gradientn(colours=myPalette, na.value="black",
                            limits = c(0, 100)) +
       ## use weights to assign widths to petals:
-      scale_x_continuous(labels = score_df$goal, breaks = score_df$pos, limits = p_limits) +
+      scale_x_continuous(labels = plot_df$goal, breaks = plot_df$pos, limits = p_limits) +
       scale_y_continuous(limits = c(-blank_circle_rad,
                                     ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
                                            150, 100)))
@@ -273,7 +281,7 @@ PlotFlower <- function(region_plot     = NA,
     plot_obj <- plot_obj +
       geom_text(data = score_index,
                 inherit.aes = FALSE,
-                aes_string(label = region),
+                aes(label = plot_score_index$score),
                 x = 0, y = -blank_circle_rad,
                 hjust = .5, vjust = .5,
                 size = 12,
