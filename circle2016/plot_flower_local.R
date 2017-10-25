@@ -113,19 +113,33 @@ PlotFlower <- function(region_plot     = NA,
     ## calculate position of supra goals before any unequal weighting (ie for FP)
     mutate(pos_supra  = ifelse(!is.na(name_supra), mean(pos), NA)) %>%
     ungroup() %>%
-    filter(weight != 0)
-
-  ## set up for displaying NAs
-  score_df <- score_df %>%
+    filter(weight != 0) %>%
+    ## set up for displaying NAs
     mutate(plot_NA = ifelse(is.na(score), 100, NA))
 
 
-  ## read if file for weights for FIS vs. MAR
-  w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight",
+  ## read if file for weights for FIS vs. MAR ----
+  w_files <- list.files(path="layers", pattern = "fp_wildcaught_weight",
                      full.names = TRUE)
 
+  if( length(w_files) > 0 ) {
+
+    w_fn_gl <- list.files(path="layers", pattern = "fp_wildcaught_weight_gl",
+                     full.names = TRUE)
+
+    w_fn <- dplyr::setdiff(w_files, w_fn_gl)
+
+    message(sprintf('Two weighting files found to plot FIS and MAR with unequal weighting...\nUsing %s, ignoring %s',
+                    w_fn, w_fn_gl))
+  }
+
   if ( file.exists(w_fn) ) {
-    w <- read_csv(w_fn)
+
+    message(sprintf('Using %s to plot FIS and MAR with unequal weighting', w_fn))
+
+    ## read in weights
+    w <- read_csv(w_fn) %>%
+      select(rgn_id, w_fis)
     w <- rbind(w, data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
       arrange(rgn_id)
   } else {
@@ -142,20 +156,17 @@ PlotFlower <- function(region_plot     = NA,
     unique() %>%
     as.data.frame()
 
-  ## calculate arc: stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar
+  ## calculate arc: stackoverflow.com/questions/38207390/making-curved-text-on-coord-polar ----
   supra_df <- supra %>%
     mutate(myAng = seq(-70, 250, length.out = dim(supra)[1])) %>%
     filter(!is.na(pos_supra))
 
 
-  ## more labeling
+  ## more labeling and parameters ----
   goal_labels <- score_df %>%
     select(goal, name_flower)
 
-
-  ## some parameters for the plot
   p_limits <- c(0, score_df$pos_end[1])
-  # p_score  <- round(weighted.mean(score_df$score, score_df$weight, na.rm = TRUE), 0)
   blank_circle_rad <- 42
   light_line <- 'grey90'
   white_fill <- 'white'
@@ -175,7 +186,7 @@ PlotFlower <- function(region_plot     = NA,
   myPalette <-   c(reds, blues)
 
 
-  ## filenaming for saving
+  ## filenaming for saving ----
   regions <- bind_rows(
     data_frame(                # order regions to start with whole study_area
       region_id   = 0,
@@ -192,7 +203,7 @@ PlotFlower <- function(region_plot     = NA,
   ## loop through to save flower plot for each region ----
   for (region in region_plots) { # region = 3
 
-    ## filter region info to plot
+    ## filter region info, setup to plot ----
     plot_df <- score_df %>%
       filter(region_id == region)
     plot_score_index <- score_index %>%
@@ -219,6 +230,7 @@ PlotFlower <- function(region_plot     = NA,
         arrange(pos)
     }
 
+
     ## set up basic plot parameters ----
     plot_obj <- ggplot(data = plot_df,
                        aes(x = pos, y = score, fill = score, width = weight))
@@ -231,10 +243,11 @@ PlotFlower <- function(region_plot     = NA,
                     size = 0.5, color = light_line, show.legend = NA)
 
     ## lays any NA bars on top of background, with darker grey:
-    plot_obj <- plot_obj +
-      geom_bar(aes(x = pos, y = plot_NA),
-               stat = 'identity', color = light_line, fill = light_fill, size = .2)
-
+    if(any(!is.na(plot_df$plot_NA))) {
+      plot_obj <- plot_obj +
+        geom_bar(aes(x = pos, y = plot_NA),
+                 stat = 'identity', color = light_line, fill = light_fill, size = .2)
+    }
 
     ## establish the basics of the flower plot
     plot_obj <- plot_obj +
@@ -337,4 +350,3 @@ ggtheme_plot <- function(base_size = 9) {
         legend.key       = element_rect(colour = NA, fill = NA),
         axis.line        = element_blank()) # element_line(colour = "grey30", size = .5))
 }
-
