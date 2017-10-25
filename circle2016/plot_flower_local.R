@@ -1,6 +1,7 @@
 #' Flower plots for OHI scores
 #' By Casey O'Hara, Julia Lowndes, Melanie Frazier github.com/ohi-science
 #' Assumes you are in the scenario folder, and will rely on scores.csv and conf/goals.csv
+#' will save figs to reports/figures, and list them in regions_figs.csv
 #'
 #' @param region_plot provide region_id to plot, defaults to all regions+overall (region_id = 0)
 #' @param year_plot provide year to plot, defaults to most recent
@@ -14,12 +15,7 @@
 #'
 #'
 #' ## TODISCUSS WITH MEL::::: ggtheme plot is a function at the bottom of this file
-#' ## will save 'reports/figures/regions_figs.csv' along with flower plots
-#' ## TODO:
-#' - see if region_0 is necessary now
-#' - redo NAs
-#' -final clean through
-#' - consider purrr (jennifer thompson)
+#' - consider purrr another day (jennifer thompson)
 library(tidyverse)
 library(stringr)
 library(RColorBrewer)
@@ -60,21 +56,11 @@ PlotFlower <- function(region_plot     = NA,
   score_index <- scores %>%
     filter(goal == "Index") %>%
     select(region_id, score) %>%
-    mutate(#region_id = paste0("region_", region_id),
-           score     = round(score))#  %>%
-    # spread(region_id, score)
-
-
-  ## set up for displaying NAs
-  score_df_na <- scores %>%
-    mutate(score = ifelse(is.na(score), 100, NA)) %>% #,
-           #region_id = paste0("region_", region_id)) %>%
-    spread(region_id, score)
+    mutate(score = round(score))
 
 
   ## unique regions to plot
   region_plots <- unique(scores$region_id)
-  # region_plots <- paste0(region_plots)
 
   ## labeling:: regions info
   region_names <- bind_rows(
@@ -90,11 +76,6 @@ PlotFlower <- function(region_plot     = NA,
     mutate(flower_png = sprintf('reports/figures/flower_%s.png',
                                 stringr::str_replace_all(region_name, ' ', '_')))
   readr::write_csv(fig_names, 'reports/figures/regions_figs.csv')
-
-
-  ## labeling:: region name for plot labeling
-  # region_names <- region_names %>%
-  #   mutate(region_id = paste0("region_", region_id)) ## %>%
 
 
   ## goals.csv configuration info----
@@ -118,8 +99,6 @@ PlotFlower <- function(region_plot     = NA,
   ## join scores and conf ----
   score_df <- scores %>%
     inner_join(conf, by="goal") %>%
-    # mutate(region_id = paste0("region_", region_id)) %>%
-    # spread(region_id, score) %>%
     arrange(order_color)
 
 
@@ -136,7 +115,12 @@ PlotFlower <- function(region_plot     = NA,
     ungroup() %>%
     filter(weight != 0)
 
-  ## weights for FIS vs. MAR
+  ## set up for displaying NAs
+  score_df <- score_df %>%
+    mutate(plot_NA = ifelse(is.na(score), 100, NA))
+
+
+  ## read if file for weights for FIS vs. MAR
   w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight",
                      full.names = TRUE)
 
@@ -149,7 +133,7 @@ PlotFlower <- function(region_plot     = NA,
   }
 
 
-  ## create supra goal dataframe for position and labeling
+  ## create supra goal dataframe for position and labeling ----
   supra <- score_df %>%
     mutate(name_supra = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     mutate(name_supra = paste0(name_supra, "\n"),
@@ -182,7 +166,7 @@ PlotFlower <- function(region_plot     = NA,
   dark_fill  <- 'grey22'
 
 
-  ## Mel's color palette
+  ## Mel's color palette ----
   reds <-  grDevices::colorRampPalette(
     c("#A50026", "#D73027", "#F46D43", "#FDAE61", "#FEE090"),
     space="Lab")(65)
@@ -191,23 +175,21 @@ PlotFlower <- function(region_plot     = NA,
   myPalette <-   c(reds, blues)
 
 
-  ## regions info
+  ## filenaming for saving
   regions <- bind_rows(
     data_frame(                # order regions to start with whole study_area
       region_id   = 0,
       region_name = assessment_name),
     read_csv('spatial/regions_list.csv') %>%
       dplyr::select(region_id   = rgn_id,
-                    region_name = rgn_name))
-
-  ## set figure name
-  regions <- regions %>%
+                    region_name = rgn_name)) %>%
     mutate(flower_png = sprintf('reports/figures/flower_%s.png',
                                 str_replace_all(region_name, ' ', '_')))
+  ## write out filenames
   readr::write_csv(regions, 'reports/figures/regions_figs.csv')
 
 
-  ## loop through to save flower plot for each region
+  ## loop through to save flower plot for each region ----
   for (region in region_plots) { # region = 3
 
     ## filter region info to plot
@@ -225,7 +207,7 @@ PlotFlower <- function(region_plot     = NA,
       select(region_name)
 
 
-    ## weights for FIS vs. MAR
+    ## inject weights for FIS vs. MAR ----
     if ( file.exists(w_fn) ) {
       ## inject FIS/MAR weights
       plot_df$weight[plot_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region]
@@ -237,17 +219,7 @@ PlotFlower <- function(region_plot     = NA,
         arrange(pos)
     }
 
-
-
-    ## a few other calcs:: NAs and FIS/MAR unequal weighting
-    # join pos data
-    # score_df_na <- score_df_na %>%
-    #   left_join(score_df %>%
-    #               select(goal, order_hierarchy, weight, pos), by = "goal") %>%
-    #   arrange(order_hierarchy)
-
-
-    ## set up basic plot parameters, aes_string will plot region from for loop
+    ## set up basic plot parameters ----
     plot_obj <- ggplot(data = plot_df,
                        aes(x = pos, y = score, fill = score, width = weight))
 
@@ -259,14 +231,9 @@ PlotFlower <- function(region_plot     = NA,
                     size = 0.5, color = light_line, show.legend = NA)
 
     ## lays any NA bars on top of background, with darker grey:
-    # if(any(!is.na(score_df_na$score))) {
-    # plot_obj <- plot_obj +
-    #   geom_bar(data = score_df_na,
-    #            inherit.aes = FALSE,
-    #            aes_string(x = "pos", y = region),
-    #            stat = 'identity', color = light_line, fill = light_fill, size = .2)
-
-    # }
+    plot_obj <- plot_obj +
+      geom_bar(aes(x = pos, y = plot_NA),
+               stat = 'identity', color = light_line, fill = light_fill, size = .2)
 
 
     ## establish the basics of the flower plot
@@ -287,7 +254,8 @@ PlotFlower <- function(region_plot     = NA,
       ## use weights to assign widths to petals:
       scale_x_continuous(labels = plot_df$goal, breaks = plot_df$pos, limits = p_limits) +
       scale_y_continuous(limits = c(-blank_circle_rad,
-                                    ifelse(first(goal_labels == TRUE) | is.data.frame(goal_labels),
+                                    ifelse(first(goal_labels == TRUE) |
+                                             is.data.frame(goal_labels),
                                            150, 100)))
 
 
@@ -321,11 +289,6 @@ PlotFlower <- function(region_plot     = NA,
 
     ## position supra arc and names. x is angle, y is distance from center
     supra_rad  <- 145  ## supra goal radius from center
-
-    ## put this here temporarily while i figure out angles
-    # supra_df <- supra %>%
-    #   mutate(myAng = seq(-70, 250, length.out = dim(supra)[1])) %>%
-    #   filter(!is.na(pos_supra))
 
     plot_obj <- plot_obj +
       ## add supragoal arcs
