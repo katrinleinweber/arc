@@ -119,23 +119,23 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## read if file for weights for FIS vs. MAR ----
-  w_files <- list.files(path="layers", pattern = "fp_wildcaught_weight",
+  w_fn <- list.files(path="layers", pattern = "fp_wildcaught_weight",
                      full.names = TRUE)
 
-  if( length(w_files) > 0 ) {
+  if( length(w_fn) > 0 ) {
 
-    w_fn_gl <- list.files(path="layers", pattern = "fp_wildcaught_weight_gl",
-                     full.names = TRUE)
+    ## if there are 2 files, ignore global
+    if( length(w_fn) > 1 ) {
+      w_fn_gl <- list.files(path="layers", pattern = "fp_wildcaught_weight_gl",
+                            full.names = TRUE)
 
-    w_fn <- dplyr::setdiff(w_files, w_fn_gl)
+      w_fn <- dplyr::setdiff(w_fn, w_fn_gl)
 
-    message(sprintf('Two weighting files found to plot FIS and MAR with unequal weighting...\nUsing %s, ignoring %s',
-                    w_fn, w_fn_gl))
-  }
-
-  if ( file.exists(w_fn) ) {
-
-    message(sprintf('Using %s to plot FIS and MAR with unequal weighting', w_fn))
+      message(sprintf('Two weighting files found to plot FIS and MAR with unequal weighting...\nUsing %s, ignoring %s',
+                      w_fn, w_fn_gl))
+    } else {
+      message(sprintf('Using %s to plot FIS and MAR with unequal weighting', w_fn))
+    }
 
     ## read in weights
     w <- read_csv(w_fn) %>%
@@ -219,7 +219,7 @@ PlotFlower <- function(region_plot     = NA,
 
 
     ## inject weights for FIS vs. MAR ----
-    if ( file.exists(w_fn) ) {
+    if ( length(w_fn) > 0 ) {
       ## inject FIS/MAR weights
       plot_df$weight[plot_df$goal == "FIS"] <- w$w_fis[w$rgn_id == region]
       plot_df$weight[plot_df$goal == "MAR"] <- 1 - w$w_fis[w$rgn_id == region]
