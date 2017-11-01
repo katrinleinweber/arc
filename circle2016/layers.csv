@@ -1,6 +1,6 @@
 targets,layer,filename,fld_value,units,name,description,clip_n_ship_disag,clip_n_ship_disag_description,layer_gl,path_in,fld_id_num,fld_id_chr,fld_category,fld_year,fld_val_num,fld_val_chr,file_exists,year_min,year_max,val_min,val_max,val_0to1,flds_unused,flds_missing,rows_duplicated,num_ids_unique,data_na
-AN,ao_trend,ao_trend_arc2016.csv,trend,trend score,Trends in AO,,,,ao_trend_arc2016,~/github/arc/circle2016/layers/ao_scores_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.029646459,0.0691,FALSE,,,,9,FALSE
-AN,ao_status,ao_status_arc2016.csv,status,status score,AO status,,,,ao_status_arc2016,,rgn_id,,,,status,,TRUE,,,68.80292103,99.6,FALSE,,,,9,FALSE
+AO,ao_trend,ao_trend_arc2016.csv,trend,trend score,Trends in AO,,,,ao_trend_arc2016,~/github/arc/circle2016/layers/ao_scores_arc2016.csv,rgn_id,,,,trend,,TRUE,,,-0.029646459,0.0691,FALSE,,,,9,FALSE
+AO,ao_status,ao_status_arc2016.csv,status,status score,AO status,,,,ao_status_arc2016,,rgn_id,,,,status,,TRUE,,,68.80292103,99.6,FALSE,,,,9,FALSE
 CW,cw_chemical_trend,cw_chemical_trend_arc2016.csv,trend,trend score,Trends in chemical pollution,"Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
@@ -111,7 +111,7 @@ LE,le_wage_sector_year,le_wage_sector_year_arc2016.csv,usd,2010 USD,Wages,wage/s
 LE,le_workforcesize_adj,le_workforcesize_adj_arc2016.csv,jobs,jobs,Modeled Livelihoods & Economies data,adjusted workforce size,population_inland25km,global workforce data were applied to each region after weighting by each region's coastal population.,le_workforcesize_adj_arc2016,~/github/arc/circle2016/layers/le_workforcesize_adj_arc2016.csv,rgn_id,,,year,jobs,,TRUE,2001,2015,1411,1738006.227,FALSE,,,,9,FALSE
 LE pressures,le_sector_weight,le_sector_weight_gl2016.csv,weight,value,Jobs weighting,Jobs weighting by sector (defaulting to 1),equal,,le_sector_weight_arc2016,~/github/ohi-global/eez2016/layers/le_sector_weight.csv,rgn_id,,sector,,weight,,TRUE,,,1,1,TRUE,,,,9,FALSE
 LIV ECO,le_popn,le_population_arc2016.csv,count,count,Total population by subregion,Population data from census,equal,,le_population_arc2016,~/github/arc/cricle2016/layers/le_population_arc2016.csv,rgn_id,,,year,count,,TRUE,2000,2015,2266,2897177,FALSE,,,,9,FALSE
-PP,lsp_prot_area_offshore3nm,lsp_prot_area_offshore3nm_arc2016.csv,area_km2,km^2,Coastal marine protected areas offshore 3km,"Coastal protected areas offshore to 3nm from the UN WDPA. 
+LSP,lsp_prot_area_offshore3nm,lsp_prot_area_offshore3nm_arc2016.csv,area_km2,km^2,Coastal marine protected areas offshore 3km,"Coastal protected areas offshore to 3nm from the UN WDPA. 
 
 Data sources:
 
@@ -132,7 +132,7 @@ MAR,mar_sustainability_score,mar_sustainability_score_arc2016.csv,sust_coeff,sus
 Data sources:
 
 - Trujillo P. (2008). **Using a mariculture sustainability index to rank countriesâ performances**. In: A comparative assessment of biodiversity, fisheries and aquaculture in 53 countriesâ Exclusive Economic Zones, Alder J, Pauly D, editors. _Fisheries Centre Research Report_, vol. 16(7) p. 28â56.",equal,global mariculture sustainability scores were applied equally to each region.,mar_sustainability_score,~/github/ohi-global/eez2016/layers/mar_sustainability_score.csv,rgn_id,,species_code,,sust_coeff,,TRUE,,,0.17,0.93,TRUE,,,,9,FALSE
-MMH,np_harvest,np_harvest_arc2016.csv,score,score,Marine mammal catches,Catches of marine mammals across Arctic - see meta data for data sources,equal,,,~/github/arc/circle2016/layers/np_harvest_arc2016.csv,rgn_id,,species_code,year,score,,TRUE,1979,2015,0.068217054,1,TRUE,,,,9,FALSE
+NP,np_harvest,np_harvest_arc2016.csv,score,score,Marine mammal catches,Catches of marine mammals across Arctic - see meta data for data sources,equal,,,~/github/arc/circle2016/layers/np_harvest_arc2016.csv,rgn_id,,species_code,year,score,,TRUE,1979,2015,0.068217054,1,TRUE,,,,9,FALSE
 pressures,cc_acid,cc_acid_gl2016.csv,pressure_score,pressure score,Ocean acidification,"Change in current year's modeled aragonite saturation state (Feely et al. 2010) relative to historical mean (1880-1889).
 
 Data sources:
