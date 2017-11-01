@@ -1,10 +1,10 @@
 rgn_id,type,label
-1,eez,Alaska
+1,eez,Arctic Alaska
 2,eez,Nunavut
-3,eez,Beaufort Sea
-4,eez,Russia
+3,eez,Canadian Beaufort Sea
+4,eez,Russian Arctic
 5,eez,Svalbard
-6,eez,Norway
+6,eez,Arctic Norway
 7,eez,Jan Mayen
 8,eez,West Greenland
 9,eez,East Greenland
