@@ -251,6 +251,7 @@ new_b_bmsy(cmsy, method="cmsy")
 
 cmsy <- read.csv('circle2016/prep/FIS/reg/meanbmsy/cmsy_b_bmsy_constrained_mean5yrs_reg.csv') %>%
   dplyr::select(stock_id, year, cmsy_bbmsy=mean_5year)
+ram<- read.csv('circle2016/prep/FIS/reg/ram_bmsy.csv')
 
 #comsir <- read.csv('prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv') %>%
 #dplyr::select(stock_id, year, comsir_bbmsy=mean_5year)
@@ -265,6 +266,10 @@ mean_catch <- read.csv("circle2016/prep/FIS/reg/meancatchreg/mean_catch_reg.csv"
 setdiff(cmsy$stock_id, mean_catch$stock_id)
 setdiff(mean_catch$stock_id, cmsy$stock_id)
 intersect(mean_catch$stock_id, cmsy$stock_id) #946
+
+
+
+
 
 ###CMSY join with mean catch
 data <- mean_catch %>%
@@ -281,8 +286,34 @@ data <- mean_catch %>%
 
 write.csv(data, file='circle2016/prep/FIS/reg/fis_cmsy_bbmsy_noRAM_reg.csv', row.names=FALSE)
 
+######ADD RAM DATA############
+setdiff(ram$stock_id, mean_catch$stock_id)
+setdiff(mean_catch$stock_id, ram$stock_id)
+intersect(ram$stock_id, mean_catch$stock_id) #256 stocks with RAM-B/Bmsy data (although RAM is matched by fao and rgn ids)
 
+data <- mean_catch %>%
+  left_join(ram, by=c('stock_id', "year")) %>%
+  group_by(rgn_id, taxon_key, stock_id, year, mean_catch) %>%    ### some regions have more than one stock...these will be averaged
+  summarize(ram_bmsy = mean(ram_bmsy, na.rm=TRUE),
+            gapfilled = ifelse(all(is.na(gapfilled)), NA, max(gapfilled, na.rm=TRUE))) %>%
+  left_join(cmsy, by=c("stock_id", "year")) %>%
+  ungroup()
 
+## select best data and indicate gapfilling
+data <- data %>%
+  mutate(bmsy_data_source = ifelse(!is.na(ram_bmsy), "RAM", NA)) %>%
+  mutate(bmsy_data_source = ifelse(is.na(bmsy_data_source) & !is.na(cmsy_bbmsy), "CMSY", bmsy_data_source)) %>%
+  mutate(bbmsy = ifelse(is.na(ram_bmsy), cmsy_bbmsy, ram_bmsy)) %>%
+  select(rgn_id, stock_id, taxon_key, year, bbmsy, bmsy_data_source, RAM_gapfilled=gapfilled, mean_catch) %>%
+  filter(year >= 2001) %>%
+  unique()
+
+bbmsy <- data %>%
+  select(rgn_id, stock_id, year, bbmsy) %>%
+  filter(!is.na(bbmsy)) %>%
+  unique()
+
+write.csv(bbmsy, 'circle2016/prep/FIS/reg/fis_cmsy_bbmsy_RAM_reg.csv')
 ###Explore for high BBMSY###
 
 high_bmsy <- filter(data, bbmsy<0.5) %>%
@@ -306,7 +337,7 @@ FIS = function(layers, status_year){
       year,
       catch          = mean_catch)
   # b_bmsy data
-  b<- read.csv('circle2016/prep/FIS/reg/fis_cmsy_bbmsy_noRAM_reg.csv') %>%
+  b<- read.csv('circle2016/prep/FIS/reg/fis_cmsy_bbmsy_RAM_reg.csv') %>%
     dplyr::select(
       rgn_id,
       stock_id,
@@ -324,9 +355,9 @@ FIS = function(layers, status_year){
   # The following stocks are fished in multiple regions and have high b/bmsy values
   # Due to the underfishing penalty, this actually penalizes the regions that have the highest
   # proportion of catch of these stocks.  The following corrects this problem:
-  #  filter(b, stock_id %in% c('Katsuwonus_pelamis-71', 'Clupea_harengus-27', 'Trachurus_capensis-47'))
+  #filter(b, stock_id %in% c('Katsuwonus_pelamis-71', 'Clupea_harengus-27', 'Trachurus_capensis-47'))
 
-  high_bmsy <- c('Katsuwonus_pelamis-71', 'Clupea_harengus-27', 'Trachurus_capensis-47', 'Sardinella_aurita-34', 'Scomberomorus_cavalla-31')
+ high_bmsy <- c('Katsuwonus_pelamis-71', 'Clupea_harengus-27', 'Trachurus_capensis-47', 'Sardinella_aurita-34', 'Scomberomorus_cavalla-31')
 
   b <- b %>%
     mutate(bmsy = ifelse(stock_id %in% high_bmsy, 1, bmsy))
@@ -420,8 +451,8 @@ FIS = function(layers, status_year){
     mutate(gap_fill = ifelse(is.na(bmsy), "mean", "none")) %>%
     dplyr::select(rgn_id, stock_id, taxon_key, year, catch, score, gap_fill) %>%
     filter(year == status_year)
-  write.csv(gap_fill_data, 'temp/FIS_summary_gf.csv', row.names=FALSE)
-  write.csv(data_fis_gf, 'temp/FIS_summary_gf2.csv', row.names=FALSE)
+  write.csv(gap_fill_data, 'circle2016/temp/FIS_summary_gf_reg.csv', row.names=FALSE)
+  write.csv(data_fis_gf, 'circle2016/temp/FIS_summary_gf2_reg.csv', row.names=FALSE)
 
   status_data <- data_fis_gf %>%
     dplyr::select(rgn_id, stock_id, year, catch, score)
@@ -481,7 +512,7 @@ FIS = function(layers, status_year){
 
 
 
-
+write.csv(scores, 'circle2016/prep/FIS/reg/reg_scores.csv')
 
   return(scores)
 }
