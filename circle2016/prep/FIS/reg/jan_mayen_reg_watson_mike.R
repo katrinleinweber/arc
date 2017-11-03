@@ -251,7 +251,7 @@ new_b_bmsy(cmsy, method="cmsy")
 
 cmsy <- read.csv('circle2016/prep/FIS/reg/meanbmsy/cmsy_b_bmsy_constrained_mean5yrs_reg.csv') %>%
   dplyr::select(stock_id, year, cmsy_bbmsy=mean_5year)
-ram<- read.csv('circle2016/prep/FIS/reg/ram_bmsy.csv')
+
 
 #comsir <- read.csv('prep/FIS/meanbmsy/comsir_b_bmsy_NA_mean5yrs.csv') %>%
 #dplyr::select(stock_id, year, comsir_bbmsy=mean_5year)
@@ -287,6 +287,7 @@ data <- mean_catch %>%
 write.csv(data, file='circle2016/prep/FIS/reg/fis_cmsy_bbmsy_noRAM_reg.csv', row.names=FALSE)
 
 ######ADD RAM DATA############
+ram<- read.csv('circle2016/prep/FIS/reg/ram_bmsy.csv')
 setdiff(ram$stock_id, mean_catch$stock_id)
 setdiff(mean_catch$stock_id, ram$stock_id)
 intersect(ram$stock_id, mean_catch$stock_id) #256 stocks with RAM-B/Bmsy data (although RAM is matched by fao and rgn ids)

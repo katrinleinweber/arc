@@ -43,6 +43,36 @@ setdiff(cmsy$stock_id, mean_catch$stock_id)
 setdiff(mean_catch$stock_id, cmsy$stock_id)
 intersect(mean_catch$stock_id, cmsy$stock_id) #946
 
+######ADD RAM DATA############
+ram<- read.csv('circle2016/prep/FIS/reg/ram_bmsy.csv')
+setdiff(ram$stock_id, mean_catch$stock_id)
+setdiff(mean_catch$stock_id, ram$stock_id)
+intersect(ram$stock_id, mean_catch$stock_id) #256 stocks with RAM-B/Bmsy data (although RAM is matched by fao and rgn ids)
+
+data <- mean_catch %>%
+  left_join(ram, by=c('stock_id', "year")) %>%
+  group_by(rgn_id, taxon_key, stock_id, year, mean_catch) %>%    ### some regions have more than one stock...these will be averaged
+  summarize(ram_bmsy = mean(ram_bmsy, na.rm=TRUE),
+            gapfilled = ifelse(all(is.na(gapfilled)), NA, max(gapfilled, na.rm=TRUE))) %>%
+  left_join(cmsy, by=c("stock_id", "year")) %>%
+  ungroup()
+
+## select best data and indicate gapfilling
+data <- data %>%
+  mutate(bmsy_data_source = ifelse(!is.na(ram_bmsy), "RAM", NA)) %>%
+  mutate(bmsy_data_source = ifelse(is.na(bmsy_data_source) & !is.na(cmsy_bbmsy), "CMSY", bmsy_data_source)) %>%
+  mutate(bbmsy = ifelse(is.na(ram_bmsy), cmsy_bbmsy, ram_bmsy)) %>%
+  select(rgn_id, stock_id, taxon_key, year, bbmsy, bmsy_data_source, RAM_gapfilled=gapfilled, mean_catch) %>%
+  filter(year >= 2001) %>%
+  unique()
+
+bbmsy <- data %>%
+  select(rgn_id, stock_id, year, bbmsy) %>%
+  filter(!is.na(bbmsy)) %>%
+  unique()
+
+write.csv(bbmsy, 'prep/FIS/fis_cmsy_bbmsy_RAM.csv')
+
 ###CMSY join with mean catch
 data <- mean_catch %>%
   group_by(rgn_id, taxon_key, stock_id, year, mean_catch) %>%    ### some regions have more than one stock...these will be averaged
