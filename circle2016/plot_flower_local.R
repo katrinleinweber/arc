@@ -3,10 +3,10 @@
 #' Assumes you are in the scenario folder, and will rely on scores.csv and conf/goals.csv
 #' will save figs to reports/figures, and list them in regions_figs.csv
 #'
+#' param scores scores dataframe. default = NULL, which then reads in scores.csv
 #' @param region_plot provide region_id to plot, defaults to all regions+overall (region_id = 0)
 #' @param year_plot provide year to plot, defaults to most recent
 #' @param assessment_name name of the overall assessment (region_id = 0)
-#' @param incl_legend show the legend? (default is TRUE)
 #'
 #' @return plot object that can be further modified. Also saves figures as pngs.
 #' @export
@@ -23,7 +23,7 @@ library(RColorBrewer)
 PlotFlower <- function(region_plot     = NA,
                        year_plot       = NA,
                        assessment_name = "OHI Assessment",
-                       incl_legend     = TRUE) {
+                       dir_fig_save    = "reports/figures") {
 
 
   ## scores data ----
@@ -43,7 +43,7 @@ PlotFlower <- function(region_plot     = NA,
   }
 
   ## filters the region of interest, otherwise all goals are printed
-  if(!is.na(region_plot)){
+  if ( !any(is.na(region_plot)) ){
     scores <- scores %>%
       filter(region_id %in% region_plot)
   }
@@ -61,21 +61,6 @@ PlotFlower <- function(region_plot     = NA,
 
   ## unique regions to plot
   region_plots <- unique(scores$region_id)
-
-  ## labeling:: regions info
-  region_names <- bind_rows(
-    data_frame(                # order regions to start with whole study_area
-      region_id   = 0,
-      region_name = assessment_name),
-    read_csv('spatial/regions_list.csv') %>%
-      dplyr::select(region_id   = rgn_id,
-                    region_name = rgn_name))
-
-  ## save list of figure names, save object for naming below
-  fig_names <- region_names %>%
-    mutate(flower_png = sprintf('reports/figures/flower_%s.png',
-                                stringr::str_replace_all(region_name, ' ', '_')))
-  readr::write_csv(fig_names, 'reports/figures/regions_figs.csv')
 
 
   ## goals.csv configuration info----
@@ -142,8 +127,17 @@ PlotFlower <- function(region_plot     = NA,
       select(rgn_id, w_fis)
     w <- rbind(w, data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
       arrange(rgn_id)
+
+    ## make sure weight regions match regions_plot regions
+    if ( !any(w$rgn_id %in% region_plots) ) {
+      message('`layers/fp_wildcaught_weight*.csv` missing regions...plotting FIS and MAR with equal weighting\n')
+      w_fn = NULL
+    }
+
   } else {
+
     message('Cannot find `layers/fp_wildcaught_weight*.csv`...plotting FIS and MAR with equal weighting\n')
+
   }
 
 
@@ -186,22 +180,28 @@ PlotFlower <- function(region_plot     = NA,
   myPalette <-   c(reds, blues)
 
 
-  ## filenaming for saving ----
-  regions <- bind_rows(
-    data_frame(                # order regions to start with whole study_area
+  ## filenaming for labeling and saving ----
+  region_names_all <- bind_rows(
+    data_frame(                             ## order regions to start with whole study_area
       region_id   = 0,
       region_name = assessment_name),
     read_csv('spatial/regions_list.csv') %>%
       dplyr::select(region_id   = rgn_id,
                     region_name = rgn_name)) %>%
-    mutate(flower_png = sprintf('reports/figures/flower_%s.png',
-                                str_replace_all(region_name, ' ', '_')))
+    mutate(flower_png = sprintf('%s/flower_%s.png',
+                                dir_fig_save,
+                                str_replace_all(region_name, ' ', '')))
   ## write out filenames
-  readr::write_csv(regions, 'reports/figures/regions_figs.csv')
+  readr::write_csv(region_names_all, 'reports/figures/regions_figs.csv')
+
+  ## move into for loop only with region_names to plot
+  region_names <- region_names_all %>%
+    filter(region_id %in% region_plots) %>%  ## filter only regions to plot
+    distinct()                              ## in case region_id 0 was included in regions_list.csv
 
 
   ## loop through to save flower plot for each region ----
-  for (region in region_plots) { # region = 3
+  for (region in region_plots) { # region = 301
 
     ## filter region info, setup to plot ----
     plot_df <- score_df %>%
@@ -210,7 +210,7 @@ PlotFlower <- function(region_plot     = NA,
       filter(region_id == region)
 
     ## fig_name to save
-    fig_save <- regions$flower_png[regions$region_id == region]
+    fig_save <- region_names$flower_png[region_names$region_id == region]
 
     ## labeling:: region name for title
     region_name <- region_names %>%
@@ -281,7 +281,7 @@ PlotFlower <- function(region_plot     = NA,
                 hjust = .5, vjust = .5,
                 size = 12,
                 color = dark_line) +
-      labs(title = region_name$region_name)
+      labs(title = str_replace_all(region_name, '-', ' - '))
 
 
     ### clean up the theme
@@ -314,20 +314,15 @@ PlotFlower <- function(region_plot     = NA,
                 size = 3,
                 color = dark_line)
 
-    ### include or exclude the legend
-    if(!incl_legend) {
-      plot_obj <- plot_obj +
-        theme(legend.position = 'none')
-    }
-
 
     ### display/save options: print to graphics, save to file
     print(plot_obj)
 
     ## save plot
     ggsave(filename = fig_save,
-           height = 6, width = 8, units = 'in', dpi = 300,
-           plot = plot_obj)
+           plot = plot_obj,
+           device = "png",
+           height = 6, width = 8, units = 'in', dpi = 300)
 
 
     ### ...then return the plot object for further use
