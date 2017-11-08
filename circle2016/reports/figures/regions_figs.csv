@@ -1,11 +1,11 @@
 region_id,region_name,flower_png
 0,Arctic,reports/figures/flower_Arctic.png
-1,Arctic Alaska,reports/figures/flower_Arctic_Alaska.png
+1,Arctic Alaska,reports/figures/flower_ArcticAlaska.png
 2,Nunavut,reports/figures/flower_Nunavut.png
-3,Canadian Beaufort Sea,reports/figures/flower_Canadian_Beaufort_Sea.png
-4,Russian Arctic,reports/figures/flower_Russian_Arctic.png
+3,Canadian Beaufort Sea,reports/figures/flower_CanadianBeaufortSea.png
+4,Russian Arctic,reports/figures/flower_RussianArctic.png
 5,Svalbard,reports/figures/flower_Svalbard.png
-6,Arctic Norway,reports/figures/flower_Arctic_Norway.png
-7,Jan Mayen,reports/figures/flower_Jan_Mayen.png
-8,West Greenland,reports/figures/flower_West_Greenland.png
-9,East Greenland,reports/figures/flower_East_Greenland.png
+6,Arctic Norway,reports/figures/flower_ArcticNorway.png
+7,Jan Mayen,reports/figures/flower_JanMayen.png
+8,West Greenland,reports/figures/flower_WestGreenland.png
+9,East Greenland,reports/figures/flower_EastGreenland.png
