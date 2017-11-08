@@ -98,14 +98,14 @@ ohi_type     = 'global'  # ohi_type = 'HS'    ohi_type = 'AQ'
 ####Read in species cell summary in######
 
 summary_by_loiczid<- read_csv('~/github/ohiprep/globalprep/spp_ico/v2016/summary/cell_spp_summary_by_loiczid.csv')
-region_prop_df<- read_csv('prep/ICO/rgn_prop_file.csv')
+region_prop_df<- read_csv('circle2016/prep/ICO/rgn_prop_file.csv')
 
 region_summary<- summary_by_loiczid %>%
   inner_join(region_prop_df, by= 'loiczid')%>%
   mutate(cell_area_weight_cat     = cellarea * n_cat_spp * proportionArea,
          cell_area_weight_trend   = cellarea * n_tr_spp * proportionArea,
          area_weighted_mean_cat   = weighted_mean_cat   * cell_area_weight_cat,
-         area_weighted_mean_trend = weighted_mean_trend * cell_area_weight_trend) %>%
+         area_weighted_mean_trend = (weighted_mean_trend/20) * cell_area_weight_trend) %>%
   arrange(loiczid)
 
 region_sums <- region_summary %>%
@@ -113,7 +113,7 @@ region_sums <- region_summary %>%
   summarize(rgn_mean_cat   = sum(area_weighted_mean_cat)/sum(cell_area_weight_cat),
             rgn_mean_trend = sum(area_weighted_mean_trend, na.rm = TRUE)/sum(cell_area_weight_trend))%>%
   mutate(status = ((1 - rgn_mean_cat) - 0.25) / 0.75)
-write_csv(region_sums, 'prep/SPP/spp_summary.csv')
+write_csv(region_sums, 'circle2016/prep/SPP/spp_summary_new.csv')
 
 #####3nm layer
 ##############################################################################=
