@@ -367,7 +367,7 @@ Data sources:
 
 - [International Union for Conservation of Nature (IUCN)](http://www.iucnredlist.org/technical-documents/classification-schemes/threats-classification-scheme)
 <<<<<<< HEAD
-","equal","global trends were applied equally to each region. ","spp_trend","~/github/arc/circle2016/layers/spp_trend_arc2016.csv","rgn_id",,,,"score",,TRUE,,,-0.246419683,-0.040942201,FALSE,,,,9,FALSE
+","equal","global trends were applied equally to each region. ","spp_trend","~/github/arc/circle2016/layers/spp_trend_arc2016.csv","rgn_id",,,,"score",,TRUE,,,-0.012320984,-0.00204711,FALSE,,,,9,FALSE
 "TR","tr_jobs_pct_tourism","tr_jobs_pct_tourism_arc2016.csv","pct","percent","Percent direct employment in tourism","Percent direct employment in tourism (WTTC).
 =======
 ","equal","global trends were applied equally to each region. ","spp_trend","~/github/arc/circle2016/layers/spp_trend_arc2016.csv","rgn_id",,,"year","pct",,TRUE,2001,2015,1.378643427,19.33701657,FALSE,,,,9,FALSE
