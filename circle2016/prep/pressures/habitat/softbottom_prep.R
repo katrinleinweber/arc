@@ -106,7 +106,7 @@ for(file in files) { # file = "dem_catch_2003.csv"
 }
 dem_catch_all<- filter(dem_catch_all, rgn_id != 10)
 
-area <- read.csv("prep/pressures/habitat/habitat_extent_softbottom.csv")
+area <- read.csv("prep/pressures/habitat/output/habitat_extent_softbottom.csv")
 area<- filter(area, rgn_id!=10)
 
 data_density <- dem_catch_all %>%
@@ -127,6 +127,9 @@ write.csv(max,
 ref_point <- read.csv("prep/pressures/habitat/reference_point_max.csv")
 ref_point_max <- max(ref_point$maxDensity) 31.9710840
 
+##Global max density = 1159.452
+ref_point_max<- 1159.452
+
 ## rescale the density:
 ## density is rescaled twice to reduce skew
 
@@ -145,6 +148,8 @@ write.csv(ref_median,
           row.names=FALSE)
 
 ref_point_median <- min(ref_median$ref_median) # 0.8928182
+#global ref min = 0.9359877
+ref_point_median<- 0.9359877
 
 ## Rescale for second time:
 data_rescaled_2 <- data_rescaled %>%
@@ -167,9 +172,10 @@ condition_pressure <- data_rescaled_2 %>%
   filter(!is.na(pressure))
 
 save_dir <- "prep/pressures/habitat/output"
-stop_year <- max(condition_pressure$year)
+stop_year <-max(condition_pressure$year)
 
-for (status_year in (stop_year-4):stop_year){ #status_year = 2010
+
+for (status_year in (stop_year-4):stop_year) #status_year = 2010
   trend_years <- status_year:(status_year - 4)
   first_trend_year <- min(trend_years)
 
@@ -179,7 +185,7 @@ for (status_year in (stop_year-4):stop_year){ #status_year = 2010
     group_by(rgn_id) %>%
     do(mdl = lm(health ~ year, data=.),
        adjust_trend = .$health[.$year == first_trend_year]) %>%
-    summarize(rgn_id = rgn_id,
+    dplyr::summarize(rgn_id = rgn_id,
               trend = round(coef(mdl)['year']/adjust_trend * 5, 4)) %>%
     ungroup() %>%
     mutate(trend = ifelse(trend > 1, 1, trend)) %>%
@@ -188,14 +194,15 @@ for (status_year in (stop_year-4):stop_year){ #status_year = 2010
   trend <- trend %>%
     mutate(habitat = "soft_bottom") %>%
     dplyr::select(rgn_id, habitat, trend)
-  write.csv(trend, file.path(save_dir, sprintf("habitat_trend_softbottom_v%s.csv", status_year)), row.names=FALSE)
+  write.csv(trend, file.path(save_dir, sprintf("new_habitat_trend_softbottom_v%s.csv", status_year)), row.names=FALSE)
 
   health <- condition_pressure[condition_pressure$year %in% status_year, ] %>%
     mutate(habitat = "soft_bottom") %>%
     dplyr::select(rgn_id, habitat, health)
-  write.csv(health, file.path(save_dir, sprintf("habitat_health_softbottom_v%s.csv", status_year)), row.names=FALSE)
+  write.csv(health, file.path(save_dir, sprintf("new_habitat_health_softbottom_v%s.csv", status_year)), row.names=FALSE)
 
   pressure <- condition_pressure[condition_pressure$year %in% status_year, ] %>%
     dplyr::select(rgn_id, pressure_score = pressure)
-  write.csv(pressure, file.path(save_dir, sprintf("hd_sb_subtidal_v%s.csv", status_year)), row.names=FALSE)
-}
+  write.csv(pressure, file.path(save_dir, sprintf("new_hd_sb_subtidal_v%s.csv", status_year)), row.names=FALSE)
+
+

@@ -74,7 +74,7 @@ Data sources:
 - Cavalieri, D. J., Parkinson, C. L., Gloersen, P. and Zwally, H. (2014). **Sea ice concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS passive microwave data. 1979-2014**. _Boulder, Colorado USA: NASA National Snow and Ice Data Center Distributed Active Archive Center_. http://dx.doi.org/10.5067/8GQ8LZQVL0VL.
 - Waycott, M., Duarte, C. M., Carruthers, T. J. B., Orth, R. J. et al. (2009), **Accelerating loss of seagrasses across the globe threatens coastal ecosystems**. _Proceedings of the National Academy of Sciences_ 106(30):12377-12381.
 - Bruno, J. F. & Selig, E. R. (2007) **Regional decline of coral cover in the Indo-Pacific: timing, extent, and subregional comparisons.** _PLoS ONE_ 2(8): e711. doi:10.1371/journal.pone.0000711
-- Schutte, V. G. W., Selig, E. R. & Bruno, J. F. (2010).  **Regional spatio-temporal trends in Caribbean coral reef benthic communities**. _Marine Ecology Progress Series_ 402: 115â122. ","equal","global habitat health was applied equally to all regions. ","hab_health","~/github/ohi-global/eez2016/layers/hab_health.csv","rgn_id",,"habitat",,"health",,TRUE,,,0.0416088765603329,1,TRUE,,,,9,FALSE
+- Schutte, V. G. W., Selig, E. R. & Bruno, J. F. (2010).  **Regional spatio-temporal trends in Caribbean coral reef benthic communities**. _Marine Ecology Progress Series_ 402: 115â122. ","equal","global habitat health was applied equally to all regions. ","hab_health","~/github/ohi-global/eez2016/layers/hab_health.csv","rgn_id",,"habitat",,"health",,TRUE,,,0.041608877,1,TRUE,,,,9,FALSE
 "HAB CS CP","hab_trend","hab_trend_arc2016.csv","trend","trend score","Habitat health trend","Habitat health trend
 
 Data sources:
@@ -88,7 +88,7 @@ Data sources:
 - Cavalieri, D. J., Parkinson, C. L., Gloersen, P. and Zwally, H. (2014). **Sea ice concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS passive microwave data. 1979-2014**. _Boulder, Colorado USA: NASA National Snow and Ice Data Center Distributed Active Archive Center_ (http://dx.doi.org/10.5067/8GQ8LZQVL0VL)
 - Waycott, M., Duarte, C. M., Carruthers, T. J. B., Orth, R. J. et al. (2009). **Accelerating loss of seagrasses across the globe threatens coastal ecosystems**. _Proceedings of the National Academy of Sciences_ 106(30):12377-12381.
 - Bruno, J. F. & Selig, E. R. (2007) **Regional decline of coral cover in the Indo-Pacific: timing, extent, and subregional comparisons**. _PLoS ONE_ 2(8): e711. doi:10.1371/journal.pone.0000711
-- Schutte, V. G. W., Selig, E.R. & Bruno, J. F. (2010).  **Regional spatio-temporal trends in Caribbean coral reef benthic communities**. _Marine Ecology Progress Series_ 402: 115â122.","equal","global trends were applied equally to all regions.","hab_trend","~/github/ohi-global/eez2016/layers/hab_trend.csv","rgn_id",,"habitat",,"trend",,TRUE,,,-0.2897,0.0303841701556841,FALSE,,,,9,FALSE
+- Schutte, V. G. W., Selig, E.R. & Bruno, J. F. (2010).  **Regional spatio-temporal trends in Caribbean coral reef benthic communities**. _Marine Ecology Progress Series_ 402: 115â122.","equal","global trends were applied equally to all regions.","hab_trend","~/github/ohi-global/eez2016/layers/hab_trend.csv","rgn_id",,"habitat",,"trend",,TRUE,,,-0.203761755,0.03038417,FALSE,,,,9,FALSE
 "HAB CS CP","hab_weight","hab_weight_arc2016.csv","km2","extent weighting","habitat extent","Habitat health trend
 
 Data sources:
@@ -194,7 +194,7 @@ Data sources:
 Data sources:
 
 - [Sea Around Us Project (SAUP)](http://www.seaaroundus.org/)
-","equal","global pressures data were applied equally to all regions.","hd_subtidal_sb","~/github/ohi-global/eez2016/layers/hd_subtidal_sb.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,0.515559457136734,TRUE,,,,9,FALSE
+","equal","global pressures data were applied equally to all regions.","hd_subtidal_sb","~/github/ohi-global/eez2016/layers/hd_subtidal_sb.csv","rgn_id",,,,"pressure_score",,TRUE,,,0,0.231950936190265,TRUE,,,,9,FALSE
 "pressures","po_chemicals","po_chemicals_arc2016.csv","pressure_score","pressure score","Chemical pollution","Modeled chemical pollution from commercial shipping traffic, ports and harbors, and pesticide use (Halpern et al. 2015).
 
 Data sources:
