@@ -28,6 +28,10 @@ source('plot_flower_local.R')
 PlotFlower(assessment_name = "Arctic")
 
 
+## Maps for each goal ----
+# source('https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/MappingFunction.R')
+#
+# PlotMap(goal_plot = "AO")
 
 ## Maps for each goal ----
 source('PlotMap.r')
