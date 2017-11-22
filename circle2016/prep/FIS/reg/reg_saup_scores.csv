@@ -1,19 +1,19 @@
 region_id,dimension,goal,reg score,SAUP score
-1,status,FIS,37.4,46.7
-2,status,FIS,52.3,49.2
-3,status,FIS,40.8,48.6
-4,status,FIS,51.1,62.2
-5,status,FIS,53.5,57
-6,status,FIS,55.3,73
-7,status,FIS,52.2,9.4
-8,status,FIS,51.5,80.5
-9,status,FIS,53.8,46.3
-1,trend,FIS,0.169,0
-2,trend,FIS,-0.295,0
-3,trend,FIS,0.1382,0.02
-4,trend,FIS,0.0312,0.09
-5,trend,FIS,0.0028,0.06
-6,trend,FIS,0.0939,0.05
-7,trend,FIS,0.0352,0.14
-8,trend,FIS,-0.2077,-0.07
-9,trend,FIS,0.1371,0.04
+Arctic Alaska,status,FIS,37.4,46.7
+Nunavut,status,FIS,52.3,49.2
+Canadian Beaufort,status,FIS,40.8,48.6
+Russian Arctic,status,FIS,51.1,62.2
+Svalbard,status,FIS,53.5,57
+Arctic Norway,status,FIS,55.3,73
+Jan Mayen,status,FIS,52.2,9.4
+West Greenland,status,FIS,51.5,80.5
+East Greenland,status,FIS,53.8,46.3
+Arctic Alaska,trend,FIS,0.169,0
+Nunavut,trend,FIS,-0.295,0
+Canadian Beaufort,trend,FIS,0.1382,0.02
+Russian Arctic,trend,FIS,0.0312,0.09
+Svalbard,trend,FIS,0.0028,0.06
+Arctic Norway,trend,FIS,0.0939,0.05
+Jan Mayen,trend,FIS,0.0352,0.14
+West Greenland,trend,FIS,-0.2077,-0.07
+East Greenland,trend,FIS,0.1371,0.04
