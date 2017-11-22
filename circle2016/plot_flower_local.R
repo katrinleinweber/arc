@@ -36,7 +36,7 @@ PlotFlower <- function(region_plot     = NA,
   }
 
   ## if there are multiple years in the dataset and no year_plot argument,
-  ## the most recent year of data is selected
+  ## the most recent year of data is dplyr::selected
   if(is.na(year_plot)){
     scores <- scores %>%
       filter(year == max(year))
@@ -55,7 +55,7 @@ PlotFlower <- function(region_plot     = NA,
   ## labeling:: Index score for center labeling before join with conf
   score_index <- scores %>%
     filter(goal == "Index") %>%
-    select(region_id, score) %>%
+    dplyr::select(region_id, score) %>%
     mutate(score = round(score))
 
 
@@ -70,13 +70,13 @@ PlotFlower <- function(region_plot     = NA,
   goals_supra <- na.omit(unique(conf$parent))
   supra_lookup <- conf %>%
     filter(goal %in% goals_supra) %>%
-    select(parent = goal, name_supra = name)
+    dplyr::select(parent = goal, name_supra = name)
 
   ## extract conf info for labeling
   conf <- conf %>%
     left_join(supra_lookup, by = 'parent') %>%
     filter(!(goal %in% goals_supra)) %>%
-    select(goal, order_color, order_hierarchy,
+    dplyr::select(goal, order_color, order_hierarchy,
            weight, name_supra, name_flower) %>%
     mutate(name_flower = gsub("\\n", "\n", name_flower, fixed = TRUE)) %>%
     arrange(order_hierarchy)
@@ -124,7 +124,7 @@ PlotFlower <- function(region_plot     = NA,
 
     ## read in weights
     w <- read_csv(w_fn) %>%
-      select(rgn_id, w_fis)
+      dplyr::select(rgn_id, w_fis)
     w <- rbind(w, data.frame(rgn_id = 0, w_fis = mean(w$w_fis))) %>%
       arrange(rgn_id)
 
@@ -146,7 +146,7 @@ PlotFlower <- function(region_plot     = NA,
     mutate(name_supra = ifelse(is.na(name_supra), name_flower, name_supra)) %>%
     mutate(name_supra = paste0(name_supra, "\n"),
            name_supra  = gsub("Coastal", "", name_supra, fixed = TRUE)) %>%
-    select(name_supra, pos_supra) %>%
+    dplyr::select(name_supra, pos_supra) %>%
     unique() %>%
     as.data.frame()
 
@@ -158,7 +158,7 @@ PlotFlower <- function(region_plot     = NA,
 
   ## more labeling and parameters ----
   goal_labels <- score_df %>%
-    select(goal, name_flower)
+    dplyr::select(goal, name_flower)
 
   p_limits <- c(0, score_df$pos_end[1])
   blank_circle_rad <- 42
@@ -215,7 +215,7 @@ PlotFlower <- function(region_plot     = NA,
     ## labeling:: region name for title
     region_name <- region_names %>%
       filter(region_id == region) %>%
-      select(region_name)
+      dplyr::select(region_name)
 
 
     ## inject weights for FIS vs. MAR ----
@@ -335,7 +335,7 @@ PlotFlower <- function(region_plot     = NA,
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
         text             = element_text(family = 'Helvetica', color = 'gray30', size = base_size),
-        plot.title       = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
+        plot.title       = element_text(size = rel(3), hjust = 0.5, vjust=-2, face = 'bold'),
         panel.background = element_blank(),
         legend.position  = 'right',
         panel.border     = element_blank(),
