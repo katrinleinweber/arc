@@ -36,7 +36,7 @@ Data sources:
 
 - [FAO Major Fishing Areas](http://www.fao.org/fishery/area/search/en)
 <<<<<<< HEAD
-- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,2.46141623875173e-12,287613.495552297,FALSE,,,,9,FALSE
+- [Sea Around Us Project (SAUP)](http://www.seaaroundus.org)","","","fis_meancatch_arc2016","~/github/arc/circle2016/layers/fis_meancatch_arc2016.csv","rgn_id",,"stock_id_taxonkey","year","mean_catch",,TRUE,2001,2014,1.52658428571429e-05,296415.703480998,FALSE,,,,9,FALSE
 "FIS","fis_comsir_bmsy_arc2016","fis_comsir_bmsy_arc2016.csv","bbmsy","B / B_msy","B/Bmsy estimates obtained using the comsir method","The ratio of fish population abundance compared to the abundance required to deliver maximum sustainable yield, obtained from the catch-MSY model (Martell & Froese, 2013).
 
 Data sources:
