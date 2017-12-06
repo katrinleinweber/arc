@@ -33,8 +33,8 @@ PlotMap <- function(scores,
                     # include_land    = TRUE, # need to develop if we want this
                     fld_rgn         = 'region_id',
                     fld_score       = 'score',
-                    scale_label     = 'score',
-                    scale_limits    = c(0, 100),
+                    scale_label     = 'Region',
+                    scale_limits    = c(1, 9),
                     print_fig       = TRUE, ### print to display
                     path_fig    = NULL) { ### path to save the plot as an image
                     # allow fig_png to be NULL and then pass it back as a list of ggplot objects so that you could modify it more on {
@@ -59,7 +59,7 @@ PlotMap <- function(scores,
   # ggtheme_plot() +
 
   df_plot <- ggplot() +
-    geom_sf(data = poly_sf, aes(fill = score)) +
+    geom_sf(data = poly_sf, aes(fill = rgn_id)) +
     theme(axis.ticks = element_blank(),
           axis.text  = element_blank(),
           axis.title = element_blank(),
